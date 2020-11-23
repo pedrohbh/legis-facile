@@ -1,0 +1,56 @@
+grammar ufes.mdd.lei.LegisFacile with org.eclipse.xtext.common.Terminals
+
+generate legisFacile "http://www.mdd.ufes/lei/LegisFacile"
+
+Lei:
+	(elements+=Type)*
+;
+
+Type:
+	DataType | Entity | Preliminar Normativa Final
+;
+
+Preliminar:
+	('Preliminar'|'preliminar') '{'
+		epigrage=Epigrafe ','
+		ementa=Ementa	','
+		preambulo=Preambulo ','
+	'}'
+;
+
+Epigrafe:
+	('Epigrafe'|'epigrafe') '(' ato=STRING ',' numero=INT ',' ano=INT ')'
+;
+
+Ementa:
+	('Ementa'|'ementa') '(' ementa=STRING ')'
+;
+
+Preambulo:
+	('Preambulo'|'preambulo') '(' preambulo=STRING ')'
+;
+
+Normativa:
+	('Normativa'|'normativa') '{'
+	'}'
+;
+
+
+Final: 
+	('Final'|'final') '{'
+	'}'
+;
+
+DataType:
+	'datatype' name=ID
+;
+
+Entity:
+	'entity' name=ID ('extends' superType=[Entity])? '{'
+	(features+=Feature)*
+	'}'
+;
+
+Feature:
+	(many?='many')? name=ID ':' type=[Type]
+;

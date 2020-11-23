@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: ufes.mdd.lei
+Bundle-ManifestVersion: 2
+Bundle-Name: ufes.mdd.lei
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: ufes.mdd.lei; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: ufes.mdd.lei,
+ ufes.mdd.lei.legisFacile.util,
+ ufes.mdd.lei.legisFacile.impl,
+ ufes.mdd.lei.parser.antlr.internal,
+ ufes.mdd.lei.services,
+ ufes.mdd.lei.generator,
+ ufes.mdd.lei.legisFacile,
+ ufes.mdd.lei.validation,
+ ufes.mdd.lei.scoping,
+ ufes.mdd.lei.parser.antlr,
+ ufes.mdd.lei.serializer
+Import-Package: org.apache.log4j
