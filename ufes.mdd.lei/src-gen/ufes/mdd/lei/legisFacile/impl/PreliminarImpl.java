@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import ufes.mdd.lei.legisFacile.Ementa;
 import ufes.mdd.lei.legisFacile.Epigrafe;
@@ -32,7 +33,7 @@ import ufes.mdd.lei.legisFacile.Preliminar;
  *
  * @generated
  */
-public class PreliminarImpl extends TypeImpl implements Preliminar
+public class PreliminarImpl extends MinimalEObjectImpl.Container implements Preliminar
 {
   /**
    * The cached value of the '{@link #getEpigrage() <em>Epigrage</em>}' containment reference.

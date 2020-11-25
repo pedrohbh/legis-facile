@@ -71,6 +71,10 @@ public class LegisFacileFactoryImpl extends EFactoryImpl implements LegisFacileF
       case LegisFacilePackage.EPIGRAFE: return createEpigrafe();
       case LegisFacilePackage.EMENTA: return createEmenta();
       case LegisFacilePackage.PREAMBULO: return createPreambulo();
+      case LegisFacilePackage.NORMATIVA: return createNormativa();
+      case LegisFacilePackage.ARTIGO: return createArtigo();
+      case LegisFacilePackage.CAPUT: return createCaput();
+      case LegisFacilePackage.PARAGRAFO: return createParagrafo();
       case LegisFacilePackage.DATA_TYPE: return createDataType();
       case LegisFacilePackage.ENTITY: return createEntity();
       case LegisFacilePackage.FEATURE: return createFeature();
@@ -149,6 +153,54 @@ public class LegisFacileFactoryImpl extends EFactoryImpl implements LegisFacileF
   {
     PreambuloImpl preambulo = new PreambuloImpl();
     return preambulo;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Normativa createNormativa()
+  {
+    NormativaImpl normativa = new NormativaImpl();
+    return normativa;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Artigo createArtigo()
+  {
+    ArtigoImpl artigo = new ArtigoImpl();
+    return artigo;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Caput createCaput()
+  {
+    CaputImpl caput = new CaputImpl();
+    return caput;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Paragrafo createParagrafo()
+  {
+    ParagrafoImpl paragrafo = new ParagrafoImpl();
+    return paragrafo;
   }
 
   /**

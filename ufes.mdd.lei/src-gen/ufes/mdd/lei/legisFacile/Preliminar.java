@@ -3,6 +3,7 @@
  */
 package ufes.mdd.lei.legisFacile;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +23,7 @@ package ufes.mdd.lei.legisFacile;
  * @model
  * @generated
  */
-public interface Preliminar extends Type
+public interface Preliminar extends EObject
 {
   /**
    * Returns the value of the '<em><b>Epigrage</b></em>' containment reference.

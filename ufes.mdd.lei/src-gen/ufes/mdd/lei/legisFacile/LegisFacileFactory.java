@@ -78,6 +78,42 @@ public interface LegisFacileFactory extends EFactory
   Preambulo createPreambulo();
 
   /**
+   * Returns a new object of class '<em>Normativa</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Normativa</em>'.
+   * @generated
+   */
+  Normativa createNormativa();
+
+  /**
+   * Returns a new object of class '<em>Artigo</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Artigo</em>'.
+   * @generated
+   */
+  Artigo createArtigo();
+
+  /**
+   * Returns a new object of class '<em>Caput</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Caput</em>'.
+   * @generated
+   */
+  Caput createCaput();
+
+  /**
+   * Returns a new object of class '<em>Paragrafo</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Paragrafo</em>'.
+   * @generated
+   */
+  Paragrafo createParagrafo();
+
+  /**
    * Returns a new object of class '<em>Data Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

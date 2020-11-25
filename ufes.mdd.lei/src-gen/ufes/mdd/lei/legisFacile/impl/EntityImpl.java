@@ -30,7 +30,6 @@ import ufes.mdd.lei.legisFacile.LegisFacilePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link ufes.mdd.lei.legisFacile.impl.EntityImpl#getName <em>Name</em>}</li>
  *   <li>{@link ufes.mdd.lei.legisFacile.impl.EntityImpl#getSuperType <em>Super Type</em>}</li>
  *   <li>{@link ufes.mdd.lei.legisFacile.impl.EntityImpl#getFeatures <em>Features</em>}</li>
  * </ul>
@@ -39,26 +38,6 @@ import ufes.mdd.lei.legisFacile.LegisFacilePackage;
  */
 public class EntityImpl extends TypeImpl implements Entity
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getSuperType() <em>Super Type</em>}' reference.
    * <!-- begin-user-doc -->
@@ -98,31 +77,6 @@ public class EntityImpl extends TypeImpl implements Entity
   protected EClass eStaticClass()
   {
     return LegisFacilePackage.Literals.ENTITY;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LegisFacilePackage.ENTITY__NAME, oldName, name));
   }
 
   /**
@@ -211,8 +165,6 @@ public class EntityImpl extends TypeImpl implements Entity
   {
     switch (featureID)
     {
-      case LegisFacilePackage.ENTITY__NAME:
-        return getName();
       case LegisFacilePackage.ENTITY__SUPER_TYPE:
         if (resolve) return getSuperType();
         return basicGetSuperType();
@@ -233,9 +185,6 @@ public class EntityImpl extends TypeImpl implements Entity
   {
     switch (featureID)
     {
-      case LegisFacilePackage.ENTITY__NAME:
-        setName((String)newValue);
-        return;
       case LegisFacilePackage.ENTITY__SUPER_TYPE:
         setSuperType((Entity)newValue);
         return;
@@ -257,9 +206,6 @@ public class EntityImpl extends TypeImpl implements Entity
   {
     switch (featureID)
     {
-      case LegisFacilePackage.ENTITY__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case LegisFacilePackage.ENTITY__SUPER_TYPE:
         setSuperType((Entity)null);
         return;
@@ -280,31 +226,12 @@ public class EntityImpl extends TypeImpl implements Entity
   {
     switch (featureID)
     {
-      case LegisFacilePackage.ENTITY__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case LegisFacilePackage.ENTITY__SUPER_TYPE:
         return superType != null;
       case LegisFacilePackage.ENTITY__FEATURES:
         return features != null && !features.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //EntityImpl

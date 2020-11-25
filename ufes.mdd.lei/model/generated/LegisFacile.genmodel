@@ -9,7 +9,12 @@
     <genClasses ecoreClass="LegisFacile.ecore#//Lei">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Lei/elements"/>
     </genClasses>
-    <genClasses ecoreClass="LegisFacile.ecore#//Type"/>
+    <genClasses ecoreClass="LegisFacile.ecore#//Type">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Type/preliminar"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Type/normativa"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//Type/final"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//Type/name"/>
+    </genClasses>
     <genClasses ecoreClass="LegisFacile.ecore#//Preliminar">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Preliminar/epigrage"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Preliminar/ementa"/>
@@ -26,11 +31,21 @@
     <genClasses ecoreClass="LegisFacile.ecore#//Preambulo">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//Preambulo/preambulo"/>
     </genClasses>
-    <genClasses ecoreClass="LegisFacile.ecore#//DataType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//DataType/name"/>
+    <genClasses ecoreClass="LegisFacile.ecore#//Normativa">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Normativa/artigos"/>
     </genClasses>
+    <genClasses ecoreClass="LegisFacile.ecore#//Artigo">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Artigo/caput"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Artigo/paragrafos"/>
+    </genClasses>
+    <genClasses ecoreClass="LegisFacile.ecore#//Caput">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//Caput/texto"/>
+    </genClasses>
+    <genClasses ecoreClass="LegisFacile.ecore#//Paragrafo">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//Paragrafo/texto"/>
+    </genClasses>
+    <genClasses ecoreClass="LegisFacile.ecore#//DataType"/>
     <genClasses ecoreClass="LegisFacile.ecore#//Entity">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//Entity/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Entity/superType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Entity/features"/>
     </genClasses>

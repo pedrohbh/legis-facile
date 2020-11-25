@@ -91,7 +91,6 @@ public class LegisFacileSwitch<T> extends Switch<T>
       {
         Preliminar preliminar = (Preliminar)theEObject;
         T result = casePreliminar(preliminar);
-        if (result == null) result = caseType(preliminar);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -113,6 +112,34 @@ public class LegisFacileSwitch<T> extends Switch<T>
       {
         Preambulo preambulo = (Preambulo)theEObject;
         T result = casePreambulo(preambulo);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LegisFacilePackage.NORMATIVA:
+      {
+        Normativa normativa = (Normativa)theEObject;
+        T result = caseNormativa(normativa);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LegisFacilePackage.ARTIGO:
+      {
+        Artigo artigo = (Artigo)theEObject;
+        T result = caseArtigo(artigo);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LegisFacilePackage.CAPUT:
+      {
+        Caput caput = (Caput)theEObject;
+        T result = caseCaput(caput);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LegisFacilePackage.PARAGRAFO:
+      {
+        Paragrafo paragrafo = (Paragrafo)theEObject;
+        T result = caseParagrafo(paragrafo);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -235,6 +262,70 @@ public class LegisFacileSwitch<T> extends Switch<T>
    * @generated
    */
   public T casePreambulo(Preambulo object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Normativa</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Normativa</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNormativa(Normativa object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Artigo</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Artigo</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseArtigo(Artigo object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Caput</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Caput</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCaput(Caput object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Paragrafo</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Paragrafo</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseParagrafo(Paragrafo object)
   {
     return null;
   }

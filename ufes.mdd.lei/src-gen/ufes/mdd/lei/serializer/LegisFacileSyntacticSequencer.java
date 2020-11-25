@@ -21,52 +21,29 @@ import ufes.mdd.lei.services.LegisFacileGrammarAccess;
 public class LegisFacileSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected LegisFacileGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_Artigo_ArtigoKeyword_0_0_or_ArtigoKeyword_0_1;
 	protected AbstractElementAlias match_Ementa_EmentaKeyword_0_0_or_EmentaKeyword_0_1;
 	protected AbstractElementAlias match_Epigrafe_EpigrafeKeyword_0_0_or_EpigrafeKeyword_0_1;
+	protected AbstractElementAlias match_Normativa_NormativaKeyword_0_0_or_NormativaKeyword_0_1;
 	protected AbstractElementAlias match_Preambulo_PreambuloKeyword_0_0_or_PreambuloKeyword_0_1;
 	protected AbstractElementAlias match_Preliminar_PreliminarKeyword_0_0_or_PreliminarKeyword_0_1;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (LegisFacileGrammarAccess) access;
+		match_Artigo_ArtigoKeyword_0_0_or_ArtigoKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getArtigoAccess().getArtigoKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getArtigoAccess().getArtigoKeyword_0_1()));
 		match_Ementa_EmentaKeyword_0_0_or_EmentaKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getEmentaAccess().getEmentaKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getEmentaAccess().getEmentaKeyword_0_1()));
 		match_Epigrafe_EpigrafeKeyword_0_0_or_EpigrafeKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getEpigrafeAccess().getEpigrafeKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getEpigrafeAccess().getEpigrafeKeyword_0_1()));
+		match_Normativa_NormativaKeyword_0_0_or_NormativaKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getNormativaAccess().getNormativaKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getNormativaAccess().getNormativaKeyword_0_1()));
 		match_Preambulo_PreambuloKeyword_0_0_or_PreambuloKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getPreambuloAccess().getPreambuloKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getPreambuloAccess().getPreambuloKeyword_0_1()));
 		match_Preliminar_PreliminarKeyword_0_0_or_PreliminarKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getPreliminarAccess().getPreliminarKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getPreliminarAccess().getPreliminarKeyword_0_1()));
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getFinalRule())
-			return getFinalToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getNormativaRule())
-			return getNormativaToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
-	/**
-	 * Final: 
-	 * 	('Final'|'final') '{'
-	 * 	'}'
-	 * ;
-	 */
-	protected String getFinalToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "Final { }";
-	}
-	
-	/**
-	 * Normativa:
-	 * 	('Normativa'|'normativa') '{'
-	 * 	'}'
-	 * ;
-	 */
-	protected String getNormativaToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "Normativa { }";
-	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -74,10 +51,14 @@ public class LegisFacileSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Ementa_EmentaKeyword_0_0_or_EmentaKeyword_0_1.equals(syntax))
+			if (match_Artigo_ArtigoKeyword_0_0_or_ArtigoKeyword_0_1.equals(syntax))
+				emit_Artigo_ArtigoKeyword_0_0_or_ArtigoKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Ementa_EmentaKeyword_0_0_or_EmentaKeyword_0_1.equals(syntax))
 				emit_Ementa_EmentaKeyword_0_0_or_EmentaKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Epigrafe_EpigrafeKeyword_0_0_or_EpigrafeKeyword_0_1.equals(syntax))
 				emit_Epigrafe_EpigrafeKeyword_0_0_or_EpigrafeKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Normativa_NormativaKeyword_0_0_or_NormativaKeyword_0_1.equals(syntax))
+				emit_Normativa_NormativaKeyword_0_0_or_NormativaKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Preambulo_PreambuloKeyword_0_0_or_PreambuloKeyword_0_1.equals(syntax))
 				emit_Preambulo_PreambuloKeyword_0_0_or_PreambuloKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Preliminar_PreliminarKeyword_0_0_or_PreliminarKeyword_0_1.equals(syntax))
@@ -86,6 +67,17 @@ public class LegisFacileSyntacticSequencer extends AbstractSyntacticSequencer {
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     'Artigo' | 'artigo'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) '{' caput=Caput
+	 */
+	protected void emit_Artigo_ArtigoKeyword_0_0_or_ArtigoKeyword_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * Ambiguous syntax:
 	 *     'Ementa' | 'ementa'
@@ -105,6 +97,17 @@ public class LegisFacileSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) '(' ato=STRING
 	 */
 	protected void emit_Epigrafe_EpigrafeKeyword_0_0_or_EpigrafeKeyword_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'Normativa' | 'normativa'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) '{' artigos+=Artigo
+	 */
+	protected void emit_Normativa_NormativaKeyword_0_0_or_NormativaKeyword_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

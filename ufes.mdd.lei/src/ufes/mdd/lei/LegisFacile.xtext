@@ -7,7 +7,7 @@ Lei:
 ;
 
 Type:
-	DataType | Entity | Preliminar Normativa Final
+	DataType | Entity | preliminar=Preliminar normativa=Normativa final=Final
 ;
 
 Preliminar:
@@ -32,7 +32,23 @@ Preambulo:
 
 Normativa:
 	('Normativa'|'normativa') '{'
+	(artigos+=Artigo)+
 	'}'
+;
+
+Artigo:
+	('Artigo'|'artigo') '{'
+		caput=Caput ','
+		(paragrafos+=Paragrafo ',')*
+	'}'
+;
+
+Caput:
+	texto=STRING
+;
+
+Paragrafo:
+	texto=STRING
 ;
 
 

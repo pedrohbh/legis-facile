@@ -10,6 +10,8 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import ufes.mdd.lei.legisFacile.Artigo;
+import ufes.mdd.lei.legisFacile.Caput;
 import ufes.mdd.lei.legisFacile.DataType;
 import ufes.mdd.lei.legisFacile.Ementa;
 import ufes.mdd.lei.legisFacile.Entity;
@@ -18,6 +20,8 @@ import ufes.mdd.lei.legisFacile.Feature;
 import ufes.mdd.lei.legisFacile.LegisFacileFactory;
 import ufes.mdd.lei.legisFacile.LegisFacilePackage;
 import ufes.mdd.lei.legisFacile.Lei;
+import ufes.mdd.lei.legisFacile.Normativa;
+import ufes.mdd.lei.legisFacile.Paragrafo;
 import ufes.mdd.lei.legisFacile.Preambulo;
 import ufes.mdd.lei.legisFacile.Preliminar;
 import ufes.mdd.lei.legisFacile.Type;
@@ -71,6 +75,34 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
    * @generated
    */
   private EClass preambuloEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass normativaEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass artigoEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass caputEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass paragrafoEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -187,6 +219,50 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
   public EClass getType()
   {
     return typeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getType_Preliminar()
+  {
+    return (EReference)typeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getType_Normativa()
+  {
+    return (EReference)typeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getType_Final()
+  {
+    return (EAttribute)typeEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getType_Name()
+  {
+    return (EAttribute)typeEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -327,9 +403,9 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
    * @generated
    */
   @Override
-  public EClass getDataType()
+  public EClass getNormativa()
   {
-    return dataTypeEClass;
+    return normativaEClass;
   }
 
   /**
@@ -338,9 +414,97 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
    * @generated
    */
   @Override
-  public EAttribute getDataType_Name()
+  public EReference getNormativa_Artigos()
   {
-    return (EAttribute)dataTypeEClass.getEStructuralFeatures().get(0);
+    return (EReference)normativaEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getArtigo()
+  {
+    return artigoEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getArtigo_Caput()
+  {
+    return (EReference)artigoEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getArtigo_Paragrafos()
+  {
+    return (EReference)artigoEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCaput()
+  {
+    return caputEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCaput_Texto()
+  {
+    return (EAttribute)caputEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getParagrafo()
+  {
+    return paragrafoEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getParagrafo_Texto()
+  {
+    return (EAttribute)paragrafoEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDataType()
+  {
+    return dataTypeEClass;
   }
 
   /**
@@ -360,20 +524,9 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
    * @generated
    */
   @Override
-  public EAttribute getEntity_Name()
-  {
-    return (EAttribute)entityEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EReference getEntity_SuperType()
   {
-    return (EReference)entityEClass.getEStructuralFeatures().get(1);
+    return (EReference)entityEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -384,7 +537,7 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
   @Override
   public EReference getEntity_Features()
   {
-    return (EReference)entityEClass.getEStructuralFeatures().get(2);
+    return (EReference)entityEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -466,6 +619,10 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
     createEReference(leiEClass, LEI__ELEMENTS);
 
     typeEClass = createEClass(TYPE);
+    createEReference(typeEClass, TYPE__PRELIMINAR);
+    createEReference(typeEClass, TYPE__NORMATIVA);
+    createEAttribute(typeEClass, TYPE__FINAL);
+    createEAttribute(typeEClass, TYPE__NAME);
 
     preliminarEClass = createEClass(PRELIMINAR);
     createEReference(preliminarEClass, PRELIMINAR__EPIGRAGE);
@@ -483,11 +640,22 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
     preambuloEClass = createEClass(PREAMBULO);
     createEAttribute(preambuloEClass, PREAMBULO__PREAMBULO);
 
+    normativaEClass = createEClass(NORMATIVA);
+    createEReference(normativaEClass, NORMATIVA__ARTIGOS);
+
+    artigoEClass = createEClass(ARTIGO);
+    createEReference(artigoEClass, ARTIGO__CAPUT);
+    createEReference(artigoEClass, ARTIGO__PARAGRAFOS);
+
+    caputEClass = createEClass(CAPUT);
+    createEAttribute(caputEClass, CAPUT__TEXTO);
+
+    paragrafoEClass = createEClass(PARAGRAFO);
+    createEAttribute(paragrafoEClass, PARAGRAFO__TEXTO);
+
     dataTypeEClass = createEClass(DATA_TYPE);
-    createEAttribute(dataTypeEClass, DATA_TYPE__NAME);
 
     entityEClass = createEClass(ENTITY);
-    createEAttribute(entityEClass, ENTITY__NAME);
     createEReference(entityEClass, ENTITY__SUPER_TYPE);
     createEReference(entityEClass, ENTITY__FEATURES);
 
@@ -526,7 +694,6 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    preliminarEClass.getESuperTypes().add(this.getType());
     dataTypeEClass.getESuperTypes().add(this.getType());
     entityEClass.getESuperTypes().add(this.getType());
 
@@ -535,6 +702,10 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
     initEReference(getLei_Elements(), this.getType(), null, "elements", null, 0, -1, Lei.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getType_Preliminar(), this.getPreliminar(), null, "preliminar", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getType_Normativa(), this.getNormativa(), null, "normativa", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getType_Final(), ecorePackage.getEString(), "final", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getType_Name(), ecorePackage.getEString(), "name", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(preliminarEClass, Preliminar.class, "Preliminar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPreliminar_Epigrage(), this.getEpigrafe(), null, "epigrage", null, 0, 1, Preliminar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -552,11 +723,22 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
     initEClass(preambuloEClass, Preambulo.class, "Preambulo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPreambulo_Preambulo(), ecorePackage.getEString(), "preambulo", null, 0, 1, Preambulo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(normativaEClass, Normativa.class, "Normativa", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNormativa_Artigos(), this.getArtigo(), null, "artigos", null, 0, -1, Normativa.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(artigoEClass, Artigo.class, "Artigo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getArtigo_Caput(), this.getCaput(), null, "caput", null, 0, 1, Artigo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getArtigo_Paragrafos(), this.getParagrafo(), null, "paragrafos", null, 0, -1, Artigo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(caputEClass, Caput.class, "Caput", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCaput_Texto(), ecorePackage.getEString(), "texto", null, 0, 1, Caput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(paragrafoEClass, Paragrafo.class, "Paragrafo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getParagrafo_Texto(), ecorePackage.getEString(), "texto", null, 0, 1, Paragrafo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(dataTypeEClass, DataType.class, "DataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDataType_Name(), ecorePackage.getEString(), "name", null, 0, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEntity_Name(), ecorePackage.getEString(), "name", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEntity_SuperType(), this.getEntity(), null, "superType", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEntity_Features(), this.getFeature(), null, "features", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

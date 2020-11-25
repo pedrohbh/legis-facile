@@ -14,6 +14,8 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+import ufes.mdd.lei.legisFacile.Artigo;
+import ufes.mdd.lei.legisFacile.Caput;
 import ufes.mdd.lei.legisFacile.DataType;
 import ufes.mdd.lei.legisFacile.Ementa;
 import ufes.mdd.lei.legisFacile.Entity;
@@ -21,8 +23,11 @@ import ufes.mdd.lei.legisFacile.Epigrafe;
 import ufes.mdd.lei.legisFacile.Feature;
 import ufes.mdd.lei.legisFacile.LegisFacilePackage;
 import ufes.mdd.lei.legisFacile.Lei;
+import ufes.mdd.lei.legisFacile.Normativa;
+import ufes.mdd.lei.legisFacile.Paragrafo;
 import ufes.mdd.lei.legisFacile.Preambulo;
 import ufes.mdd.lei.legisFacile.Preliminar;
+import ufes.mdd.lei.legisFacile.Type;
 import ufes.mdd.lei.services.LegisFacileGrammarAccess;
 
 @SuppressWarnings("all")
@@ -39,6 +44,12 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == LegisFacilePackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case LegisFacilePackage.ARTIGO:
+				sequence_Artigo(context, (Artigo) semanticObject); 
+				return; 
+			case LegisFacilePackage.CAPUT:
+				sequence_Caput(context, (Caput) semanticObject); 
+				return; 
 			case LegisFacilePackage.DATA_TYPE:
 				sequence_DataType(context, (DataType) semanticObject); 
 				return; 
@@ -57,16 +68,55 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 			case LegisFacilePackage.LEI:
 				sequence_Lei(context, (Lei) semanticObject); 
 				return; 
+			case LegisFacilePackage.NORMATIVA:
+				sequence_Normativa(context, (Normativa) semanticObject); 
+				return; 
+			case LegisFacilePackage.PARAGRAFO:
+				sequence_Paragrafo(context, (Paragrafo) semanticObject); 
+				return; 
 			case LegisFacilePackage.PREAMBULO:
 				sequence_Preambulo(context, (Preambulo) semanticObject); 
 				return; 
 			case LegisFacilePackage.PRELIMINAR:
 				sequence_Preliminar(context, (Preliminar) semanticObject); 
 				return; 
+			case LegisFacilePackage.TYPE:
+				sequence_Type(context, (Type) semanticObject); 
+				return; 
 			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Contexts:
+	 *     Artigo returns Artigo
+	 *
+	 * Constraint:
+	 *     (caput=Caput paragrafos+=Paragrafo*)
+	 */
+	protected void sequence_Artigo(ISerializationContext context, Artigo semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Caput returns Caput
+	 *
+	 * Constraint:
+	 *     texto=STRING
+	 */
+	protected void sequence_Caput(ISerializationContext context, Caput semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LegisFacilePackage.Literals.CAPUT__TEXTO) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegisFacilePackage.Literals.CAPUT__TEXTO));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCaputAccess().getTextoSTRINGTerminalRuleCall_0(), semanticObject.getTexto());
+		feeder.finish();
+	}
+	
 	
 	/**
 	 * Contexts:
@@ -78,8 +128,8 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 */
 	protected void sequence_DataType(ISerializationContext context, DataType semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LegisFacilePackage.Literals.DATA_TYPE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegisFacilePackage.Literals.DATA_TYPE__NAME));
+			if (transientValues.isValueTransient(semanticObject, LegisFacilePackage.Literals.TYPE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegisFacilePackage.Literals.TYPE__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getDataTypeAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
@@ -168,6 +218,36 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Contexts:
+	 *     Normativa returns Normativa
+	 *
+	 * Constraint:
+	 *     artigos+=Artigo+
+	 */
+	protected void sequence_Normativa(ISerializationContext context, Normativa semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Paragrafo returns Paragrafo
+	 *
+	 * Constraint:
+	 *     texto=STRING
+	 */
+	protected void sequence_Paragrafo(ISerializationContext context, Paragrafo semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LegisFacilePackage.Literals.PARAGRAFO__TEXTO) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegisFacilePackage.Literals.PARAGRAFO__TEXTO));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getParagrafoAccess().getTextoSTRINGTerminalRuleCall_0(), semanticObject.getTexto());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Preambulo returns Preambulo
 	 *
 	 * Constraint:
@@ -186,7 +266,6 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Contexts:
-	 *     Type returns Preliminar
 	 *     Preliminar returns Preliminar
 	 *
 	 * Constraint:
@@ -205,6 +284,30 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 		feeder.accept(grammarAccess.getPreliminarAccess().getEpigrageEpigrafeParserRuleCall_2_0(), semanticObject.getEpigrage());
 		feeder.accept(grammarAccess.getPreliminarAccess().getEmentaEmentaParserRuleCall_4_0(), semanticObject.getEmenta());
 		feeder.accept(grammarAccess.getPreliminarAccess().getPreambuloPreambuloParserRuleCall_6_0(), semanticObject.getPreambulo());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Type returns Type
+	 *
+	 * Constraint:
+	 *     (preliminar=Preliminar normativa=Normativa final=Final)
+	 */
+	protected void sequence_Type(ISerializationContext context, Type semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LegisFacilePackage.Literals.TYPE__PRELIMINAR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegisFacilePackage.Literals.TYPE__PRELIMINAR));
+			if (transientValues.isValueTransient(semanticObject, LegisFacilePackage.Literals.TYPE__NORMATIVA) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegisFacilePackage.Literals.TYPE__NORMATIVA));
+			if (transientValues.isValueTransient(semanticObject, LegisFacilePackage.Literals.TYPE__FINAL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegisFacilePackage.Literals.TYPE__FINAL));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getTypeAccess().getPreliminarPreliminarParserRuleCall_2_0_0(), semanticObject.getPreliminar());
+		feeder.accept(grammarAccess.getTypeAccess().getNormativaNormativaParserRuleCall_2_1_0(), semanticObject.getNormativa());
+		feeder.accept(grammarAccess.getTypeAccess().getFinalFinalParserRuleCall_2_2_0(), semanticObject.getFinal());
 		feeder.finish();
 	}
 	

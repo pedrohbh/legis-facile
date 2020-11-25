@@ -3,22 +3,98 @@
  */
 package ufes.mdd.lei.legisFacile.impl;
 
-import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import ufes.mdd.lei.legisFacile.LegisFacilePackage;
+import ufes.mdd.lei.legisFacile.Normativa;
+import ufes.mdd.lei.legisFacile.Preliminar;
 import ufes.mdd.lei.legisFacile.Type;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Type</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link ufes.mdd.lei.legisFacile.impl.TypeImpl#getPreliminar <em>Preliminar</em>}</li>
+ *   <li>{@link ufes.mdd.lei.legisFacile.impl.TypeImpl#getNormativa <em>Normativa</em>}</li>
+ *   <li>{@link ufes.mdd.lei.legisFacile.impl.TypeImpl#getFinal <em>Final</em>}</li>
+ *   <li>{@link ufes.mdd.lei.legisFacile.impl.TypeImpl#getName <em>Name</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class TypeImpl extends MinimalEObjectImpl.Container implements Type
 {
+  /**
+   * The cached value of the '{@link #getPreliminar() <em>Preliminar</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPreliminar()
+   * @generated
+   * @ordered
+   */
+  protected Preliminar preliminar;
+
+  /**
+   * The cached value of the '{@link #getNormativa() <em>Normativa</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNormativa()
+   * @generated
+   * @ordered
+   */
+  protected Normativa normativa;
+
+  /**
+   * The default value of the '{@link #getFinal() <em>Final</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFinal()
+   * @generated
+   * @ordered
+   */
+  protected static final String FINAL_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getFinal() <em>Final</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFinal()
+   * @generated
+   * @ordered
+   */
+  protected String final_ = FINAL_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -38,6 +114,289 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
   protected EClass eStaticClass()
   {
     return LegisFacilePackage.Literals.TYPE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Preliminar getPreliminar()
+  {
+    return preliminar;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetPreliminar(Preliminar newPreliminar, NotificationChain msgs)
+  {
+    Preliminar oldPreliminar = preliminar;
+    preliminar = newPreliminar;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LegisFacilePackage.TYPE__PRELIMINAR, oldPreliminar, newPreliminar);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setPreliminar(Preliminar newPreliminar)
+  {
+    if (newPreliminar != preliminar)
+    {
+      NotificationChain msgs = null;
+      if (preliminar != null)
+        msgs = ((InternalEObject)preliminar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LegisFacilePackage.TYPE__PRELIMINAR, null, msgs);
+      if (newPreliminar != null)
+        msgs = ((InternalEObject)newPreliminar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LegisFacilePackage.TYPE__PRELIMINAR, null, msgs);
+      msgs = basicSetPreliminar(newPreliminar, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LegisFacilePackage.TYPE__PRELIMINAR, newPreliminar, newPreliminar));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Normativa getNormativa()
+  {
+    return normativa;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetNormativa(Normativa newNormativa, NotificationChain msgs)
+  {
+    Normativa oldNormativa = normativa;
+    normativa = newNormativa;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LegisFacilePackage.TYPE__NORMATIVA, oldNormativa, newNormativa);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setNormativa(Normativa newNormativa)
+  {
+    if (newNormativa != normativa)
+    {
+      NotificationChain msgs = null;
+      if (normativa != null)
+        msgs = ((InternalEObject)normativa).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LegisFacilePackage.TYPE__NORMATIVA, null, msgs);
+      if (newNormativa != null)
+        msgs = ((InternalEObject)newNormativa).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LegisFacilePackage.TYPE__NORMATIVA, null, msgs);
+      msgs = basicSetNormativa(newNormativa, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LegisFacilePackage.TYPE__NORMATIVA, newNormativa, newNormativa));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getFinal()
+  {
+    return final_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setFinal(String newFinal)
+  {
+    String oldFinal = final_;
+    final_ = newFinal;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LegisFacilePackage.TYPE__FINAL, oldFinal, final_));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LegisFacilePackage.TYPE__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case LegisFacilePackage.TYPE__PRELIMINAR:
+        return basicSetPreliminar(null, msgs);
+      case LegisFacilePackage.TYPE__NORMATIVA:
+        return basicSetNormativa(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case LegisFacilePackage.TYPE__PRELIMINAR:
+        return getPreliminar();
+      case LegisFacilePackage.TYPE__NORMATIVA:
+        return getNormativa();
+      case LegisFacilePackage.TYPE__FINAL:
+        return getFinal();
+      case LegisFacilePackage.TYPE__NAME:
+        return getName();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case LegisFacilePackage.TYPE__PRELIMINAR:
+        setPreliminar((Preliminar)newValue);
+        return;
+      case LegisFacilePackage.TYPE__NORMATIVA:
+        setNormativa((Normativa)newValue);
+        return;
+      case LegisFacilePackage.TYPE__FINAL:
+        setFinal((String)newValue);
+        return;
+      case LegisFacilePackage.TYPE__NAME:
+        setName((String)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case LegisFacilePackage.TYPE__PRELIMINAR:
+        setPreliminar((Preliminar)null);
+        return;
+      case LegisFacilePackage.TYPE__NORMATIVA:
+        setNormativa((Normativa)null);
+        return;
+      case LegisFacilePackage.TYPE__FINAL:
+        setFinal(FINAL_EDEFAULT);
+        return;
+      case LegisFacilePackage.TYPE__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case LegisFacilePackage.TYPE__PRELIMINAR:
+        return preliminar != null;
+      case LegisFacilePackage.TYPE__NORMATIVA:
+        return normativa != null;
+      case LegisFacilePackage.TYPE__FINAL:
+        return FINAL_EDEFAULT == null ? final_ != null : !FINAL_EDEFAULT.equals(final_);
+      case LegisFacilePackage.TYPE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (final: ");
+    result.append(final_);
+    result.append(", name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //TypeImpl

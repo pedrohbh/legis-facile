@@ -106,6 +106,26 @@ public class LegisFacileAdapterFactory extends AdapterFactoryImpl
         return createPreambuloAdapter();
       }
       @Override
+      public Adapter caseNormativa(Normativa object)
+      {
+        return createNormativaAdapter();
+      }
+      @Override
+      public Adapter caseArtigo(Artigo object)
+      {
+        return createArtigoAdapter();
+      }
+      @Override
+      public Adapter caseCaput(Caput object)
+      {
+        return createCaputAdapter();
+      }
+      @Override
+      public Adapter caseParagrafo(Paragrafo object)
+      {
+        return createParagrafoAdapter();
+      }
+      @Override
       public Adapter caseDataType(DataType object)
       {
         return createDataTypeAdapter();
@@ -228,6 +248,66 @@ public class LegisFacileAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createPreambuloAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link ufes.mdd.lei.legisFacile.Normativa <em>Normativa</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see ufes.mdd.lei.legisFacile.Normativa
+   * @generated
+   */
+  public Adapter createNormativaAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link ufes.mdd.lei.legisFacile.Artigo <em>Artigo</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see ufes.mdd.lei.legisFacile.Artigo
+   * @generated
+   */
+  public Adapter createArtigoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link ufes.mdd.lei.legisFacile.Caput <em>Caput</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see ufes.mdd.lei.legisFacile.Caput
+   * @generated
+   */
+  public Adapter createCaputAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link ufes.mdd.lei.legisFacile.Paragrafo <em>Paragrafo</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see ufes.mdd.lei.legisFacile.Paragrafo
+   * @generated
+   */
+  public Adapter createParagrafoAdapter()
   {
     return null;
   }

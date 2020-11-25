@@ -96,13 +96,49 @@ public interface LegisFacilePackage extends EPackage
   int TYPE = 1;
 
   /**
+   * The feature id for the '<em><b>Preliminar</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__PRELIMINAR = 0;
+
+  /**
+   * The feature id for the '<em><b>Normativa</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__NORMATIVA = 1;
+
+  /**
+   * The feature id for the '<em><b>Final</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__FINAL = 2;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__NAME = 3;
+
+  /**
    * The number of structural features of the '<em>Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_FEATURE_COUNT = 0;
+  int TYPE_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link ufes.mdd.lei.legisFacile.impl.PreliminarImpl <em>Preliminar</em>}' class.
@@ -121,7 +157,7 @@ public interface LegisFacilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PRELIMINAR__EPIGRAGE = TYPE_FEATURE_COUNT + 0;
+  int PRELIMINAR__EPIGRAGE = 0;
 
   /**
    * The feature id for the '<em><b>Ementa</b></em>' containment reference.
@@ -130,7 +166,7 @@ public interface LegisFacilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PRELIMINAR__EMENTA = TYPE_FEATURE_COUNT + 1;
+  int PRELIMINAR__EMENTA = 1;
 
   /**
    * The feature id for the '<em><b>Preambulo</b></em>' containment reference.
@@ -139,7 +175,7 @@ public interface LegisFacilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PRELIMINAR__PREAMBULO = TYPE_FEATURE_COUNT + 2;
+  int PRELIMINAR__PREAMBULO = 2;
 
   /**
    * The number of structural features of the '<em>Preliminar</em>' class.
@@ -148,7 +184,7 @@ public interface LegisFacilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int PRELIMINAR_FEATURE_COUNT = TYPE_FEATURE_COUNT + 3;
+  int PRELIMINAR_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link ufes.mdd.lei.legisFacile.impl.EpigrafeImpl <em>Epigrafe</em>}' class.
@@ -253,6 +289,127 @@ public interface LegisFacilePackage extends EPackage
   int PREAMBULO_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link ufes.mdd.lei.legisFacile.impl.NormativaImpl <em>Normativa</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see ufes.mdd.lei.legisFacile.impl.NormativaImpl
+   * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getNormativa()
+   * @generated
+   */
+  int NORMATIVA = 6;
+
+  /**
+   * The feature id for the '<em><b>Artigos</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NORMATIVA__ARTIGOS = 0;
+
+  /**
+   * The number of structural features of the '<em>Normativa</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NORMATIVA_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link ufes.mdd.lei.legisFacile.impl.ArtigoImpl <em>Artigo</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see ufes.mdd.lei.legisFacile.impl.ArtigoImpl
+   * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getArtigo()
+   * @generated
+   */
+  int ARTIGO = 7;
+
+  /**
+   * The feature id for the '<em><b>Caput</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARTIGO__CAPUT = 0;
+
+  /**
+   * The feature id for the '<em><b>Paragrafos</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARTIGO__PARAGRAFOS = 1;
+
+  /**
+   * The number of structural features of the '<em>Artigo</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARTIGO_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link ufes.mdd.lei.legisFacile.impl.CaputImpl <em>Caput</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see ufes.mdd.lei.legisFacile.impl.CaputImpl
+   * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getCaput()
+   * @generated
+   */
+  int CAPUT = 8;
+
+  /**
+   * The feature id for the '<em><b>Texto</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CAPUT__TEXTO = 0;
+
+  /**
+   * The number of structural features of the '<em>Caput</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CAPUT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link ufes.mdd.lei.legisFacile.impl.ParagrafoImpl <em>Paragrafo</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see ufes.mdd.lei.legisFacile.impl.ParagrafoImpl
+   * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getParagrafo()
+   * @generated
+   */
+  int PARAGRAFO = 9;
+
+  /**
+   * The feature id for the '<em><b>Texto</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAGRAFO__TEXTO = 0;
+
+  /**
+   * The number of structural features of the '<em>Paragrafo</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAGRAFO_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link ufes.mdd.lei.legisFacile.impl.DataTypeImpl <em>Data Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -260,7 +417,34 @@ public interface LegisFacilePackage extends EPackage
    * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getDataType()
    * @generated
    */
-  int DATA_TYPE = 6;
+  int DATA_TYPE = 10;
+
+  /**
+   * The feature id for the '<em><b>Preliminar</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE__PRELIMINAR = TYPE__PRELIMINAR;
+
+  /**
+   * The feature id for the '<em><b>Normativa</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE__NORMATIVA = TYPE__NORMATIVA;
+
+  /**
+   * The feature id for the '<em><b>Final</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE__FINAL = TYPE__FINAL;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -269,7 +453,7 @@ public interface LegisFacilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA_TYPE__NAME = TYPE_FEATURE_COUNT + 0;
+  int DATA_TYPE__NAME = TYPE__NAME;
 
   /**
    * The number of structural features of the '<em>Data Type</em>' class.
@@ -278,7 +462,7 @@ public interface LegisFacilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
+  int DATA_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link ufes.mdd.lei.legisFacile.impl.EntityImpl <em>Entity</em>}' class.
@@ -288,7 +472,34 @@ public interface LegisFacilePackage extends EPackage
    * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getEntity()
    * @generated
    */
-  int ENTITY = 7;
+  int ENTITY = 11;
+
+  /**
+   * The feature id for the '<em><b>Preliminar</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY__PRELIMINAR = TYPE__PRELIMINAR;
+
+  /**
+   * The feature id for the '<em><b>Normativa</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY__NORMATIVA = TYPE__NORMATIVA;
+
+  /**
+   * The feature id for the '<em><b>Final</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY__FINAL = TYPE__FINAL;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -297,7 +508,7 @@ public interface LegisFacilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENTITY__NAME = TYPE_FEATURE_COUNT + 0;
+  int ENTITY__NAME = TYPE__NAME;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -306,7 +517,7 @@ public interface LegisFacilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENTITY__SUPER_TYPE = TYPE_FEATURE_COUNT + 1;
+  int ENTITY__SUPER_TYPE = TYPE_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Features</b></em>' containment reference list.
@@ -315,7 +526,7 @@ public interface LegisFacilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENTITY__FEATURES = TYPE_FEATURE_COUNT + 2;
+  int ENTITY__FEATURES = TYPE_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Entity</em>' class.
@@ -324,7 +535,7 @@ public interface LegisFacilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENTITY_FEATURE_COUNT = TYPE_FEATURE_COUNT + 3;
+  int ENTITY_FEATURE_COUNT = TYPE_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link ufes.mdd.lei.legisFacile.impl.FeatureImpl <em>Feature</em>}' class.
@@ -334,7 +545,7 @@ public interface LegisFacilePackage extends EPackage
    * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getFeature()
    * @generated
    */
-  int FEATURE = 8;
+  int FEATURE = 12;
 
   /**
    * The feature id for the '<em><b>Many</b></em>' attribute.
@@ -403,6 +614,50 @@ public interface LegisFacilePackage extends EPackage
    * @generated
    */
   EClass getType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link ufes.mdd.lei.legisFacile.Type#getPreliminar <em>Preliminar</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Preliminar</em>'.
+   * @see ufes.mdd.lei.legisFacile.Type#getPreliminar()
+   * @see #getType()
+   * @generated
+   */
+  EReference getType_Preliminar();
+
+  /**
+   * Returns the meta object for the containment reference '{@link ufes.mdd.lei.legisFacile.Type#getNormativa <em>Normativa</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Normativa</em>'.
+   * @see ufes.mdd.lei.legisFacile.Type#getNormativa()
+   * @see #getType()
+   * @generated
+   */
+  EReference getType_Normativa();
+
+  /**
+   * Returns the meta object for the attribute '{@link ufes.mdd.lei.legisFacile.Type#getFinal <em>Final</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Final</em>'.
+   * @see ufes.mdd.lei.legisFacile.Type#getFinal()
+   * @see #getType()
+   * @generated
+   */
+  EAttribute getType_Final();
+
+  /**
+   * Returns the meta object for the attribute '{@link ufes.mdd.lei.legisFacile.Type#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see ufes.mdd.lei.legisFacile.Type#getName()
+   * @see #getType()
+   * @generated
+   */
+  EAttribute getType_Name();
 
   /**
    * Returns the meta object for class '{@link ufes.mdd.lei.legisFacile.Preliminar <em>Preliminar</em>}'.
@@ -533,6 +788,101 @@ public interface LegisFacilePackage extends EPackage
   EAttribute getPreambulo_Preambulo();
 
   /**
+   * Returns the meta object for class '{@link ufes.mdd.lei.legisFacile.Normativa <em>Normativa</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Normativa</em>'.
+   * @see ufes.mdd.lei.legisFacile.Normativa
+   * @generated
+   */
+  EClass getNormativa();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link ufes.mdd.lei.legisFacile.Normativa#getArtigos <em>Artigos</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Artigos</em>'.
+   * @see ufes.mdd.lei.legisFacile.Normativa#getArtigos()
+   * @see #getNormativa()
+   * @generated
+   */
+  EReference getNormativa_Artigos();
+
+  /**
+   * Returns the meta object for class '{@link ufes.mdd.lei.legisFacile.Artigo <em>Artigo</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Artigo</em>'.
+   * @see ufes.mdd.lei.legisFacile.Artigo
+   * @generated
+   */
+  EClass getArtigo();
+
+  /**
+   * Returns the meta object for the containment reference '{@link ufes.mdd.lei.legisFacile.Artigo#getCaput <em>Caput</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Caput</em>'.
+   * @see ufes.mdd.lei.legisFacile.Artigo#getCaput()
+   * @see #getArtigo()
+   * @generated
+   */
+  EReference getArtigo_Caput();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link ufes.mdd.lei.legisFacile.Artigo#getParagrafos <em>Paragrafos</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Paragrafos</em>'.
+   * @see ufes.mdd.lei.legisFacile.Artigo#getParagrafos()
+   * @see #getArtigo()
+   * @generated
+   */
+  EReference getArtigo_Paragrafos();
+
+  /**
+   * Returns the meta object for class '{@link ufes.mdd.lei.legisFacile.Caput <em>Caput</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Caput</em>'.
+   * @see ufes.mdd.lei.legisFacile.Caput
+   * @generated
+   */
+  EClass getCaput();
+
+  /**
+   * Returns the meta object for the attribute '{@link ufes.mdd.lei.legisFacile.Caput#getTexto <em>Texto</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Texto</em>'.
+   * @see ufes.mdd.lei.legisFacile.Caput#getTexto()
+   * @see #getCaput()
+   * @generated
+   */
+  EAttribute getCaput_Texto();
+
+  /**
+   * Returns the meta object for class '{@link ufes.mdd.lei.legisFacile.Paragrafo <em>Paragrafo</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Paragrafo</em>'.
+   * @see ufes.mdd.lei.legisFacile.Paragrafo
+   * @generated
+   */
+  EClass getParagrafo();
+
+  /**
+   * Returns the meta object for the attribute '{@link ufes.mdd.lei.legisFacile.Paragrafo#getTexto <em>Texto</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Texto</em>'.
+   * @see ufes.mdd.lei.legisFacile.Paragrafo#getTexto()
+   * @see #getParagrafo()
+   * @generated
+   */
+  EAttribute getParagrafo_Texto();
+
+  /**
    * Returns the meta object for class '{@link ufes.mdd.lei.legisFacile.DataType <em>Data Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -543,17 +893,6 @@ public interface LegisFacilePackage extends EPackage
   EClass getDataType();
 
   /**
-   * Returns the meta object for the attribute '{@link ufes.mdd.lei.legisFacile.DataType#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see ufes.mdd.lei.legisFacile.DataType#getName()
-   * @see #getDataType()
-   * @generated
-   */
-  EAttribute getDataType_Name();
-
-  /**
    * Returns the meta object for class '{@link ufes.mdd.lei.legisFacile.Entity <em>Entity</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -562,17 +901,6 @@ public interface LegisFacilePackage extends EPackage
    * @generated
    */
   EClass getEntity();
-
-  /**
-   * Returns the meta object for the attribute '{@link ufes.mdd.lei.legisFacile.Entity#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see ufes.mdd.lei.legisFacile.Entity#getName()
-   * @see #getEntity()
-   * @generated
-   */
-  EAttribute getEntity_Name();
 
   /**
    * Returns the meta object for the reference '{@link ufes.mdd.lei.legisFacile.Entity#getSuperType <em>Super Type</em>}'.
@@ -691,6 +1019,38 @@ public interface LegisFacilePackage extends EPackage
     EClass TYPE = eINSTANCE.getType();
 
     /**
+     * The meta object literal for the '<em><b>Preliminar</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE__PRELIMINAR = eINSTANCE.getType_Preliminar();
+
+    /**
+     * The meta object literal for the '<em><b>Normativa</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE__NORMATIVA = eINSTANCE.getType_Normativa();
+
+    /**
+     * The meta object literal for the '<em><b>Final</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TYPE__FINAL = eINSTANCE.getType_Final();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TYPE__NAME = eINSTANCE.getType_Name();
+
+    /**
      * The meta object literal for the '{@link ufes.mdd.lei.legisFacile.impl.PreliminarImpl <em>Preliminar</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -795,6 +1155,86 @@ public interface LegisFacilePackage extends EPackage
     EAttribute PREAMBULO__PREAMBULO = eINSTANCE.getPreambulo_Preambulo();
 
     /**
+     * The meta object literal for the '{@link ufes.mdd.lei.legisFacile.impl.NormativaImpl <em>Normativa</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see ufes.mdd.lei.legisFacile.impl.NormativaImpl
+     * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getNormativa()
+     * @generated
+     */
+    EClass NORMATIVA = eINSTANCE.getNormativa();
+
+    /**
+     * The meta object literal for the '<em><b>Artigos</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NORMATIVA__ARTIGOS = eINSTANCE.getNormativa_Artigos();
+
+    /**
+     * The meta object literal for the '{@link ufes.mdd.lei.legisFacile.impl.ArtigoImpl <em>Artigo</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see ufes.mdd.lei.legisFacile.impl.ArtigoImpl
+     * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getArtigo()
+     * @generated
+     */
+    EClass ARTIGO = eINSTANCE.getArtigo();
+
+    /**
+     * The meta object literal for the '<em><b>Caput</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARTIGO__CAPUT = eINSTANCE.getArtigo_Caput();
+
+    /**
+     * The meta object literal for the '<em><b>Paragrafos</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARTIGO__PARAGRAFOS = eINSTANCE.getArtigo_Paragrafos();
+
+    /**
+     * The meta object literal for the '{@link ufes.mdd.lei.legisFacile.impl.CaputImpl <em>Caput</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see ufes.mdd.lei.legisFacile.impl.CaputImpl
+     * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getCaput()
+     * @generated
+     */
+    EClass CAPUT = eINSTANCE.getCaput();
+
+    /**
+     * The meta object literal for the '<em><b>Texto</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CAPUT__TEXTO = eINSTANCE.getCaput_Texto();
+
+    /**
+     * The meta object literal for the '{@link ufes.mdd.lei.legisFacile.impl.ParagrafoImpl <em>Paragrafo</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see ufes.mdd.lei.legisFacile.impl.ParagrafoImpl
+     * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getParagrafo()
+     * @generated
+     */
+    EClass PARAGRAFO = eINSTANCE.getParagrafo();
+
+    /**
+     * The meta object literal for the '<em><b>Texto</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PARAGRAFO__TEXTO = eINSTANCE.getParagrafo_Texto();
+
+    /**
      * The meta object literal for the '{@link ufes.mdd.lei.legisFacile.impl.DataTypeImpl <em>Data Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -805,14 +1245,6 @@ public interface LegisFacilePackage extends EPackage
     EClass DATA_TYPE = eINSTANCE.getDataType();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute DATA_TYPE__NAME = eINSTANCE.getDataType_Name();
-
-    /**
      * The meta object literal for the '{@link ufes.mdd.lei.legisFacile.impl.EntityImpl <em>Entity</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -821,14 +1253,6 @@ public interface LegisFacilePackage extends EPackage
      * @generated
      */
     EClass ENTITY = eINSTANCE.getEntity();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ENTITY__NAME = eINSTANCE.getEntity_Name();
 
     /**
      * The meta object literal for the '<em><b>Super Type</b></em>' reference feature.

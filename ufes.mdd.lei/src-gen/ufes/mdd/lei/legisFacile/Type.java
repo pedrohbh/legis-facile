@@ -10,6 +10,15 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Type</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link ufes.mdd.lei.legisFacile.Type#getPreliminar <em>Preliminar</em>}</li>
+ *   <li>{@link ufes.mdd.lei.legisFacile.Type#getNormativa <em>Normativa</em>}</li>
+ *   <li>{@link ufes.mdd.lei.legisFacile.Type#getFinal <em>Final</em>}</li>
+ *   <li>{@link ufes.mdd.lei.legisFacile.Type#getName <em>Name</em>}</li>
+ * </ul>
  *
  * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getType()
  * @model
@@ -17,4 +26,92 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Type extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Preliminar</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Preliminar</em>' containment reference.
+   * @see #setPreliminar(Preliminar)
+   * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getType_Preliminar()
+   * @model containment="true"
+   * @generated
+   */
+  Preliminar getPreliminar();
+
+  /**
+   * Sets the value of the '{@link ufes.mdd.lei.legisFacile.Type#getPreliminar <em>Preliminar</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Preliminar</em>' containment reference.
+   * @see #getPreliminar()
+   * @generated
+   */
+  void setPreliminar(Preliminar value);
+
+  /**
+   * Returns the value of the '<em><b>Normativa</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Normativa</em>' containment reference.
+   * @see #setNormativa(Normativa)
+   * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getType_Normativa()
+   * @model containment="true"
+   * @generated
+   */
+  Normativa getNormativa();
+
+  /**
+   * Sets the value of the '{@link ufes.mdd.lei.legisFacile.Type#getNormativa <em>Normativa</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Normativa</em>' containment reference.
+   * @see #getNormativa()
+   * @generated
+   */
+  void setNormativa(Normativa value);
+
+  /**
+   * Returns the value of the '<em><b>Final</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Final</em>' attribute.
+   * @see #setFinal(String)
+   * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getType_Final()
+   * @model
+   * @generated
+   */
+  String getFinal();
+
+  /**
+   * Sets the value of the '{@link ufes.mdd.lei.legisFacile.Type#getFinal <em>Final</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Final</em>' attribute.
+   * @see #getFinal()
+   * @generated
+   */
+  void setFinal(String value);
+
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getType_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link ufes.mdd.lei.legisFacile.Type#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
 } // Type
