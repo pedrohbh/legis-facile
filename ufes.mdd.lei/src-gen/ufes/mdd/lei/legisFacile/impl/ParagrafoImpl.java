@@ -3,12 +3,18 @@
  */
 package ufes.mdd.lei.legisFacile.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 import ufes.mdd.lei.legisFacile.LegisFacilePackage;
 import ufes.mdd.lei.legisFacile.Paragrafo;
@@ -22,6 +28,7 @@ import ufes.mdd.lei.legisFacile.Paragrafo;
  * </p>
  * <ul>
  *   <li>{@link ufes.mdd.lei.legisFacile.impl.ParagrafoImpl#getTexto <em>Texto</em>}</li>
+ *   <li>{@link ufes.mdd.lei.legisFacile.impl.ParagrafoImpl#getAlineas <em>Alineas</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,6 +54,16 @@ public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Parag
    * @ordered
    */
   protected String texto = TEXTO_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getAlineas() <em>Alineas</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAlineas()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> alineas;
 
   /**
    * <!-- begin-user-doc -->
@@ -100,12 +117,29 @@ public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Parag
    * @generated
    */
   @Override
+  public EList<String> getAlineas()
+  {
+    if (alineas == null)
+    {
+      alineas = new EDataTypeEList<String>(String.class, this, LegisFacilePackage.PARAGRAFO__ALINEAS);
+    }
+    return alineas;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case LegisFacilePackage.PARAGRAFO__TEXTO:
         return getTexto();
+      case LegisFacilePackage.PARAGRAFO__ALINEAS:
+        return getAlineas();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -115,6 +149,7 @@ public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Parag
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -122,6 +157,10 @@ public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Parag
     {
       case LegisFacilePackage.PARAGRAFO__TEXTO:
         setTexto((String)newValue);
+        return;
+      case LegisFacilePackage.PARAGRAFO__ALINEAS:
+        getAlineas().clear();
+        getAlineas().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -140,6 +179,9 @@ public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Parag
       case LegisFacilePackage.PARAGRAFO__TEXTO:
         setTexto(TEXTO_EDEFAULT);
         return;
+      case LegisFacilePackage.PARAGRAFO__ALINEAS:
+        getAlineas().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -156,6 +198,8 @@ public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Parag
     {
       case LegisFacilePackage.PARAGRAFO__TEXTO:
         return TEXTO_EDEFAULT == null ? texto != null : !TEXTO_EDEFAULT.equals(texto);
+      case LegisFacilePackage.PARAGRAFO__ALINEAS:
+        return alineas != null && !alineas.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -173,6 +217,8 @@ public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Parag
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (texto: ");
     result.append(texto);
+    result.append(", alineas: ");
+    result.append(alineas);
     result.append(')');
     return result.toString();
   }

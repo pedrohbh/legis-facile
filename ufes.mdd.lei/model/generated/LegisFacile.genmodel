@@ -43,6 +43,7 @@
     </genClasses>
     <genClasses ecoreClass="LegisFacile.ecore#//Paragrafo">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//Paragrafo/texto"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//Paragrafo/alineas"/>
     </genClasses>
     <genClasses ecoreClass="LegisFacile.ecore#//DataType"/>
     <genClasses ecoreClass="LegisFacile.ecore#//Entity">

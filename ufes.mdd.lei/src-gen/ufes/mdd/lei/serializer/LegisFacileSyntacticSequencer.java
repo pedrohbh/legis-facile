@@ -11,6 +11,7 @@ import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
@@ -25,6 +26,8 @@ public class LegisFacileSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Ementa_EmentaKeyword_0_0_or_EmentaKeyword_0_1;
 	protected AbstractElementAlias match_Epigrafe_EpigrafeKeyword_0_0_or_EpigrafeKeyword_0_1;
 	protected AbstractElementAlias match_Normativa_NormativaKeyword_0_0_or_NormativaKeyword_0_1;
+	protected AbstractElementAlias match_Paragrafo_ParagrafoKeyword_0_0_or_ParagrafoKeyword_0_1;
+	protected AbstractElementAlias match_Paragrafo___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q;
 	protected AbstractElementAlias match_Preambulo_PreambuloKeyword_0_0_or_PreambuloKeyword_0_1;
 	protected AbstractElementAlias match_Preliminar_PreliminarKeyword_0_0_or_PreliminarKeyword_0_1;
 	
@@ -35,6 +38,8 @@ public class LegisFacileSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Ementa_EmentaKeyword_0_0_or_EmentaKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getEmentaAccess().getEmentaKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getEmentaAccess().getEmentaKeyword_0_1()));
 		match_Epigrafe_EpigrafeKeyword_0_0_or_EpigrafeKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getEpigrafeAccess().getEpigrafeKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getEpigrafeAccess().getEpigrafeKeyword_0_1()));
 		match_Normativa_NormativaKeyword_0_0_or_NormativaKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getNormativaAccess().getNormativaKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getNormativaAccess().getNormativaKeyword_0_1()));
+		match_Paragrafo_ParagrafoKeyword_0_0_or_ParagrafoKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getParagrafoAccess().getParagrafoKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getParagrafoAccess().getParagrafoKeyword_0_1()));
+		match_Paragrafo___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getParagrafoAccess().getLeftCurlyBracketKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getParagrafoAccess().getRightCurlyBracketKeyword_4_2()));
 		match_Preambulo_PreambuloKeyword_0_0_or_PreambuloKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getPreambuloAccess().getPreambuloKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getPreambuloAccess().getPreambuloKeyword_0_1()));
 		match_Preliminar_PreliminarKeyword_0_0_or_PreliminarKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getPreliminarAccess().getPreliminarKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getPreliminarAccess().getPreliminarKeyword_0_1()));
 	}
@@ -59,6 +64,10 @@ public class LegisFacileSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Epigrafe_EpigrafeKeyword_0_0_or_EpigrafeKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Normativa_NormativaKeyword_0_0_or_NormativaKeyword_0_1.equals(syntax))
 				emit_Normativa_NormativaKeyword_0_0_or_NormativaKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Paragrafo_ParagrafoKeyword_0_0_or_ParagrafoKeyword_0_1.equals(syntax))
+				emit_Paragrafo_ParagrafoKeyword_0_0_or_ParagrafoKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Paragrafo___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q.equals(syntax))
+				emit_Paragrafo___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Preambulo_PreambuloKeyword_0_0_or_PreambuloKeyword_0_1.equals(syntax))
 				emit_Preambulo_PreambuloKeyword_0_0_or_PreambuloKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Preliminar_PreliminarKeyword_0_0_or_PreliminarKeyword_0_1.equals(syntax))
@@ -108,6 +117,28 @@ public class LegisFacileSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) '{' artigos+=Artigo
 	 */
 	protected void emit_Normativa_NormativaKeyword_0_0_or_NormativaKeyword_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'Paragrafo' | 'paragrafo'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) '(' texto=STRING
+	 */
+	protected void emit_Paragrafo_ParagrafoKeyword_0_0_or_ParagrafoKeyword_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('{' '}')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     texto=STRING ')' (ambiguity) (rule end)
+	 */
+	protected void emit_Paragrafo___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

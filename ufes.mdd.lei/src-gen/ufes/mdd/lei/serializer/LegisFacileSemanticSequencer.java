@@ -233,16 +233,10 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Paragrafo returns Paragrafo
 	 *
 	 * Constraint:
-	 *     texto=STRING
+	 *     (texto=STRING alineas+=Alinea*)
 	 */
 	protected void sequence_Paragrafo(ISerializationContext context, Paragrafo semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LegisFacilePackage.Literals.PARAGRAFO__TEXTO) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegisFacilePackage.Literals.PARAGRAFO__TEXTO));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getParagrafoAccess().getTextoSTRINGTerminalRuleCall_0(), semanticObject.getTexto());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

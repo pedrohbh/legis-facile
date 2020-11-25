@@ -502,6 +502,17 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
    * @generated
    */
   @Override
+  public EAttribute getParagrafo_Alineas()
+  {
+    return (EAttribute)paragrafoEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getDataType()
   {
     return dataTypeEClass;
@@ -652,6 +663,7 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
 
     paragrafoEClass = createEClass(PARAGRAFO);
     createEAttribute(paragrafoEClass, PARAGRAFO__TEXTO);
+    createEAttribute(paragrafoEClass, PARAGRAFO__ALINEAS);
 
     dataTypeEClass = createEClass(DATA_TYPE);
 
@@ -735,6 +747,7 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
 
     initEClass(paragrafoEClass, Paragrafo.class, "Paragrafo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getParagrafo_Texto(), ecorePackage.getEString(), "texto", null, 0, 1, Paragrafo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getParagrafo_Alineas(), ecorePackage.getEString(), "alineas", null, 0, -1, Paragrafo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dataTypeEClass, DataType.class, "DataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

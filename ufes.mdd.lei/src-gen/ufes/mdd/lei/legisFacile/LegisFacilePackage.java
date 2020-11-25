@@ -401,13 +401,22 @@ public interface LegisFacilePackage extends EPackage
   int PARAGRAFO__TEXTO = 0;
 
   /**
+   * The feature id for the '<em><b>Alineas</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAGRAFO__ALINEAS = 1;
+
+  /**
    * The number of structural features of the '<em>Paragrafo</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PARAGRAFO_FEATURE_COUNT = 1;
+  int PARAGRAFO_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link ufes.mdd.lei.legisFacile.impl.DataTypeImpl <em>Data Type</em>}' class.
@@ -883,6 +892,17 @@ public interface LegisFacilePackage extends EPackage
   EAttribute getParagrafo_Texto();
 
   /**
+   * Returns the meta object for the attribute list '{@link ufes.mdd.lei.legisFacile.Paragrafo#getAlineas <em>Alineas</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Alineas</em>'.
+   * @see ufes.mdd.lei.legisFacile.Paragrafo#getAlineas()
+   * @see #getParagrafo()
+   * @generated
+   */
+  EAttribute getParagrafo_Alineas();
+
+  /**
    * Returns the meta object for class '{@link ufes.mdd.lei.legisFacile.DataType <em>Data Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1233,6 +1253,14 @@ public interface LegisFacilePackage extends EPackage
      * @generated
      */
     EAttribute PARAGRAFO__TEXTO = eINSTANCE.getParagrafo_Texto();
+
+    /**
+     * The meta object literal for the '<em><b>Alineas</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PARAGRAFO__ALINEAS = eINSTANCE.getParagrafo_Alineas();
 
     /**
      * The meta object literal for the '{@link ufes.mdd.lei.legisFacile.impl.DataTypeImpl <em>Data Type</em>}' class.

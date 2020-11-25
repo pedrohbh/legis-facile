@@ -47,6 +47,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Paragrafo">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="texto" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alineas" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataType" eSuperTypes="#//Type"/>
   <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="#//Type">

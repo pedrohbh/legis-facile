@@ -38,8 +38,8 @@ Normativa:
 
 Artigo:
 	('Artigo'|'artigo') '{'
-		caput=Caput ','
-		(paragrafos+=Paragrafo ',')*
+		caput=Caput
+		(paragrafos+=Paragrafo)*
 	'}'
 ;
 
@@ -48,9 +48,16 @@ Caput:
 ;
 
 Paragrafo:
-	texto=STRING
+	('Paragrafo'|'paragrafo') '(' texto=STRING ')' ('{'		
+		(alineas+=Alinea)*
+	'}')?
 ;
 
+Alinea:
+	('alinea'|'Alinea') '{'
+	
+	'}'
+;
 
 Final: 
 	('Final'|'final') '{'

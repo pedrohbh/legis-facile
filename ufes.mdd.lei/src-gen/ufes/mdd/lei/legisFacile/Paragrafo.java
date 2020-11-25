@@ -3,6 +3,8 @@
  */
 package ufes.mdd.lei.legisFacile;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link ufes.mdd.lei.legisFacile.Paragrafo#getTexto <em>Texto</em>}</li>
+ *   <li>{@link ufes.mdd.lei.legisFacile.Paragrafo#getAlineas <em>Alineas</em>}</li>
  * </ul>
  *
  * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getParagrafo()
@@ -44,5 +47,17 @@ public interface Paragrafo extends EObject
    * @generated
    */
   void setTexto(String value);
+
+  /**
+   * Returns the value of the '<em><b>Alineas</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Alineas</em>' attribute list.
+   * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getParagrafo_Alineas()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getAlineas();
 
 } // Paragrafo

@@ -22,13 +22,15 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalLegisFacileParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Preliminar'", "'preliminar'", "'Epigrafe'", "'epigrafe'", "'Ementa'", "'ementa'", "'Preambulo'", "'preambulo'", "'Normativa'", "'normativa'", "'Artigo'", "'artigo'", "'Final'", "'final'", "'{'", "','", "'}'", "'('", "')'", "'datatype'", "'entity'", "'extends'", "':'", "'many'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Preliminar'", "'preliminar'", "'Epigrafe'", "'epigrafe'", "'Ementa'", "'ementa'", "'Preambulo'", "'preambulo'", "'Normativa'", "'normativa'", "'Artigo'", "'artigo'", "'Paragrafo'", "'paragrafo'", "'alinea'", "'Alinea'", "'Final'", "'final'", "'{'", "','", "'}'", "'('", "')'", "'datatype'", "'entity'", "'extends'", "':'", "'many'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
     public static final int T__19=19;
     public static final int T__15=15;
+    public static final int T__37=37;
     public static final int T__16=16;
+    public static final int T__38=38;
     public static final int T__17=17;
     public static final int T__18=18;
     public static final int T__11=11;
@@ -36,7 +38,9 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
     public static final int T__12=12;
     public static final int T__34=34;
     public static final int T__13=13;
+    public static final int T__35=35;
     public static final int T__14=14;
+    public static final int T__36=36;
     public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
@@ -142,7 +146,7 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( ((LA1_0>=11 && LA1_0<=12)||(LA1_0>=30 && LA1_0<=31)) ) {
+                if ( ((LA1_0>=11 && LA1_0<=12)||(LA1_0>=34 && LA1_0<=35)) ) {
                     alt1=1;
                 }
 
@@ -834,31 +838,31 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleParagrafo"
-    // InternalLegisFacile.g:287:1: ruleParagrafo : ( ( rule__Paragrafo__TextoAssignment ) ) ;
+    // InternalLegisFacile.g:287:1: ruleParagrafo : ( ( rule__Paragrafo__Group__0 ) ) ;
     public final void ruleParagrafo() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:291:2: ( ( ( rule__Paragrafo__TextoAssignment ) ) )
-            // InternalLegisFacile.g:292:2: ( ( rule__Paragrafo__TextoAssignment ) )
+            // InternalLegisFacile.g:291:2: ( ( ( rule__Paragrafo__Group__0 ) ) )
+            // InternalLegisFacile.g:292:2: ( ( rule__Paragrafo__Group__0 ) )
             {
-            // InternalLegisFacile.g:292:2: ( ( rule__Paragrafo__TextoAssignment ) )
-            // InternalLegisFacile.g:293:3: ( rule__Paragrafo__TextoAssignment )
+            // InternalLegisFacile.g:292:2: ( ( rule__Paragrafo__Group__0 ) )
+            // InternalLegisFacile.g:293:3: ( rule__Paragrafo__Group__0 )
             {
-             before(grammarAccess.getParagrafoAccess().getTextoAssignment()); 
-            // InternalLegisFacile.g:294:3: ( rule__Paragrafo__TextoAssignment )
-            // InternalLegisFacile.g:294:4: rule__Paragrafo__TextoAssignment
+             before(grammarAccess.getParagrafoAccess().getGroup()); 
+            // InternalLegisFacile.g:294:3: ( rule__Paragrafo__Group__0 )
+            // InternalLegisFacile.g:294:4: rule__Paragrafo__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__Paragrafo__TextoAssignment();
+            rule__Paragrafo__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getParagrafoAccess().getTextoAssignment()); 
+             after(grammarAccess.getParagrafoAccess().getGroup()); 
 
             }
 
@@ -880,12 +884,89 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
     // $ANTLR end "ruleParagrafo"
 
 
+    // $ANTLR start "entryRuleAlinea"
+    // InternalLegisFacile.g:303:1: entryRuleAlinea : ruleAlinea EOF ;
+    public final void entryRuleAlinea() throws RecognitionException {
+        try {
+            // InternalLegisFacile.g:304:1: ( ruleAlinea EOF )
+            // InternalLegisFacile.g:305:1: ruleAlinea EOF
+            {
+             before(grammarAccess.getAlineaRule()); 
+            pushFollow(FOLLOW_1);
+            ruleAlinea();
+
+            state._fsp--;
+
+             after(grammarAccess.getAlineaRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleAlinea"
+
+
+    // $ANTLR start "ruleAlinea"
+    // InternalLegisFacile.g:312:1: ruleAlinea : ( ( rule__Alinea__Group__0 ) ) ;
+    public final void ruleAlinea() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLegisFacile.g:316:2: ( ( ( rule__Alinea__Group__0 ) ) )
+            // InternalLegisFacile.g:317:2: ( ( rule__Alinea__Group__0 ) )
+            {
+            // InternalLegisFacile.g:317:2: ( ( rule__Alinea__Group__0 ) )
+            // InternalLegisFacile.g:318:3: ( rule__Alinea__Group__0 )
+            {
+             before(grammarAccess.getAlineaAccess().getGroup()); 
+            // InternalLegisFacile.g:319:3: ( rule__Alinea__Group__0 )
+            // InternalLegisFacile.g:319:4: rule__Alinea__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Alinea__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getAlineaAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleAlinea"
+
+
     // $ANTLR start "entryRuleFinal"
-    // InternalLegisFacile.g:303:1: entryRuleFinal : ruleFinal EOF ;
+    // InternalLegisFacile.g:328:1: entryRuleFinal : ruleFinal EOF ;
     public final void entryRuleFinal() throws RecognitionException {
         try {
-            // InternalLegisFacile.g:304:1: ( ruleFinal EOF )
-            // InternalLegisFacile.g:305:1: ruleFinal EOF
+            // InternalLegisFacile.g:329:1: ( ruleFinal EOF )
+            // InternalLegisFacile.g:330:1: ruleFinal EOF
             {
              before(grammarAccess.getFinalRule()); 
             pushFollow(FOLLOW_1);
@@ -911,21 +992,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleFinal"
-    // InternalLegisFacile.g:312:1: ruleFinal : ( ( rule__Final__Group__0 ) ) ;
+    // InternalLegisFacile.g:337:1: ruleFinal : ( ( rule__Final__Group__0 ) ) ;
     public final void ruleFinal() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:316:2: ( ( ( rule__Final__Group__0 ) ) )
-            // InternalLegisFacile.g:317:2: ( ( rule__Final__Group__0 ) )
+            // InternalLegisFacile.g:341:2: ( ( ( rule__Final__Group__0 ) ) )
+            // InternalLegisFacile.g:342:2: ( ( rule__Final__Group__0 ) )
             {
-            // InternalLegisFacile.g:317:2: ( ( rule__Final__Group__0 ) )
-            // InternalLegisFacile.g:318:3: ( rule__Final__Group__0 )
+            // InternalLegisFacile.g:342:2: ( ( rule__Final__Group__0 ) )
+            // InternalLegisFacile.g:343:3: ( rule__Final__Group__0 )
             {
              before(grammarAccess.getFinalAccess().getGroup()); 
-            // InternalLegisFacile.g:319:3: ( rule__Final__Group__0 )
-            // InternalLegisFacile.g:319:4: rule__Final__Group__0
+            // InternalLegisFacile.g:344:3: ( rule__Final__Group__0 )
+            // InternalLegisFacile.g:344:4: rule__Final__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__Final__Group__0();
@@ -958,11 +1039,11 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "entryRuleDataType"
-    // InternalLegisFacile.g:328:1: entryRuleDataType : ruleDataType EOF ;
+    // InternalLegisFacile.g:353:1: entryRuleDataType : ruleDataType EOF ;
     public final void entryRuleDataType() throws RecognitionException {
         try {
-            // InternalLegisFacile.g:329:1: ( ruleDataType EOF )
-            // InternalLegisFacile.g:330:1: ruleDataType EOF
+            // InternalLegisFacile.g:354:1: ( ruleDataType EOF )
+            // InternalLegisFacile.g:355:1: ruleDataType EOF
             {
              before(grammarAccess.getDataTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -988,21 +1069,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleDataType"
-    // InternalLegisFacile.g:337:1: ruleDataType : ( ( rule__DataType__Group__0 ) ) ;
+    // InternalLegisFacile.g:362:1: ruleDataType : ( ( rule__DataType__Group__0 ) ) ;
     public final void ruleDataType() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:341:2: ( ( ( rule__DataType__Group__0 ) ) )
-            // InternalLegisFacile.g:342:2: ( ( rule__DataType__Group__0 ) )
+            // InternalLegisFacile.g:366:2: ( ( ( rule__DataType__Group__0 ) ) )
+            // InternalLegisFacile.g:367:2: ( ( rule__DataType__Group__0 ) )
             {
-            // InternalLegisFacile.g:342:2: ( ( rule__DataType__Group__0 ) )
-            // InternalLegisFacile.g:343:3: ( rule__DataType__Group__0 )
+            // InternalLegisFacile.g:367:2: ( ( rule__DataType__Group__0 ) )
+            // InternalLegisFacile.g:368:3: ( rule__DataType__Group__0 )
             {
              before(grammarAccess.getDataTypeAccess().getGroup()); 
-            // InternalLegisFacile.g:344:3: ( rule__DataType__Group__0 )
-            // InternalLegisFacile.g:344:4: rule__DataType__Group__0
+            // InternalLegisFacile.g:369:3: ( rule__DataType__Group__0 )
+            // InternalLegisFacile.g:369:4: rule__DataType__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__DataType__Group__0();
@@ -1035,11 +1116,11 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "entryRuleEntity"
-    // InternalLegisFacile.g:353:1: entryRuleEntity : ruleEntity EOF ;
+    // InternalLegisFacile.g:378:1: entryRuleEntity : ruleEntity EOF ;
     public final void entryRuleEntity() throws RecognitionException {
         try {
-            // InternalLegisFacile.g:354:1: ( ruleEntity EOF )
-            // InternalLegisFacile.g:355:1: ruleEntity EOF
+            // InternalLegisFacile.g:379:1: ( ruleEntity EOF )
+            // InternalLegisFacile.g:380:1: ruleEntity EOF
             {
              before(grammarAccess.getEntityRule()); 
             pushFollow(FOLLOW_1);
@@ -1065,21 +1146,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleEntity"
-    // InternalLegisFacile.g:362:1: ruleEntity : ( ( rule__Entity__Group__0 ) ) ;
+    // InternalLegisFacile.g:387:1: ruleEntity : ( ( rule__Entity__Group__0 ) ) ;
     public final void ruleEntity() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:366:2: ( ( ( rule__Entity__Group__0 ) ) )
-            // InternalLegisFacile.g:367:2: ( ( rule__Entity__Group__0 ) )
+            // InternalLegisFacile.g:391:2: ( ( ( rule__Entity__Group__0 ) ) )
+            // InternalLegisFacile.g:392:2: ( ( rule__Entity__Group__0 ) )
             {
-            // InternalLegisFacile.g:367:2: ( ( rule__Entity__Group__0 ) )
-            // InternalLegisFacile.g:368:3: ( rule__Entity__Group__0 )
+            // InternalLegisFacile.g:392:2: ( ( rule__Entity__Group__0 ) )
+            // InternalLegisFacile.g:393:3: ( rule__Entity__Group__0 )
             {
              before(grammarAccess.getEntityAccess().getGroup()); 
-            // InternalLegisFacile.g:369:3: ( rule__Entity__Group__0 )
-            // InternalLegisFacile.g:369:4: rule__Entity__Group__0
+            // InternalLegisFacile.g:394:3: ( rule__Entity__Group__0 )
+            // InternalLegisFacile.g:394:4: rule__Entity__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__Entity__Group__0();
@@ -1112,11 +1193,11 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "entryRuleFeature"
-    // InternalLegisFacile.g:378:1: entryRuleFeature : ruleFeature EOF ;
+    // InternalLegisFacile.g:403:1: entryRuleFeature : ruleFeature EOF ;
     public final void entryRuleFeature() throws RecognitionException {
         try {
-            // InternalLegisFacile.g:379:1: ( ruleFeature EOF )
-            // InternalLegisFacile.g:380:1: ruleFeature EOF
+            // InternalLegisFacile.g:404:1: ( ruleFeature EOF )
+            // InternalLegisFacile.g:405:1: ruleFeature EOF
             {
              before(grammarAccess.getFeatureRule()); 
             pushFollow(FOLLOW_1);
@@ -1142,21 +1223,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleFeature"
-    // InternalLegisFacile.g:387:1: ruleFeature : ( ( rule__Feature__Group__0 ) ) ;
+    // InternalLegisFacile.g:412:1: ruleFeature : ( ( rule__Feature__Group__0 ) ) ;
     public final void ruleFeature() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:391:2: ( ( ( rule__Feature__Group__0 ) ) )
-            // InternalLegisFacile.g:392:2: ( ( rule__Feature__Group__0 ) )
+            // InternalLegisFacile.g:416:2: ( ( ( rule__Feature__Group__0 ) ) )
+            // InternalLegisFacile.g:417:2: ( ( rule__Feature__Group__0 ) )
             {
-            // InternalLegisFacile.g:392:2: ( ( rule__Feature__Group__0 ) )
-            // InternalLegisFacile.g:393:3: ( rule__Feature__Group__0 )
+            // InternalLegisFacile.g:417:2: ( ( rule__Feature__Group__0 ) )
+            // InternalLegisFacile.g:418:3: ( rule__Feature__Group__0 )
             {
              before(grammarAccess.getFeatureAccess().getGroup()); 
-            // InternalLegisFacile.g:394:3: ( rule__Feature__Group__0 )
-            // InternalLegisFacile.g:394:4: rule__Feature__Group__0
+            // InternalLegisFacile.g:419:3: ( rule__Feature__Group__0 )
+            // InternalLegisFacile.g:419:4: rule__Feature__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__Feature__Group__0();
@@ -1189,21 +1270,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Type__Alternatives"
-    // InternalLegisFacile.g:402:1: rule__Type__Alternatives : ( ( ruleDataType ) | ( ruleEntity ) | ( ( rule__Type__Group_2__0 ) ) );
+    // InternalLegisFacile.g:427:1: rule__Type__Alternatives : ( ( ruleDataType ) | ( ruleEntity ) | ( ( rule__Type__Group_2__0 ) ) );
     public final void rule__Type__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:406:1: ( ( ruleDataType ) | ( ruleEntity ) | ( ( rule__Type__Group_2__0 ) ) )
+            // InternalLegisFacile.g:431:1: ( ( ruleDataType ) | ( ruleEntity ) | ( ( rule__Type__Group_2__0 ) ) )
             int alt2=3;
             switch ( input.LA(1) ) {
-            case 30:
+            case 34:
                 {
                 alt2=1;
                 }
                 break;
-            case 31:
+            case 35:
                 {
                 alt2=2;
                 }
@@ -1223,10 +1304,10 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
             switch (alt2) {
                 case 1 :
-                    // InternalLegisFacile.g:407:2: ( ruleDataType )
+                    // InternalLegisFacile.g:432:2: ( ruleDataType )
                     {
-                    // InternalLegisFacile.g:407:2: ( ruleDataType )
-                    // InternalLegisFacile.g:408:3: ruleDataType
+                    // InternalLegisFacile.g:432:2: ( ruleDataType )
+                    // InternalLegisFacile.g:433:3: ruleDataType
                     {
                      before(grammarAccess.getTypeAccess().getDataTypeParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -1242,10 +1323,10 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalLegisFacile.g:413:2: ( ruleEntity )
+                    // InternalLegisFacile.g:438:2: ( ruleEntity )
                     {
-                    // InternalLegisFacile.g:413:2: ( ruleEntity )
-                    // InternalLegisFacile.g:414:3: ruleEntity
+                    // InternalLegisFacile.g:438:2: ( ruleEntity )
+                    // InternalLegisFacile.g:439:3: ruleEntity
                     {
                      before(grammarAccess.getTypeAccess().getEntityParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -1261,14 +1342,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 3 :
-                    // InternalLegisFacile.g:419:2: ( ( rule__Type__Group_2__0 ) )
+                    // InternalLegisFacile.g:444:2: ( ( rule__Type__Group_2__0 ) )
                     {
-                    // InternalLegisFacile.g:419:2: ( ( rule__Type__Group_2__0 ) )
-                    // InternalLegisFacile.g:420:3: ( rule__Type__Group_2__0 )
+                    // InternalLegisFacile.g:444:2: ( ( rule__Type__Group_2__0 ) )
+                    // InternalLegisFacile.g:445:3: ( rule__Type__Group_2__0 )
                     {
                      before(grammarAccess.getTypeAccess().getGroup_2()); 
-                    // InternalLegisFacile.g:421:3: ( rule__Type__Group_2__0 )
-                    // InternalLegisFacile.g:421:4: rule__Type__Group_2__0
+                    // InternalLegisFacile.g:446:3: ( rule__Type__Group_2__0 )
+                    // InternalLegisFacile.g:446:4: rule__Type__Group_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Type__Group_2__0();
@@ -1303,13 +1384,13 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preliminar__Alternatives_0"
-    // InternalLegisFacile.g:429:1: rule__Preliminar__Alternatives_0 : ( ( 'Preliminar' ) | ( 'preliminar' ) );
+    // InternalLegisFacile.g:454:1: rule__Preliminar__Alternatives_0 : ( ( 'Preliminar' ) | ( 'preliminar' ) );
     public final void rule__Preliminar__Alternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:433:1: ( ( 'Preliminar' ) | ( 'preliminar' ) )
+            // InternalLegisFacile.g:458:1: ( ( 'Preliminar' ) | ( 'preliminar' ) )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -1327,10 +1408,10 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
             }
             switch (alt3) {
                 case 1 :
-                    // InternalLegisFacile.g:434:2: ( 'Preliminar' )
+                    // InternalLegisFacile.g:459:2: ( 'Preliminar' )
                     {
-                    // InternalLegisFacile.g:434:2: ( 'Preliminar' )
-                    // InternalLegisFacile.g:435:3: 'Preliminar'
+                    // InternalLegisFacile.g:459:2: ( 'Preliminar' )
+                    // InternalLegisFacile.g:460:3: 'Preliminar'
                     {
                      before(grammarAccess.getPreliminarAccess().getPreliminarKeyword_0_0()); 
                     match(input,11,FOLLOW_2); 
@@ -1342,10 +1423,10 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalLegisFacile.g:440:2: ( 'preliminar' )
+                    // InternalLegisFacile.g:465:2: ( 'preliminar' )
                     {
-                    // InternalLegisFacile.g:440:2: ( 'preliminar' )
-                    // InternalLegisFacile.g:441:3: 'preliminar'
+                    // InternalLegisFacile.g:465:2: ( 'preliminar' )
+                    // InternalLegisFacile.g:466:3: 'preliminar'
                     {
                      before(grammarAccess.getPreliminarAccess().getPreliminarKeyword_0_1()); 
                     match(input,12,FOLLOW_2); 
@@ -1374,13 +1455,13 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Epigrafe__Alternatives_0"
-    // InternalLegisFacile.g:450:1: rule__Epigrafe__Alternatives_0 : ( ( 'Epigrafe' ) | ( 'epigrafe' ) );
+    // InternalLegisFacile.g:475:1: rule__Epigrafe__Alternatives_0 : ( ( 'Epigrafe' ) | ( 'epigrafe' ) );
     public final void rule__Epigrafe__Alternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:454:1: ( ( 'Epigrafe' ) | ( 'epigrafe' ) )
+            // InternalLegisFacile.g:479:1: ( ( 'Epigrafe' ) | ( 'epigrafe' ) )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1398,10 +1479,10 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
             }
             switch (alt4) {
                 case 1 :
-                    // InternalLegisFacile.g:455:2: ( 'Epigrafe' )
+                    // InternalLegisFacile.g:480:2: ( 'Epigrafe' )
                     {
-                    // InternalLegisFacile.g:455:2: ( 'Epigrafe' )
-                    // InternalLegisFacile.g:456:3: 'Epigrafe'
+                    // InternalLegisFacile.g:480:2: ( 'Epigrafe' )
+                    // InternalLegisFacile.g:481:3: 'Epigrafe'
                     {
                      before(grammarAccess.getEpigrafeAccess().getEpigrafeKeyword_0_0()); 
                     match(input,13,FOLLOW_2); 
@@ -1413,10 +1494,10 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalLegisFacile.g:461:2: ( 'epigrafe' )
+                    // InternalLegisFacile.g:486:2: ( 'epigrafe' )
                     {
-                    // InternalLegisFacile.g:461:2: ( 'epigrafe' )
-                    // InternalLegisFacile.g:462:3: 'epigrafe'
+                    // InternalLegisFacile.g:486:2: ( 'epigrafe' )
+                    // InternalLegisFacile.g:487:3: 'epigrafe'
                     {
                      before(grammarAccess.getEpigrafeAccess().getEpigrafeKeyword_0_1()); 
                     match(input,14,FOLLOW_2); 
@@ -1445,13 +1526,13 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Ementa__Alternatives_0"
-    // InternalLegisFacile.g:471:1: rule__Ementa__Alternatives_0 : ( ( 'Ementa' ) | ( 'ementa' ) );
+    // InternalLegisFacile.g:496:1: rule__Ementa__Alternatives_0 : ( ( 'Ementa' ) | ( 'ementa' ) );
     public final void rule__Ementa__Alternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:475:1: ( ( 'Ementa' ) | ( 'ementa' ) )
+            // InternalLegisFacile.g:500:1: ( ( 'Ementa' ) | ( 'ementa' ) )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -1469,10 +1550,10 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
             }
             switch (alt5) {
                 case 1 :
-                    // InternalLegisFacile.g:476:2: ( 'Ementa' )
+                    // InternalLegisFacile.g:501:2: ( 'Ementa' )
                     {
-                    // InternalLegisFacile.g:476:2: ( 'Ementa' )
-                    // InternalLegisFacile.g:477:3: 'Ementa'
+                    // InternalLegisFacile.g:501:2: ( 'Ementa' )
+                    // InternalLegisFacile.g:502:3: 'Ementa'
                     {
                      before(grammarAccess.getEmentaAccess().getEmentaKeyword_0_0()); 
                     match(input,15,FOLLOW_2); 
@@ -1484,10 +1565,10 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalLegisFacile.g:482:2: ( 'ementa' )
+                    // InternalLegisFacile.g:507:2: ( 'ementa' )
                     {
-                    // InternalLegisFacile.g:482:2: ( 'ementa' )
-                    // InternalLegisFacile.g:483:3: 'ementa'
+                    // InternalLegisFacile.g:507:2: ( 'ementa' )
+                    // InternalLegisFacile.g:508:3: 'ementa'
                     {
                      before(grammarAccess.getEmentaAccess().getEmentaKeyword_0_1()); 
                     match(input,16,FOLLOW_2); 
@@ -1516,13 +1597,13 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preambulo__Alternatives_0"
-    // InternalLegisFacile.g:492:1: rule__Preambulo__Alternatives_0 : ( ( 'Preambulo' ) | ( 'preambulo' ) );
+    // InternalLegisFacile.g:517:1: rule__Preambulo__Alternatives_0 : ( ( 'Preambulo' ) | ( 'preambulo' ) );
     public final void rule__Preambulo__Alternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:496:1: ( ( 'Preambulo' ) | ( 'preambulo' ) )
+            // InternalLegisFacile.g:521:1: ( ( 'Preambulo' ) | ( 'preambulo' ) )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1540,10 +1621,10 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
             }
             switch (alt6) {
                 case 1 :
-                    // InternalLegisFacile.g:497:2: ( 'Preambulo' )
+                    // InternalLegisFacile.g:522:2: ( 'Preambulo' )
                     {
-                    // InternalLegisFacile.g:497:2: ( 'Preambulo' )
-                    // InternalLegisFacile.g:498:3: 'Preambulo'
+                    // InternalLegisFacile.g:522:2: ( 'Preambulo' )
+                    // InternalLegisFacile.g:523:3: 'Preambulo'
                     {
                      before(grammarAccess.getPreambuloAccess().getPreambuloKeyword_0_0()); 
                     match(input,17,FOLLOW_2); 
@@ -1555,10 +1636,10 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalLegisFacile.g:503:2: ( 'preambulo' )
+                    // InternalLegisFacile.g:528:2: ( 'preambulo' )
                     {
-                    // InternalLegisFacile.g:503:2: ( 'preambulo' )
-                    // InternalLegisFacile.g:504:3: 'preambulo'
+                    // InternalLegisFacile.g:528:2: ( 'preambulo' )
+                    // InternalLegisFacile.g:529:3: 'preambulo'
                     {
                      before(grammarAccess.getPreambuloAccess().getPreambuloKeyword_0_1()); 
                     match(input,18,FOLLOW_2); 
@@ -1587,13 +1668,13 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Normativa__Alternatives_0"
-    // InternalLegisFacile.g:513:1: rule__Normativa__Alternatives_0 : ( ( 'Normativa' ) | ( 'normativa' ) );
+    // InternalLegisFacile.g:538:1: rule__Normativa__Alternatives_0 : ( ( 'Normativa' ) | ( 'normativa' ) );
     public final void rule__Normativa__Alternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:517:1: ( ( 'Normativa' ) | ( 'normativa' ) )
+            // InternalLegisFacile.g:542:1: ( ( 'Normativa' ) | ( 'normativa' ) )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1611,10 +1692,10 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
             }
             switch (alt7) {
                 case 1 :
-                    // InternalLegisFacile.g:518:2: ( 'Normativa' )
+                    // InternalLegisFacile.g:543:2: ( 'Normativa' )
                     {
-                    // InternalLegisFacile.g:518:2: ( 'Normativa' )
-                    // InternalLegisFacile.g:519:3: 'Normativa'
+                    // InternalLegisFacile.g:543:2: ( 'Normativa' )
+                    // InternalLegisFacile.g:544:3: 'Normativa'
                     {
                      before(grammarAccess.getNormativaAccess().getNormativaKeyword_0_0()); 
                     match(input,19,FOLLOW_2); 
@@ -1626,10 +1707,10 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalLegisFacile.g:524:2: ( 'normativa' )
+                    // InternalLegisFacile.g:549:2: ( 'normativa' )
                     {
-                    // InternalLegisFacile.g:524:2: ( 'normativa' )
-                    // InternalLegisFacile.g:525:3: 'normativa'
+                    // InternalLegisFacile.g:549:2: ( 'normativa' )
+                    // InternalLegisFacile.g:550:3: 'normativa'
                     {
                      before(grammarAccess.getNormativaAccess().getNormativaKeyword_0_1()); 
                     match(input,20,FOLLOW_2); 
@@ -1658,13 +1739,13 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Artigo__Alternatives_0"
-    // InternalLegisFacile.g:534:1: rule__Artigo__Alternatives_0 : ( ( 'Artigo' ) | ( 'artigo' ) );
+    // InternalLegisFacile.g:559:1: rule__Artigo__Alternatives_0 : ( ( 'Artigo' ) | ( 'artigo' ) );
     public final void rule__Artigo__Alternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:538:1: ( ( 'Artigo' ) | ( 'artigo' ) )
+            // InternalLegisFacile.g:563:1: ( ( 'Artigo' ) | ( 'artigo' ) )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -1682,10 +1763,10 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
             }
             switch (alt8) {
                 case 1 :
-                    // InternalLegisFacile.g:539:2: ( 'Artigo' )
+                    // InternalLegisFacile.g:564:2: ( 'Artigo' )
                     {
-                    // InternalLegisFacile.g:539:2: ( 'Artigo' )
-                    // InternalLegisFacile.g:540:3: 'Artigo'
+                    // InternalLegisFacile.g:564:2: ( 'Artigo' )
+                    // InternalLegisFacile.g:565:3: 'Artigo'
                     {
                      before(grammarAccess.getArtigoAccess().getArtigoKeyword_0_0()); 
                     match(input,21,FOLLOW_2); 
@@ -1697,10 +1778,10 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalLegisFacile.g:545:2: ( 'artigo' )
+                    // InternalLegisFacile.g:570:2: ( 'artigo' )
                     {
-                    // InternalLegisFacile.g:545:2: ( 'artigo' )
-                    // InternalLegisFacile.g:546:3: 'artigo'
+                    // InternalLegisFacile.g:570:2: ( 'artigo' )
+                    // InternalLegisFacile.g:571:3: 'artigo'
                     {
                      before(grammarAccess.getArtigoAccess().getArtigoKeyword_0_1()); 
                     match(input,22,FOLLOW_2); 
@@ -1728,14 +1809,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Artigo__Alternatives_0"
 
 
-    // $ANTLR start "rule__Final__Alternatives_0"
-    // InternalLegisFacile.g:555:1: rule__Final__Alternatives_0 : ( ( 'Final' ) | ( 'final' ) );
-    public final void rule__Final__Alternatives_0() throws RecognitionException {
+    // $ANTLR start "rule__Paragrafo__Alternatives_0"
+    // InternalLegisFacile.g:580:1: rule__Paragrafo__Alternatives_0 : ( ( 'Paragrafo' ) | ( 'paragrafo' ) );
+    public final void rule__Paragrafo__Alternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:559:1: ( ( 'Final' ) | ( 'final' ) )
+            // InternalLegisFacile.g:584:1: ( ( 'Paragrafo' ) | ( 'paragrafo' ) )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1753,13 +1834,155 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
             }
             switch (alt9) {
                 case 1 :
-                    // InternalLegisFacile.g:560:2: ( 'Final' )
+                    // InternalLegisFacile.g:585:2: ( 'Paragrafo' )
                     {
-                    // InternalLegisFacile.g:560:2: ( 'Final' )
-                    // InternalLegisFacile.g:561:3: 'Final'
+                    // InternalLegisFacile.g:585:2: ( 'Paragrafo' )
+                    // InternalLegisFacile.g:586:3: 'Paragrafo'
+                    {
+                     before(grammarAccess.getParagrafoAccess().getParagrafoKeyword_0_0()); 
+                    match(input,23,FOLLOW_2); 
+                     after(grammarAccess.getParagrafoAccess().getParagrafoKeyword_0_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalLegisFacile.g:591:2: ( 'paragrafo' )
+                    {
+                    // InternalLegisFacile.g:591:2: ( 'paragrafo' )
+                    // InternalLegisFacile.g:592:3: 'paragrafo'
+                    {
+                     before(grammarAccess.getParagrafoAccess().getParagrafoKeyword_0_1()); 
+                    match(input,24,FOLLOW_2); 
+                     after(grammarAccess.getParagrafoAccess().getParagrafoKeyword_0_1()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Paragrafo__Alternatives_0"
+
+
+    // $ANTLR start "rule__Alinea__Alternatives_0"
+    // InternalLegisFacile.g:601:1: rule__Alinea__Alternatives_0 : ( ( 'alinea' ) | ( 'Alinea' ) );
+    public final void rule__Alinea__Alternatives_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLegisFacile.g:605:1: ( ( 'alinea' ) | ( 'Alinea' ) )
+            int alt10=2;
+            int LA10_0 = input.LA(1);
+
+            if ( (LA10_0==25) ) {
+                alt10=1;
+            }
+            else if ( (LA10_0==26) ) {
+                alt10=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 10, 0, input);
+
+                throw nvae;
+            }
+            switch (alt10) {
+                case 1 :
+                    // InternalLegisFacile.g:606:2: ( 'alinea' )
+                    {
+                    // InternalLegisFacile.g:606:2: ( 'alinea' )
+                    // InternalLegisFacile.g:607:3: 'alinea'
+                    {
+                     before(grammarAccess.getAlineaAccess().getAlineaKeyword_0_0()); 
+                    match(input,25,FOLLOW_2); 
+                     after(grammarAccess.getAlineaAccess().getAlineaKeyword_0_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalLegisFacile.g:612:2: ( 'Alinea' )
+                    {
+                    // InternalLegisFacile.g:612:2: ( 'Alinea' )
+                    // InternalLegisFacile.g:613:3: 'Alinea'
+                    {
+                     before(grammarAccess.getAlineaAccess().getAlineaKeyword_0_1()); 
+                    match(input,26,FOLLOW_2); 
+                     after(grammarAccess.getAlineaAccess().getAlineaKeyword_0_1()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Alinea__Alternatives_0"
+
+
+    // $ANTLR start "rule__Final__Alternatives_0"
+    // InternalLegisFacile.g:622:1: rule__Final__Alternatives_0 : ( ( 'Final' ) | ( 'final' ) );
+    public final void rule__Final__Alternatives_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLegisFacile.g:626:1: ( ( 'Final' ) | ( 'final' ) )
+            int alt11=2;
+            int LA11_0 = input.LA(1);
+
+            if ( (LA11_0==27) ) {
+                alt11=1;
+            }
+            else if ( (LA11_0==28) ) {
+                alt11=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 11, 0, input);
+
+                throw nvae;
+            }
+            switch (alt11) {
+                case 1 :
+                    // InternalLegisFacile.g:627:2: ( 'Final' )
+                    {
+                    // InternalLegisFacile.g:627:2: ( 'Final' )
+                    // InternalLegisFacile.g:628:3: 'Final'
                     {
                      before(grammarAccess.getFinalAccess().getFinalKeyword_0_0()); 
-                    match(input,23,FOLLOW_2); 
+                    match(input,27,FOLLOW_2); 
                      after(grammarAccess.getFinalAccess().getFinalKeyword_0_0()); 
 
                     }
@@ -1768,13 +1991,13 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalLegisFacile.g:566:2: ( 'final' )
+                    // InternalLegisFacile.g:633:2: ( 'final' )
                     {
-                    // InternalLegisFacile.g:566:2: ( 'final' )
-                    // InternalLegisFacile.g:567:3: 'final'
+                    // InternalLegisFacile.g:633:2: ( 'final' )
+                    // InternalLegisFacile.g:634:3: 'final'
                     {
                      before(grammarAccess.getFinalAccess().getFinalKeyword_0_1()); 
-                    match(input,24,FOLLOW_2); 
+                    match(input,28,FOLLOW_2); 
                      after(grammarAccess.getFinalAccess().getFinalKeyword_0_1()); 
 
                     }
@@ -1800,14 +2023,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Type__Group_2__0"
-    // InternalLegisFacile.g:576:1: rule__Type__Group_2__0 : rule__Type__Group_2__0__Impl rule__Type__Group_2__1 ;
+    // InternalLegisFacile.g:643:1: rule__Type__Group_2__0 : rule__Type__Group_2__0__Impl rule__Type__Group_2__1 ;
     public final void rule__Type__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:580:1: ( rule__Type__Group_2__0__Impl rule__Type__Group_2__1 )
-            // InternalLegisFacile.g:581:2: rule__Type__Group_2__0__Impl rule__Type__Group_2__1
+            // InternalLegisFacile.g:647:1: ( rule__Type__Group_2__0__Impl rule__Type__Group_2__1 )
+            // InternalLegisFacile.g:648:2: rule__Type__Group_2__0__Impl rule__Type__Group_2__1
             {
             pushFollow(FOLLOW_4);
             rule__Type__Group_2__0__Impl();
@@ -1838,21 +2061,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Type__Group_2__0__Impl"
-    // InternalLegisFacile.g:588:1: rule__Type__Group_2__0__Impl : ( ( rule__Type__PreliminarAssignment_2_0 ) ) ;
+    // InternalLegisFacile.g:655:1: rule__Type__Group_2__0__Impl : ( ( rule__Type__PreliminarAssignment_2_0 ) ) ;
     public final void rule__Type__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:592:1: ( ( ( rule__Type__PreliminarAssignment_2_0 ) ) )
-            // InternalLegisFacile.g:593:1: ( ( rule__Type__PreliminarAssignment_2_0 ) )
+            // InternalLegisFacile.g:659:1: ( ( ( rule__Type__PreliminarAssignment_2_0 ) ) )
+            // InternalLegisFacile.g:660:1: ( ( rule__Type__PreliminarAssignment_2_0 ) )
             {
-            // InternalLegisFacile.g:593:1: ( ( rule__Type__PreliminarAssignment_2_0 ) )
-            // InternalLegisFacile.g:594:2: ( rule__Type__PreliminarAssignment_2_0 )
+            // InternalLegisFacile.g:660:1: ( ( rule__Type__PreliminarAssignment_2_0 ) )
+            // InternalLegisFacile.g:661:2: ( rule__Type__PreliminarAssignment_2_0 )
             {
              before(grammarAccess.getTypeAccess().getPreliminarAssignment_2_0()); 
-            // InternalLegisFacile.g:595:2: ( rule__Type__PreliminarAssignment_2_0 )
-            // InternalLegisFacile.g:595:3: rule__Type__PreliminarAssignment_2_0
+            // InternalLegisFacile.g:662:2: ( rule__Type__PreliminarAssignment_2_0 )
+            // InternalLegisFacile.g:662:3: rule__Type__PreliminarAssignment_2_0
             {
             pushFollow(FOLLOW_2);
             rule__Type__PreliminarAssignment_2_0();
@@ -1885,14 +2108,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Type__Group_2__1"
-    // InternalLegisFacile.g:603:1: rule__Type__Group_2__1 : rule__Type__Group_2__1__Impl rule__Type__Group_2__2 ;
+    // InternalLegisFacile.g:670:1: rule__Type__Group_2__1 : rule__Type__Group_2__1__Impl rule__Type__Group_2__2 ;
     public final void rule__Type__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:607:1: ( rule__Type__Group_2__1__Impl rule__Type__Group_2__2 )
-            // InternalLegisFacile.g:608:2: rule__Type__Group_2__1__Impl rule__Type__Group_2__2
+            // InternalLegisFacile.g:674:1: ( rule__Type__Group_2__1__Impl rule__Type__Group_2__2 )
+            // InternalLegisFacile.g:675:2: rule__Type__Group_2__1__Impl rule__Type__Group_2__2
             {
             pushFollow(FOLLOW_5);
             rule__Type__Group_2__1__Impl();
@@ -1923,21 +2146,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Type__Group_2__1__Impl"
-    // InternalLegisFacile.g:615:1: rule__Type__Group_2__1__Impl : ( ( rule__Type__NormativaAssignment_2_1 ) ) ;
+    // InternalLegisFacile.g:682:1: rule__Type__Group_2__1__Impl : ( ( rule__Type__NormativaAssignment_2_1 ) ) ;
     public final void rule__Type__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:619:1: ( ( ( rule__Type__NormativaAssignment_2_1 ) ) )
-            // InternalLegisFacile.g:620:1: ( ( rule__Type__NormativaAssignment_2_1 ) )
+            // InternalLegisFacile.g:686:1: ( ( ( rule__Type__NormativaAssignment_2_1 ) ) )
+            // InternalLegisFacile.g:687:1: ( ( rule__Type__NormativaAssignment_2_1 ) )
             {
-            // InternalLegisFacile.g:620:1: ( ( rule__Type__NormativaAssignment_2_1 ) )
-            // InternalLegisFacile.g:621:2: ( rule__Type__NormativaAssignment_2_1 )
+            // InternalLegisFacile.g:687:1: ( ( rule__Type__NormativaAssignment_2_1 ) )
+            // InternalLegisFacile.g:688:2: ( rule__Type__NormativaAssignment_2_1 )
             {
              before(grammarAccess.getTypeAccess().getNormativaAssignment_2_1()); 
-            // InternalLegisFacile.g:622:2: ( rule__Type__NormativaAssignment_2_1 )
-            // InternalLegisFacile.g:622:3: rule__Type__NormativaAssignment_2_1
+            // InternalLegisFacile.g:689:2: ( rule__Type__NormativaAssignment_2_1 )
+            // InternalLegisFacile.g:689:3: rule__Type__NormativaAssignment_2_1
             {
             pushFollow(FOLLOW_2);
             rule__Type__NormativaAssignment_2_1();
@@ -1970,14 +2193,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Type__Group_2__2"
-    // InternalLegisFacile.g:630:1: rule__Type__Group_2__2 : rule__Type__Group_2__2__Impl ;
+    // InternalLegisFacile.g:697:1: rule__Type__Group_2__2 : rule__Type__Group_2__2__Impl ;
     public final void rule__Type__Group_2__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:634:1: ( rule__Type__Group_2__2__Impl )
-            // InternalLegisFacile.g:635:2: rule__Type__Group_2__2__Impl
+            // InternalLegisFacile.g:701:1: ( rule__Type__Group_2__2__Impl )
+            // InternalLegisFacile.g:702:2: rule__Type__Group_2__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Type__Group_2__2__Impl();
@@ -2003,21 +2226,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Type__Group_2__2__Impl"
-    // InternalLegisFacile.g:641:1: rule__Type__Group_2__2__Impl : ( ( rule__Type__FinalAssignment_2_2 ) ) ;
+    // InternalLegisFacile.g:708:1: rule__Type__Group_2__2__Impl : ( ( rule__Type__FinalAssignment_2_2 ) ) ;
     public final void rule__Type__Group_2__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:645:1: ( ( ( rule__Type__FinalAssignment_2_2 ) ) )
-            // InternalLegisFacile.g:646:1: ( ( rule__Type__FinalAssignment_2_2 ) )
+            // InternalLegisFacile.g:712:1: ( ( ( rule__Type__FinalAssignment_2_2 ) ) )
+            // InternalLegisFacile.g:713:1: ( ( rule__Type__FinalAssignment_2_2 ) )
             {
-            // InternalLegisFacile.g:646:1: ( ( rule__Type__FinalAssignment_2_2 ) )
-            // InternalLegisFacile.g:647:2: ( rule__Type__FinalAssignment_2_2 )
+            // InternalLegisFacile.g:713:1: ( ( rule__Type__FinalAssignment_2_2 ) )
+            // InternalLegisFacile.g:714:2: ( rule__Type__FinalAssignment_2_2 )
             {
              before(grammarAccess.getTypeAccess().getFinalAssignment_2_2()); 
-            // InternalLegisFacile.g:648:2: ( rule__Type__FinalAssignment_2_2 )
-            // InternalLegisFacile.g:648:3: rule__Type__FinalAssignment_2_2
+            // InternalLegisFacile.g:715:2: ( rule__Type__FinalAssignment_2_2 )
+            // InternalLegisFacile.g:715:3: rule__Type__FinalAssignment_2_2
             {
             pushFollow(FOLLOW_2);
             rule__Type__FinalAssignment_2_2();
@@ -2050,14 +2273,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preliminar__Group__0"
-    // InternalLegisFacile.g:657:1: rule__Preliminar__Group__0 : rule__Preliminar__Group__0__Impl rule__Preliminar__Group__1 ;
+    // InternalLegisFacile.g:724:1: rule__Preliminar__Group__0 : rule__Preliminar__Group__0__Impl rule__Preliminar__Group__1 ;
     public final void rule__Preliminar__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:661:1: ( rule__Preliminar__Group__0__Impl rule__Preliminar__Group__1 )
-            // InternalLegisFacile.g:662:2: rule__Preliminar__Group__0__Impl rule__Preliminar__Group__1
+            // InternalLegisFacile.g:728:1: ( rule__Preliminar__Group__0__Impl rule__Preliminar__Group__1 )
+            // InternalLegisFacile.g:729:2: rule__Preliminar__Group__0__Impl rule__Preliminar__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__Preliminar__Group__0__Impl();
@@ -2088,21 +2311,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preliminar__Group__0__Impl"
-    // InternalLegisFacile.g:669:1: rule__Preliminar__Group__0__Impl : ( ( rule__Preliminar__Alternatives_0 ) ) ;
+    // InternalLegisFacile.g:736:1: rule__Preliminar__Group__0__Impl : ( ( rule__Preliminar__Alternatives_0 ) ) ;
     public final void rule__Preliminar__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:673:1: ( ( ( rule__Preliminar__Alternatives_0 ) ) )
-            // InternalLegisFacile.g:674:1: ( ( rule__Preliminar__Alternatives_0 ) )
+            // InternalLegisFacile.g:740:1: ( ( ( rule__Preliminar__Alternatives_0 ) ) )
+            // InternalLegisFacile.g:741:1: ( ( rule__Preliminar__Alternatives_0 ) )
             {
-            // InternalLegisFacile.g:674:1: ( ( rule__Preliminar__Alternatives_0 ) )
-            // InternalLegisFacile.g:675:2: ( rule__Preliminar__Alternatives_0 )
+            // InternalLegisFacile.g:741:1: ( ( rule__Preliminar__Alternatives_0 ) )
+            // InternalLegisFacile.g:742:2: ( rule__Preliminar__Alternatives_0 )
             {
              before(grammarAccess.getPreliminarAccess().getAlternatives_0()); 
-            // InternalLegisFacile.g:676:2: ( rule__Preliminar__Alternatives_0 )
-            // InternalLegisFacile.g:676:3: rule__Preliminar__Alternatives_0
+            // InternalLegisFacile.g:743:2: ( rule__Preliminar__Alternatives_0 )
+            // InternalLegisFacile.g:743:3: rule__Preliminar__Alternatives_0
             {
             pushFollow(FOLLOW_2);
             rule__Preliminar__Alternatives_0();
@@ -2135,14 +2358,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preliminar__Group__1"
-    // InternalLegisFacile.g:684:1: rule__Preliminar__Group__1 : rule__Preliminar__Group__1__Impl rule__Preliminar__Group__2 ;
+    // InternalLegisFacile.g:751:1: rule__Preliminar__Group__1 : rule__Preliminar__Group__1__Impl rule__Preliminar__Group__2 ;
     public final void rule__Preliminar__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:688:1: ( rule__Preliminar__Group__1__Impl rule__Preliminar__Group__2 )
-            // InternalLegisFacile.g:689:2: rule__Preliminar__Group__1__Impl rule__Preliminar__Group__2
+            // InternalLegisFacile.g:755:1: ( rule__Preliminar__Group__1__Impl rule__Preliminar__Group__2 )
+            // InternalLegisFacile.g:756:2: rule__Preliminar__Group__1__Impl rule__Preliminar__Group__2
             {
             pushFollow(FOLLOW_7);
             rule__Preliminar__Group__1__Impl();
@@ -2173,20 +2396,20 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preliminar__Group__1__Impl"
-    // InternalLegisFacile.g:696:1: rule__Preliminar__Group__1__Impl : ( '{' ) ;
+    // InternalLegisFacile.g:763:1: rule__Preliminar__Group__1__Impl : ( '{' ) ;
     public final void rule__Preliminar__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:700:1: ( ( '{' ) )
-            // InternalLegisFacile.g:701:1: ( '{' )
+            // InternalLegisFacile.g:767:1: ( ( '{' ) )
+            // InternalLegisFacile.g:768:1: ( '{' )
             {
-            // InternalLegisFacile.g:701:1: ( '{' )
-            // InternalLegisFacile.g:702:2: '{'
+            // InternalLegisFacile.g:768:1: ( '{' )
+            // InternalLegisFacile.g:769:2: '{'
             {
              before(grammarAccess.getPreliminarAccess().getLeftCurlyBracketKeyword_1()); 
-            match(input,25,FOLLOW_2); 
+            match(input,29,FOLLOW_2); 
              after(grammarAccess.getPreliminarAccess().getLeftCurlyBracketKeyword_1()); 
 
             }
@@ -2210,14 +2433,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preliminar__Group__2"
-    // InternalLegisFacile.g:711:1: rule__Preliminar__Group__2 : rule__Preliminar__Group__2__Impl rule__Preliminar__Group__3 ;
+    // InternalLegisFacile.g:778:1: rule__Preliminar__Group__2 : rule__Preliminar__Group__2__Impl rule__Preliminar__Group__3 ;
     public final void rule__Preliminar__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:715:1: ( rule__Preliminar__Group__2__Impl rule__Preliminar__Group__3 )
-            // InternalLegisFacile.g:716:2: rule__Preliminar__Group__2__Impl rule__Preliminar__Group__3
+            // InternalLegisFacile.g:782:1: ( rule__Preliminar__Group__2__Impl rule__Preliminar__Group__3 )
+            // InternalLegisFacile.g:783:2: rule__Preliminar__Group__2__Impl rule__Preliminar__Group__3
             {
             pushFollow(FOLLOW_8);
             rule__Preliminar__Group__2__Impl();
@@ -2248,21 +2471,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preliminar__Group__2__Impl"
-    // InternalLegisFacile.g:723:1: rule__Preliminar__Group__2__Impl : ( ( rule__Preliminar__EpigrageAssignment_2 ) ) ;
+    // InternalLegisFacile.g:790:1: rule__Preliminar__Group__2__Impl : ( ( rule__Preliminar__EpigrageAssignment_2 ) ) ;
     public final void rule__Preliminar__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:727:1: ( ( ( rule__Preliminar__EpigrageAssignment_2 ) ) )
-            // InternalLegisFacile.g:728:1: ( ( rule__Preliminar__EpigrageAssignment_2 ) )
+            // InternalLegisFacile.g:794:1: ( ( ( rule__Preliminar__EpigrageAssignment_2 ) ) )
+            // InternalLegisFacile.g:795:1: ( ( rule__Preliminar__EpigrageAssignment_2 ) )
             {
-            // InternalLegisFacile.g:728:1: ( ( rule__Preliminar__EpigrageAssignment_2 ) )
-            // InternalLegisFacile.g:729:2: ( rule__Preliminar__EpigrageAssignment_2 )
+            // InternalLegisFacile.g:795:1: ( ( rule__Preliminar__EpigrageAssignment_2 ) )
+            // InternalLegisFacile.g:796:2: ( rule__Preliminar__EpigrageAssignment_2 )
             {
              before(grammarAccess.getPreliminarAccess().getEpigrageAssignment_2()); 
-            // InternalLegisFacile.g:730:2: ( rule__Preliminar__EpigrageAssignment_2 )
-            // InternalLegisFacile.g:730:3: rule__Preliminar__EpigrageAssignment_2
+            // InternalLegisFacile.g:797:2: ( rule__Preliminar__EpigrageAssignment_2 )
+            // InternalLegisFacile.g:797:3: rule__Preliminar__EpigrageAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Preliminar__EpigrageAssignment_2();
@@ -2295,14 +2518,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preliminar__Group__3"
-    // InternalLegisFacile.g:738:1: rule__Preliminar__Group__3 : rule__Preliminar__Group__3__Impl rule__Preliminar__Group__4 ;
+    // InternalLegisFacile.g:805:1: rule__Preliminar__Group__3 : rule__Preliminar__Group__3__Impl rule__Preliminar__Group__4 ;
     public final void rule__Preliminar__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:742:1: ( rule__Preliminar__Group__3__Impl rule__Preliminar__Group__4 )
-            // InternalLegisFacile.g:743:2: rule__Preliminar__Group__3__Impl rule__Preliminar__Group__4
+            // InternalLegisFacile.g:809:1: ( rule__Preliminar__Group__3__Impl rule__Preliminar__Group__4 )
+            // InternalLegisFacile.g:810:2: rule__Preliminar__Group__3__Impl rule__Preliminar__Group__4
             {
             pushFollow(FOLLOW_9);
             rule__Preliminar__Group__3__Impl();
@@ -2333,20 +2556,20 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preliminar__Group__3__Impl"
-    // InternalLegisFacile.g:750:1: rule__Preliminar__Group__3__Impl : ( ',' ) ;
+    // InternalLegisFacile.g:817:1: rule__Preliminar__Group__3__Impl : ( ',' ) ;
     public final void rule__Preliminar__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:754:1: ( ( ',' ) )
-            // InternalLegisFacile.g:755:1: ( ',' )
+            // InternalLegisFacile.g:821:1: ( ( ',' ) )
+            // InternalLegisFacile.g:822:1: ( ',' )
             {
-            // InternalLegisFacile.g:755:1: ( ',' )
-            // InternalLegisFacile.g:756:2: ','
+            // InternalLegisFacile.g:822:1: ( ',' )
+            // InternalLegisFacile.g:823:2: ','
             {
              before(grammarAccess.getPreliminarAccess().getCommaKeyword_3()); 
-            match(input,26,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getPreliminarAccess().getCommaKeyword_3()); 
 
             }
@@ -2370,14 +2593,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preliminar__Group__4"
-    // InternalLegisFacile.g:765:1: rule__Preliminar__Group__4 : rule__Preliminar__Group__4__Impl rule__Preliminar__Group__5 ;
+    // InternalLegisFacile.g:832:1: rule__Preliminar__Group__4 : rule__Preliminar__Group__4__Impl rule__Preliminar__Group__5 ;
     public final void rule__Preliminar__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:769:1: ( rule__Preliminar__Group__4__Impl rule__Preliminar__Group__5 )
-            // InternalLegisFacile.g:770:2: rule__Preliminar__Group__4__Impl rule__Preliminar__Group__5
+            // InternalLegisFacile.g:836:1: ( rule__Preliminar__Group__4__Impl rule__Preliminar__Group__5 )
+            // InternalLegisFacile.g:837:2: rule__Preliminar__Group__4__Impl rule__Preliminar__Group__5
             {
             pushFollow(FOLLOW_8);
             rule__Preliminar__Group__4__Impl();
@@ -2408,21 +2631,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preliminar__Group__4__Impl"
-    // InternalLegisFacile.g:777:1: rule__Preliminar__Group__4__Impl : ( ( rule__Preliminar__EmentaAssignment_4 ) ) ;
+    // InternalLegisFacile.g:844:1: rule__Preliminar__Group__4__Impl : ( ( rule__Preliminar__EmentaAssignment_4 ) ) ;
     public final void rule__Preliminar__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:781:1: ( ( ( rule__Preliminar__EmentaAssignment_4 ) ) )
-            // InternalLegisFacile.g:782:1: ( ( rule__Preliminar__EmentaAssignment_4 ) )
+            // InternalLegisFacile.g:848:1: ( ( ( rule__Preliminar__EmentaAssignment_4 ) ) )
+            // InternalLegisFacile.g:849:1: ( ( rule__Preliminar__EmentaAssignment_4 ) )
             {
-            // InternalLegisFacile.g:782:1: ( ( rule__Preliminar__EmentaAssignment_4 ) )
-            // InternalLegisFacile.g:783:2: ( rule__Preliminar__EmentaAssignment_4 )
+            // InternalLegisFacile.g:849:1: ( ( rule__Preliminar__EmentaAssignment_4 ) )
+            // InternalLegisFacile.g:850:2: ( rule__Preliminar__EmentaAssignment_4 )
             {
              before(grammarAccess.getPreliminarAccess().getEmentaAssignment_4()); 
-            // InternalLegisFacile.g:784:2: ( rule__Preliminar__EmentaAssignment_4 )
-            // InternalLegisFacile.g:784:3: rule__Preliminar__EmentaAssignment_4
+            // InternalLegisFacile.g:851:2: ( rule__Preliminar__EmentaAssignment_4 )
+            // InternalLegisFacile.g:851:3: rule__Preliminar__EmentaAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__Preliminar__EmentaAssignment_4();
@@ -2455,14 +2678,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preliminar__Group__5"
-    // InternalLegisFacile.g:792:1: rule__Preliminar__Group__5 : rule__Preliminar__Group__5__Impl rule__Preliminar__Group__6 ;
+    // InternalLegisFacile.g:859:1: rule__Preliminar__Group__5 : rule__Preliminar__Group__5__Impl rule__Preliminar__Group__6 ;
     public final void rule__Preliminar__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:796:1: ( rule__Preliminar__Group__5__Impl rule__Preliminar__Group__6 )
-            // InternalLegisFacile.g:797:2: rule__Preliminar__Group__5__Impl rule__Preliminar__Group__6
+            // InternalLegisFacile.g:863:1: ( rule__Preliminar__Group__5__Impl rule__Preliminar__Group__6 )
+            // InternalLegisFacile.g:864:2: rule__Preliminar__Group__5__Impl rule__Preliminar__Group__6
             {
             pushFollow(FOLLOW_10);
             rule__Preliminar__Group__5__Impl();
@@ -2493,20 +2716,20 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preliminar__Group__5__Impl"
-    // InternalLegisFacile.g:804:1: rule__Preliminar__Group__5__Impl : ( ',' ) ;
+    // InternalLegisFacile.g:871:1: rule__Preliminar__Group__5__Impl : ( ',' ) ;
     public final void rule__Preliminar__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:808:1: ( ( ',' ) )
-            // InternalLegisFacile.g:809:1: ( ',' )
+            // InternalLegisFacile.g:875:1: ( ( ',' ) )
+            // InternalLegisFacile.g:876:1: ( ',' )
             {
-            // InternalLegisFacile.g:809:1: ( ',' )
-            // InternalLegisFacile.g:810:2: ','
+            // InternalLegisFacile.g:876:1: ( ',' )
+            // InternalLegisFacile.g:877:2: ','
             {
              before(grammarAccess.getPreliminarAccess().getCommaKeyword_5()); 
-            match(input,26,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getPreliminarAccess().getCommaKeyword_5()); 
 
             }
@@ -2530,14 +2753,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preliminar__Group__6"
-    // InternalLegisFacile.g:819:1: rule__Preliminar__Group__6 : rule__Preliminar__Group__6__Impl rule__Preliminar__Group__7 ;
+    // InternalLegisFacile.g:886:1: rule__Preliminar__Group__6 : rule__Preliminar__Group__6__Impl rule__Preliminar__Group__7 ;
     public final void rule__Preliminar__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:823:1: ( rule__Preliminar__Group__6__Impl rule__Preliminar__Group__7 )
-            // InternalLegisFacile.g:824:2: rule__Preliminar__Group__6__Impl rule__Preliminar__Group__7
+            // InternalLegisFacile.g:890:1: ( rule__Preliminar__Group__6__Impl rule__Preliminar__Group__7 )
+            // InternalLegisFacile.g:891:2: rule__Preliminar__Group__6__Impl rule__Preliminar__Group__7
             {
             pushFollow(FOLLOW_8);
             rule__Preliminar__Group__6__Impl();
@@ -2568,21 +2791,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preliminar__Group__6__Impl"
-    // InternalLegisFacile.g:831:1: rule__Preliminar__Group__6__Impl : ( ( rule__Preliminar__PreambuloAssignment_6 ) ) ;
+    // InternalLegisFacile.g:898:1: rule__Preliminar__Group__6__Impl : ( ( rule__Preliminar__PreambuloAssignment_6 ) ) ;
     public final void rule__Preliminar__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:835:1: ( ( ( rule__Preliminar__PreambuloAssignment_6 ) ) )
-            // InternalLegisFacile.g:836:1: ( ( rule__Preliminar__PreambuloAssignment_6 ) )
+            // InternalLegisFacile.g:902:1: ( ( ( rule__Preliminar__PreambuloAssignment_6 ) ) )
+            // InternalLegisFacile.g:903:1: ( ( rule__Preliminar__PreambuloAssignment_6 ) )
             {
-            // InternalLegisFacile.g:836:1: ( ( rule__Preliminar__PreambuloAssignment_6 ) )
-            // InternalLegisFacile.g:837:2: ( rule__Preliminar__PreambuloAssignment_6 )
+            // InternalLegisFacile.g:903:1: ( ( rule__Preliminar__PreambuloAssignment_6 ) )
+            // InternalLegisFacile.g:904:2: ( rule__Preliminar__PreambuloAssignment_6 )
             {
              before(grammarAccess.getPreliminarAccess().getPreambuloAssignment_6()); 
-            // InternalLegisFacile.g:838:2: ( rule__Preliminar__PreambuloAssignment_6 )
-            // InternalLegisFacile.g:838:3: rule__Preliminar__PreambuloAssignment_6
+            // InternalLegisFacile.g:905:2: ( rule__Preliminar__PreambuloAssignment_6 )
+            // InternalLegisFacile.g:905:3: rule__Preliminar__PreambuloAssignment_6
             {
             pushFollow(FOLLOW_2);
             rule__Preliminar__PreambuloAssignment_6();
@@ -2615,14 +2838,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preliminar__Group__7"
-    // InternalLegisFacile.g:846:1: rule__Preliminar__Group__7 : rule__Preliminar__Group__7__Impl rule__Preliminar__Group__8 ;
+    // InternalLegisFacile.g:913:1: rule__Preliminar__Group__7 : rule__Preliminar__Group__7__Impl rule__Preliminar__Group__8 ;
     public final void rule__Preliminar__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:850:1: ( rule__Preliminar__Group__7__Impl rule__Preliminar__Group__8 )
-            // InternalLegisFacile.g:851:2: rule__Preliminar__Group__7__Impl rule__Preliminar__Group__8
+            // InternalLegisFacile.g:917:1: ( rule__Preliminar__Group__7__Impl rule__Preliminar__Group__8 )
+            // InternalLegisFacile.g:918:2: rule__Preliminar__Group__7__Impl rule__Preliminar__Group__8
             {
             pushFollow(FOLLOW_11);
             rule__Preliminar__Group__7__Impl();
@@ -2653,20 +2876,20 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preliminar__Group__7__Impl"
-    // InternalLegisFacile.g:858:1: rule__Preliminar__Group__7__Impl : ( ',' ) ;
+    // InternalLegisFacile.g:925:1: rule__Preliminar__Group__7__Impl : ( ',' ) ;
     public final void rule__Preliminar__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:862:1: ( ( ',' ) )
-            // InternalLegisFacile.g:863:1: ( ',' )
+            // InternalLegisFacile.g:929:1: ( ( ',' ) )
+            // InternalLegisFacile.g:930:1: ( ',' )
             {
-            // InternalLegisFacile.g:863:1: ( ',' )
-            // InternalLegisFacile.g:864:2: ','
+            // InternalLegisFacile.g:930:1: ( ',' )
+            // InternalLegisFacile.g:931:2: ','
             {
              before(grammarAccess.getPreliminarAccess().getCommaKeyword_7()); 
-            match(input,26,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getPreliminarAccess().getCommaKeyword_7()); 
 
             }
@@ -2690,14 +2913,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preliminar__Group__8"
-    // InternalLegisFacile.g:873:1: rule__Preliminar__Group__8 : rule__Preliminar__Group__8__Impl ;
+    // InternalLegisFacile.g:940:1: rule__Preliminar__Group__8 : rule__Preliminar__Group__8__Impl ;
     public final void rule__Preliminar__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:877:1: ( rule__Preliminar__Group__8__Impl )
-            // InternalLegisFacile.g:878:2: rule__Preliminar__Group__8__Impl
+            // InternalLegisFacile.g:944:1: ( rule__Preliminar__Group__8__Impl )
+            // InternalLegisFacile.g:945:2: rule__Preliminar__Group__8__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Preliminar__Group__8__Impl();
@@ -2723,20 +2946,20 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preliminar__Group__8__Impl"
-    // InternalLegisFacile.g:884:1: rule__Preliminar__Group__8__Impl : ( '}' ) ;
+    // InternalLegisFacile.g:951:1: rule__Preliminar__Group__8__Impl : ( '}' ) ;
     public final void rule__Preliminar__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:888:1: ( ( '}' ) )
-            // InternalLegisFacile.g:889:1: ( '}' )
+            // InternalLegisFacile.g:955:1: ( ( '}' ) )
+            // InternalLegisFacile.g:956:1: ( '}' )
             {
-            // InternalLegisFacile.g:889:1: ( '}' )
-            // InternalLegisFacile.g:890:2: '}'
+            // InternalLegisFacile.g:956:1: ( '}' )
+            // InternalLegisFacile.g:957:2: '}'
             {
              before(grammarAccess.getPreliminarAccess().getRightCurlyBracketKeyword_8()); 
-            match(input,27,FOLLOW_2); 
+            match(input,31,FOLLOW_2); 
              after(grammarAccess.getPreliminarAccess().getRightCurlyBracketKeyword_8()); 
 
             }
@@ -2760,14 +2983,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Epigrafe__Group__0"
-    // InternalLegisFacile.g:900:1: rule__Epigrafe__Group__0 : rule__Epigrafe__Group__0__Impl rule__Epigrafe__Group__1 ;
+    // InternalLegisFacile.g:967:1: rule__Epigrafe__Group__0 : rule__Epigrafe__Group__0__Impl rule__Epigrafe__Group__1 ;
     public final void rule__Epigrafe__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:904:1: ( rule__Epigrafe__Group__0__Impl rule__Epigrafe__Group__1 )
-            // InternalLegisFacile.g:905:2: rule__Epigrafe__Group__0__Impl rule__Epigrafe__Group__1
+            // InternalLegisFacile.g:971:1: ( rule__Epigrafe__Group__0__Impl rule__Epigrafe__Group__1 )
+            // InternalLegisFacile.g:972:2: rule__Epigrafe__Group__0__Impl rule__Epigrafe__Group__1
             {
             pushFollow(FOLLOW_12);
             rule__Epigrafe__Group__0__Impl();
@@ -2798,21 +3021,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Epigrafe__Group__0__Impl"
-    // InternalLegisFacile.g:912:1: rule__Epigrafe__Group__0__Impl : ( ( rule__Epigrafe__Alternatives_0 ) ) ;
+    // InternalLegisFacile.g:979:1: rule__Epigrafe__Group__0__Impl : ( ( rule__Epigrafe__Alternatives_0 ) ) ;
     public final void rule__Epigrafe__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:916:1: ( ( ( rule__Epigrafe__Alternatives_0 ) ) )
-            // InternalLegisFacile.g:917:1: ( ( rule__Epigrafe__Alternatives_0 ) )
+            // InternalLegisFacile.g:983:1: ( ( ( rule__Epigrafe__Alternatives_0 ) ) )
+            // InternalLegisFacile.g:984:1: ( ( rule__Epigrafe__Alternatives_0 ) )
             {
-            // InternalLegisFacile.g:917:1: ( ( rule__Epigrafe__Alternatives_0 ) )
-            // InternalLegisFacile.g:918:2: ( rule__Epigrafe__Alternatives_0 )
+            // InternalLegisFacile.g:984:1: ( ( rule__Epigrafe__Alternatives_0 ) )
+            // InternalLegisFacile.g:985:2: ( rule__Epigrafe__Alternatives_0 )
             {
              before(grammarAccess.getEpigrafeAccess().getAlternatives_0()); 
-            // InternalLegisFacile.g:919:2: ( rule__Epigrafe__Alternatives_0 )
-            // InternalLegisFacile.g:919:3: rule__Epigrafe__Alternatives_0
+            // InternalLegisFacile.g:986:2: ( rule__Epigrafe__Alternatives_0 )
+            // InternalLegisFacile.g:986:3: rule__Epigrafe__Alternatives_0
             {
             pushFollow(FOLLOW_2);
             rule__Epigrafe__Alternatives_0();
@@ -2845,14 +3068,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Epigrafe__Group__1"
-    // InternalLegisFacile.g:927:1: rule__Epigrafe__Group__1 : rule__Epigrafe__Group__1__Impl rule__Epigrafe__Group__2 ;
+    // InternalLegisFacile.g:994:1: rule__Epigrafe__Group__1 : rule__Epigrafe__Group__1__Impl rule__Epigrafe__Group__2 ;
     public final void rule__Epigrafe__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:931:1: ( rule__Epigrafe__Group__1__Impl rule__Epigrafe__Group__2 )
-            // InternalLegisFacile.g:932:2: rule__Epigrafe__Group__1__Impl rule__Epigrafe__Group__2
+            // InternalLegisFacile.g:998:1: ( rule__Epigrafe__Group__1__Impl rule__Epigrafe__Group__2 )
+            // InternalLegisFacile.g:999:2: rule__Epigrafe__Group__1__Impl rule__Epigrafe__Group__2
             {
             pushFollow(FOLLOW_13);
             rule__Epigrafe__Group__1__Impl();
@@ -2883,20 +3106,20 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Epigrafe__Group__1__Impl"
-    // InternalLegisFacile.g:939:1: rule__Epigrafe__Group__1__Impl : ( '(' ) ;
+    // InternalLegisFacile.g:1006:1: rule__Epigrafe__Group__1__Impl : ( '(' ) ;
     public final void rule__Epigrafe__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:943:1: ( ( '(' ) )
-            // InternalLegisFacile.g:944:1: ( '(' )
+            // InternalLegisFacile.g:1010:1: ( ( '(' ) )
+            // InternalLegisFacile.g:1011:1: ( '(' )
             {
-            // InternalLegisFacile.g:944:1: ( '(' )
-            // InternalLegisFacile.g:945:2: '('
+            // InternalLegisFacile.g:1011:1: ( '(' )
+            // InternalLegisFacile.g:1012:2: '('
             {
              before(grammarAccess.getEpigrafeAccess().getLeftParenthesisKeyword_1()); 
-            match(input,28,FOLLOW_2); 
+            match(input,32,FOLLOW_2); 
              after(grammarAccess.getEpigrafeAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -2920,14 +3143,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Epigrafe__Group__2"
-    // InternalLegisFacile.g:954:1: rule__Epigrafe__Group__2 : rule__Epigrafe__Group__2__Impl rule__Epigrafe__Group__3 ;
+    // InternalLegisFacile.g:1021:1: rule__Epigrafe__Group__2 : rule__Epigrafe__Group__2__Impl rule__Epigrafe__Group__3 ;
     public final void rule__Epigrafe__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:958:1: ( rule__Epigrafe__Group__2__Impl rule__Epigrafe__Group__3 )
-            // InternalLegisFacile.g:959:2: rule__Epigrafe__Group__2__Impl rule__Epigrafe__Group__3
+            // InternalLegisFacile.g:1025:1: ( rule__Epigrafe__Group__2__Impl rule__Epigrafe__Group__3 )
+            // InternalLegisFacile.g:1026:2: rule__Epigrafe__Group__2__Impl rule__Epigrafe__Group__3
             {
             pushFollow(FOLLOW_8);
             rule__Epigrafe__Group__2__Impl();
@@ -2958,21 +3181,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Epigrafe__Group__2__Impl"
-    // InternalLegisFacile.g:966:1: rule__Epigrafe__Group__2__Impl : ( ( rule__Epigrafe__AtoAssignment_2 ) ) ;
+    // InternalLegisFacile.g:1033:1: rule__Epigrafe__Group__2__Impl : ( ( rule__Epigrafe__AtoAssignment_2 ) ) ;
     public final void rule__Epigrafe__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:970:1: ( ( ( rule__Epigrafe__AtoAssignment_2 ) ) )
-            // InternalLegisFacile.g:971:1: ( ( rule__Epigrafe__AtoAssignment_2 ) )
+            // InternalLegisFacile.g:1037:1: ( ( ( rule__Epigrafe__AtoAssignment_2 ) ) )
+            // InternalLegisFacile.g:1038:1: ( ( rule__Epigrafe__AtoAssignment_2 ) )
             {
-            // InternalLegisFacile.g:971:1: ( ( rule__Epigrafe__AtoAssignment_2 ) )
-            // InternalLegisFacile.g:972:2: ( rule__Epigrafe__AtoAssignment_2 )
+            // InternalLegisFacile.g:1038:1: ( ( rule__Epigrafe__AtoAssignment_2 ) )
+            // InternalLegisFacile.g:1039:2: ( rule__Epigrafe__AtoAssignment_2 )
             {
              before(grammarAccess.getEpigrafeAccess().getAtoAssignment_2()); 
-            // InternalLegisFacile.g:973:2: ( rule__Epigrafe__AtoAssignment_2 )
-            // InternalLegisFacile.g:973:3: rule__Epigrafe__AtoAssignment_2
+            // InternalLegisFacile.g:1040:2: ( rule__Epigrafe__AtoAssignment_2 )
+            // InternalLegisFacile.g:1040:3: rule__Epigrafe__AtoAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Epigrafe__AtoAssignment_2();
@@ -3005,14 +3228,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Epigrafe__Group__3"
-    // InternalLegisFacile.g:981:1: rule__Epigrafe__Group__3 : rule__Epigrafe__Group__3__Impl rule__Epigrafe__Group__4 ;
+    // InternalLegisFacile.g:1048:1: rule__Epigrafe__Group__3 : rule__Epigrafe__Group__3__Impl rule__Epigrafe__Group__4 ;
     public final void rule__Epigrafe__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:985:1: ( rule__Epigrafe__Group__3__Impl rule__Epigrafe__Group__4 )
-            // InternalLegisFacile.g:986:2: rule__Epigrafe__Group__3__Impl rule__Epigrafe__Group__4
+            // InternalLegisFacile.g:1052:1: ( rule__Epigrafe__Group__3__Impl rule__Epigrafe__Group__4 )
+            // InternalLegisFacile.g:1053:2: rule__Epigrafe__Group__3__Impl rule__Epigrafe__Group__4
             {
             pushFollow(FOLLOW_14);
             rule__Epigrafe__Group__3__Impl();
@@ -3043,20 +3266,20 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Epigrafe__Group__3__Impl"
-    // InternalLegisFacile.g:993:1: rule__Epigrafe__Group__3__Impl : ( ',' ) ;
+    // InternalLegisFacile.g:1060:1: rule__Epigrafe__Group__3__Impl : ( ',' ) ;
     public final void rule__Epigrafe__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:997:1: ( ( ',' ) )
-            // InternalLegisFacile.g:998:1: ( ',' )
+            // InternalLegisFacile.g:1064:1: ( ( ',' ) )
+            // InternalLegisFacile.g:1065:1: ( ',' )
             {
-            // InternalLegisFacile.g:998:1: ( ',' )
-            // InternalLegisFacile.g:999:2: ','
+            // InternalLegisFacile.g:1065:1: ( ',' )
+            // InternalLegisFacile.g:1066:2: ','
             {
              before(grammarAccess.getEpigrafeAccess().getCommaKeyword_3()); 
-            match(input,26,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getEpigrafeAccess().getCommaKeyword_3()); 
 
             }
@@ -3080,14 +3303,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Epigrafe__Group__4"
-    // InternalLegisFacile.g:1008:1: rule__Epigrafe__Group__4 : rule__Epigrafe__Group__4__Impl rule__Epigrafe__Group__5 ;
+    // InternalLegisFacile.g:1075:1: rule__Epigrafe__Group__4 : rule__Epigrafe__Group__4__Impl rule__Epigrafe__Group__5 ;
     public final void rule__Epigrafe__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1012:1: ( rule__Epigrafe__Group__4__Impl rule__Epigrafe__Group__5 )
-            // InternalLegisFacile.g:1013:2: rule__Epigrafe__Group__4__Impl rule__Epigrafe__Group__5
+            // InternalLegisFacile.g:1079:1: ( rule__Epigrafe__Group__4__Impl rule__Epigrafe__Group__5 )
+            // InternalLegisFacile.g:1080:2: rule__Epigrafe__Group__4__Impl rule__Epigrafe__Group__5
             {
             pushFollow(FOLLOW_8);
             rule__Epigrafe__Group__4__Impl();
@@ -3118,21 +3341,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Epigrafe__Group__4__Impl"
-    // InternalLegisFacile.g:1020:1: rule__Epigrafe__Group__4__Impl : ( ( rule__Epigrafe__NumeroAssignment_4 ) ) ;
+    // InternalLegisFacile.g:1087:1: rule__Epigrafe__Group__4__Impl : ( ( rule__Epigrafe__NumeroAssignment_4 ) ) ;
     public final void rule__Epigrafe__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1024:1: ( ( ( rule__Epigrafe__NumeroAssignment_4 ) ) )
-            // InternalLegisFacile.g:1025:1: ( ( rule__Epigrafe__NumeroAssignment_4 ) )
+            // InternalLegisFacile.g:1091:1: ( ( ( rule__Epigrafe__NumeroAssignment_4 ) ) )
+            // InternalLegisFacile.g:1092:1: ( ( rule__Epigrafe__NumeroAssignment_4 ) )
             {
-            // InternalLegisFacile.g:1025:1: ( ( rule__Epigrafe__NumeroAssignment_4 ) )
-            // InternalLegisFacile.g:1026:2: ( rule__Epigrafe__NumeroAssignment_4 )
+            // InternalLegisFacile.g:1092:1: ( ( rule__Epigrafe__NumeroAssignment_4 ) )
+            // InternalLegisFacile.g:1093:2: ( rule__Epigrafe__NumeroAssignment_4 )
             {
              before(grammarAccess.getEpigrafeAccess().getNumeroAssignment_4()); 
-            // InternalLegisFacile.g:1027:2: ( rule__Epigrafe__NumeroAssignment_4 )
-            // InternalLegisFacile.g:1027:3: rule__Epigrafe__NumeroAssignment_4
+            // InternalLegisFacile.g:1094:2: ( rule__Epigrafe__NumeroAssignment_4 )
+            // InternalLegisFacile.g:1094:3: rule__Epigrafe__NumeroAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__Epigrafe__NumeroAssignment_4();
@@ -3165,14 +3388,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Epigrafe__Group__5"
-    // InternalLegisFacile.g:1035:1: rule__Epigrafe__Group__5 : rule__Epigrafe__Group__5__Impl rule__Epigrafe__Group__6 ;
+    // InternalLegisFacile.g:1102:1: rule__Epigrafe__Group__5 : rule__Epigrafe__Group__5__Impl rule__Epigrafe__Group__6 ;
     public final void rule__Epigrafe__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1039:1: ( rule__Epigrafe__Group__5__Impl rule__Epigrafe__Group__6 )
-            // InternalLegisFacile.g:1040:2: rule__Epigrafe__Group__5__Impl rule__Epigrafe__Group__6
+            // InternalLegisFacile.g:1106:1: ( rule__Epigrafe__Group__5__Impl rule__Epigrafe__Group__6 )
+            // InternalLegisFacile.g:1107:2: rule__Epigrafe__Group__5__Impl rule__Epigrafe__Group__6
             {
             pushFollow(FOLLOW_14);
             rule__Epigrafe__Group__5__Impl();
@@ -3203,20 +3426,20 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Epigrafe__Group__5__Impl"
-    // InternalLegisFacile.g:1047:1: rule__Epigrafe__Group__5__Impl : ( ',' ) ;
+    // InternalLegisFacile.g:1114:1: rule__Epigrafe__Group__5__Impl : ( ',' ) ;
     public final void rule__Epigrafe__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1051:1: ( ( ',' ) )
-            // InternalLegisFacile.g:1052:1: ( ',' )
+            // InternalLegisFacile.g:1118:1: ( ( ',' ) )
+            // InternalLegisFacile.g:1119:1: ( ',' )
             {
-            // InternalLegisFacile.g:1052:1: ( ',' )
-            // InternalLegisFacile.g:1053:2: ','
+            // InternalLegisFacile.g:1119:1: ( ',' )
+            // InternalLegisFacile.g:1120:2: ','
             {
              before(grammarAccess.getEpigrafeAccess().getCommaKeyword_5()); 
-            match(input,26,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getEpigrafeAccess().getCommaKeyword_5()); 
 
             }
@@ -3240,14 +3463,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Epigrafe__Group__6"
-    // InternalLegisFacile.g:1062:1: rule__Epigrafe__Group__6 : rule__Epigrafe__Group__6__Impl rule__Epigrafe__Group__7 ;
+    // InternalLegisFacile.g:1129:1: rule__Epigrafe__Group__6 : rule__Epigrafe__Group__6__Impl rule__Epigrafe__Group__7 ;
     public final void rule__Epigrafe__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1066:1: ( rule__Epigrafe__Group__6__Impl rule__Epigrafe__Group__7 )
-            // InternalLegisFacile.g:1067:2: rule__Epigrafe__Group__6__Impl rule__Epigrafe__Group__7
+            // InternalLegisFacile.g:1133:1: ( rule__Epigrafe__Group__6__Impl rule__Epigrafe__Group__7 )
+            // InternalLegisFacile.g:1134:2: rule__Epigrafe__Group__6__Impl rule__Epigrafe__Group__7
             {
             pushFollow(FOLLOW_15);
             rule__Epigrafe__Group__6__Impl();
@@ -3278,21 +3501,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Epigrafe__Group__6__Impl"
-    // InternalLegisFacile.g:1074:1: rule__Epigrafe__Group__6__Impl : ( ( rule__Epigrafe__AnoAssignment_6 ) ) ;
+    // InternalLegisFacile.g:1141:1: rule__Epigrafe__Group__6__Impl : ( ( rule__Epigrafe__AnoAssignment_6 ) ) ;
     public final void rule__Epigrafe__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1078:1: ( ( ( rule__Epigrafe__AnoAssignment_6 ) ) )
-            // InternalLegisFacile.g:1079:1: ( ( rule__Epigrafe__AnoAssignment_6 ) )
+            // InternalLegisFacile.g:1145:1: ( ( ( rule__Epigrafe__AnoAssignment_6 ) ) )
+            // InternalLegisFacile.g:1146:1: ( ( rule__Epigrafe__AnoAssignment_6 ) )
             {
-            // InternalLegisFacile.g:1079:1: ( ( rule__Epigrafe__AnoAssignment_6 ) )
-            // InternalLegisFacile.g:1080:2: ( rule__Epigrafe__AnoAssignment_6 )
+            // InternalLegisFacile.g:1146:1: ( ( rule__Epigrafe__AnoAssignment_6 ) )
+            // InternalLegisFacile.g:1147:2: ( rule__Epigrafe__AnoAssignment_6 )
             {
              before(grammarAccess.getEpigrafeAccess().getAnoAssignment_6()); 
-            // InternalLegisFacile.g:1081:2: ( rule__Epigrafe__AnoAssignment_6 )
-            // InternalLegisFacile.g:1081:3: rule__Epigrafe__AnoAssignment_6
+            // InternalLegisFacile.g:1148:2: ( rule__Epigrafe__AnoAssignment_6 )
+            // InternalLegisFacile.g:1148:3: rule__Epigrafe__AnoAssignment_6
             {
             pushFollow(FOLLOW_2);
             rule__Epigrafe__AnoAssignment_6();
@@ -3325,14 +3548,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Epigrafe__Group__7"
-    // InternalLegisFacile.g:1089:1: rule__Epigrafe__Group__7 : rule__Epigrafe__Group__7__Impl ;
+    // InternalLegisFacile.g:1156:1: rule__Epigrafe__Group__7 : rule__Epigrafe__Group__7__Impl ;
     public final void rule__Epigrafe__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1093:1: ( rule__Epigrafe__Group__7__Impl )
-            // InternalLegisFacile.g:1094:2: rule__Epigrafe__Group__7__Impl
+            // InternalLegisFacile.g:1160:1: ( rule__Epigrafe__Group__7__Impl )
+            // InternalLegisFacile.g:1161:2: rule__Epigrafe__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Epigrafe__Group__7__Impl();
@@ -3358,20 +3581,20 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Epigrafe__Group__7__Impl"
-    // InternalLegisFacile.g:1100:1: rule__Epigrafe__Group__7__Impl : ( ')' ) ;
+    // InternalLegisFacile.g:1167:1: rule__Epigrafe__Group__7__Impl : ( ')' ) ;
     public final void rule__Epigrafe__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1104:1: ( ( ')' ) )
-            // InternalLegisFacile.g:1105:1: ( ')' )
+            // InternalLegisFacile.g:1171:1: ( ( ')' ) )
+            // InternalLegisFacile.g:1172:1: ( ')' )
             {
-            // InternalLegisFacile.g:1105:1: ( ')' )
-            // InternalLegisFacile.g:1106:2: ')'
+            // InternalLegisFacile.g:1172:1: ( ')' )
+            // InternalLegisFacile.g:1173:2: ')'
             {
              before(grammarAccess.getEpigrafeAccess().getRightParenthesisKeyword_7()); 
-            match(input,29,FOLLOW_2); 
+            match(input,33,FOLLOW_2); 
              after(grammarAccess.getEpigrafeAccess().getRightParenthesisKeyword_7()); 
 
             }
@@ -3395,14 +3618,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Ementa__Group__0"
-    // InternalLegisFacile.g:1116:1: rule__Ementa__Group__0 : rule__Ementa__Group__0__Impl rule__Ementa__Group__1 ;
+    // InternalLegisFacile.g:1183:1: rule__Ementa__Group__0 : rule__Ementa__Group__0__Impl rule__Ementa__Group__1 ;
     public final void rule__Ementa__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1120:1: ( rule__Ementa__Group__0__Impl rule__Ementa__Group__1 )
-            // InternalLegisFacile.g:1121:2: rule__Ementa__Group__0__Impl rule__Ementa__Group__1
+            // InternalLegisFacile.g:1187:1: ( rule__Ementa__Group__0__Impl rule__Ementa__Group__1 )
+            // InternalLegisFacile.g:1188:2: rule__Ementa__Group__0__Impl rule__Ementa__Group__1
             {
             pushFollow(FOLLOW_12);
             rule__Ementa__Group__0__Impl();
@@ -3433,21 +3656,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Ementa__Group__0__Impl"
-    // InternalLegisFacile.g:1128:1: rule__Ementa__Group__0__Impl : ( ( rule__Ementa__Alternatives_0 ) ) ;
+    // InternalLegisFacile.g:1195:1: rule__Ementa__Group__0__Impl : ( ( rule__Ementa__Alternatives_0 ) ) ;
     public final void rule__Ementa__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1132:1: ( ( ( rule__Ementa__Alternatives_0 ) ) )
-            // InternalLegisFacile.g:1133:1: ( ( rule__Ementa__Alternatives_0 ) )
+            // InternalLegisFacile.g:1199:1: ( ( ( rule__Ementa__Alternatives_0 ) ) )
+            // InternalLegisFacile.g:1200:1: ( ( rule__Ementa__Alternatives_0 ) )
             {
-            // InternalLegisFacile.g:1133:1: ( ( rule__Ementa__Alternatives_0 ) )
-            // InternalLegisFacile.g:1134:2: ( rule__Ementa__Alternatives_0 )
+            // InternalLegisFacile.g:1200:1: ( ( rule__Ementa__Alternatives_0 ) )
+            // InternalLegisFacile.g:1201:2: ( rule__Ementa__Alternatives_0 )
             {
              before(grammarAccess.getEmentaAccess().getAlternatives_0()); 
-            // InternalLegisFacile.g:1135:2: ( rule__Ementa__Alternatives_0 )
-            // InternalLegisFacile.g:1135:3: rule__Ementa__Alternatives_0
+            // InternalLegisFacile.g:1202:2: ( rule__Ementa__Alternatives_0 )
+            // InternalLegisFacile.g:1202:3: rule__Ementa__Alternatives_0
             {
             pushFollow(FOLLOW_2);
             rule__Ementa__Alternatives_0();
@@ -3480,14 +3703,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Ementa__Group__1"
-    // InternalLegisFacile.g:1143:1: rule__Ementa__Group__1 : rule__Ementa__Group__1__Impl rule__Ementa__Group__2 ;
+    // InternalLegisFacile.g:1210:1: rule__Ementa__Group__1 : rule__Ementa__Group__1__Impl rule__Ementa__Group__2 ;
     public final void rule__Ementa__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1147:1: ( rule__Ementa__Group__1__Impl rule__Ementa__Group__2 )
-            // InternalLegisFacile.g:1148:2: rule__Ementa__Group__1__Impl rule__Ementa__Group__2
+            // InternalLegisFacile.g:1214:1: ( rule__Ementa__Group__1__Impl rule__Ementa__Group__2 )
+            // InternalLegisFacile.g:1215:2: rule__Ementa__Group__1__Impl rule__Ementa__Group__2
             {
             pushFollow(FOLLOW_13);
             rule__Ementa__Group__1__Impl();
@@ -3518,20 +3741,20 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Ementa__Group__1__Impl"
-    // InternalLegisFacile.g:1155:1: rule__Ementa__Group__1__Impl : ( '(' ) ;
+    // InternalLegisFacile.g:1222:1: rule__Ementa__Group__1__Impl : ( '(' ) ;
     public final void rule__Ementa__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1159:1: ( ( '(' ) )
-            // InternalLegisFacile.g:1160:1: ( '(' )
+            // InternalLegisFacile.g:1226:1: ( ( '(' ) )
+            // InternalLegisFacile.g:1227:1: ( '(' )
             {
-            // InternalLegisFacile.g:1160:1: ( '(' )
-            // InternalLegisFacile.g:1161:2: '('
+            // InternalLegisFacile.g:1227:1: ( '(' )
+            // InternalLegisFacile.g:1228:2: '('
             {
              before(grammarAccess.getEmentaAccess().getLeftParenthesisKeyword_1()); 
-            match(input,28,FOLLOW_2); 
+            match(input,32,FOLLOW_2); 
              after(grammarAccess.getEmentaAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -3555,14 +3778,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Ementa__Group__2"
-    // InternalLegisFacile.g:1170:1: rule__Ementa__Group__2 : rule__Ementa__Group__2__Impl rule__Ementa__Group__3 ;
+    // InternalLegisFacile.g:1237:1: rule__Ementa__Group__2 : rule__Ementa__Group__2__Impl rule__Ementa__Group__3 ;
     public final void rule__Ementa__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1174:1: ( rule__Ementa__Group__2__Impl rule__Ementa__Group__3 )
-            // InternalLegisFacile.g:1175:2: rule__Ementa__Group__2__Impl rule__Ementa__Group__3
+            // InternalLegisFacile.g:1241:1: ( rule__Ementa__Group__2__Impl rule__Ementa__Group__3 )
+            // InternalLegisFacile.g:1242:2: rule__Ementa__Group__2__Impl rule__Ementa__Group__3
             {
             pushFollow(FOLLOW_15);
             rule__Ementa__Group__2__Impl();
@@ -3593,21 +3816,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Ementa__Group__2__Impl"
-    // InternalLegisFacile.g:1182:1: rule__Ementa__Group__2__Impl : ( ( rule__Ementa__EmentaAssignment_2 ) ) ;
+    // InternalLegisFacile.g:1249:1: rule__Ementa__Group__2__Impl : ( ( rule__Ementa__EmentaAssignment_2 ) ) ;
     public final void rule__Ementa__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1186:1: ( ( ( rule__Ementa__EmentaAssignment_2 ) ) )
-            // InternalLegisFacile.g:1187:1: ( ( rule__Ementa__EmentaAssignment_2 ) )
+            // InternalLegisFacile.g:1253:1: ( ( ( rule__Ementa__EmentaAssignment_2 ) ) )
+            // InternalLegisFacile.g:1254:1: ( ( rule__Ementa__EmentaAssignment_2 ) )
             {
-            // InternalLegisFacile.g:1187:1: ( ( rule__Ementa__EmentaAssignment_2 ) )
-            // InternalLegisFacile.g:1188:2: ( rule__Ementa__EmentaAssignment_2 )
+            // InternalLegisFacile.g:1254:1: ( ( rule__Ementa__EmentaAssignment_2 ) )
+            // InternalLegisFacile.g:1255:2: ( rule__Ementa__EmentaAssignment_2 )
             {
              before(grammarAccess.getEmentaAccess().getEmentaAssignment_2()); 
-            // InternalLegisFacile.g:1189:2: ( rule__Ementa__EmentaAssignment_2 )
-            // InternalLegisFacile.g:1189:3: rule__Ementa__EmentaAssignment_2
+            // InternalLegisFacile.g:1256:2: ( rule__Ementa__EmentaAssignment_2 )
+            // InternalLegisFacile.g:1256:3: rule__Ementa__EmentaAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Ementa__EmentaAssignment_2();
@@ -3640,14 +3863,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Ementa__Group__3"
-    // InternalLegisFacile.g:1197:1: rule__Ementa__Group__3 : rule__Ementa__Group__3__Impl ;
+    // InternalLegisFacile.g:1264:1: rule__Ementa__Group__3 : rule__Ementa__Group__3__Impl ;
     public final void rule__Ementa__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1201:1: ( rule__Ementa__Group__3__Impl )
-            // InternalLegisFacile.g:1202:2: rule__Ementa__Group__3__Impl
+            // InternalLegisFacile.g:1268:1: ( rule__Ementa__Group__3__Impl )
+            // InternalLegisFacile.g:1269:2: rule__Ementa__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Ementa__Group__3__Impl();
@@ -3673,20 +3896,20 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Ementa__Group__3__Impl"
-    // InternalLegisFacile.g:1208:1: rule__Ementa__Group__3__Impl : ( ')' ) ;
+    // InternalLegisFacile.g:1275:1: rule__Ementa__Group__3__Impl : ( ')' ) ;
     public final void rule__Ementa__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1212:1: ( ( ')' ) )
-            // InternalLegisFacile.g:1213:1: ( ')' )
+            // InternalLegisFacile.g:1279:1: ( ( ')' ) )
+            // InternalLegisFacile.g:1280:1: ( ')' )
             {
-            // InternalLegisFacile.g:1213:1: ( ')' )
-            // InternalLegisFacile.g:1214:2: ')'
+            // InternalLegisFacile.g:1280:1: ( ')' )
+            // InternalLegisFacile.g:1281:2: ')'
             {
              before(grammarAccess.getEmentaAccess().getRightParenthesisKeyword_3()); 
-            match(input,29,FOLLOW_2); 
+            match(input,33,FOLLOW_2); 
              after(grammarAccess.getEmentaAccess().getRightParenthesisKeyword_3()); 
 
             }
@@ -3710,14 +3933,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preambulo__Group__0"
-    // InternalLegisFacile.g:1224:1: rule__Preambulo__Group__0 : rule__Preambulo__Group__0__Impl rule__Preambulo__Group__1 ;
+    // InternalLegisFacile.g:1291:1: rule__Preambulo__Group__0 : rule__Preambulo__Group__0__Impl rule__Preambulo__Group__1 ;
     public final void rule__Preambulo__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1228:1: ( rule__Preambulo__Group__0__Impl rule__Preambulo__Group__1 )
-            // InternalLegisFacile.g:1229:2: rule__Preambulo__Group__0__Impl rule__Preambulo__Group__1
+            // InternalLegisFacile.g:1295:1: ( rule__Preambulo__Group__0__Impl rule__Preambulo__Group__1 )
+            // InternalLegisFacile.g:1296:2: rule__Preambulo__Group__0__Impl rule__Preambulo__Group__1
             {
             pushFollow(FOLLOW_12);
             rule__Preambulo__Group__0__Impl();
@@ -3748,21 +3971,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preambulo__Group__0__Impl"
-    // InternalLegisFacile.g:1236:1: rule__Preambulo__Group__0__Impl : ( ( rule__Preambulo__Alternatives_0 ) ) ;
+    // InternalLegisFacile.g:1303:1: rule__Preambulo__Group__0__Impl : ( ( rule__Preambulo__Alternatives_0 ) ) ;
     public final void rule__Preambulo__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1240:1: ( ( ( rule__Preambulo__Alternatives_0 ) ) )
-            // InternalLegisFacile.g:1241:1: ( ( rule__Preambulo__Alternatives_0 ) )
+            // InternalLegisFacile.g:1307:1: ( ( ( rule__Preambulo__Alternatives_0 ) ) )
+            // InternalLegisFacile.g:1308:1: ( ( rule__Preambulo__Alternatives_0 ) )
             {
-            // InternalLegisFacile.g:1241:1: ( ( rule__Preambulo__Alternatives_0 ) )
-            // InternalLegisFacile.g:1242:2: ( rule__Preambulo__Alternatives_0 )
+            // InternalLegisFacile.g:1308:1: ( ( rule__Preambulo__Alternatives_0 ) )
+            // InternalLegisFacile.g:1309:2: ( rule__Preambulo__Alternatives_0 )
             {
              before(grammarAccess.getPreambuloAccess().getAlternatives_0()); 
-            // InternalLegisFacile.g:1243:2: ( rule__Preambulo__Alternatives_0 )
-            // InternalLegisFacile.g:1243:3: rule__Preambulo__Alternatives_0
+            // InternalLegisFacile.g:1310:2: ( rule__Preambulo__Alternatives_0 )
+            // InternalLegisFacile.g:1310:3: rule__Preambulo__Alternatives_0
             {
             pushFollow(FOLLOW_2);
             rule__Preambulo__Alternatives_0();
@@ -3795,14 +4018,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preambulo__Group__1"
-    // InternalLegisFacile.g:1251:1: rule__Preambulo__Group__1 : rule__Preambulo__Group__1__Impl rule__Preambulo__Group__2 ;
+    // InternalLegisFacile.g:1318:1: rule__Preambulo__Group__1 : rule__Preambulo__Group__1__Impl rule__Preambulo__Group__2 ;
     public final void rule__Preambulo__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1255:1: ( rule__Preambulo__Group__1__Impl rule__Preambulo__Group__2 )
-            // InternalLegisFacile.g:1256:2: rule__Preambulo__Group__1__Impl rule__Preambulo__Group__2
+            // InternalLegisFacile.g:1322:1: ( rule__Preambulo__Group__1__Impl rule__Preambulo__Group__2 )
+            // InternalLegisFacile.g:1323:2: rule__Preambulo__Group__1__Impl rule__Preambulo__Group__2
             {
             pushFollow(FOLLOW_13);
             rule__Preambulo__Group__1__Impl();
@@ -3833,20 +4056,20 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preambulo__Group__1__Impl"
-    // InternalLegisFacile.g:1263:1: rule__Preambulo__Group__1__Impl : ( '(' ) ;
+    // InternalLegisFacile.g:1330:1: rule__Preambulo__Group__1__Impl : ( '(' ) ;
     public final void rule__Preambulo__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1267:1: ( ( '(' ) )
-            // InternalLegisFacile.g:1268:1: ( '(' )
+            // InternalLegisFacile.g:1334:1: ( ( '(' ) )
+            // InternalLegisFacile.g:1335:1: ( '(' )
             {
-            // InternalLegisFacile.g:1268:1: ( '(' )
-            // InternalLegisFacile.g:1269:2: '('
+            // InternalLegisFacile.g:1335:1: ( '(' )
+            // InternalLegisFacile.g:1336:2: '('
             {
              before(grammarAccess.getPreambuloAccess().getLeftParenthesisKeyword_1()); 
-            match(input,28,FOLLOW_2); 
+            match(input,32,FOLLOW_2); 
              after(grammarAccess.getPreambuloAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -3870,14 +4093,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preambulo__Group__2"
-    // InternalLegisFacile.g:1278:1: rule__Preambulo__Group__2 : rule__Preambulo__Group__2__Impl rule__Preambulo__Group__3 ;
+    // InternalLegisFacile.g:1345:1: rule__Preambulo__Group__2 : rule__Preambulo__Group__2__Impl rule__Preambulo__Group__3 ;
     public final void rule__Preambulo__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1282:1: ( rule__Preambulo__Group__2__Impl rule__Preambulo__Group__3 )
-            // InternalLegisFacile.g:1283:2: rule__Preambulo__Group__2__Impl rule__Preambulo__Group__3
+            // InternalLegisFacile.g:1349:1: ( rule__Preambulo__Group__2__Impl rule__Preambulo__Group__3 )
+            // InternalLegisFacile.g:1350:2: rule__Preambulo__Group__2__Impl rule__Preambulo__Group__3
             {
             pushFollow(FOLLOW_15);
             rule__Preambulo__Group__2__Impl();
@@ -3908,21 +4131,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preambulo__Group__2__Impl"
-    // InternalLegisFacile.g:1290:1: rule__Preambulo__Group__2__Impl : ( ( rule__Preambulo__PreambuloAssignment_2 ) ) ;
+    // InternalLegisFacile.g:1357:1: rule__Preambulo__Group__2__Impl : ( ( rule__Preambulo__PreambuloAssignment_2 ) ) ;
     public final void rule__Preambulo__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1294:1: ( ( ( rule__Preambulo__PreambuloAssignment_2 ) ) )
-            // InternalLegisFacile.g:1295:1: ( ( rule__Preambulo__PreambuloAssignment_2 ) )
+            // InternalLegisFacile.g:1361:1: ( ( ( rule__Preambulo__PreambuloAssignment_2 ) ) )
+            // InternalLegisFacile.g:1362:1: ( ( rule__Preambulo__PreambuloAssignment_2 ) )
             {
-            // InternalLegisFacile.g:1295:1: ( ( rule__Preambulo__PreambuloAssignment_2 ) )
-            // InternalLegisFacile.g:1296:2: ( rule__Preambulo__PreambuloAssignment_2 )
+            // InternalLegisFacile.g:1362:1: ( ( rule__Preambulo__PreambuloAssignment_2 ) )
+            // InternalLegisFacile.g:1363:2: ( rule__Preambulo__PreambuloAssignment_2 )
             {
              before(grammarAccess.getPreambuloAccess().getPreambuloAssignment_2()); 
-            // InternalLegisFacile.g:1297:2: ( rule__Preambulo__PreambuloAssignment_2 )
-            // InternalLegisFacile.g:1297:3: rule__Preambulo__PreambuloAssignment_2
+            // InternalLegisFacile.g:1364:2: ( rule__Preambulo__PreambuloAssignment_2 )
+            // InternalLegisFacile.g:1364:3: rule__Preambulo__PreambuloAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Preambulo__PreambuloAssignment_2();
@@ -3955,14 +4178,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preambulo__Group__3"
-    // InternalLegisFacile.g:1305:1: rule__Preambulo__Group__3 : rule__Preambulo__Group__3__Impl ;
+    // InternalLegisFacile.g:1372:1: rule__Preambulo__Group__3 : rule__Preambulo__Group__3__Impl ;
     public final void rule__Preambulo__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1309:1: ( rule__Preambulo__Group__3__Impl )
-            // InternalLegisFacile.g:1310:2: rule__Preambulo__Group__3__Impl
+            // InternalLegisFacile.g:1376:1: ( rule__Preambulo__Group__3__Impl )
+            // InternalLegisFacile.g:1377:2: rule__Preambulo__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Preambulo__Group__3__Impl();
@@ -3988,20 +4211,20 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preambulo__Group__3__Impl"
-    // InternalLegisFacile.g:1316:1: rule__Preambulo__Group__3__Impl : ( ')' ) ;
+    // InternalLegisFacile.g:1383:1: rule__Preambulo__Group__3__Impl : ( ')' ) ;
     public final void rule__Preambulo__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1320:1: ( ( ')' ) )
-            // InternalLegisFacile.g:1321:1: ( ')' )
+            // InternalLegisFacile.g:1387:1: ( ( ')' ) )
+            // InternalLegisFacile.g:1388:1: ( ')' )
             {
-            // InternalLegisFacile.g:1321:1: ( ')' )
-            // InternalLegisFacile.g:1322:2: ')'
+            // InternalLegisFacile.g:1388:1: ( ')' )
+            // InternalLegisFacile.g:1389:2: ')'
             {
              before(grammarAccess.getPreambuloAccess().getRightParenthesisKeyword_3()); 
-            match(input,29,FOLLOW_2); 
+            match(input,33,FOLLOW_2); 
              after(grammarAccess.getPreambuloAccess().getRightParenthesisKeyword_3()); 
 
             }
@@ -4025,14 +4248,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Normativa__Group__0"
-    // InternalLegisFacile.g:1332:1: rule__Normativa__Group__0 : rule__Normativa__Group__0__Impl rule__Normativa__Group__1 ;
+    // InternalLegisFacile.g:1399:1: rule__Normativa__Group__0 : rule__Normativa__Group__0__Impl rule__Normativa__Group__1 ;
     public final void rule__Normativa__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1336:1: ( rule__Normativa__Group__0__Impl rule__Normativa__Group__1 )
-            // InternalLegisFacile.g:1337:2: rule__Normativa__Group__0__Impl rule__Normativa__Group__1
+            // InternalLegisFacile.g:1403:1: ( rule__Normativa__Group__0__Impl rule__Normativa__Group__1 )
+            // InternalLegisFacile.g:1404:2: rule__Normativa__Group__0__Impl rule__Normativa__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__Normativa__Group__0__Impl();
@@ -4063,21 +4286,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Normativa__Group__0__Impl"
-    // InternalLegisFacile.g:1344:1: rule__Normativa__Group__0__Impl : ( ( rule__Normativa__Alternatives_0 ) ) ;
+    // InternalLegisFacile.g:1411:1: rule__Normativa__Group__0__Impl : ( ( rule__Normativa__Alternatives_0 ) ) ;
     public final void rule__Normativa__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1348:1: ( ( ( rule__Normativa__Alternatives_0 ) ) )
-            // InternalLegisFacile.g:1349:1: ( ( rule__Normativa__Alternatives_0 ) )
+            // InternalLegisFacile.g:1415:1: ( ( ( rule__Normativa__Alternatives_0 ) ) )
+            // InternalLegisFacile.g:1416:1: ( ( rule__Normativa__Alternatives_0 ) )
             {
-            // InternalLegisFacile.g:1349:1: ( ( rule__Normativa__Alternatives_0 ) )
-            // InternalLegisFacile.g:1350:2: ( rule__Normativa__Alternatives_0 )
+            // InternalLegisFacile.g:1416:1: ( ( rule__Normativa__Alternatives_0 ) )
+            // InternalLegisFacile.g:1417:2: ( rule__Normativa__Alternatives_0 )
             {
              before(grammarAccess.getNormativaAccess().getAlternatives_0()); 
-            // InternalLegisFacile.g:1351:2: ( rule__Normativa__Alternatives_0 )
-            // InternalLegisFacile.g:1351:3: rule__Normativa__Alternatives_0
+            // InternalLegisFacile.g:1418:2: ( rule__Normativa__Alternatives_0 )
+            // InternalLegisFacile.g:1418:3: rule__Normativa__Alternatives_0
             {
             pushFollow(FOLLOW_2);
             rule__Normativa__Alternatives_0();
@@ -4110,14 +4333,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Normativa__Group__1"
-    // InternalLegisFacile.g:1359:1: rule__Normativa__Group__1 : rule__Normativa__Group__1__Impl rule__Normativa__Group__2 ;
+    // InternalLegisFacile.g:1426:1: rule__Normativa__Group__1 : rule__Normativa__Group__1__Impl rule__Normativa__Group__2 ;
     public final void rule__Normativa__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1363:1: ( rule__Normativa__Group__1__Impl rule__Normativa__Group__2 )
-            // InternalLegisFacile.g:1364:2: rule__Normativa__Group__1__Impl rule__Normativa__Group__2
+            // InternalLegisFacile.g:1430:1: ( rule__Normativa__Group__1__Impl rule__Normativa__Group__2 )
+            // InternalLegisFacile.g:1431:2: rule__Normativa__Group__1__Impl rule__Normativa__Group__2
             {
             pushFollow(FOLLOW_16);
             rule__Normativa__Group__1__Impl();
@@ -4148,20 +4371,20 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Normativa__Group__1__Impl"
-    // InternalLegisFacile.g:1371:1: rule__Normativa__Group__1__Impl : ( '{' ) ;
+    // InternalLegisFacile.g:1438:1: rule__Normativa__Group__1__Impl : ( '{' ) ;
     public final void rule__Normativa__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1375:1: ( ( '{' ) )
-            // InternalLegisFacile.g:1376:1: ( '{' )
+            // InternalLegisFacile.g:1442:1: ( ( '{' ) )
+            // InternalLegisFacile.g:1443:1: ( '{' )
             {
-            // InternalLegisFacile.g:1376:1: ( '{' )
-            // InternalLegisFacile.g:1377:2: '{'
+            // InternalLegisFacile.g:1443:1: ( '{' )
+            // InternalLegisFacile.g:1444:2: '{'
             {
              before(grammarAccess.getNormativaAccess().getLeftCurlyBracketKeyword_1()); 
-            match(input,25,FOLLOW_2); 
+            match(input,29,FOLLOW_2); 
              after(grammarAccess.getNormativaAccess().getLeftCurlyBracketKeyword_1()); 
 
             }
@@ -4185,14 +4408,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Normativa__Group__2"
-    // InternalLegisFacile.g:1386:1: rule__Normativa__Group__2 : rule__Normativa__Group__2__Impl rule__Normativa__Group__3 ;
+    // InternalLegisFacile.g:1453:1: rule__Normativa__Group__2 : rule__Normativa__Group__2__Impl rule__Normativa__Group__3 ;
     public final void rule__Normativa__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1390:1: ( rule__Normativa__Group__2__Impl rule__Normativa__Group__3 )
-            // InternalLegisFacile.g:1391:2: rule__Normativa__Group__2__Impl rule__Normativa__Group__3
+            // InternalLegisFacile.g:1457:1: ( rule__Normativa__Group__2__Impl rule__Normativa__Group__3 )
+            // InternalLegisFacile.g:1458:2: rule__Normativa__Group__2__Impl rule__Normativa__Group__3
             {
             pushFollow(FOLLOW_11);
             rule__Normativa__Group__2__Impl();
@@ -4223,24 +4446,24 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Normativa__Group__2__Impl"
-    // InternalLegisFacile.g:1398:1: rule__Normativa__Group__2__Impl : ( ( ( rule__Normativa__ArtigosAssignment_2 ) ) ( ( rule__Normativa__ArtigosAssignment_2 )* ) ) ;
+    // InternalLegisFacile.g:1465:1: rule__Normativa__Group__2__Impl : ( ( ( rule__Normativa__ArtigosAssignment_2 ) ) ( ( rule__Normativa__ArtigosAssignment_2 )* ) ) ;
     public final void rule__Normativa__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1402:1: ( ( ( ( rule__Normativa__ArtigosAssignment_2 ) ) ( ( rule__Normativa__ArtigosAssignment_2 )* ) ) )
-            // InternalLegisFacile.g:1403:1: ( ( ( rule__Normativa__ArtigosAssignment_2 ) ) ( ( rule__Normativa__ArtigosAssignment_2 )* ) )
+            // InternalLegisFacile.g:1469:1: ( ( ( ( rule__Normativa__ArtigosAssignment_2 ) ) ( ( rule__Normativa__ArtigosAssignment_2 )* ) ) )
+            // InternalLegisFacile.g:1470:1: ( ( ( rule__Normativa__ArtigosAssignment_2 ) ) ( ( rule__Normativa__ArtigosAssignment_2 )* ) )
             {
-            // InternalLegisFacile.g:1403:1: ( ( ( rule__Normativa__ArtigosAssignment_2 ) ) ( ( rule__Normativa__ArtigosAssignment_2 )* ) )
-            // InternalLegisFacile.g:1404:2: ( ( rule__Normativa__ArtigosAssignment_2 ) ) ( ( rule__Normativa__ArtigosAssignment_2 )* )
+            // InternalLegisFacile.g:1470:1: ( ( ( rule__Normativa__ArtigosAssignment_2 ) ) ( ( rule__Normativa__ArtigosAssignment_2 )* ) )
+            // InternalLegisFacile.g:1471:2: ( ( rule__Normativa__ArtigosAssignment_2 ) ) ( ( rule__Normativa__ArtigosAssignment_2 )* )
             {
-            // InternalLegisFacile.g:1404:2: ( ( rule__Normativa__ArtigosAssignment_2 ) )
-            // InternalLegisFacile.g:1405:3: ( rule__Normativa__ArtigosAssignment_2 )
+            // InternalLegisFacile.g:1471:2: ( ( rule__Normativa__ArtigosAssignment_2 ) )
+            // InternalLegisFacile.g:1472:3: ( rule__Normativa__ArtigosAssignment_2 )
             {
              before(grammarAccess.getNormativaAccess().getArtigosAssignment_2()); 
-            // InternalLegisFacile.g:1406:3: ( rule__Normativa__ArtigosAssignment_2 )
-            // InternalLegisFacile.g:1406:4: rule__Normativa__ArtigosAssignment_2
+            // InternalLegisFacile.g:1473:3: ( rule__Normativa__ArtigosAssignment_2 )
+            // InternalLegisFacile.g:1473:4: rule__Normativa__ArtigosAssignment_2
             {
             pushFollow(FOLLOW_17);
             rule__Normativa__ArtigosAssignment_2();
@@ -4254,24 +4477,24 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
             }
 
-            // InternalLegisFacile.g:1409:2: ( ( rule__Normativa__ArtigosAssignment_2 )* )
-            // InternalLegisFacile.g:1410:3: ( rule__Normativa__ArtigosAssignment_2 )*
+            // InternalLegisFacile.g:1476:2: ( ( rule__Normativa__ArtigosAssignment_2 )* )
+            // InternalLegisFacile.g:1477:3: ( rule__Normativa__ArtigosAssignment_2 )*
             {
              before(grammarAccess.getNormativaAccess().getArtigosAssignment_2()); 
-            // InternalLegisFacile.g:1411:3: ( rule__Normativa__ArtigosAssignment_2 )*
-            loop10:
+            // InternalLegisFacile.g:1478:3: ( rule__Normativa__ArtigosAssignment_2 )*
+            loop12:
             do {
-                int alt10=2;
-                int LA10_0 = input.LA(1);
+                int alt12=2;
+                int LA12_0 = input.LA(1);
 
-                if ( ((LA10_0>=21 && LA10_0<=22)) ) {
-                    alt10=1;
+                if ( ((LA12_0>=21 && LA12_0<=22)) ) {
+                    alt12=1;
                 }
 
 
-                switch (alt10) {
+                switch (alt12) {
             	case 1 :
-            	    // InternalLegisFacile.g:1411:4: rule__Normativa__ArtigosAssignment_2
+            	    // InternalLegisFacile.g:1478:4: rule__Normativa__ArtigosAssignment_2
             	    {
             	    pushFollow(FOLLOW_17);
             	    rule__Normativa__ArtigosAssignment_2();
@@ -4283,7 +4506,7 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
             	    break;
 
             	default :
-            	    break loop10;
+            	    break loop12;
                 }
             } while (true);
 
@@ -4313,14 +4536,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Normativa__Group__3"
-    // InternalLegisFacile.g:1420:1: rule__Normativa__Group__3 : rule__Normativa__Group__3__Impl ;
+    // InternalLegisFacile.g:1487:1: rule__Normativa__Group__3 : rule__Normativa__Group__3__Impl ;
     public final void rule__Normativa__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1424:1: ( rule__Normativa__Group__3__Impl )
-            // InternalLegisFacile.g:1425:2: rule__Normativa__Group__3__Impl
+            // InternalLegisFacile.g:1491:1: ( rule__Normativa__Group__3__Impl )
+            // InternalLegisFacile.g:1492:2: rule__Normativa__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Normativa__Group__3__Impl();
@@ -4346,20 +4569,20 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Normativa__Group__3__Impl"
-    // InternalLegisFacile.g:1431:1: rule__Normativa__Group__3__Impl : ( '}' ) ;
+    // InternalLegisFacile.g:1498:1: rule__Normativa__Group__3__Impl : ( '}' ) ;
     public final void rule__Normativa__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1435:1: ( ( '}' ) )
-            // InternalLegisFacile.g:1436:1: ( '}' )
+            // InternalLegisFacile.g:1502:1: ( ( '}' ) )
+            // InternalLegisFacile.g:1503:1: ( '}' )
             {
-            // InternalLegisFacile.g:1436:1: ( '}' )
-            // InternalLegisFacile.g:1437:2: '}'
+            // InternalLegisFacile.g:1503:1: ( '}' )
+            // InternalLegisFacile.g:1504:2: '}'
             {
              before(grammarAccess.getNormativaAccess().getRightCurlyBracketKeyword_3()); 
-            match(input,27,FOLLOW_2); 
+            match(input,31,FOLLOW_2); 
              after(grammarAccess.getNormativaAccess().getRightCurlyBracketKeyword_3()); 
 
             }
@@ -4383,14 +4606,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Artigo__Group__0"
-    // InternalLegisFacile.g:1447:1: rule__Artigo__Group__0 : rule__Artigo__Group__0__Impl rule__Artigo__Group__1 ;
+    // InternalLegisFacile.g:1514:1: rule__Artigo__Group__0 : rule__Artigo__Group__0__Impl rule__Artigo__Group__1 ;
     public final void rule__Artigo__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1451:1: ( rule__Artigo__Group__0__Impl rule__Artigo__Group__1 )
-            // InternalLegisFacile.g:1452:2: rule__Artigo__Group__0__Impl rule__Artigo__Group__1
+            // InternalLegisFacile.g:1518:1: ( rule__Artigo__Group__0__Impl rule__Artigo__Group__1 )
+            // InternalLegisFacile.g:1519:2: rule__Artigo__Group__0__Impl rule__Artigo__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__Artigo__Group__0__Impl();
@@ -4421,21 +4644,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Artigo__Group__0__Impl"
-    // InternalLegisFacile.g:1459:1: rule__Artigo__Group__0__Impl : ( ( rule__Artigo__Alternatives_0 ) ) ;
+    // InternalLegisFacile.g:1526:1: rule__Artigo__Group__0__Impl : ( ( rule__Artigo__Alternatives_0 ) ) ;
     public final void rule__Artigo__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1463:1: ( ( ( rule__Artigo__Alternatives_0 ) ) )
-            // InternalLegisFacile.g:1464:1: ( ( rule__Artigo__Alternatives_0 ) )
+            // InternalLegisFacile.g:1530:1: ( ( ( rule__Artigo__Alternatives_0 ) ) )
+            // InternalLegisFacile.g:1531:1: ( ( rule__Artigo__Alternatives_0 ) )
             {
-            // InternalLegisFacile.g:1464:1: ( ( rule__Artigo__Alternatives_0 ) )
-            // InternalLegisFacile.g:1465:2: ( rule__Artigo__Alternatives_0 )
+            // InternalLegisFacile.g:1531:1: ( ( rule__Artigo__Alternatives_0 ) )
+            // InternalLegisFacile.g:1532:2: ( rule__Artigo__Alternatives_0 )
             {
              before(grammarAccess.getArtigoAccess().getAlternatives_0()); 
-            // InternalLegisFacile.g:1466:2: ( rule__Artigo__Alternatives_0 )
-            // InternalLegisFacile.g:1466:3: rule__Artigo__Alternatives_0
+            // InternalLegisFacile.g:1533:2: ( rule__Artigo__Alternatives_0 )
+            // InternalLegisFacile.g:1533:3: rule__Artigo__Alternatives_0
             {
             pushFollow(FOLLOW_2);
             rule__Artigo__Alternatives_0();
@@ -4468,14 +4691,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Artigo__Group__1"
-    // InternalLegisFacile.g:1474:1: rule__Artigo__Group__1 : rule__Artigo__Group__1__Impl rule__Artigo__Group__2 ;
+    // InternalLegisFacile.g:1541:1: rule__Artigo__Group__1 : rule__Artigo__Group__1__Impl rule__Artigo__Group__2 ;
     public final void rule__Artigo__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1478:1: ( rule__Artigo__Group__1__Impl rule__Artigo__Group__2 )
-            // InternalLegisFacile.g:1479:2: rule__Artigo__Group__1__Impl rule__Artigo__Group__2
+            // InternalLegisFacile.g:1545:1: ( rule__Artigo__Group__1__Impl rule__Artigo__Group__2 )
+            // InternalLegisFacile.g:1546:2: rule__Artigo__Group__1__Impl rule__Artigo__Group__2
             {
             pushFollow(FOLLOW_13);
             rule__Artigo__Group__1__Impl();
@@ -4506,20 +4729,20 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Artigo__Group__1__Impl"
-    // InternalLegisFacile.g:1486:1: rule__Artigo__Group__1__Impl : ( '{' ) ;
+    // InternalLegisFacile.g:1553:1: rule__Artigo__Group__1__Impl : ( '{' ) ;
     public final void rule__Artigo__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1490:1: ( ( '{' ) )
-            // InternalLegisFacile.g:1491:1: ( '{' )
+            // InternalLegisFacile.g:1557:1: ( ( '{' ) )
+            // InternalLegisFacile.g:1558:1: ( '{' )
             {
-            // InternalLegisFacile.g:1491:1: ( '{' )
-            // InternalLegisFacile.g:1492:2: '{'
+            // InternalLegisFacile.g:1558:1: ( '{' )
+            // InternalLegisFacile.g:1559:2: '{'
             {
              before(grammarAccess.getArtigoAccess().getLeftCurlyBracketKeyword_1()); 
-            match(input,25,FOLLOW_2); 
+            match(input,29,FOLLOW_2); 
              after(grammarAccess.getArtigoAccess().getLeftCurlyBracketKeyword_1()); 
 
             }
@@ -4543,16 +4766,16 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Artigo__Group__2"
-    // InternalLegisFacile.g:1501:1: rule__Artigo__Group__2 : rule__Artigo__Group__2__Impl rule__Artigo__Group__3 ;
+    // InternalLegisFacile.g:1568:1: rule__Artigo__Group__2 : rule__Artigo__Group__2__Impl rule__Artigo__Group__3 ;
     public final void rule__Artigo__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1505:1: ( rule__Artigo__Group__2__Impl rule__Artigo__Group__3 )
-            // InternalLegisFacile.g:1506:2: rule__Artigo__Group__2__Impl rule__Artigo__Group__3
+            // InternalLegisFacile.g:1572:1: ( rule__Artigo__Group__2__Impl rule__Artigo__Group__3 )
+            // InternalLegisFacile.g:1573:2: rule__Artigo__Group__2__Impl rule__Artigo__Group__3
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_18);
             rule__Artigo__Group__2__Impl();
 
             state._fsp--;
@@ -4581,21 +4804,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Artigo__Group__2__Impl"
-    // InternalLegisFacile.g:1513:1: rule__Artigo__Group__2__Impl : ( ( rule__Artigo__CaputAssignment_2 ) ) ;
+    // InternalLegisFacile.g:1580:1: rule__Artigo__Group__2__Impl : ( ( rule__Artigo__CaputAssignment_2 ) ) ;
     public final void rule__Artigo__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1517:1: ( ( ( rule__Artigo__CaputAssignment_2 ) ) )
-            // InternalLegisFacile.g:1518:1: ( ( rule__Artigo__CaputAssignment_2 ) )
+            // InternalLegisFacile.g:1584:1: ( ( ( rule__Artigo__CaputAssignment_2 ) ) )
+            // InternalLegisFacile.g:1585:1: ( ( rule__Artigo__CaputAssignment_2 ) )
             {
-            // InternalLegisFacile.g:1518:1: ( ( rule__Artigo__CaputAssignment_2 ) )
-            // InternalLegisFacile.g:1519:2: ( rule__Artigo__CaputAssignment_2 )
+            // InternalLegisFacile.g:1585:1: ( ( rule__Artigo__CaputAssignment_2 ) )
+            // InternalLegisFacile.g:1586:2: ( rule__Artigo__CaputAssignment_2 )
             {
              before(grammarAccess.getArtigoAccess().getCaputAssignment_2()); 
-            // InternalLegisFacile.g:1520:2: ( rule__Artigo__CaputAssignment_2 )
-            // InternalLegisFacile.g:1520:3: rule__Artigo__CaputAssignment_2
+            // InternalLegisFacile.g:1587:2: ( rule__Artigo__CaputAssignment_2 )
+            // InternalLegisFacile.g:1587:3: rule__Artigo__CaputAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Artigo__CaputAssignment_2();
@@ -4628,14 +4851,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Artigo__Group__3"
-    // InternalLegisFacile.g:1528:1: rule__Artigo__Group__3 : rule__Artigo__Group__3__Impl rule__Artigo__Group__4 ;
+    // InternalLegisFacile.g:1595:1: rule__Artigo__Group__3 : rule__Artigo__Group__3__Impl rule__Artigo__Group__4 ;
     public final void rule__Artigo__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1532:1: ( rule__Artigo__Group__3__Impl rule__Artigo__Group__4 )
-            // InternalLegisFacile.g:1533:2: rule__Artigo__Group__3__Impl rule__Artigo__Group__4
+            // InternalLegisFacile.g:1599:1: ( rule__Artigo__Group__3__Impl rule__Artigo__Group__4 )
+            // InternalLegisFacile.g:1600:2: rule__Artigo__Group__3__Impl rule__Artigo__Group__4
             {
             pushFollow(FOLLOW_18);
             rule__Artigo__Group__3__Impl();
@@ -4666,21 +4889,49 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Artigo__Group__3__Impl"
-    // InternalLegisFacile.g:1540:1: rule__Artigo__Group__3__Impl : ( ',' ) ;
+    // InternalLegisFacile.g:1607:1: rule__Artigo__Group__3__Impl : ( ( rule__Artigo__ParagrafosAssignment_3 )* ) ;
     public final void rule__Artigo__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1544:1: ( ( ',' ) )
-            // InternalLegisFacile.g:1545:1: ( ',' )
+            // InternalLegisFacile.g:1611:1: ( ( ( rule__Artigo__ParagrafosAssignment_3 )* ) )
+            // InternalLegisFacile.g:1612:1: ( ( rule__Artigo__ParagrafosAssignment_3 )* )
             {
-            // InternalLegisFacile.g:1545:1: ( ',' )
-            // InternalLegisFacile.g:1546:2: ','
+            // InternalLegisFacile.g:1612:1: ( ( rule__Artigo__ParagrafosAssignment_3 )* )
+            // InternalLegisFacile.g:1613:2: ( rule__Artigo__ParagrafosAssignment_3 )*
             {
-             before(grammarAccess.getArtigoAccess().getCommaKeyword_3()); 
-            match(input,26,FOLLOW_2); 
-             after(grammarAccess.getArtigoAccess().getCommaKeyword_3()); 
+             before(grammarAccess.getArtigoAccess().getParagrafosAssignment_3()); 
+            // InternalLegisFacile.g:1614:2: ( rule__Artigo__ParagrafosAssignment_3 )*
+            loop13:
+            do {
+                int alt13=2;
+                int LA13_0 = input.LA(1);
+
+                if ( ((LA13_0>=23 && LA13_0<=24)) ) {
+                    alt13=1;
+                }
+
+
+                switch (alt13) {
+            	case 1 :
+            	    // InternalLegisFacile.g:1614:3: rule__Artigo__ParagrafosAssignment_3
+            	    {
+            	    pushFollow(FOLLOW_19);
+            	    rule__Artigo__ParagrafosAssignment_3();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop13;
+                }
+            } while (true);
+
+             after(grammarAccess.getArtigoAccess().getParagrafosAssignment_3()); 
 
             }
 
@@ -4703,22 +4954,17 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Artigo__Group__4"
-    // InternalLegisFacile.g:1555:1: rule__Artigo__Group__4 : rule__Artigo__Group__4__Impl rule__Artigo__Group__5 ;
+    // InternalLegisFacile.g:1622:1: rule__Artigo__Group__4 : rule__Artigo__Group__4__Impl ;
     public final void rule__Artigo__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1559:1: ( rule__Artigo__Group__4__Impl rule__Artigo__Group__5 )
-            // InternalLegisFacile.g:1560:2: rule__Artigo__Group__4__Impl rule__Artigo__Group__5
+            // InternalLegisFacile.g:1626:1: ( rule__Artigo__Group__4__Impl )
+            // InternalLegisFacile.g:1627:2: rule__Artigo__Group__4__Impl
             {
-            pushFollow(FOLLOW_18);
-            rule__Artigo__Group__4__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__Artigo__Group__5();
+            rule__Artigo__Group__4__Impl();
 
             state._fsp--;
 
@@ -4741,49 +4987,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Artigo__Group__4__Impl"
-    // InternalLegisFacile.g:1567:1: rule__Artigo__Group__4__Impl : ( ( rule__Artigo__Group_4__0 )* ) ;
+    // InternalLegisFacile.g:1633:1: rule__Artigo__Group__4__Impl : ( '}' ) ;
     public final void rule__Artigo__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1571:1: ( ( ( rule__Artigo__Group_4__0 )* ) )
-            // InternalLegisFacile.g:1572:1: ( ( rule__Artigo__Group_4__0 )* )
+            // InternalLegisFacile.g:1637:1: ( ( '}' ) )
+            // InternalLegisFacile.g:1638:1: ( '}' )
             {
-            // InternalLegisFacile.g:1572:1: ( ( rule__Artigo__Group_4__0 )* )
-            // InternalLegisFacile.g:1573:2: ( rule__Artigo__Group_4__0 )*
+            // InternalLegisFacile.g:1638:1: ( '}' )
+            // InternalLegisFacile.g:1639:2: '}'
             {
-             before(grammarAccess.getArtigoAccess().getGroup_4()); 
-            // InternalLegisFacile.g:1574:2: ( rule__Artigo__Group_4__0 )*
-            loop11:
-            do {
-                int alt11=2;
-                int LA11_0 = input.LA(1);
-
-                if ( (LA11_0==RULE_STRING) ) {
-                    alt11=1;
-                }
-
-
-                switch (alt11) {
-            	case 1 :
-            	    // InternalLegisFacile.g:1574:3: rule__Artigo__Group_4__0
-            	    {
-            	    pushFollow(FOLLOW_19);
-            	    rule__Artigo__Group_4__0();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop11;
-                }
-            } while (true);
-
-             after(grammarAccess.getArtigoAccess().getGroup_4()); 
+             before(grammarAccess.getArtigoAccess().getRightCurlyBracketKeyword_4()); 
+            match(input,31,FOLLOW_2); 
+             after(grammarAccess.getArtigoAccess().getRightCurlyBracketKeyword_4()); 
 
             }
 
@@ -4805,93 +5023,23 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Artigo__Group__4__Impl"
 
 
-    // $ANTLR start "rule__Artigo__Group__5"
-    // InternalLegisFacile.g:1582:1: rule__Artigo__Group__5 : rule__Artigo__Group__5__Impl ;
-    public final void rule__Artigo__Group__5() throws RecognitionException {
+    // $ANTLR start "rule__Paragrafo__Group__0"
+    // InternalLegisFacile.g:1649:1: rule__Paragrafo__Group__0 : rule__Paragrafo__Group__0__Impl rule__Paragrafo__Group__1 ;
+    public final void rule__Paragrafo__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1586:1: ( rule__Artigo__Group__5__Impl )
-            // InternalLegisFacile.g:1587:2: rule__Artigo__Group__5__Impl
+            // InternalLegisFacile.g:1653:1: ( rule__Paragrafo__Group__0__Impl rule__Paragrafo__Group__1 )
+            // InternalLegisFacile.g:1654:2: rule__Paragrafo__Group__0__Impl rule__Paragrafo__Group__1
             {
-            pushFollow(FOLLOW_2);
-            rule__Artigo__Group__5__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Artigo__Group__5"
-
-
-    // $ANTLR start "rule__Artigo__Group__5__Impl"
-    // InternalLegisFacile.g:1593:1: rule__Artigo__Group__5__Impl : ( '}' ) ;
-    public final void rule__Artigo__Group__5__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalLegisFacile.g:1597:1: ( ( '}' ) )
-            // InternalLegisFacile.g:1598:1: ( '}' )
-            {
-            // InternalLegisFacile.g:1598:1: ( '}' )
-            // InternalLegisFacile.g:1599:2: '}'
-            {
-             before(grammarAccess.getArtigoAccess().getRightCurlyBracketKeyword_5()); 
-            match(input,27,FOLLOW_2); 
-             after(grammarAccess.getArtigoAccess().getRightCurlyBracketKeyword_5()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Artigo__Group__5__Impl"
-
-
-    // $ANTLR start "rule__Artigo__Group_4__0"
-    // InternalLegisFacile.g:1609:1: rule__Artigo__Group_4__0 : rule__Artigo__Group_4__0__Impl rule__Artigo__Group_4__1 ;
-    public final void rule__Artigo__Group_4__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalLegisFacile.g:1613:1: ( rule__Artigo__Group_4__0__Impl rule__Artigo__Group_4__1 )
-            // InternalLegisFacile.g:1614:2: rule__Artigo__Group_4__0__Impl rule__Artigo__Group_4__1
-            {
-            pushFollow(FOLLOW_8);
-            rule__Artigo__Group_4__0__Impl();
+            pushFollow(FOLLOW_12);
+            rule__Paragrafo__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Artigo__Group_4__1();
+            rule__Paragrafo__Group__1();
 
             state._fsp--;
 
@@ -4910,35 +5058,35 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Artigo__Group_4__0"
+    // $ANTLR end "rule__Paragrafo__Group__0"
 
 
-    // $ANTLR start "rule__Artigo__Group_4__0__Impl"
-    // InternalLegisFacile.g:1621:1: rule__Artigo__Group_4__0__Impl : ( ( rule__Artigo__ParagrafosAssignment_4_0 ) ) ;
-    public final void rule__Artigo__Group_4__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Paragrafo__Group__0__Impl"
+    // InternalLegisFacile.g:1661:1: rule__Paragrafo__Group__0__Impl : ( ( rule__Paragrafo__Alternatives_0 ) ) ;
+    public final void rule__Paragrafo__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1625:1: ( ( ( rule__Artigo__ParagrafosAssignment_4_0 ) ) )
-            // InternalLegisFacile.g:1626:1: ( ( rule__Artigo__ParagrafosAssignment_4_0 ) )
+            // InternalLegisFacile.g:1665:1: ( ( ( rule__Paragrafo__Alternatives_0 ) ) )
+            // InternalLegisFacile.g:1666:1: ( ( rule__Paragrafo__Alternatives_0 ) )
             {
-            // InternalLegisFacile.g:1626:1: ( ( rule__Artigo__ParagrafosAssignment_4_0 ) )
-            // InternalLegisFacile.g:1627:2: ( rule__Artigo__ParagrafosAssignment_4_0 )
+            // InternalLegisFacile.g:1666:1: ( ( rule__Paragrafo__Alternatives_0 ) )
+            // InternalLegisFacile.g:1667:2: ( rule__Paragrafo__Alternatives_0 )
             {
-             before(grammarAccess.getArtigoAccess().getParagrafosAssignment_4_0()); 
-            // InternalLegisFacile.g:1628:2: ( rule__Artigo__ParagrafosAssignment_4_0 )
-            // InternalLegisFacile.g:1628:3: rule__Artigo__ParagrafosAssignment_4_0
+             before(grammarAccess.getParagrafoAccess().getAlternatives_0()); 
+            // InternalLegisFacile.g:1668:2: ( rule__Paragrafo__Alternatives_0 )
+            // InternalLegisFacile.g:1668:3: rule__Paragrafo__Alternatives_0
             {
             pushFollow(FOLLOW_2);
-            rule__Artigo__ParagrafosAssignment_4_0();
+            rule__Paragrafo__Alternatives_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getArtigoAccess().getParagrafosAssignment_4_0()); 
+             after(grammarAccess.getParagrafoAccess().getAlternatives_0()); 
 
             }
 
@@ -4957,21 +5105,186 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Artigo__Group_4__0__Impl"
+    // $ANTLR end "rule__Paragrafo__Group__0__Impl"
 
 
-    // $ANTLR start "rule__Artigo__Group_4__1"
-    // InternalLegisFacile.g:1636:1: rule__Artigo__Group_4__1 : rule__Artigo__Group_4__1__Impl ;
-    public final void rule__Artigo__Group_4__1() throws RecognitionException {
+    // $ANTLR start "rule__Paragrafo__Group__1"
+    // InternalLegisFacile.g:1676:1: rule__Paragrafo__Group__1 : rule__Paragrafo__Group__1__Impl rule__Paragrafo__Group__2 ;
+    public final void rule__Paragrafo__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1640:1: ( rule__Artigo__Group_4__1__Impl )
-            // InternalLegisFacile.g:1641:2: rule__Artigo__Group_4__1__Impl
+            // InternalLegisFacile.g:1680:1: ( rule__Paragrafo__Group__1__Impl rule__Paragrafo__Group__2 )
+            // InternalLegisFacile.g:1681:2: rule__Paragrafo__Group__1__Impl rule__Paragrafo__Group__2
+            {
+            pushFollow(FOLLOW_13);
+            rule__Paragrafo__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Paragrafo__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Paragrafo__Group__1"
+
+
+    // $ANTLR start "rule__Paragrafo__Group__1__Impl"
+    // InternalLegisFacile.g:1688:1: rule__Paragrafo__Group__1__Impl : ( '(' ) ;
+    public final void rule__Paragrafo__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLegisFacile.g:1692:1: ( ( '(' ) )
+            // InternalLegisFacile.g:1693:1: ( '(' )
+            {
+            // InternalLegisFacile.g:1693:1: ( '(' )
+            // InternalLegisFacile.g:1694:2: '('
+            {
+             before(grammarAccess.getParagrafoAccess().getLeftParenthesisKeyword_1()); 
+            match(input,32,FOLLOW_2); 
+             after(grammarAccess.getParagrafoAccess().getLeftParenthesisKeyword_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Paragrafo__Group__1__Impl"
+
+
+    // $ANTLR start "rule__Paragrafo__Group__2"
+    // InternalLegisFacile.g:1703:1: rule__Paragrafo__Group__2 : rule__Paragrafo__Group__2__Impl rule__Paragrafo__Group__3 ;
+    public final void rule__Paragrafo__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLegisFacile.g:1707:1: ( rule__Paragrafo__Group__2__Impl rule__Paragrafo__Group__3 )
+            // InternalLegisFacile.g:1708:2: rule__Paragrafo__Group__2__Impl rule__Paragrafo__Group__3
+            {
+            pushFollow(FOLLOW_15);
+            rule__Paragrafo__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Paragrafo__Group__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Paragrafo__Group__2"
+
+
+    // $ANTLR start "rule__Paragrafo__Group__2__Impl"
+    // InternalLegisFacile.g:1715:1: rule__Paragrafo__Group__2__Impl : ( ( rule__Paragrafo__TextoAssignment_2 ) ) ;
+    public final void rule__Paragrafo__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLegisFacile.g:1719:1: ( ( ( rule__Paragrafo__TextoAssignment_2 ) ) )
+            // InternalLegisFacile.g:1720:1: ( ( rule__Paragrafo__TextoAssignment_2 ) )
+            {
+            // InternalLegisFacile.g:1720:1: ( ( rule__Paragrafo__TextoAssignment_2 ) )
+            // InternalLegisFacile.g:1721:2: ( rule__Paragrafo__TextoAssignment_2 )
+            {
+             before(grammarAccess.getParagrafoAccess().getTextoAssignment_2()); 
+            // InternalLegisFacile.g:1722:2: ( rule__Paragrafo__TextoAssignment_2 )
+            // InternalLegisFacile.g:1722:3: rule__Paragrafo__TextoAssignment_2
             {
             pushFollow(FOLLOW_2);
-            rule__Artigo__Group_4__1__Impl();
+            rule__Paragrafo__TextoAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getParagrafoAccess().getTextoAssignment_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Paragrafo__Group__2__Impl"
+
+
+    // $ANTLR start "rule__Paragrafo__Group__3"
+    // InternalLegisFacile.g:1730:1: rule__Paragrafo__Group__3 : rule__Paragrafo__Group__3__Impl rule__Paragrafo__Group__4 ;
+    public final void rule__Paragrafo__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLegisFacile.g:1734:1: ( rule__Paragrafo__Group__3__Impl rule__Paragrafo__Group__4 )
+            // InternalLegisFacile.g:1735:2: rule__Paragrafo__Group__3__Impl rule__Paragrafo__Group__4
+            {
+            pushFollow(FOLLOW_6);
+            rule__Paragrafo__Group__3__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Paragrafo__Group__4();
 
             state._fsp--;
 
@@ -4990,25 +5303,25 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Artigo__Group_4__1"
+    // $ANTLR end "rule__Paragrafo__Group__3"
 
 
-    // $ANTLR start "rule__Artigo__Group_4__1__Impl"
-    // InternalLegisFacile.g:1647:1: rule__Artigo__Group_4__1__Impl : ( ',' ) ;
-    public final void rule__Artigo__Group_4__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Paragrafo__Group__3__Impl"
+    // InternalLegisFacile.g:1742:1: rule__Paragrafo__Group__3__Impl : ( ')' ) ;
+    public final void rule__Paragrafo__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1651:1: ( ( ',' ) )
-            // InternalLegisFacile.g:1652:1: ( ',' )
+            // InternalLegisFacile.g:1746:1: ( ( ')' ) )
+            // InternalLegisFacile.g:1747:1: ( ')' )
             {
-            // InternalLegisFacile.g:1652:1: ( ',' )
-            // InternalLegisFacile.g:1653:2: ','
+            // InternalLegisFacile.g:1747:1: ( ')' )
+            // InternalLegisFacile.g:1748:2: ')'
             {
-             before(grammarAccess.getArtigoAccess().getCommaKeyword_4_1()); 
-            match(input,26,FOLLOW_2); 
-             after(grammarAccess.getArtigoAccess().getCommaKeyword_4_1()); 
+             before(grammarAccess.getParagrafoAccess().getRightParenthesisKeyword_3()); 
+            match(input,33,FOLLOW_2); 
+             after(grammarAccess.getParagrafoAccess().getRightParenthesisKeyword_3()); 
 
             }
 
@@ -5027,18 +5340,587 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Artigo__Group_4__1__Impl"
+    // $ANTLR end "rule__Paragrafo__Group__3__Impl"
+
+
+    // $ANTLR start "rule__Paragrafo__Group__4"
+    // InternalLegisFacile.g:1757:1: rule__Paragrafo__Group__4 : rule__Paragrafo__Group__4__Impl ;
+    public final void rule__Paragrafo__Group__4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLegisFacile.g:1761:1: ( rule__Paragrafo__Group__4__Impl )
+            // InternalLegisFacile.g:1762:2: rule__Paragrafo__Group__4__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Paragrafo__Group__4__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Paragrafo__Group__4"
+
+
+    // $ANTLR start "rule__Paragrafo__Group__4__Impl"
+    // InternalLegisFacile.g:1768:1: rule__Paragrafo__Group__4__Impl : ( ( rule__Paragrafo__Group_4__0 )? ) ;
+    public final void rule__Paragrafo__Group__4__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLegisFacile.g:1772:1: ( ( ( rule__Paragrafo__Group_4__0 )? ) )
+            // InternalLegisFacile.g:1773:1: ( ( rule__Paragrafo__Group_4__0 )? )
+            {
+            // InternalLegisFacile.g:1773:1: ( ( rule__Paragrafo__Group_4__0 )? )
+            // InternalLegisFacile.g:1774:2: ( rule__Paragrafo__Group_4__0 )?
+            {
+             before(grammarAccess.getParagrafoAccess().getGroup_4()); 
+            // InternalLegisFacile.g:1775:2: ( rule__Paragrafo__Group_4__0 )?
+            int alt14=2;
+            int LA14_0 = input.LA(1);
+
+            if ( (LA14_0==29) ) {
+                alt14=1;
+            }
+            switch (alt14) {
+                case 1 :
+                    // InternalLegisFacile.g:1775:3: rule__Paragrafo__Group_4__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Paragrafo__Group_4__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getParagrafoAccess().getGroup_4()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Paragrafo__Group__4__Impl"
+
+
+    // $ANTLR start "rule__Paragrafo__Group_4__0"
+    // InternalLegisFacile.g:1784:1: rule__Paragrafo__Group_4__0 : rule__Paragrafo__Group_4__0__Impl rule__Paragrafo__Group_4__1 ;
+    public final void rule__Paragrafo__Group_4__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLegisFacile.g:1788:1: ( rule__Paragrafo__Group_4__0__Impl rule__Paragrafo__Group_4__1 )
+            // InternalLegisFacile.g:1789:2: rule__Paragrafo__Group_4__0__Impl rule__Paragrafo__Group_4__1
+            {
+            pushFollow(FOLLOW_20);
+            rule__Paragrafo__Group_4__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Paragrafo__Group_4__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Paragrafo__Group_4__0"
+
+
+    // $ANTLR start "rule__Paragrafo__Group_4__0__Impl"
+    // InternalLegisFacile.g:1796:1: rule__Paragrafo__Group_4__0__Impl : ( '{' ) ;
+    public final void rule__Paragrafo__Group_4__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLegisFacile.g:1800:1: ( ( '{' ) )
+            // InternalLegisFacile.g:1801:1: ( '{' )
+            {
+            // InternalLegisFacile.g:1801:1: ( '{' )
+            // InternalLegisFacile.g:1802:2: '{'
+            {
+             before(grammarAccess.getParagrafoAccess().getLeftCurlyBracketKeyword_4_0()); 
+            match(input,29,FOLLOW_2); 
+             after(grammarAccess.getParagrafoAccess().getLeftCurlyBracketKeyword_4_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Paragrafo__Group_4__0__Impl"
+
+
+    // $ANTLR start "rule__Paragrafo__Group_4__1"
+    // InternalLegisFacile.g:1811:1: rule__Paragrafo__Group_4__1 : rule__Paragrafo__Group_4__1__Impl rule__Paragrafo__Group_4__2 ;
+    public final void rule__Paragrafo__Group_4__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLegisFacile.g:1815:1: ( rule__Paragrafo__Group_4__1__Impl rule__Paragrafo__Group_4__2 )
+            // InternalLegisFacile.g:1816:2: rule__Paragrafo__Group_4__1__Impl rule__Paragrafo__Group_4__2
+            {
+            pushFollow(FOLLOW_20);
+            rule__Paragrafo__Group_4__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Paragrafo__Group_4__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Paragrafo__Group_4__1"
+
+
+    // $ANTLR start "rule__Paragrafo__Group_4__1__Impl"
+    // InternalLegisFacile.g:1823:1: rule__Paragrafo__Group_4__1__Impl : ( ( rule__Paragrafo__AlineasAssignment_4_1 )* ) ;
+    public final void rule__Paragrafo__Group_4__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLegisFacile.g:1827:1: ( ( ( rule__Paragrafo__AlineasAssignment_4_1 )* ) )
+            // InternalLegisFacile.g:1828:1: ( ( rule__Paragrafo__AlineasAssignment_4_1 )* )
+            {
+            // InternalLegisFacile.g:1828:1: ( ( rule__Paragrafo__AlineasAssignment_4_1 )* )
+            // InternalLegisFacile.g:1829:2: ( rule__Paragrafo__AlineasAssignment_4_1 )*
+            {
+             before(grammarAccess.getParagrafoAccess().getAlineasAssignment_4_1()); 
+            // InternalLegisFacile.g:1830:2: ( rule__Paragrafo__AlineasAssignment_4_1 )*
+            loop15:
+            do {
+                int alt15=2;
+                int LA15_0 = input.LA(1);
+
+                if ( ((LA15_0>=25 && LA15_0<=26)) ) {
+                    alt15=1;
+                }
+
+
+                switch (alt15) {
+            	case 1 :
+            	    // InternalLegisFacile.g:1830:3: rule__Paragrafo__AlineasAssignment_4_1
+            	    {
+            	    pushFollow(FOLLOW_21);
+            	    rule__Paragrafo__AlineasAssignment_4_1();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop15;
+                }
+            } while (true);
+
+             after(grammarAccess.getParagrafoAccess().getAlineasAssignment_4_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Paragrafo__Group_4__1__Impl"
+
+
+    // $ANTLR start "rule__Paragrafo__Group_4__2"
+    // InternalLegisFacile.g:1838:1: rule__Paragrafo__Group_4__2 : rule__Paragrafo__Group_4__2__Impl ;
+    public final void rule__Paragrafo__Group_4__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLegisFacile.g:1842:1: ( rule__Paragrafo__Group_4__2__Impl )
+            // InternalLegisFacile.g:1843:2: rule__Paragrafo__Group_4__2__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Paragrafo__Group_4__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Paragrafo__Group_4__2"
+
+
+    // $ANTLR start "rule__Paragrafo__Group_4__2__Impl"
+    // InternalLegisFacile.g:1849:1: rule__Paragrafo__Group_4__2__Impl : ( '}' ) ;
+    public final void rule__Paragrafo__Group_4__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLegisFacile.g:1853:1: ( ( '}' ) )
+            // InternalLegisFacile.g:1854:1: ( '}' )
+            {
+            // InternalLegisFacile.g:1854:1: ( '}' )
+            // InternalLegisFacile.g:1855:2: '}'
+            {
+             before(grammarAccess.getParagrafoAccess().getRightCurlyBracketKeyword_4_2()); 
+            match(input,31,FOLLOW_2); 
+             after(grammarAccess.getParagrafoAccess().getRightCurlyBracketKeyword_4_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Paragrafo__Group_4__2__Impl"
+
+
+    // $ANTLR start "rule__Alinea__Group__0"
+    // InternalLegisFacile.g:1865:1: rule__Alinea__Group__0 : rule__Alinea__Group__0__Impl rule__Alinea__Group__1 ;
+    public final void rule__Alinea__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLegisFacile.g:1869:1: ( rule__Alinea__Group__0__Impl rule__Alinea__Group__1 )
+            // InternalLegisFacile.g:1870:2: rule__Alinea__Group__0__Impl rule__Alinea__Group__1
+            {
+            pushFollow(FOLLOW_6);
+            rule__Alinea__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Alinea__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Alinea__Group__0"
+
+
+    // $ANTLR start "rule__Alinea__Group__0__Impl"
+    // InternalLegisFacile.g:1877:1: rule__Alinea__Group__0__Impl : ( ( rule__Alinea__Alternatives_0 ) ) ;
+    public final void rule__Alinea__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLegisFacile.g:1881:1: ( ( ( rule__Alinea__Alternatives_0 ) ) )
+            // InternalLegisFacile.g:1882:1: ( ( rule__Alinea__Alternatives_0 ) )
+            {
+            // InternalLegisFacile.g:1882:1: ( ( rule__Alinea__Alternatives_0 ) )
+            // InternalLegisFacile.g:1883:2: ( rule__Alinea__Alternatives_0 )
+            {
+             before(grammarAccess.getAlineaAccess().getAlternatives_0()); 
+            // InternalLegisFacile.g:1884:2: ( rule__Alinea__Alternatives_0 )
+            // InternalLegisFacile.g:1884:3: rule__Alinea__Alternatives_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Alinea__Alternatives_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getAlineaAccess().getAlternatives_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Alinea__Group__0__Impl"
+
+
+    // $ANTLR start "rule__Alinea__Group__1"
+    // InternalLegisFacile.g:1892:1: rule__Alinea__Group__1 : rule__Alinea__Group__1__Impl rule__Alinea__Group__2 ;
+    public final void rule__Alinea__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLegisFacile.g:1896:1: ( rule__Alinea__Group__1__Impl rule__Alinea__Group__2 )
+            // InternalLegisFacile.g:1897:2: rule__Alinea__Group__1__Impl rule__Alinea__Group__2
+            {
+            pushFollow(FOLLOW_11);
+            rule__Alinea__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Alinea__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Alinea__Group__1"
+
+
+    // $ANTLR start "rule__Alinea__Group__1__Impl"
+    // InternalLegisFacile.g:1904:1: rule__Alinea__Group__1__Impl : ( '{' ) ;
+    public final void rule__Alinea__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLegisFacile.g:1908:1: ( ( '{' ) )
+            // InternalLegisFacile.g:1909:1: ( '{' )
+            {
+            // InternalLegisFacile.g:1909:1: ( '{' )
+            // InternalLegisFacile.g:1910:2: '{'
+            {
+             before(grammarAccess.getAlineaAccess().getLeftCurlyBracketKeyword_1()); 
+            match(input,29,FOLLOW_2); 
+             after(grammarAccess.getAlineaAccess().getLeftCurlyBracketKeyword_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Alinea__Group__1__Impl"
+
+
+    // $ANTLR start "rule__Alinea__Group__2"
+    // InternalLegisFacile.g:1919:1: rule__Alinea__Group__2 : rule__Alinea__Group__2__Impl ;
+    public final void rule__Alinea__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLegisFacile.g:1923:1: ( rule__Alinea__Group__2__Impl )
+            // InternalLegisFacile.g:1924:2: rule__Alinea__Group__2__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Alinea__Group__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Alinea__Group__2"
+
+
+    // $ANTLR start "rule__Alinea__Group__2__Impl"
+    // InternalLegisFacile.g:1930:1: rule__Alinea__Group__2__Impl : ( '}' ) ;
+    public final void rule__Alinea__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLegisFacile.g:1934:1: ( ( '}' ) )
+            // InternalLegisFacile.g:1935:1: ( '}' )
+            {
+            // InternalLegisFacile.g:1935:1: ( '}' )
+            // InternalLegisFacile.g:1936:2: '}'
+            {
+             before(grammarAccess.getAlineaAccess().getRightCurlyBracketKeyword_2()); 
+            match(input,31,FOLLOW_2); 
+             after(grammarAccess.getAlineaAccess().getRightCurlyBracketKeyword_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Alinea__Group__2__Impl"
 
 
     // $ANTLR start "rule__Final__Group__0"
-    // InternalLegisFacile.g:1663:1: rule__Final__Group__0 : rule__Final__Group__0__Impl rule__Final__Group__1 ;
+    // InternalLegisFacile.g:1946:1: rule__Final__Group__0 : rule__Final__Group__0__Impl rule__Final__Group__1 ;
     public final void rule__Final__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1667:1: ( rule__Final__Group__0__Impl rule__Final__Group__1 )
-            // InternalLegisFacile.g:1668:2: rule__Final__Group__0__Impl rule__Final__Group__1
+            // InternalLegisFacile.g:1950:1: ( rule__Final__Group__0__Impl rule__Final__Group__1 )
+            // InternalLegisFacile.g:1951:2: rule__Final__Group__0__Impl rule__Final__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__Final__Group__0__Impl();
@@ -5069,21 +5951,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Final__Group__0__Impl"
-    // InternalLegisFacile.g:1675:1: rule__Final__Group__0__Impl : ( ( rule__Final__Alternatives_0 ) ) ;
+    // InternalLegisFacile.g:1958:1: rule__Final__Group__0__Impl : ( ( rule__Final__Alternatives_0 ) ) ;
     public final void rule__Final__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1679:1: ( ( ( rule__Final__Alternatives_0 ) ) )
-            // InternalLegisFacile.g:1680:1: ( ( rule__Final__Alternatives_0 ) )
+            // InternalLegisFacile.g:1962:1: ( ( ( rule__Final__Alternatives_0 ) ) )
+            // InternalLegisFacile.g:1963:1: ( ( rule__Final__Alternatives_0 ) )
             {
-            // InternalLegisFacile.g:1680:1: ( ( rule__Final__Alternatives_0 ) )
-            // InternalLegisFacile.g:1681:2: ( rule__Final__Alternatives_0 )
+            // InternalLegisFacile.g:1963:1: ( ( rule__Final__Alternatives_0 ) )
+            // InternalLegisFacile.g:1964:2: ( rule__Final__Alternatives_0 )
             {
              before(grammarAccess.getFinalAccess().getAlternatives_0()); 
-            // InternalLegisFacile.g:1682:2: ( rule__Final__Alternatives_0 )
-            // InternalLegisFacile.g:1682:3: rule__Final__Alternatives_0
+            // InternalLegisFacile.g:1965:2: ( rule__Final__Alternatives_0 )
+            // InternalLegisFacile.g:1965:3: rule__Final__Alternatives_0
             {
             pushFollow(FOLLOW_2);
             rule__Final__Alternatives_0();
@@ -5116,14 +5998,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Final__Group__1"
-    // InternalLegisFacile.g:1690:1: rule__Final__Group__1 : rule__Final__Group__1__Impl rule__Final__Group__2 ;
+    // InternalLegisFacile.g:1973:1: rule__Final__Group__1 : rule__Final__Group__1__Impl rule__Final__Group__2 ;
     public final void rule__Final__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1694:1: ( rule__Final__Group__1__Impl rule__Final__Group__2 )
-            // InternalLegisFacile.g:1695:2: rule__Final__Group__1__Impl rule__Final__Group__2
+            // InternalLegisFacile.g:1977:1: ( rule__Final__Group__1__Impl rule__Final__Group__2 )
+            // InternalLegisFacile.g:1978:2: rule__Final__Group__1__Impl rule__Final__Group__2
             {
             pushFollow(FOLLOW_11);
             rule__Final__Group__1__Impl();
@@ -5154,20 +6036,20 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Final__Group__1__Impl"
-    // InternalLegisFacile.g:1702:1: rule__Final__Group__1__Impl : ( '{' ) ;
+    // InternalLegisFacile.g:1985:1: rule__Final__Group__1__Impl : ( '{' ) ;
     public final void rule__Final__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1706:1: ( ( '{' ) )
-            // InternalLegisFacile.g:1707:1: ( '{' )
+            // InternalLegisFacile.g:1989:1: ( ( '{' ) )
+            // InternalLegisFacile.g:1990:1: ( '{' )
             {
-            // InternalLegisFacile.g:1707:1: ( '{' )
-            // InternalLegisFacile.g:1708:2: '{'
+            // InternalLegisFacile.g:1990:1: ( '{' )
+            // InternalLegisFacile.g:1991:2: '{'
             {
              before(grammarAccess.getFinalAccess().getLeftCurlyBracketKeyword_1()); 
-            match(input,25,FOLLOW_2); 
+            match(input,29,FOLLOW_2); 
              after(grammarAccess.getFinalAccess().getLeftCurlyBracketKeyword_1()); 
 
             }
@@ -5191,14 +6073,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Final__Group__2"
-    // InternalLegisFacile.g:1717:1: rule__Final__Group__2 : rule__Final__Group__2__Impl ;
+    // InternalLegisFacile.g:2000:1: rule__Final__Group__2 : rule__Final__Group__2__Impl ;
     public final void rule__Final__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1721:1: ( rule__Final__Group__2__Impl )
-            // InternalLegisFacile.g:1722:2: rule__Final__Group__2__Impl
+            // InternalLegisFacile.g:2004:1: ( rule__Final__Group__2__Impl )
+            // InternalLegisFacile.g:2005:2: rule__Final__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Final__Group__2__Impl();
@@ -5224,20 +6106,20 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Final__Group__2__Impl"
-    // InternalLegisFacile.g:1728:1: rule__Final__Group__2__Impl : ( '}' ) ;
+    // InternalLegisFacile.g:2011:1: rule__Final__Group__2__Impl : ( '}' ) ;
     public final void rule__Final__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1732:1: ( ( '}' ) )
-            // InternalLegisFacile.g:1733:1: ( '}' )
+            // InternalLegisFacile.g:2015:1: ( ( '}' ) )
+            // InternalLegisFacile.g:2016:1: ( '}' )
             {
-            // InternalLegisFacile.g:1733:1: ( '}' )
-            // InternalLegisFacile.g:1734:2: '}'
+            // InternalLegisFacile.g:2016:1: ( '}' )
+            // InternalLegisFacile.g:2017:2: '}'
             {
              before(grammarAccess.getFinalAccess().getRightCurlyBracketKeyword_2()); 
-            match(input,27,FOLLOW_2); 
+            match(input,31,FOLLOW_2); 
              after(grammarAccess.getFinalAccess().getRightCurlyBracketKeyword_2()); 
 
             }
@@ -5261,16 +6143,16 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DataType__Group__0"
-    // InternalLegisFacile.g:1744:1: rule__DataType__Group__0 : rule__DataType__Group__0__Impl rule__DataType__Group__1 ;
+    // InternalLegisFacile.g:2027:1: rule__DataType__Group__0 : rule__DataType__Group__0__Impl rule__DataType__Group__1 ;
     public final void rule__DataType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1748:1: ( rule__DataType__Group__0__Impl rule__DataType__Group__1 )
-            // InternalLegisFacile.g:1749:2: rule__DataType__Group__0__Impl rule__DataType__Group__1
+            // InternalLegisFacile.g:2031:1: ( rule__DataType__Group__0__Impl rule__DataType__Group__1 )
+            // InternalLegisFacile.g:2032:2: rule__DataType__Group__0__Impl rule__DataType__Group__1
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_22);
             rule__DataType__Group__0__Impl();
 
             state._fsp--;
@@ -5299,20 +6181,20 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DataType__Group__0__Impl"
-    // InternalLegisFacile.g:1756:1: rule__DataType__Group__0__Impl : ( 'datatype' ) ;
+    // InternalLegisFacile.g:2039:1: rule__DataType__Group__0__Impl : ( 'datatype' ) ;
     public final void rule__DataType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1760:1: ( ( 'datatype' ) )
-            // InternalLegisFacile.g:1761:1: ( 'datatype' )
+            // InternalLegisFacile.g:2043:1: ( ( 'datatype' ) )
+            // InternalLegisFacile.g:2044:1: ( 'datatype' )
             {
-            // InternalLegisFacile.g:1761:1: ( 'datatype' )
-            // InternalLegisFacile.g:1762:2: 'datatype'
+            // InternalLegisFacile.g:2044:1: ( 'datatype' )
+            // InternalLegisFacile.g:2045:2: 'datatype'
             {
              before(grammarAccess.getDataTypeAccess().getDatatypeKeyword_0()); 
-            match(input,30,FOLLOW_2); 
+            match(input,34,FOLLOW_2); 
              after(grammarAccess.getDataTypeAccess().getDatatypeKeyword_0()); 
 
             }
@@ -5336,14 +6218,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DataType__Group__1"
-    // InternalLegisFacile.g:1771:1: rule__DataType__Group__1 : rule__DataType__Group__1__Impl ;
+    // InternalLegisFacile.g:2054:1: rule__DataType__Group__1 : rule__DataType__Group__1__Impl ;
     public final void rule__DataType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1775:1: ( rule__DataType__Group__1__Impl )
-            // InternalLegisFacile.g:1776:2: rule__DataType__Group__1__Impl
+            // InternalLegisFacile.g:2058:1: ( rule__DataType__Group__1__Impl )
+            // InternalLegisFacile.g:2059:2: rule__DataType__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DataType__Group__1__Impl();
@@ -5369,21 +6251,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DataType__Group__1__Impl"
-    // InternalLegisFacile.g:1782:1: rule__DataType__Group__1__Impl : ( ( rule__DataType__NameAssignment_1 ) ) ;
+    // InternalLegisFacile.g:2065:1: rule__DataType__Group__1__Impl : ( ( rule__DataType__NameAssignment_1 ) ) ;
     public final void rule__DataType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1786:1: ( ( ( rule__DataType__NameAssignment_1 ) ) )
-            // InternalLegisFacile.g:1787:1: ( ( rule__DataType__NameAssignment_1 ) )
+            // InternalLegisFacile.g:2069:1: ( ( ( rule__DataType__NameAssignment_1 ) ) )
+            // InternalLegisFacile.g:2070:1: ( ( rule__DataType__NameAssignment_1 ) )
             {
-            // InternalLegisFacile.g:1787:1: ( ( rule__DataType__NameAssignment_1 ) )
-            // InternalLegisFacile.g:1788:2: ( rule__DataType__NameAssignment_1 )
+            // InternalLegisFacile.g:2070:1: ( ( rule__DataType__NameAssignment_1 ) )
+            // InternalLegisFacile.g:2071:2: ( rule__DataType__NameAssignment_1 )
             {
              before(grammarAccess.getDataTypeAccess().getNameAssignment_1()); 
-            // InternalLegisFacile.g:1789:2: ( rule__DataType__NameAssignment_1 )
-            // InternalLegisFacile.g:1789:3: rule__DataType__NameAssignment_1
+            // InternalLegisFacile.g:2072:2: ( rule__DataType__NameAssignment_1 )
+            // InternalLegisFacile.g:2072:3: rule__DataType__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__DataType__NameAssignment_1();
@@ -5416,16 +6298,16 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Entity__Group__0"
-    // InternalLegisFacile.g:1798:1: rule__Entity__Group__0 : rule__Entity__Group__0__Impl rule__Entity__Group__1 ;
+    // InternalLegisFacile.g:2081:1: rule__Entity__Group__0 : rule__Entity__Group__0__Impl rule__Entity__Group__1 ;
     public final void rule__Entity__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1802:1: ( rule__Entity__Group__0__Impl rule__Entity__Group__1 )
-            // InternalLegisFacile.g:1803:2: rule__Entity__Group__0__Impl rule__Entity__Group__1
+            // InternalLegisFacile.g:2085:1: ( rule__Entity__Group__0__Impl rule__Entity__Group__1 )
+            // InternalLegisFacile.g:2086:2: rule__Entity__Group__0__Impl rule__Entity__Group__1
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_22);
             rule__Entity__Group__0__Impl();
 
             state._fsp--;
@@ -5454,20 +6336,20 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Entity__Group__0__Impl"
-    // InternalLegisFacile.g:1810:1: rule__Entity__Group__0__Impl : ( 'entity' ) ;
+    // InternalLegisFacile.g:2093:1: rule__Entity__Group__0__Impl : ( 'entity' ) ;
     public final void rule__Entity__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1814:1: ( ( 'entity' ) )
-            // InternalLegisFacile.g:1815:1: ( 'entity' )
+            // InternalLegisFacile.g:2097:1: ( ( 'entity' ) )
+            // InternalLegisFacile.g:2098:1: ( 'entity' )
             {
-            // InternalLegisFacile.g:1815:1: ( 'entity' )
-            // InternalLegisFacile.g:1816:2: 'entity'
+            // InternalLegisFacile.g:2098:1: ( 'entity' )
+            // InternalLegisFacile.g:2099:2: 'entity'
             {
              before(grammarAccess.getEntityAccess().getEntityKeyword_0()); 
-            match(input,31,FOLLOW_2); 
+            match(input,35,FOLLOW_2); 
              after(grammarAccess.getEntityAccess().getEntityKeyword_0()); 
 
             }
@@ -5491,16 +6373,16 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Entity__Group__1"
-    // InternalLegisFacile.g:1825:1: rule__Entity__Group__1 : rule__Entity__Group__1__Impl rule__Entity__Group__2 ;
+    // InternalLegisFacile.g:2108:1: rule__Entity__Group__1 : rule__Entity__Group__1__Impl rule__Entity__Group__2 ;
     public final void rule__Entity__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1829:1: ( rule__Entity__Group__1__Impl rule__Entity__Group__2 )
-            // InternalLegisFacile.g:1830:2: rule__Entity__Group__1__Impl rule__Entity__Group__2
+            // InternalLegisFacile.g:2112:1: ( rule__Entity__Group__1__Impl rule__Entity__Group__2 )
+            // InternalLegisFacile.g:2113:2: rule__Entity__Group__1__Impl rule__Entity__Group__2
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_23);
             rule__Entity__Group__1__Impl();
 
             state._fsp--;
@@ -5529,21 +6411,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Entity__Group__1__Impl"
-    // InternalLegisFacile.g:1837:1: rule__Entity__Group__1__Impl : ( ( rule__Entity__NameAssignment_1 ) ) ;
+    // InternalLegisFacile.g:2120:1: rule__Entity__Group__1__Impl : ( ( rule__Entity__NameAssignment_1 ) ) ;
     public final void rule__Entity__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1841:1: ( ( ( rule__Entity__NameAssignment_1 ) ) )
-            // InternalLegisFacile.g:1842:1: ( ( rule__Entity__NameAssignment_1 ) )
+            // InternalLegisFacile.g:2124:1: ( ( ( rule__Entity__NameAssignment_1 ) ) )
+            // InternalLegisFacile.g:2125:1: ( ( rule__Entity__NameAssignment_1 ) )
             {
-            // InternalLegisFacile.g:1842:1: ( ( rule__Entity__NameAssignment_1 ) )
-            // InternalLegisFacile.g:1843:2: ( rule__Entity__NameAssignment_1 )
+            // InternalLegisFacile.g:2125:1: ( ( rule__Entity__NameAssignment_1 ) )
+            // InternalLegisFacile.g:2126:2: ( rule__Entity__NameAssignment_1 )
             {
              before(grammarAccess.getEntityAccess().getNameAssignment_1()); 
-            // InternalLegisFacile.g:1844:2: ( rule__Entity__NameAssignment_1 )
-            // InternalLegisFacile.g:1844:3: rule__Entity__NameAssignment_1
+            // InternalLegisFacile.g:2127:2: ( rule__Entity__NameAssignment_1 )
+            // InternalLegisFacile.g:2127:3: rule__Entity__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Entity__NameAssignment_1();
@@ -5576,16 +6458,16 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Entity__Group__2"
-    // InternalLegisFacile.g:1852:1: rule__Entity__Group__2 : rule__Entity__Group__2__Impl rule__Entity__Group__3 ;
+    // InternalLegisFacile.g:2135:1: rule__Entity__Group__2 : rule__Entity__Group__2__Impl rule__Entity__Group__3 ;
     public final void rule__Entity__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1856:1: ( rule__Entity__Group__2__Impl rule__Entity__Group__3 )
-            // InternalLegisFacile.g:1857:2: rule__Entity__Group__2__Impl rule__Entity__Group__3
+            // InternalLegisFacile.g:2139:1: ( rule__Entity__Group__2__Impl rule__Entity__Group__3 )
+            // InternalLegisFacile.g:2140:2: rule__Entity__Group__2__Impl rule__Entity__Group__3
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_23);
             rule__Entity__Group__2__Impl();
 
             state._fsp--;
@@ -5614,29 +6496,29 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Entity__Group__2__Impl"
-    // InternalLegisFacile.g:1864:1: rule__Entity__Group__2__Impl : ( ( rule__Entity__Group_2__0 )? ) ;
+    // InternalLegisFacile.g:2147:1: rule__Entity__Group__2__Impl : ( ( rule__Entity__Group_2__0 )? ) ;
     public final void rule__Entity__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1868:1: ( ( ( rule__Entity__Group_2__0 )? ) )
-            // InternalLegisFacile.g:1869:1: ( ( rule__Entity__Group_2__0 )? )
+            // InternalLegisFacile.g:2151:1: ( ( ( rule__Entity__Group_2__0 )? ) )
+            // InternalLegisFacile.g:2152:1: ( ( rule__Entity__Group_2__0 )? )
             {
-            // InternalLegisFacile.g:1869:1: ( ( rule__Entity__Group_2__0 )? )
-            // InternalLegisFacile.g:1870:2: ( rule__Entity__Group_2__0 )?
+            // InternalLegisFacile.g:2152:1: ( ( rule__Entity__Group_2__0 )? )
+            // InternalLegisFacile.g:2153:2: ( rule__Entity__Group_2__0 )?
             {
              before(grammarAccess.getEntityAccess().getGroup_2()); 
-            // InternalLegisFacile.g:1871:2: ( rule__Entity__Group_2__0 )?
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+            // InternalLegisFacile.g:2154:2: ( rule__Entity__Group_2__0 )?
+            int alt16=2;
+            int LA16_0 = input.LA(1);
 
-            if ( (LA12_0==32) ) {
-                alt12=1;
+            if ( (LA16_0==36) ) {
+                alt16=1;
             }
-            switch (alt12) {
+            switch (alt16) {
                 case 1 :
-                    // InternalLegisFacile.g:1871:3: rule__Entity__Group_2__0
+                    // InternalLegisFacile.g:2154:3: rule__Entity__Group_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Entity__Group_2__0();
@@ -5672,16 +6554,16 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Entity__Group__3"
-    // InternalLegisFacile.g:1879:1: rule__Entity__Group__3 : rule__Entity__Group__3__Impl rule__Entity__Group__4 ;
+    // InternalLegisFacile.g:2162:1: rule__Entity__Group__3 : rule__Entity__Group__3__Impl rule__Entity__Group__4 ;
     public final void rule__Entity__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1883:1: ( rule__Entity__Group__3__Impl rule__Entity__Group__4 )
-            // InternalLegisFacile.g:1884:2: rule__Entity__Group__3__Impl rule__Entity__Group__4
+            // InternalLegisFacile.g:2166:1: ( rule__Entity__Group__3__Impl rule__Entity__Group__4 )
+            // InternalLegisFacile.g:2167:2: rule__Entity__Group__3__Impl rule__Entity__Group__4
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_24);
             rule__Entity__Group__3__Impl();
 
             state._fsp--;
@@ -5710,20 +6592,20 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Entity__Group__3__Impl"
-    // InternalLegisFacile.g:1891:1: rule__Entity__Group__3__Impl : ( '{' ) ;
+    // InternalLegisFacile.g:2174:1: rule__Entity__Group__3__Impl : ( '{' ) ;
     public final void rule__Entity__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1895:1: ( ( '{' ) )
-            // InternalLegisFacile.g:1896:1: ( '{' )
+            // InternalLegisFacile.g:2178:1: ( ( '{' ) )
+            // InternalLegisFacile.g:2179:1: ( '{' )
             {
-            // InternalLegisFacile.g:1896:1: ( '{' )
-            // InternalLegisFacile.g:1897:2: '{'
+            // InternalLegisFacile.g:2179:1: ( '{' )
+            // InternalLegisFacile.g:2180:2: '{'
             {
              before(grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_3()); 
-            match(input,25,FOLLOW_2); 
+            match(input,29,FOLLOW_2); 
              after(grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_3()); 
 
             }
@@ -5747,16 +6629,16 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Entity__Group__4"
-    // InternalLegisFacile.g:1906:1: rule__Entity__Group__4 : rule__Entity__Group__4__Impl rule__Entity__Group__5 ;
+    // InternalLegisFacile.g:2189:1: rule__Entity__Group__4 : rule__Entity__Group__4__Impl rule__Entity__Group__5 ;
     public final void rule__Entity__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1910:1: ( rule__Entity__Group__4__Impl rule__Entity__Group__5 )
-            // InternalLegisFacile.g:1911:2: rule__Entity__Group__4__Impl rule__Entity__Group__5
+            // InternalLegisFacile.g:2193:1: ( rule__Entity__Group__4__Impl rule__Entity__Group__5 )
+            // InternalLegisFacile.g:2194:2: rule__Entity__Group__4__Impl rule__Entity__Group__5
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_24);
             rule__Entity__Group__4__Impl();
 
             state._fsp--;
@@ -5785,35 +6667,35 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Entity__Group__4__Impl"
-    // InternalLegisFacile.g:1918:1: rule__Entity__Group__4__Impl : ( ( rule__Entity__FeaturesAssignment_4 )* ) ;
+    // InternalLegisFacile.g:2201:1: rule__Entity__Group__4__Impl : ( ( rule__Entity__FeaturesAssignment_4 )* ) ;
     public final void rule__Entity__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1922:1: ( ( ( rule__Entity__FeaturesAssignment_4 )* ) )
-            // InternalLegisFacile.g:1923:1: ( ( rule__Entity__FeaturesAssignment_4 )* )
+            // InternalLegisFacile.g:2205:1: ( ( ( rule__Entity__FeaturesAssignment_4 )* ) )
+            // InternalLegisFacile.g:2206:1: ( ( rule__Entity__FeaturesAssignment_4 )* )
             {
-            // InternalLegisFacile.g:1923:1: ( ( rule__Entity__FeaturesAssignment_4 )* )
-            // InternalLegisFacile.g:1924:2: ( rule__Entity__FeaturesAssignment_4 )*
+            // InternalLegisFacile.g:2206:1: ( ( rule__Entity__FeaturesAssignment_4 )* )
+            // InternalLegisFacile.g:2207:2: ( rule__Entity__FeaturesAssignment_4 )*
             {
              before(grammarAccess.getEntityAccess().getFeaturesAssignment_4()); 
-            // InternalLegisFacile.g:1925:2: ( rule__Entity__FeaturesAssignment_4 )*
-            loop13:
+            // InternalLegisFacile.g:2208:2: ( rule__Entity__FeaturesAssignment_4 )*
+            loop17:
             do {
-                int alt13=2;
-                int LA13_0 = input.LA(1);
+                int alt17=2;
+                int LA17_0 = input.LA(1);
 
-                if ( (LA13_0==RULE_ID||LA13_0==34) ) {
-                    alt13=1;
+                if ( (LA17_0==RULE_ID||LA17_0==38) ) {
+                    alt17=1;
                 }
 
 
-                switch (alt13) {
+                switch (alt17) {
             	case 1 :
-            	    // InternalLegisFacile.g:1925:3: rule__Entity__FeaturesAssignment_4
+            	    // InternalLegisFacile.g:2208:3: rule__Entity__FeaturesAssignment_4
             	    {
-            	    pushFollow(FOLLOW_23);
+            	    pushFollow(FOLLOW_25);
             	    rule__Entity__FeaturesAssignment_4();
 
             	    state._fsp--;
@@ -5823,7 +6705,7 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
             	    break;
 
             	default :
-            	    break loop13;
+            	    break loop17;
                 }
             } while (true);
 
@@ -5850,14 +6732,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Entity__Group__5"
-    // InternalLegisFacile.g:1933:1: rule__Entity__Group__5 : rule__Entity__Group__5__Impl ;
+    // InternalLegisFacile.g:2216:1: rule__Entity__Group__5 : rule__Entity__Group__5__Impl ;
     public final void rule__Entity__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1937:1: ( rule__Entity__Group__5__Impl )
-            // InternalLegisFacile.g:1938:2: rule__Entity__Group__5__Impl
+            // InternalLegisFacile.g:2220:1: ( rule__Entity__Group__5__Impl )
+            // InternalLegisFacile.g:2221:2: rule__Entity__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Entity__Group__5__Impl();
@@ -5883,20 +6765,20 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Entity__Group__5__Impl"
-    // InternalLegisFacile.g:1944:1: rule__Entity__Group__5__Impl : ( '}' ) ;
+    // InternalLegisFacile.g:2227:1: rule__Entity__Group__5__Impl : ( '}' ) ;
     public final void rule__Entity__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1948:1: ( ( '}' ) )
-            // InternalLegisFacile.g:1949:1: ( '}' )
+            // InternalLegisFacile.g:2231:1: ( ( '}' ) )
+            // InternalLegisFacile.g:2232:1: ( '}' )
             {
-            // InternalLegisFacile.g:1949:1: ( '}' )
-            // InternalLegisFacile.g:1950:2: '}'
+            // InternalLegisFacile.g:2232:1: ( '}' )
+            // InternalLegisFacile.g:2233:2: '}'
             {
              before(grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_5()); 
-            match(input,27,FOLLOW_2); 
+            match(input,31,FOLLOW_2); 
              after(grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_5()); 
 
             }
@@ -5920,16 +6802,16 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Entity__Group_2__0"
-    // InternalLegisFacile.g:1960:1: rule__Entity__Group_2__0 : rule__Entity__Group_2__0__Impl rule__Entity__Group_2__1 ;
+    // InternalLegisFacile.g:2243:1: rule__Entity__Group_2__0 : rule__Entity__Group_2__0__Impl rule__Entity__Group_2__1 ;
     public final void rule__Entity__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1964:1: ( rule__Entity__Group_2__0__Impl rule__Entity__Group_2__1 )
-            // InternalLegisFacile.g:1965:2: rule__Entity__Group_2__0__Impl rule__Entity__Group_2__1
+            // InternalLegisFacile.g:2247:1: ( rule__Entity__Group_2__0__Impl rule__Entity__Group_2__1 )
+            // InternalLegisFacile.g:2248:2: rule__Entity__Group_2__0__Impl rule__Entity__Group_2__1
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_22);
             rule__Entity__Group_2__0__Impl();
 
             state._fsp--;
@@ -5958,20 +6840,20 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Entity__Group_2__0__Impl"
-    // InternalLegisFacile.g:1972:1: rule__Entity__Group_2__0__Impl : ( 'extends' ) ;
+    // InternalLegisFacile.g:2255:1: rule__Entity__Group_2__0__Impl : ( 'extends' ) ;
     public final void rule__Entity__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1976:1: ( ( 'extends' ) )
-            // InternalLegisFacile.g:1977:1: ( 'extends' )
+            // InternalLegisFacile.g:2259:1: ( ( 'extends' ) )
+            // InternalLegisFacile.g:2260:1: ( 'extends' )
             {
-            // InternalLegisFacile.g:1977:1: ( 'extends' )
-            // InternalLegisFacile.g:1978:2: 'extends'
+            // InternalLegisFacile.g:2260:1: ( 'extends' )
+            // InternalLegisFacile.g:2261:2: 'extends'
             {
              before(grammarAccess.getEntityAccess().getExtendsKeyword_2_0()); 
-            match(input,32,FOLLOW_2); 
+            match(input,36,FOLLOW_2); 
              after(grammarAccess.getEntityAccess().getExtendsKeyword_2_0()); 
 
             }
@@ -5995,14 +6877,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Entity__Group_2__1"
-    // InternalLegisFacile.g:1987:1: rule__Entity__Group_2__1 : rule__Entity__Group_2__1__Impl ;
+    // InternalLegisFacile.g:2270:1: rule__Entity__Group_2__1 : rule__Entity__Group_2__1__Impl ;
     public final void rule__Entity__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:1991:1: ( rule__Entity__Group_2__1__Impl )
-            // InternalLegisFacile.g:1992:2: rule__Entity__Group_2__1__Impl
+            // InternalLegisFacile.g:2274:1: ( rule__Entity__Group_2__1__Impl )
+            // InternalLegisFacile.g:2275:2: rule__Entity__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Entity__Group_2__1__Impl();
@@ -6028,21 +6910,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Entity__Group_2__1__Impl"
-    // InternalLegisFacile.g:1998:1: rule__Entity__Group_2__1__Impl : ( ( rule__Entity__SuperTypeAssignment_2_1 ) ) ;
+    // InternalLegisFacile.g:2281:1: rule__Entity__Group_2__1__Impl : ( ( rule__Entity__SuperTypeAssignment_2_1 ) ) ;
     public final void rule__Entity__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2002:1: ( ( ( rule__Entity__SuperTypeAssignment_2_1 ) ) )
-            // InternalLegisFacile.g:2003:1: ( ( rule__Entity__SuperTypeAssignment_2_1 ) )
+            // InternalLegisFacile.g:2285:1: ( ( ( rule__Entity__SuperTypeAssignment_2_1 ) ) )
+            // InternalLegisFacile.g:2286:1: ( ( rule__Entity__SuperTypeAssignment_2_1 ) )
             {
-            // InternalLegisFacile.g:2003:1: ( ( rule__Entity__SuperTypeAssignment_2_1 ) )
-            // InternalLegisFacile.g:2004:2: ( rule__Entity__SuperTypeAssignment_2_1 )
+            // InternalLegisFacile.g:2286:1: ( ( rule__Entity__SuperTypeAssignment_2_1 ) )
+            // InternalLegisFacile.g:2287:2: ( rule__Entity__SuperTypeAssignment_2_1 )
             {
              before(grammarAccess.getEntityAccess().getSuperTypeAssignment_2_1()); 
-            // InternalLegisFacile.g:2005:2: ( rule__Entity__SuperTypeAssignment_2_1 )
-            // InternalLegisFacile.g:2005:3: rule__Entity__SuperTypeAssignment_2_1
+            // InternalLegisFacile.g:2288:2: ( rule__Entity__SuperTypeAssignment_2_1 )
+            // InternalLegisFacile.g:2288:3: rule__Entity__SuperTypeAssignment_2_1
             {
             pushFollow(FOLLOW_2);
             rule__Entity__SuperTypeAssignment_2_1();
@@ -6075,16 +6957,16 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Feature__Group__0"
-    // InternalLegisFacile.g:2014:1: rule__Feature__Group__0 : rule__Feature__Group__0__Impl rule__Feature__Group__1 ;
+    // InternalLegisFacile.g:2297:1: rule__Feature__Group__0 : rule__Feature__Group__0__Impl rule__Feature__Group__1 ;
     public final void rule__Feature__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2018:1: ( rule__Feature__Group__0__Impl rule__Feature__Group__1 )
-            // InternalLegisFacile.g:2019:2: rule__Feature__Group__0__Impl rule__Feature__Group__1
+            // InternalLegisFacile.g:2301:1: ( rule__Feature__Group__0__Impl rule__Feature__Group__1 )
+            // InternalLegisFacile.g:2302:2: rule__Feature__Group__0__Impl rule__Feature__Group__1
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_26);
             rule__Feature__Group__0__Impl();
 
             state._fsp--;
@@ -6113,29 +6995,29 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Feature__Group__0__Impl"
-    // InternalLegisFacile.g:2026:1: rule__Feature__Group__0__Impl : ( ( rule__Feature__ManyAssignment_0 )? ) ;
+    // InternalLegisFacile.g:2309:1: rule__Feature__Group__0__Impl : ( ( rule__Feature__ManyAssignment_0 )? ) ;
     public final void rule__Feature__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2030:1: ( ( ( rule__Feature__ManyAssignment_0 )? ) )
-            // InternalLegisFacile.g:2031:1: ( ( rule__Feature__ManyAssignment_0 )? )
+            // InternalLegisFacile.g:2313:1: ( ( ( rule__Feature__ManyAssignment_0 )? ) )
+            // InternalLegisFacile.g:2314:1: ( ( rule__Feature__ManyAssignment_0 )? )
             {
-            // InternalLegisFacile.g:2031:1: ( ( rule__Feature__ManyAssignment_0 )? )
-            // InternalLegisFacile.g:2032:2: ( rule__Feature__ManyAssignment_0 )?
+            // InternalLegisFacile.g:2314:1: ( ( rule__Feature__ManyAssignment_0 )? )
+            // InternalLegisFacile.g:2315:2: ( rule__Feature__ManyAssignment_0 )?
             {
              before(grammarAccess.getFeatureAccess().getManyAssignment_0()); 
-            // InternalLegisFacile.g:2033:2: ( rule__Feature__ManyAssignment_0 )?
-            int alt14=2;
-            int LA14_0 = input.LA(1);
+            // InternalLegisFacile.g:2316:2: ( rule__Feature__ManyAssignment_0 )?
+            int alt18=2;
+            int LA18_0 = input.LA(1);
 
-            if ( (LA14_0==34) ) {
-                alt14=1;
+            if ( (LA18_0==38) ) {
+                alt18=1;
             }
-            switch (alt14) {
+            switch (alt18) {
                 case 1 :
-                    // InternalLegisFacile.g:2033:3: rule__Feature__ManyAssignment_0
+                    // InternalLegisFacile.g:2316:3: rule__Feature__ManyAssignment_0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Feature__ManyAssignment_0();
@@ -6171,16 +7053,16 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Feature__Group__1"
-    // InternalLegisFacile.g:2041:1: rule__Feature__Group__1 : rule__Feature__Group__1__Impl rule__Feature__Group__2 ;
+    // InternalLegisFacile.g:2324:1: rule__Feature__Group__1 : rule__Feature__Group__1__Impl rule__Feature__Group__2 ;
     public final void rule__Feature__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2045:1: ( rule__Feature__Group__1__Impl rule__Feature__Group__2 )
-            // InternalLegisFacile.g:2046:2: rule__Feature__Group__1__Impl rule__Feature__Group__2
+            // InternalLegisFacile.g:2328:1: ( rule__Feature__Group__1__Impl rule__Feature__Group__2 )
+            // InternalLegisFacile.g:2329:2: rule__Feature__Group__1__Impl rule__Feature__Group__2
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_27);
             rule__Feature__Group__1__Impl();
 
             state._fsp--;
@@ -6209,21 +7091,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Feature__Group__1__Impl"
-    // InternalLegisFacile.g:2053:1: rule__Feature__Group__1__Impl : ( ( rule__Feature__NameAssignment_1 ) ) ;
+    // InternalLegisFacile.g:2336:1: rule__Feature__Group__1__Impl : ( ( rule__Feature__NameAssignment_1 ) ) ;
     public final void rule__Feature__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2057:1: ( ( ( rule__Feature__NameAssignment_1 ) ) )
-            // InternalLegisFacile.g:2058:1: ( ( rule__Feature__NameAssignment_1 ) )
+            // InternalLegisFacile.g:2340:1: ( ( ( rule__Feature__NameAssignment_1 ) ) )
+            // InternalLegisFacile.g:2341:1: ( ( rule__Feature__NameAssignment_1 ) )
             {
-            // InternalLegisFacile.g:2058:1: ( ( rule__Feature__NameAssignment_1 ) )
-            // InternalLegisFacile.g:2059:2: ( rule__Feature__NameAssignment_1 )
+            // InternalLegisFacile.g:2341:1: ( ( rule__Feature__NameAssignment_1 ) )
+            // InternalLegisFacile.g:2342:2: ( rule__Feature__NameAssignment_1 )
             {
              before(grammarAccess.getFeatureAccess().getNameAssignment_1()); 
-            // InternalLegisFacile.g:2060:2: ( rule__Feature__NameAssignment_1 )
-            // InternalLegisFacile.g:2060:3: rule__Feature__NameAssignment_1
+            // InternalLegisFacile.g:2343:2: ( rule__Feature__NameAssignment_1 )
+            // InternalLegisFacile.g:2343:3: rule__Feature__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Feature__NameAssignment_1();
@@ -6256,16 +7138,16 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Feature__Group__2"
-    // InternalLegisFacile.g:2068:1: rule__Feature__Group__2 : rule__Feature__Group__2__Impl rule__Feature__Group__3 ;
+    // InternalLegisFacile.g:2351:1: rule__Feature__Group__2 : rule__Feature__Group__2__Impl rule__Feature__Group__3 ;
     public final void rule__Feature__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2072:1: ( rule__Feature__Group__2__Impl rule__Feature__Group__3 )
-            // InternalLegisFacile.g:2073:2: rule__Feature__Group__2__Impl rule__Feature__Group__3
+            // InternalLegisFacile.g:2355:1: ( rule__Feature__Group__2__Impl rule__Feature__Group__3 )
+            // InternalLegisFacile.g:2356:2: rule__Feature__Group__2__Impl rule__Feature__Group__3
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_22);
             rule__Feature__Group__2__Impl();
 
             state._fsp--;
@@ -6294,20 +7176,20 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Feature__Group__2__Impl"
-    // InternalLegisFacile.g:2080:1: rule__Feature__Group__2__Impl : ( ':' ) ;
+    // InternalLegisFacile.g:2363:1: rule__Feature__Group__2__Impl : ( ':' ) ;
     public final void rule__Feature__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2084:1: ( ( ':' ) )
-            // InternalLegisFacile.g:2085:1: ( ':' )
+            // InternalLegisFacile.g:2367:1: ( ( ':' ) )
+            // InternalLegisFacile.g:2368:1: ( ':' )
             {
-            // InternalLegisFacile.g:2085:1: ( ':' )
-            // InternalLegisFacile.g:2086:2: ':'
+            // InternalLegisFacile.g:2368:1: ( ':' )
+            // InternalLegisFacile.g:2369:2: ':'
             {
              before(grammarAccess.getFeatureAccess().getColonKeyword_2()); 
-            match(input,33,FOLLOW_2); 
+            match(input,37,FOLLOW_2); 
              after(grammarAccess.getFeatureAccess().getColonKeyword_2()); 
 
             }
@@ -6331,14 +7213,14 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Feature__Group__3"
-    // InternalLegisFacile.g:2095:1: rule__Feature__Group__3 : rule__Feature__Group__3__Impl ;
+    // InternalLegisFacile.g:2378:1: rule__Feature__Group__3 : rule__Feature__Group__3__Impl ;
     public final void rule__Feature__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2099:1: ( rule__Feature__Group__3__Impl )
-            // InternalLegisFacile.g:2100:2: rule__Feature__Group__3__Impl
+            // InternalLegisFacile.g:2382:1: ( rule__Feature__Group__3__Impl )
+            // InternalLegisFacile.g:2383:2: rule__Feature__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Feature__Group__3__Impl();
@@ -6364,21 +7246,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Feature__Group__3__Impl"
-    // InternalLegisFacile.g:2106:1: rule__Feature__Group__3__Impl : ( ( rule__Feature__TypeAssignment_3 ) ) ;
+    // InternalLegisFacile.g:2389:1: rule__Feature__Group__3__Impl : ( ( rule__Feature__TypeAssignment_3 ) ) ;
     public final void rule__Feature__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2110:1: ( ( ( rule__Feature__TypeAssignment_3 ) ) )
-            // InternalLegisFacile.g:2111:1: ( ( rule__Feature__TypeAssignment_3 ) )
+            // InternalLegisFacile.g:2393:1: ( ( ( rule__Feature__TypeAssignment_3 ) ) )
+            // InternalLegisFacile.g:2394:1: ( ( rule__Feature__TypeAssignment_3 ) )
             {
-            // InternalLegisFacile.g:2111:1: ( ( rule__Feature__TypeAssignment_3 ) )
-            // InternalLegisFacile.g:2112:2: ( rule__Feature__TypeAssignment_3 )
+            // InternalLegisFacile.g:2394:1: ( ( rule__Feature__TypeAssignment_3 ) )
+            // InternalLegisFacile.g:2395:2: ( rule__Feature__TypeAssignment_3 )
             {
              before(grammarAccess.getFeatureAccess().getTypeAssignment_3()); 
-            // InternalLegisFacile.g:2113:2: ( rule__Feature__TypeAssignment_3 )
-            // InternalLegisFacile.g:2113:3: rule__Feature__TypeAssignment_3
+            // InternalLegisFacile.g:2396:2: ( rule__Feature__TypeAssignment_3 )
+            // InternalLegisFacile.g:2396:3: rule__Feature__TypeAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__Feature__TypeAssignment_3();
@@ -6411,17 +7293,17 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Lei__ElementsAssignment"
-    // InternalLegisFacile.g:2122:1: rule__Lei__ElementsAssignment : ( ruleType ) ;
+    // InternalLegisFacile.g:2405:1: rule__Lei__ElementsAssignment : ( ruleType ) ;
     public final void rule__Lei__ElementsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2126:1: ( ( ruleType ) )
-            // InternalLegisFacile.g:2127:2: ( ruleType )
+            // InternalLegisFacile.g:2409:1: ( ( ruleType ) )
+            // InternalLegisFacile.g:2410:2: ( ruleType )
             {
-            // InternalLegisFacile.g:2127:2: ( ruleType )
-            // InternalLegisFacile.g:2128:3: ruleType
+            // InternalLegisFacile.g:2410:2: ( ruleType )
+            // InternalLegisFacile.g:2411:3: ruleType
             {
              before(grammarAccess.getLeiAccess().getElementsTypeParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -6452,17 +7334,17 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Type__PreliminarAssignment_2_0"
-    // InternalLegisFacile.g:2137:1: rule__Type__PreliminarAssignment_2_0 : ( rulePreliminar ) ;
+    // InternalLegisFacile.g:2420:1: rule__Type__PreliminarAssignment_2_0 : ( rulePreliminar ) ;
     public final void rule__Type__PreliminarAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2141:1: ( ( rulePreliminar ) )
-            // InternalLegisFacile.g:2142:2: ( rulePreliminar )
+            // InternalLegisFacile.g:2424:1: ( ( rulePreliminar ) )
+            // InternalLegisFacile.g:2425:2: ( rulePreliminar )
             {
-            // InternalLegisFacile.g:2142:2: ( rulePreliminar )
-            // InternalLegisFacile.g:2143:3: rulePreliminar
+            // InternalLegisFacile.g:2425:2: ( rulePreliminar )
+            // InternalLegisFacile.g:2426:3: rulePreliminar
             {
              before(grammarAccess.getTypeAccess().getPreliminarPreliminarParserRuleCall_2_0_0()); 
             pushFollow(FOLLOW_2);
@@ -6493,17 +7375,17 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Type__NormativaAssignment_2_1"
-    // InternalLegisFacile.g:2152:1: rule__Type__NormativaAssignment_2_1 : ( ruleNormativa ) ;
+    // InternalLegisFacile.g:2435:1: rule__Type__NormativaAssignment_2_1 : ( ruleNormativa ) ;
     public final void rule__Type__NormativaAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2156:1: ( ( ruleNormativa ) )
-            // InternalLegisFacile.g:2157:2: ( ruleNormativa )
+            // InternalLegisFacile.g:2439:1: ( ( ruleNormativa ) )
+            // InternalLegisFacile.g:2440:2: ( ruleNormativa )
             {
-            // InternalLegisFacile.g:2157:2: ( ruleNormativa )
-            // InternalLegisFacile.g:2158:3: ruleNormativa
+            // InternalLegisFacile.g:2440:2: ( ruleNormativa )
+            // InternalLegisFacile.g:2441:3: ruleNormativa
             {
              before(grammarAccess.getTypeAccess().getNormativaNormativaParserRuleCall_2_1_0()); 
             pushFollow(FOLLOW_2);
@@ -6534,17 +7416,17 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Type__FinalAssignment_2_2"
-    // InternalLegisFacile.g:2167:1: rule__Type__FinalAssignment_2_2 : ( ruleFinal ) ;
+    // InternalLegisFacile.g:2450:1: rule__Type__FinalAssignment_2_2 : ( ruleFinal ) ;
     public final void rule__Type__FinalAssignment_2_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2171:1: ( ( ruleFinal ) )
-            // InternalLegisFacile.g:2172:2: ( ruleFinal )
+            // InternalLegisFacile.g:2454:1: ( ( ruleFinal ) )
+            // InternalLegisFacile.g:2455:2: ( ruleFinal )
             {
-            // InternalLegisFacile.g:2172:2: ( ruleFinal )
-            // InternalLegisFacile.g:2173:3: ruleFinal
+            // InternalLegisFacile.g:2455:2: ( ruleFinal )
+            // InternalLegisFacile.g:2456:3: ruleFinal
             {
              before(grammarAccess.getTypeAccess().getFinalFinalParserRuleCall_2_2_0()); 
             pushFollow(FOLLOW_2);
@@ -6575,17 +7457,17 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preliminar__EpigrageAssignment_2"
-    // InternalLegisFacile.g:2182:1: rule__Preliminar__EpigrageAssignment_2 : ( ruleEpigrafe ) ;
+    // InternalLegisFacile.g:2465:1: rule__Preliminar__EpigrageAssignment_2 : ( ruleEpigrafe ) ;
     public final void rule__Preliminar__EpigrageAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2186:1: ( ( ruleEpigrafe ) )
-            // InternalLegisFacile.g:2187:2: ( ruleEpigrafe )
+            // InternalLegisFacile.g:2469:1: ( ( ruleEpigrafe ) )
+            // InternalLegisFacile.g:2470:2: ( ruleEpigrafe )
             {
-            // InternalLegisFacile.g:2187:2: ( ruleEpigrafe )
-            // InternalLegisFacile.g:2188:3: ruleEpigrafe
+            // InternalLegisFacile.g:2470:2: ( ruleEpigrafe )
+            // InternalLegisFacile.g:2471:3: ruleEpigrafe
             {
              before(grammarAccess.getPreliminarAccess().getEpigrageEpigrafeParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -6616,17 +7498,17 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preliminar__EmentaAssignment_4"
-    // InternalLegisFacile.g:2197:1: rule__Preliminar__EmentaAssignment_4 : ( ruleEmenta ) ;
+    // InternalLegisFacile.g:2480:1: rule__Preliminar__EmentaAssignment_4 : ( ruleEmenta ) ;
     public final void rule__Preliminar__EmentaAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2201:1: ( ( ruleEmenta ) )
-            // InternalLegisFacile.g:2202:2: ( ruleEmenta )
+            // InternalLegisFacile.g:2484:1: ( ( ruleEmenta ) )
+            // InternalLegisFacile.g:2485:2: ( ruleEmenta )
             {
-            // InternalLegisFacile.g:2202:2: ( ruleEmenta )
-            // InternalLegisFacile.g:2203:3: ruleEmenta
+            // InternalLegisFacile.g:2485:2: ( ruleEmenta )
+            // InternalLegisFacile.g:2486:3: ruleEmenta
             {
              before(grammarAccess.getPreliminarAccess().getEmentaEmentaParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -6657,17 +7539,17 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preliminar__PreambuloAssignment_6"
-    // InternalLegisFacile.g:2212:1: rule__Preliminar__PreambuloAssignment_6 : ( rulePreambulo ) ;
+    // InternalLegisFacile.g:2495:1: rule__Preliminar__PreambuloAssignment_6 : ( rulePreambulo ) ;
     public final void rule__Preliminar__PreambuloAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2216:1: ( ( rulePreambulo ) )
-            // InternalLegisFacile.g:2217:2: ( rulePreambulo )
+            // InternalLegisFacile.g:2499:1: ( ( rulePreambulo ) )
+            // InternalLegisFacile.g:2500:2: ( rulePreambulo )
             {
-            // InternalLegisFacile.g:2217:2: ( rulePreambulo )
-            // InternalLegisFacile.g:2218:3: rulePreambulo
+            // InternalLegisFacile.g:2500:2: ( rulePreambulo )
+            // InternalLegisFacile.g:2501:3: rulePreambulo
             {
              before(grammarAccess.getPreliminarAccess().getPreambuloPreambuloParserRuleCall_6_0()); 
             pushFollow(FOLLOW_2);
@@ -6698,17 +7580,17 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Epigrafe__AtoAssignment_2"
-    // InternalLegisFacile.g:2227:1: rule__Epigrafe__AtoAssignment_2 : ( RULE_STRING ) ;
+    // InternalLegisFacile.g:2510:1: rule__Epigrafe__AtoAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Epigrafe__AtoAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2231:1: ( ( RULE_STRING ) )
-            // InternalLegisFacile.g:2232:2: ( RULE_STRING )
+            // InternalLegisFacile.g:2514:1: ( ( RULE_STRING ) )
+            // InternalLegisFacile.g:2515:2: ( RULE_STRING )
             {
-            // InternalLegisFacile.g:2232:2: ( RULE_STRING )
-            // InternalLegisFacile.g:2233:3: RULE_STRING
+            // InternalLegisFacile.g:2515:2: ( RULE_STRING )
+            // InternalLegisFacile.g:2516:3: RULE_STRING
             {
              before(grammarAccess.getEpigrafeAccess().getAtoSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -6735,17 +7617,17 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Epigrafe__NumeroAssignment_4"
-    // InternalLegisFacile.g:2242:1: rule__Epigrafe__NumeroAssignment_4 : ( RULE_INT ) ;
+    // InternalLegisFacile.g:2525:1: rule__Epigrafe__NumeroAssignment_4 : ( RULE_INT ) ;
     public final void rule__Epigrafe__NumeroAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2246:1: ( ( RULE_INT ) )
-            // InternalLegisFacile.g:2247:2: ( RULE_INT )
+            // InternalLegisFacile.g:2529:1: ( ( RULE_INT ) )
+            // InternalLegisFacile.g:2530:2: ( RULE_INT )
             {
-            // InternalLegisFacile.g:2247:2: ( RULE_INT )
-            // InternalLegisFacile.g:2248:3: RULE_INT
+            // InternalLegisFacile.g:2530:2: ( RULE_INT )
+            // InternalLegisFacile.g:2531:3: RULE_INT
             {
              before(grammarAccess.getEpigrafeAccess().getNumeroINTTerminalRuleCall_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -6772,17 +7654,17 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Epigrafe__AnoAssignment_6"
-    // InternalLegisFacile.g:2257:1: rule__Epigrafe__AnoAssignment_6 : ( RULE_INT ) ;
+    // InternalLegisFacile.g:2540:1: rule__Epigrafe__AnoAssignment_6 : ( RULE_INT ) ;
     public final void rule__Epigrafe__AnoAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2261:1: ( ( RULE_INT ) )
-            // InternalLegisFacile.g:2262:2: ( RULE_INT )
+            // InternalLegisFacile.g:2544:1: ( ( RULE_INT ) )
+            // InternalLegisFacile.g:2545:2: ( RULE_INT )
             {
-            // InternalLegisFacile.g:2262:2: ( RULE_INT )
-            // InternalLegisFacile.g:2263:3: RULE_INT
+            // InternalLegisFacile.g:2545:2: ( RULE_INT )
+            // InternalLegisFacile.g:2546:3: RULE_INT
             {
              before(grammarAccess.getEpigrafeAccess().getAnoINTTerminalRuleCall_6_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -6809,17 +7691,17 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Ementa__EmentaAssignment_2"
-    // InternalLegisFacile.g:2272:1: rule__Ementa__EmentaAssignment_2 : ( RULE_STRING ) ;
+    // InternalLegisFacile.g:2555:1: rule__Ementa__EmentaAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Ementa__EmentaAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2276:1: ( ( RULE_STRING ) )
-            // InternalLegisFacile.g:2277:2: ( RULE_STRING )
+            // InternalLegisFacile.g:2559:1: ( ( RULE_STRING ) )
+            // InternalLegisFacile.g:2560:2: ( RULE_STRING )
             {
-            // InternalLegisFacile.g:2277:2: ( RULE_STRING )
-            // InternalLegisFacile.g:2278:3: RULE_STRING
+            // InternalLegisFacile.g:2560:2: ( RULE_STRING )
+            // InternalLegisFacile.g:2561:3: RULE_STRING
             {
              before(grammarAccess.getEmentaAccess().getEmentaSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -6846,17 +7728,17 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Preambulo__PreambuloAssignment_2"
-    // InternalLegisFacile.g:2287:1: rule__Preambulo__PreambuloAssignment_2 : ( RULE_STRING ) ;
+    // InternalLegisFacile.g:2570:1: rule__Preambulo__PreambuloAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Preambulo__PreambuloAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2291:1: ( ( RULE_STRING ) )
-            // InternalLegisFacile.g:2292:2: ( RULE_STRING )
+            // InternalLegisFacile.g:2574:1: ( ( RULE_STRING ) )
+            // InternalLegisFacile.g:2575:2: ( RULE_STRING )
             {
-            // InternalLegisFacile.g:2292:2: ( RULE_STRING )
-            // InternalLegisFacile.g:2293:3: RULE_STRING
+            // InternalLegisFacile.g:2575:2: ( RULE_STRING )
+            // InternalLegisFacile.g:2576:3: RULE_STRING
             {
              before(grammarAccess.getPreambuloAccess().getPreambuloSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -6883,17 +7765,17 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Normativa__ArtigosAssignment_2"
-    // InternalLegisFacile.g:2302:1: rule__Normativa__ArtigosAssignment_2 : ( ruleArtigo ) ;
+    // InternalLegisFacile.g:2585:1: rule__Normativa__ArtigosAssignment_2 : ( ruleArtigo ) ;
     public final void rule__Normativa__ArtigosAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2306:1: ( ( ruleArtigo ) )
-            // InternalLegisFacile.g:2307:2: ( ruleArtigo )
+            // InternalLegisFacile.g:2589:1: ( ( ruleArtigo ) )
+            // InternalLegisFacile.g:2590:2: ( ruleArtigo )
             {
-            // InternalLegisFacile.g:2307:2: ( ruleArtigo )
-            // InternalLegisFacile.g:2308:3: ruleArtigo
+            // InternalLegisFacile.g:2590:2: ( ruleArtigo )
+            // InternalLegisFacile.g:2591:3: ruleArtigo
             {
              before(grammarAccess.getNormativaAccess().getArtigosArtigoParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -6924,17 +7806,17 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Artigo__CaputAssignment_2"
-    // InternalLegisFacile.g:2317:1: rule__Artigo__CaputAssignment_2 : ( ruleCaput ) ;
+    // InternalLegisFacile.g:2600:1: rule__Artigo__CaputAssignment_2 : ( ruleCaput ) ;
     public final void rule__Artigo__CaputAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2321:1: ( ( ruleCaput ) )
-            // InternalLegisFacile.g:2322:2: ( ruleCaput )
+            // InternalLegisFacile.g:2604:1: ( ( ruleCaput ) )
+            // InternalLegisFacile.g:2605:2: ( ruleCaput )
             {
-            // InternalLegisFacile.g:2322:2: ( ruleCaput )
-            // InternalLegisFacile.g:2323:3: ruleCaput
+            // InternalLegisFacile.g:2605:2: ( ruleCaput )
+            // InternalLegisFacile.g:2606:3: ruleCaput
             {
              before(grammarAccess.getArtigoAccess().getCaputCaputParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -6964,26 +7846,26 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Artigo__CaputAssignment_2"
 
 
-    // $ANTLR start "rule__Artigo__ParagrafosAssignment_4_0"
-    // InternalLegisFacile.g:2332:1: rule__Artigo__ParagrafosAssignment_4_0 : ( ruleParagrafo ) ;
-    public final void rule__Artigo__ParagrafosAssignment_4_0() throws RecognitionException {
+    // $ANTLR start "rule__Artigo__ParagrafosAssignment_3"
+    // InternalLegisFacile.g:2615:1: rule__Artigo__ParagrafosAssignment_3 : ( ruleParagrafo ) ;
+    public final void rule__Artigo__ParagrafosAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2336:1: ( ( ruleParagrafo ) )
-            // InternalLegisFacile.g:2337:2: ( ruleParagrafo )
+            // InternalLegisFacile.g:2619:1: ( ( ruleParagrafo ) )
+            // InternalLegisFacile.g:2620:2: ( ruleParagrafo )
             {
-            // InternalLegisFacile.g:2337:2: ( ruleParagrafo )
-            // InternalLegisFacile.g:2338:3: ruleParagrafo
+            // InternalLegisFacile.g:2620:2: ( ruleParagrafo )
+            // InternalLegisFacile.g:2621:3: ruleParagrafo
             {
-             before(grammarAccess.getArtigoAccess().getParagrafosParagrafoParserRuleCall_4_0_0()); 
+             before(grammarAccess.getArtigoAccess().getParagrafosParagrafoParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             ruleParagrafo();
 
             state._fsp--;
 
-             after(grammarAccess.getArtigoAccess().getParagrafosParagrafoParserRuleCall_4_0_0()); 
+             after(grammarAccess.getArtigoAccess().getParagrafosParagrafoParserRuleCall_3_0()); 
 
             }
 
@@ -7002,21 +7884,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Artigo__ParagrafosAssignment_4_0"
+    // $ANTLR end "rule__Artigo__ParagrafosAssignment_3"
 
 
     // $ANTLR start "rule__Caput__TextoAssignment"
-    // InternalLegisFacile.g:2347:1: rule__Caput__TextoAssignment : ( RULE_STRING ) ;
+    // InternalLegisFacile.g:2630:1: rule__Caput__TextoAssignment : ( RULE_STRING ) ;
     public final void rule__Caput__TextoAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2351:1: ( ( RULE_STRING ) )
-            // InternalLegisFacile.g:2352:2: ( RULE_STRING )
+            // InternalLegisFacile.g:2634:1: ( ( RULE_STRING ) )
+            // InternalLegisFacile.g:2635:2: ( RULE_STRING )
             {
-            // InternalLegisFacile.g:2352:2: ( RULE_STRING )
-            // InternalLegisFacile.g:2353:3: RULE_STRING
+            // InternalLegisFacile.g:2635:2: ( RULE_STRING )
+            // InternalLegisFacile.g:2636:3: RULE_STRING
             {
              before(grammarAccess.getCaputAccess().getTextoSTRINGTerminalRuleCall_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -7042,22 +7924,22 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Caput__TextoAssignment"
 
 
-    // $ANTLR start "rule__Paragrafo__TextoAssignment"
-    // InternalLegisFacile.g:2362:1: rule__Paragrafo__TextoAssignment : ( RULE_STRING ) ;
-    public final void rule__Paragrafo__TextoAssignment() throws RecognitionException {
+    // $ANTLR start "rule__Paragrafo__TextoAssignment_2"
+    // InternalLegisFacile.g:2645:1: rule__Paragrafo__TextoAssignment_2 : ( RULE_STRING ) ;
+    public final void rule__Paragrafo__TextoAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2366:1: ( ( RULE_STRING ) )
-            // InternalLegisFacile.g:2367:2: ( RULE_STRING )
+            // InternalLegisFacile.g:2649:1: ( ( RULE_STRING ) )
+            // InternalLegisFacile.g:2650:2: ( RULE_STRING )
             {
-            // InternalLegisFacile.g:2367:2: ( RULE_STRING )
-            // InternalLegisFacile.g:2368:3: RULE_STRING
+            // InternalLegisFacile.g:2650:2: ( RULE_STRING )
+            // InternalLegisFacile.g:2651:3: RULE_STRING
             {
-             before(grammarAccess.getParagrafoAccess().getTextoSTRINGTerminalRuleCall_0()); 
+             before(grammarAccess.getParagrafoAccess().getTextoSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getParagrafoAccess().getTextoSTRINGTerminalRuleCall_0()); 
+             after(grammarAccess.getParagrafoAccess().getTextoSTRINGTerminalRuleCall_2_0()); 
 
             }
 
@@ -7076,21 +7958,62 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Paragrafo__TextoAssignment"
+    // $ANTLR end "rule__Paragrafo__TextoAssignment_2"
+
+
+    // $ANTLR start "rule__Paragrafo__AlineasAssignment_4_1"
+    // InternalLegisFacile.g:2660:1: rule__Paragrafo__AlineasAssignment_4_1 : ( ruleAlinea ) ;
+    public final void rule__Paragrafo__AlineasAssignment_4_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLegisFacile.g:2664:1: ( ( ruleAlinea ) )
+            // InternalLegisFacile.g:2665:2: ( ruleAlinea )
+            {
+            // InternalLegisFacile.g:2665:2: ( ruleAlinea )
+            // InternalLegisFacile.g:2666:3: ruleAlinea
+            {
+             before(grammarAccess.getParagrafoAccess().getAlineasAlineaParserRuleCall_4_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleAlinea();
+
+            state._fsp--;
+
+             after(grammarAccess.getParagrafoAccess().getAlineasAlineaParserRuleCall_4_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Paragrafo__AlineasAssignment_4_1"
 
 
     // $ANTLR start "rule__DataType__NameAssignment_1"
-    // InternalLegisFacile.g:2377:1: rule__DataType__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalLegisFacile.g:2675:1: rule__DataType__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__DataType__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2381:1: ( ( RULE_ID ) )
-            // InternalLegisFacile.g:2382:2: ( RULE_ID )
+            // InternalLegisFacile.g:2679:1: ( ( RULE_ID ) )
+            // InternalLegisFacile.g:2680:2: ( RULE_ID )
             {
-            // InternalLegisFacile.g:2382:2: ( RULE_ID )
-            // InternalLegisFacile.g:2383:3: RULE_ID
+            // InternalLegisFacile.g:2680:2: ( RULE_ID )
+            // InternalLegisFacile.g:2681:3: RULE_ID
             {
              before(grammarAccess.getDataTypeAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -7117,17 +8040,17 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Entity__NameAssignment_1"
-    // InternalLegisFacile.g:2392:1: rule__Entity__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalLegisFacile.g:2690:1: rule__Entity__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Entity__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2396:1: ( ( RULE_ID ) )
-            // InternalLegisFacile.g:2397:2: ( RULE_ID )
+            // InternalLegisFacile.g:2694:1: ( ( RULE_ID ) )
+            // InternalLegisFacile.g:2695:2: ( RULE_ID )
             {
-            // InternalLegisFacile.g:2397:2: ( RULE_ID )
-            // InternalLegisFacile.g:2398:3: RULE_ID
+            // InternalLegisFacile.g:2695:2: ( RULE_ID )
+            // InternalLegisFacile.g:2696:3: RULE_ID
             {
              before(grammarAccess.getEntityAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -7154,21 +8077,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Entity__SuperTypeAssignment_2_1"
-    // InternalLegisFacile.g:2407:1: rule__Entity__SuperTypeAssignment_2_1 : ( ( RULE_ID ) ) ;
+    // InternalLegisFacile.g:2705:1: rule__Entity__SuperTypeAssignment_2_1 : ( ( RULE_ID ) ) ;
     public final void rule__Entity__SuperTypeAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2411:1: ( ( ( RULE_ID ) ) )
-            // InternalLegisFacile.g:2412:2: ( ( RULE_ID ) )
+            // InternalLegisFacile.g:2709:1: ( ( ( RULE_ID ) ) )
+            // InternalLegisFacile.g:2710:2: ( ( RULE_ID ) )
             {
-            // InternalLegisFacile.g:2412:2: ( ( RULE_ID ) )
-            // InternalLegisFacile.g:2413:3: ( RULE_ID )
+            // InternalLegisFacile.g:2710:2: ( ( RULE_ID ) )
+            // InternalLegisFacile.g:2711:3: ( RULE_ID )
             {
              before(grammarAccess.getEntityAccess().getSuperTypeEntityCrossReference_2_1_0()); 
-            // InternalLegisFacile.g:2414:3: ( RULE_ID )
-            // InternalLegisFacile.g:2415:4: RULE_ID
+            // InternalLegisFacile.g:2712:3: ( RULE_ID )
+            // InternalLegisFacile.g:2713:4: RULE_ID
             {
              before(grammarAccess.getEntityAccess().getSuperTypeEntityIDTerminalRuleCall_2_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -7199,17 +8122,17 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Entity__FeaturesAssignment_4"
-    // InternalLegisFacile.g:2426:1: rule__Entity__FeaturesAssignment_4 : ( ruleFeature ) ;
+    // InternalLegisFacile.g:2724:1: rule__Entity__FeaturesAssignment_4 : ( ruleFeature ) ;
     public final void rule__Entity__FeaturesAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2430:1: ( ( ruleFeature ) )
-            // InternalLegisFacile.g:2431:2: ( ruleFeature )
+            // InternalLegisFacile.g:2728:1: ( ( ruleFeature ) )
+            // InternalLegisFacile.g:2729:2: ( ruleFeature )
             {
-            // InternalLegisFacile.g:2431:2: ( ruleFeature )
-            // InternalLegisFacile.g:2432:3: ruleFeature
+            // InternalLegisFacile.g:2729:2: ( ruleFeature )
+            // InternalLegisFacile.g:2730:3: ruleFeature
             {
              before(grammarAccess.getEntityAccess().getFeaturesFeatureParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -7240,24 +8163,24 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Feature__ManyAssignment_0"
-    // InternalLegisFacile.g:2441:1: rule__Feature__ManyAssignment_0 : ( ( 'many' ) ) ;
+    // InternalLegisFacile.g:2739:1: rule__Feature__ManyAssignment_0 : ( ( 'many' ) ) ;
     public final void rule__Feature__ManyAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2445:1: ( ( ( 'many' ) ) )
-            // InternalLegisFacile.g:2446:2: ( ( 'many' ) )
+            // InternalLegisFacile.g:2743:1: ( ( ( 'many' ) ) )
+            // InternalLegisFacile.g:2744:2: ( ( 'many' ) )
             {
-            // InternalLegisFacile.g:2446:2: ( ( 'many' ) )
-            // InternalLegisFacile.g:2447:3: ( 'many' )
-            {
-             before(grammarAccess.getFeatureAccess().getManyManyKeyword_0_0()); 
-            // InternalLegisFacile.g:2448:3: ( 'many' )
-            // InternalLegisFacile.g:2449:4: 'many'
+            // InternalLegisFacile.g:2744:2: ( ( 'many' ) )
+            // InternalLegisFacile.g:2745:3: ( 'many' )
             {
              before(grammarAccess.getFeatureAccess().getManyManyKeyword_0_0()); 
-            match(input,34,FOLLOW_2); 
+            // InternalLegisFacile.g:2746:3: ( 'many' )
+            // InternalLegisFacile.g:2747:4: 'many'
+            {
+             before(grammarAccess.getFeatureAccess().getManyManyKeyword_0_0()); 
+            match(input,38,FOLLOW_2); 
              after(grammarAccess.getFeatureAccess().getManyManyKeyword_0_0()); 
 
             }
@@ -7285,17 +8208,17 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Feature__NameAssignment_1"
-    // InternalLegisFacile.g:2460:1: rule__Feature__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalLegisFacile.g:2758:1: rule__Feature__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Feature__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2464:1: ( ( RULE_ID ) )
-            // InternalLegisFacile.g:2465:2: ( RULE_ID )
+            // InternalLegisFacile.g:2762:1: ( ( RULE_ID ) )
+            // InternalLegisFacile.g:2763:2: ( RULE_ID )
             {
-            // InternalLegisFacile.g:2465:2: ( RULE_ID )
-            // InternalLegisFacile.g:2466:3: RULE_ID
+            // InternalLegisFacile.g:2763:2: ( RULE_ID )
+            // InternalLegisFacile.g:2764:3: RULE_ID
             {
              before(grammarAccess.getFeatureAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -7322,21 +8245,21 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Feature__TypeAssignment_3"
-    // InternalLegisFacile.g:2475:1: rule__Feature__TypeAssignment_3 : ( ( RULE_ID ) ) ;
+    // InternalLegisFacile.g:2773:1: rule__Feature__TypeAssignment_3 : ( ( RULE_ID ) ) ;
     public final void rule__Feature__TypeAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLegisFacile.g:2479:1: ( ( ( RULE_ID ) ) )
-            // InternalLegisFacile.g:2480:2: ( ( RULE_ID ) )
+            // InternalLegisFacile.g:2777:1: ( ( ( RULE_ID ) ) )
+            // InternalLegisFacile.g:2778:2: ( ( RULE_ID ) )
             {
-            // InternalLegisFacile.g:2480:2: ( ( RULE_ID ) )
-            // InternalLegisFacile.g:2481:3: ( RULE_ID )
+            // InternalLegisFacile.g:2778:2: ( ( RULE_ID ) )
+            // InternalLegisFacile.g:2779:3: ( RULE_ID )
             {
              before(grammarAccess.getFeatureAccess().getTypeTypeCrossReference_3_0()); 
-            // InternalLegisFacile.g:2482:3: ( RULE_ID )
-            // InternalLegisFacile.g:2483:4: RULE_ID
+            // InternalLegisFacile.g:2780:3: ( RULE_ID )
+            // InternalLegisFacile.g:2781:4: RULE_ID
             {
              before(grammarAccess.getFeatureAccess().getTypeTypeIDTerminalRuleCall_3_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -7372,28 +8295,30 @@ public class InternalLegisFacileParser extends AbstractInternalContentAssistPars
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x00000000C0001802L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000C00001802L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000180000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000001800000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000018000000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000020000000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000006000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000040000000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000018000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000060000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000100000000L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000200000000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000600000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000600002L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000008000010L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000102000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000408000040L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000400000042L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000400000040L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000081800000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000001800002L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000086000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000006000002L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000001020000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000004080000040L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000004000000042L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000004000000040L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000002000000000L});
 
 }
