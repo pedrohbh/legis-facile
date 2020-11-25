@@ -3,6 +3,11 @@
  */
 package ufes.mdd.lei.validation;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.xtext.validation.Check;
+
+import ufes.mdd.lei.legisFacile.Caput;
+import ufes.mdd.lei.legisFacile.LegisFacilePackage;
 
 /**
  * This class contains custom validation rules. 
@@ -21,5 +26,16 @@ public class LegisFacileValidator extends AbstractLegisFacileValidator {
 //					INVALID_NAME);
 //		}
 //	}
+	
+	public static final String INVALID_NAME = "invalidName";
+
+	@Check
+	public void checkNameStartsWithCapital(Caput caput)
+	{
+		if (!Character.isUpperCase(caput.getTexto().charAt(0)))
+		{
+			warning("O texto do \"caput\" deve começar com letra maiscula", LegisFacilePackage.Literals.CAPUT__TEXTO, INVALID_NAME);
+		}
+	}
 	
 }
