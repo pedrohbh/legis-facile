@@ -3,6 +3,8 @@
  */
 package ufes.mdd.lei.legisFacile;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link ufes.mdd.lei.legisFacile.Caput#getTexto <em>Texto</em>}</li>
+ *   <li>{@link ufes.mdd.lei.legisFacile.Caput#getParagrafos <em>Paragrafos</em>}</li>
  * </ul>
  *
  * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getCaput()
@@ -44,5 +47,17 @@ public interface Caput extends EObject
    * @generated
    */
   void setTexto(String value);
+
+  /**
+   * Returns the value of the '<em><b>Paragrafos</b></em>' containment reference list.
+   * The list contents are of type {@link ufes.mdd.lei.legisFacile.Paragrafo}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Paragrafos</em>' containment reference list.
+   * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getCaput_Paragrafos()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Paragrafo> getParagrafos();
 
 } // Caput

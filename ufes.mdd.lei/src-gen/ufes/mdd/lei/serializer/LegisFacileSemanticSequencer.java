@@ -105,16 +105,10 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Caput returns Caput
 	 *
 	 * Constraint:
-	 *     texto=STRING
+	 *     (texto=STRING paragrafos+=Paragrafo*)
 	 */
 	protected void sequence_Caput(ISerializationContext context, Caput semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LegisFacilePackage.Literals.CAPUT__TEXTO) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegisFacilePackage.Literals.CAPUT__TEXTO));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCaputAccess().getTextoSTRINGTerminalRuleCall_0(), semanticObject.getTexto());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

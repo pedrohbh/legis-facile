@@ -480,6 +480,17 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
    * @generated
    */
   @Override
+  public EReference getCaput_Paragrafos()
+  {
+    return (EReference)caputEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getParagrafo()
   {
     return paragrafoEClass;
@@ -660,6 +671,7 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
 
     caputEClass = createEClass(CAPUT);
     createEAttribute(caputEClass, CAPUT__TEXTO);
+    createEReference(caputEClass, CAPUT__PARAGRAFOS);
 
     paragrafoEClass = createEClass(PARAGRAFO);
     createEAttribute(paragrafoEClass, PARAGRAFO__TEXTO);
@@ -744,6 +756,7 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
 
     initEClass(caputEClass, Caput.class, "Caput", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCaput_Texto(), ecorePackage.getEString(), "texto", null, 0, 1, Caput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCaput_Paragrafos(), this.getParagrafo(), null, "paragrafos", null, 0, -1, Caput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(paragrafoEClass, Paragrafo.class, "Paragrafo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getParagrafo_Texto(), ecorePackage.getEString(), "texto", null, 0, 1, Paragrafo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

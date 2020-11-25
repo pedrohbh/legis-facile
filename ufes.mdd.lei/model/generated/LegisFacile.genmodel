@@ -40,6 +40,7 @@
     </genClasses>
     <genClasses ecoreClass="LegisFacile.ecore#//Caput">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//Caput/texto"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Caput/paragrafos"/>
     </genClasses>
     <genClasses ecoreClass="LegisFacile.ecore#//Paragrafo">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//Paragrafo/texto"/>

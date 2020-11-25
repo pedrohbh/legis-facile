@@ -3,15 +3,25 @@
  */
 package ufes.mdd.lei.legisFacile.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import ufes.mdd.lei.legisFacile.Caput;
 import ufes.mdd.lei.legisFacile.LegisFacilePackage;
+import ufes.mdd.lei.legisFacile.Paragrafo;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,6 +32,7 @@ import ufes.mdd.lei.legisFacile.LegisFacilePackage;
  * </p>
  * <ul>
  *   <li>{@link ufes.mdd.lei.legisFacile.impl.CaputImpl#getTexto <em>Texto</em>}</li>
+ *   <li>{@link ufes.mdd.lei.legisFacile.impl.CaputImpl#getParagrafos <em>Paragrafos</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,6 +58,16 @@ public class CaputImpl extends MinimalEObjectImpl.Container implements Caput
    * @ordered
    */
   protected String texto = TEXTO_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getParagrafos() <em>Paragrafos</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getParagrafos()
+   * @generated
+   * @ordered
+   */
+  protected EList<Paragrafo> paragrafos;
 
   /**
    * <!-- begin-user-doc -->
@@ -100,12 +121,45 @@ public class CaputImpl extends MinimalEObjectImpl.Container implements Caput
    * @generated
    */
   @Override
+  public EList<Paragrafo> getParagrafos()
+  {
+    if (paragrafos == null)
+    {
+      paragrafos = new EObjectContainmentEList<Paragrafo>(Paragrafo.class, this, LegisFacilePackage.CAPUT__PARAGRAFOS);
+    }
+    return paragrafos;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case LegisFacilePackage.CAPUT__PARAGRAFOS:
+        return ((InternalEList<?>)getParagrafos()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case LegisFacilePackage.CAPUT__TEXTO:
         return getTexto();
+      case LegisFacilePackage.CAPUT__PARAGRAFOS:
+        return getParagrafos();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -115,6 +169,7 @@ public class CaputImpl extends MinimalEObjectImpl.Container implements Caput
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -122,6 +177,10 @@ public class CaputImpl extends MinimalEObjectImpl.Container implements Caput
     {
       case LegisFacilePackage.CAPUT__TEXTO:
         setTexto((String)newValue);
+        return;
+      case LegisFacilePackage.CAPUT__PARAGRAFOS:
+        getParagrafos().clear();
+        getParagrafos().addAll((Collection<? extends Paragrafo>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -140,6 +199,9 @@ public class CaputImpl extends MinimalEObjectImpl.Container implements Caput
       case LegisFacilePackage.CAPUT__TEXTO:
         setTexto(TEXTO_EDEFAULT);
         return;
+      case LegisFacilePackage.CAPUT__PARAGRAFOS:
+        getParagrafos().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -156,6 +218,8 @@ public class CaputImpl extends MinimalEObjectImpl.Container implements Caput
     {
       case LegisFacilePackage.CAPUT__TEXTO:
         return TEXTO_EDEFAULT == null ? texto != null : !TEXTO_EDEFAULT.equals(texto);
+      case LegisFacilePackage.CAPUT__PARAGRAFOS:
+        return paragrafos != null && !paragrafos.isEmpty();
     }
     return super.eIsSet(featureID);
   }

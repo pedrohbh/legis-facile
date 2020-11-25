@@ -660,22 +660,65 @@ ruleCaput returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		otherlv_0='Caput|caput'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getCaputAccess().getCaputCaputKeyword_0());
+		}
+		otherlv_1='('
+		{
+			newLeafNode(otherlv_1, grammarAccess.getCaputAccess().getLeftParenthesisKeyword_1());
+		}
 		(
-			lv_texto_0_0=RULE_STRING
-			{
-				newLeafNode(lv_texto_0_0, grammarAccess.getCaputAccess().getTextoSTRINGTerminalRuleCall_0());
-			}
-			{
-				if ($current==null) {
-					$current = createModelElement(grammarAccess.getCaputRule());
+			(
+				lv_texto_2_0=RULE_STRING
+				{
+					newLeafNode(lv_texto_2_0, grammarAccess.getCaputAccess().getTextoSTRINGTerminalRuleCall_2_0());
 				}
-				setWithLastConsumed(
-					$current,
-					"texto",
-					lv_texto_0_0,
-					"org.eclipse.xtext.common.Terminals.STRING");
-			}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCaputRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"texto",
+						lv_texto_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
 		)
+		otherlv_3=')'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getCaputAccess().getRightParenthesisKeyword_3());
+		}
+		(
+			otherlv_4='{'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getCaputAccess().getLeftCurlyBracketKeyword_4_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getCaputAccess().getParagrafosParagrafoParserRuleCall_4_1_0());
+					}
+					lv_paragrafos_5_0=ruleParagrafo
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCaputRule());
+						}
+						add(
+							$current,
+							"paragrafos",
+							lv_paragrafos_5_0,
+							"ufes.mdd.lei.LegisFacile.Paragrafo");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
+			otherlv_6='}'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getCaputAccess().getRightCurlyBracketKeyword_4_2());
+			}
+		)?
 	)
 ;
 

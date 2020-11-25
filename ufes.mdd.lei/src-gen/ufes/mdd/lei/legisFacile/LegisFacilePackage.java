@@ -373,13 +373,22 @@ public interface LegisFacilePackage extends EPackage
   int CAPUT__TEXTO = 0;
 
   /**
+   * The feature id for the '<em><b>Paragrafos</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CAPUT__PARAGRAFOS = 1;
+
+  /**
    * The number of structural features of the '<em>Caput</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CAPUT_FEATURE_COUNT = 1;
+  int CAPUT_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link ufes.mdd.lei.legisFacile.impl.ParagrafoImpl <em>Paragrafo</em>}' class.
@@ -871,6 +880,17 @@ public interface LegisFacilePackage extends EPackage
   EAttribute getCaput_Texto();
 
   /**
+   * Returns the meta object for the containment reference list '{@link ufes.mdd.lei.legisFacile.Caput#getParagrafos <em>Paragrafos</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Paragrafos</em>'.
+   * @see ufes.mdd.lei.legisFacile.Caput#getParagrafos()
+   * @see #getCaput()
+   * @generated
+   */
+  EReference getCaput_Paragrafos();
+
+  /**
    * Returns the meta object for class '{@link ufes.mdd.lei.legisFacile.Paragrafo <em>Paragrafo</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1235,6 +1255,14 @@ public interface LegisFacilePackage extends EPackage
      * @generated
      */
     EAttribute CAPUT__TEXTO = eINSTANCE.getCaput_Texto();
+
+    /**
+     * The meta object literal for the '<em><b>Paragrafos</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CAPUT__PARAGRAFOS = eINSTANCE.getCaput_Paragrafos();
 
     /**
      * The meta object literal for the '{@link ufes.mdd.lei.legisFacile.impl.ParagrafoImpl <em>Paragrafo</em>}' class.

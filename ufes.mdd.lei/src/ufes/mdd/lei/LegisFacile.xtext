@@ -44,7 +44,9 @@ Artigo:
 ;
 
 Caput:
-	texto=STRING
+	('Caput|caput') '(' texto=STRING ')' ('{'
+	(paragrafos+=Paragrafo)*
+	'}')?
 ;
 
 Paragrafo:
@@ -55,6 +57,7 @@ Paragrafo:
 
 Alinea:
 	('alinea'|'Alinea') '{'
+	
 	
 	'}'
 ;
