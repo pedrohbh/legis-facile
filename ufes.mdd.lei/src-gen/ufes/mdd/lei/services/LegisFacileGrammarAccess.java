@@ -508,15 +508,23 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
 		private final Keyword cAlineaKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
 		private final Keyword cAlineaKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTextoAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTextoSTRINGTerminalRuleCall_2_0 = (RuleCall)cTextoAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cLeftCurlyBracketKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cItensAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cItensItemParserRuleCall_4_1_0 = (RuleCall)cItensAssignment_4_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
 		
 		//Alinea:
-		//	('alinea' | 'Alinea') '{'
-		//	'}';
+		//	('alinea' | 'Alinea') '(' texto=STRING ')' ('{'
+		//	itens+=Item*
+		//	'}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('alinea' | 'Alinea') '{' '}'
+		//('alinea' | 'Alinea') '(' texto=STRING ')' ('{' itens+=Item* '}')?
 		public Group getGroup() { return cGroup; }
 		
 		//('alinea' | 'Alinea')
@@ -528,11 +536,71 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 		//'Alinea'
 		public Keyword getAlineaKeyword_0_1() { return cAlineaKeyword_0_1; }
 		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//texto=STRING
+		public Assignment getTextoAssignment_2() { return cTextoAssignment_2; }
+		
+		//STRING
+		public RuleCall getTextoSTRINGTerminalRuleCall_2_0() { return cTextoSTRINGTerminalRuleCall_2_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		
+		//('{' itens+=Item* '}')?
+		public Group getGroup_4() { return cGroup_4; }
+		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		public Keyword getLeftCurlyBracketKeyword_4_0() { return cLeftCurlyBracketKeyword_4_0; }
+		
+		//itens+=Item*
+		public Assignment getItensAssignment_4_1() { return cItensAssignment_4_1; }
+		
+		//Item
+		public RuleCall getItensItemParserRuleCall_4_1_0() { return cItensItemParserRuleCall_4_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_2() { return cRightCurlyBracketKeyword_2; }
+		public Keyword getRightCurlyBracketKeyword_4_2() { return cRightCurlyBracketKeyword_4_2; }
+	}
+	public class ItemElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ufes.mdd.lei.LegisFacile.Item");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Keyword cItemKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
+		private final Keyword cItemKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTextoAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTextoSTRINGTerminalRuleCall_2_0 = (RuleCall)cTextoAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//Item:
+		//	('Item' | 'item') '(' texto=STRING ')';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//('Item' | 'item') '(' texto=STRING ')'
+		public Group getGroup() { return cGroup; }
+		
+		//('Item' | 'item')
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+		
+		//'Item'
+		public Keyword getItemKeyword_0_0() { return cItemKeyword_0_0; }
+		
+		//'item'
+		public Keyword getItemKeyword_0_1() { return cItemKeyword_0_1; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//texto=STRING
+		public Assignment getTextoAssignment_2() { return cTextoAssignment_2; }
+		
+		//STRING
+		public RuleCall getTextoSTRINGTerminalRuleCall_2_0() { return cTextoSTRINGTerminalRuleCall_2_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
 	public class FinalElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ufes.mdd.lei.LegisFacile.Final");
@@ -706,6 +774,7 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 	private final CaputElements pCaput;
 	private final ParagrafoElements pParagrafo;
 	private final AlineaElements pAlinea;
+	private final ItemElements pItem;
 	private final FinalElements pFinal;
 	private final DataTypeElements pDataType;
 	private final EntityElements pEntity;
@@ -731,6 +800,7 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 		this.pCaput = new CaputElements();
 		this.pParagrafo = new ParagrafoElements();
 		this.pAlinea = new AlineaElements();
+		this.pItem = new ItemElements();
 		this.pFinal = new FinalElements();
 		this.pDataType = new DataTypeElements();
 		this.pEntity = new EntityElements();
@@ -878,14 +948,25 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//Alinea:
-	//	('alinea' | 'Alinea') '{'
-	//	'}';
+	//	('alinea' | 'Alinea') '(' texto=STRING ')' ('{'
+	//	itens+=Item*
+	//	'}')?;
 	public AlineaElements getAlineaAccess() {
 		return pAlinea;
 	}
 	
 	public ParserRule getAlineaRule() {
 		return getAlineaAccess().getRule();
+	}
+	
+	//Item:
+	//	('Item' | 'item') '(' texto=STRING ')';
+	public ItemElements getItemAccess() {
+		return pItem;
+	}
+	
+	public ParserRule getItemRule() {
+		return getItemAccess().getRule();
 	}
 	
 	//Final:

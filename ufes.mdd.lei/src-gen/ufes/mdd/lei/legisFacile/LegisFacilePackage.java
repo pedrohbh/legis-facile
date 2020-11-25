@@ -410,7 +410,7 @@ public interface LegisFacilePackage extends EPackage
   int PARAGRAFO__TEXTO = 0;
 
   /**
-   * The feature id for the '<em><b>Alineas</b></em>' attribute list.
+   * The feature id for the '<em><b>Alineas</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -428,6 +428,71 @@ public interface LegisFacilePackage extends EPackage
   int PARAGRAFO_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link ufes.mdd.lei.legisFacile.impl.AlineaImpl <em>Alinea</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see ufes.mdd.lei.legisFacile.impl.AlineaImpl
+   * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getAlinea()
+   * @generated
+   */
+  int ALINEA = 10;
+
+  /**
+   * The feature id for the '<em><b>Texto</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALINEA__TEXTO = 0;
+
+  /**
+   * The feature id for the '<em><b>Itens</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALINEA__ITENS = 1;
+
+  /**
+   * The number of structural features of the '<em>Alinea</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALINEA_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link ufes.mdd.lei.legisFacile.impl.ItemImpl <em>Item</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see ufes.mdd.lei.legisFacile.impl.ItemImpl
+   * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getItem()
+   * @generated
+   */
+  int ITEM = 11;
+
+  /**
+   * The feature id for the '<em><b>Texto</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ITEM__TEXTO = 0;
+
+  /**
+   * The number of structural features of the '<em>Item</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ITEM_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link ufes.mdd.lei.legisFacile.impl.DataTypeImpl <em>Data Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -435,7 +500,7 @@ public interface LegisFacilePackage extends EPackage
    * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getDataType()
    * @generated
    */
-  int DATA_TYPE = 10;
+  int DATA_TYPE = 12;
 
   /**
    * The feature id for the '<em><b>Preliminar</b></em>' containment reference.
@@ -490,7 +555,7 @@ public interface LegisFacilePackage extends EPackage
    * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getEntity()
    * @generated
    */
-  int ENTITY = 11;
+  int ENTITY = 13;
 
   /**
    * The feature id for the '<em><b>Preliminar</b></em>' containment reference.
@@ -563,7 +628,7 @@ public interface LegisFacilePackage extends EPackage
    * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getFeature()
    * @generated
    */
-  int FEATURE = 12;
+  int FEATURE = 14;
 
   /**
    * The feature id for the '<em><b>Many</b></em>' attribute.
@@ -912,15 +977,68 @@ public interface LegisFacilePackage extends EPackage
   EAttribute getParagrafo_Texto();
 
   /**
-   * Returns the meta object for the attribute list '{@link ufes.mdd.lei.legisFacile.Paragrafo#getAlineas <em>Alineas</em>}'.
+   * Returns the meta object for the containment reference list '{@link ufes.mdd.lei.legisFacile.Paragrafo#getAlineas <em>Alineas</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Alineas</em>'.
+   * @return the meta object for the containment reference list '<em>Alineas</em>'.
    * @see ufes.mdd.lei.legisFacile.Paragrafo#getAlineas()
    * @see #getParagrafo()
    * @generated
    */
-  EAttribute getParagrafo_Alineas();
+  EReference getParagrafo_Alineas();
+
+  /**
+   * Returns the meta object for class '{@link ufes.mdd.lei.legisFacile.Alinea <em>Alinea</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Alinea</em>'.
+   * @see ufes.mdd.lei.legisFacile.Alinea
+   * @generated
+   */
+  EClass getAlinea();
+
+  /**
+   * Returns the meta object for the attribute '{@link ufes.mdd.lei.legisFacile.Alinea#getTexto <em>Texto</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Texto</em>'.
+   * @see ufes.mdd.lei.legisFacile.Alinea#getTexto()
+   * @see #getAlinea()
+   * @generated
+   */
+  EAttribute getAlinea_Texto();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link ufes.mdd.lei.legisFacile.Alinea#getItens <em>Itens</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Itens</em>'.
+   * @see ufes.mdd.lei.legisFacile.Alinea#getItens()
+   * @see #getAlinea()
+   * @generated
+   */
+  EReference getAlinea_Itens();
+
+  /**
+   * Returns the meta object for class '{@link ufes.mdd.lei.legisFacile.Item <em>Item</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Item</em>'.
+   * @see ufes.mdd.lei.legisFacile.Item
+   * @generated
+   */
+  EClass getItem();
+
+  /**
+   * Returns the meta object for the attribute '{@link ufes.mdd.lei.legisFacile.Item#getTexto <em>Texto</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Texto</em>'.
+   * @see ufes.mdd.lei.legisFacile.Item#getTexto()
+   * @see #getItem()
+   * @generated
+   */
+  EAttribute getItem_Texto();
 
   /**
    * Returns the meta object for class '{@link ufes.mdd.lei.legisFacile.DataType <em>Data Type</em>}'.
@@ -1283,12 +1401,56 @@ public interface LegisFacilePackage extends EPackage
     EAttribute PARAGRAFO__TEXTO = eINSTANCE.getParagrafo_Texto();
 
     /**
-     * The meta object literal for the '<em><b>Alineas</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Alineas</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PARAGRAFO__ALINEAS = eINSTANCE.getParagrafo_Alineas();
+    EReference PARAGRAFO__ALINEAS = eINSTANCE.getParagrafo_Alineas();
+
+    /**
+     * The meta object literal for the '{@link ufes.mdd.lei.legisFacile.impl.AlineaImpl <em>Alinea</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see ufes.mdd.lei.legisFacile.impl.AlineaImpl
+     * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getAlinea()
+     * @generated
+     */
+    EClass ALINEA = eINSTANCE.getAlinea();
+
+    /**
+     * The meta object literal for the '<em><b>Texto</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ALINEA__TEXTO = eINSTANCE.getAlinea_Texto();
+
+    /**
+     * The meta object literal for the '<em><b>Itens</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ALINEA__ITENS = eINSTANCE.getAlinea_Itens();
+
+    /**
+     * The meta object literal for the '{@link ufes.mdd.lei.legisFacile.impl.ItemImpl <em>Item</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see ufes.mdd.lei.legisFacile.impl.ItemImpl
+     * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getItem()
+     * @generated
+     */
+    EClass ITEM = eINSTANCE.getItem();
+
+    /**
+     * The meta object literal for the '<em><b>Texto</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ITEM__TEXTO = eINSTANCE.getItem_Texto();
 
     /**
      * The meta object literal for the '{@link ufes.mdd.lei.legisFacile.impl.DataTypeImpl <em>Data Type</em>}' class.

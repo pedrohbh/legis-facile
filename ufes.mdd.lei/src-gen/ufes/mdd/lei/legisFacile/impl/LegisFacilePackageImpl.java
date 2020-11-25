@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import ufes.mdd.lei.legisFacile.Alinea;
 import ufes.mdd.lei.legisFacile.Artigo;
 import ufes.mdd.lei.legisFacile.Caput;
 import ufes.mdd.lei.legisFacile.DataType;
@@ -17,6 +18,7 @@ import ufes.mdd.lei.legisFacile.Ementa;
 import ufes.mdd.lei.legisFacile.Entity;
 import ufes.mdd.lei.legisFacile.Epigrafe;
 import ufes.mdd.lei.legisFacile.Feature;
+import ufes.mdd.lei.legisFacile.Item;
 import ufes.mdd.lei.legisFacile.LegisFacileFactory;
 import ufes.mdd.lei.legisFacile.LegisFacilePackage;
 import ufes.mdd.lei.legisFacile.Lei;
@@ -103,6 +105,20 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
    * @generated
    */
   private EClass paragrafoEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass alineaEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass itemEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -513,9 +529,64 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
    * @generated
    */
   @Override
-  public EAttribute getParagrafo_Alineas()
+  public EReference getParagrafo_Alineas()
   {
-    return (EAttribute)paragrafoEClass.getEStructuralFeatures().get(1);
+    return (EReference)paragrafoEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAlinea()
+  {
+    return alineaEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAlinea_Texto()
+  {
+    return (EAttribute)alineaEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAlinea_Itens()
+  {
+    return (EReference)alineaEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getItem()
+  {
+    return itemEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getItem_Texto()
+  {
+    return (EAttribute)itemEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -675,7 +746,14 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
 
     paragrafoEClass = createEClass(PARAGRAFO);
     createEAttribute(paragrafoEClass, PARAGRAFO__TEXTO);
-    createEAttribute(paragrafoEClass, PARAGRAFO__ALINEAS);
+    createEReference(paragrafoEClass, PARAGRAFO__ALINEAS);
+
+    alineaEClass = createEClass(ALINEA);
+    createEAttribute(alineaEClass, ALINEA__TEXTO);
+    createEReference(alineaEClass, ALINEA__ITENS);
+
+    itemEClass = createEClass(ITEM);
+    createEAttribute(itemEClass, ITEM__TEXTO);
 
     dataTypeEClass = createEClass(DATA_TYPE);
 
@@ -760,7 +838,14 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
 
     initEClass(paragrafoEClass, Paragrafo.class, "Paragrafo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getParagrafo_Texto(), ecorePackage.getEString(), "texto", null, 0, 1, Paragrafo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getParagrafo_Alineas(), ecorePackage.getEString(), "alineas", null, 0, -1, Paragrafo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getParagrafo_Alineas(), this.getAlinea(), null, "alineas", null, 0, -1, Paragrafo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(alineaEClass, Alinea.class, "Alinea", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAlinea_Texto(), ecorePackage.getEString(), "texto", null, 0, 1, Alinea.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAlinea_Itens(), this.getItem(), null, "itens", null, 0, -1, Alinea.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(itemEClass, Item.class, "Item", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getItem_Texto(), ecorePackage.getEString(), "texto", null, 0, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dataTypeEClass, DataType.class, "DataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

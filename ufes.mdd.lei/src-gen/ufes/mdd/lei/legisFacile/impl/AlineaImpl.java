@@ -20,24 +20,24 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import ufes.mdd.lei.legisFacile.Alinea;
+import ufes.mdd.lei.legisFacile.Item;
 import ufes.mdd.lei.legisFacile.LegisFacilePackage;
-import ufes.mdd.lei.legisFacile.Paragrafo;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Paragrafo</b></em>'.
+ * An implementation of the model object '<em><b>Alinea</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link ufes.mdd.lei.legisFacile.impl.ParagrafoImpl#getTexto <em>Texto</em>}</li>
- *   <li>{@link ufes.mdd.lei.legisFacile.impl.ParagrafoImpl#getAlineas <em>Alineas</em>}</li>
+ *   <li>{@link ufes.mdd.lei.legisFacile.impl.AlineaImpl#getTexto <em>Texto</em>}</li>
+ *   <li>{@link ufes.mdd.lei.legisFacile.impl.AlineaImpl#getItens <em>Itens</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Paragrafo
+public class AlineaImpl extends MinimalEObjectImpl.Container implements Alinea
 {
   /**
    * The default value of the '{@link #getTexto() <em>Texto</em>}' attribute.
@@ -60,21 +60,21 @@ public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Parag
   protected String texto = TEXTO_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getAlineas() <em>Alineas</em>}' containment reference list.
+   * The cached value of the '{@link #getItens() <em>Itens</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAlineas()
+   * @see #getItens()
    * @generated
    * @ordered
    */
-  protected EList<Alinea> alineas;
+  protected EList<Item> itens;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ParagrafoImpl()
+  protected AlineaImpl()
   {
     super();
   }
@@ -87,7 +87,7 @@ public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Parag
   @Override
   protected EClass eStaticClass()
   {
-    return LegisFacilePackage.Literals.PARAGRAFO;
+    return LegisFacilePackage.Literals.ALINEA;
   }
 
   /**
@@ -112,7 +112,7 @@ public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Parag
     String oldTexto = texto;
     texto = newTexto;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LegisFacilePackage.PARAGRAFO__TEXTO, oldTexto, texto));
+      eNotify(new ENotificationImpl(this, Notification.SET, LegisFacilePackage.ALINEA__TEXTO, oldTexto, texto));
   }
 
   /**
@@ -121,13 +121,13 @@ public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Parag
    * @generated
    */
   @Override
-  public EList<Alinea> getAlineas()
+  public EList<Item> getItens()
   {
-    if (alineas == null)
+    if (itens == null)
     {
-      alineas = new EObjectContainmentEList<Alinea>(Alinea.class, this, LegisFacilePackage.PARAGRAFO__ALINEAS);
+      itens = new EObjectContainmentEList<Item>(Item.class, this, LegisFacilePackage.ALINEA__ITENS);
     }
-    return alineas;
+    return itens;
   }
 
   /**
@@ -140,8 +140,8 @@ public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Parag
   {
     switch (featureID)
     {
-      case LegisFacilePackage.PARAGRAFO__ALINEAS:
-        return ((InternalEList<?>)getAlineas()).basicRemove(otherEnd, msgs);
+      case LegisFacilePackage.ALINEA__ITENS:
+        return ((InternalEList<?>)getItens()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -156,10 +156,10 @@ public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Parag
   {
     switch (featureID)
     {
-      case LegisFacilePackage.PARAGRAFO__TEXTO:
+      case LegisFacilePackage.ALINEA__TEXTO:
         return getTexto();
-      case LegisFacilePackage.PARAGRAFO__ALINEAS:
-        return getAlineas();
+      case LegisFacilePackage.ALINEA__ITENS:
+        return getItens();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -175,12 +175,12 @@ public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Parag
   {
     switch (featureID)
     {
-      case LegisFacilePackage.PARAGRAFO__TEXTO:
+      case LegisFacilePackage.ALINEA__TEXTO:
         setTexto((String)newValue);
         return;
-      case LegisFacilePackage.PARAGRAFO__ALINEAS:
-        getAlineas().clear();
-        getAlineas().addAll((Collection<? extends Alinea>)newValue);
+      case LegisFacilePackage.ALINEA__ITENS:
+        getItens().clear();
+        getItens().addAll((Collection<? extends Item>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -196,11 +196,11 @@ public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Parag
   {
     switch (featureID)
     {
-      case LegisFacilePackage.PARAGRAFO__TEXTO:
+      case LegisFacilePackage.ALINEA__TEXTO:
         setTexto(TEXTO_EDEFAULT);
         return;
-      case LegisFacilePackage.PARAGRAFO__ALINEAS:
-        getAlineas().clear();
+      case LegisFacilePackage.ALINEA__ITENS:
+        getItens().clear();
         return;
     }
     super.eUnset(featureID);
@@ -216,10 +216,10 @@ public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Parag
   {
     switch (featureID)
     {
-      case LegisFacilePackage.PARAGRAFO__TEXTO:
+      case LegisFacilePackage.ALINEA__TEXTO:
         return TEXTO_EDEFAULT == null ? texto != null : !TEXTO_EDEFAULT.equals(texto);
-      case LegisFacilePackage.PARAGRAFO__ALINEAS:
-        return alineas != null && !alineas.isEmpty();
+      case LegisFacilePackage.ALINEA__ITENS:
+        return itens != null && !itens.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -241,4 +241,4 @@ public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Parag
     return result.toString();
   }
 
-} //ParagrafoImpl
+} //AlineaImpl

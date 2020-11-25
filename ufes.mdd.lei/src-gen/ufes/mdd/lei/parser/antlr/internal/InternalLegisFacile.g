@@ -808,14 +808,14 @@ ruleParagrafo returns [EObject current=null]
 ;
 
 // Entry rule entryRuleAlinea
-entryRuleAlinea returns [String current=null]:
+entryRuleAlinea returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getAlineaRule()); }
 	iv_ruleAlinea=ruleAlinea
-	{ $current=$iv_ruleAlinea.current.getText(); }
+	{ $current=$iv_ruleAlinea.current; }
 	EOF;
 
 // Rule Alinea
-ruleAlinea returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+ruleAlinea returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -824,27 +824,126 @@ ruleAlinea returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 }:
 	(
 		(
-			kw='alinea'
+			otherlv_0='alinea'
 			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getAlineaAccess().getAlineaKeyword_0_0());
+				newLeafNode(otherlv_0, grammarAccess.getAlineaAccess().getAlineaKeyword_0_0());
 			}
 			    |
-			kw='Alinea'
+			otherlv_1='Alinea'
 			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getAlineaAccess().getAlineaKeyword_0_1());
+				newLeafNode(otherlv_1, grammarAccess.getAlineaAccess().getAlineaKeyword_0_1());
 			}
 		)
-		kw='{'
+		otherlv_2='('
 		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getAlineaAccess().getLeftCurlyBracketKeyword_1());
+			newLeafNode(otherlv_2, grammarAccess.getAlineaAccess().getLeftParenthesisKeyword_1());
 		}
-		kw='}'
+		(
+			(
+				lv_texto_3_0=RULE_STRING
+				{
+					newLeafNode(lv_texto_3_0, grammarAccess.getAlineaAccess().getTextoSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAlineaRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"texto",
+						lv_texto_3_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_4=')'
 		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getAlineaAccess().getRightCurlyBracketKeyword_2());
+			newLeafNode(otherlv_4, grammarAccess.getAlineaAccess().getRightParenthesisKeyword_3());
+		}
+		(
+			otherlv_5='{'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getAlineaAccess().getLeftCurlyBracketKeyword_4_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getAlineaAccess().getItensItemParserRuleCall_4_1_0());
+					}
+					lv_itens_6_0=ruleItem
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getAlineaRule());
+						}
+						add(
+							$current,
+							"itens",
+							lv_itens_6_0,
+							"ufes.mdd.lei.LegisFacile.Item");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
+			otherlv_7='}'
+			{
+				newLeafNode(otherlv_7, grammarAccess.getAlineaAccess().getRightCurlyBracketKeyword_4_2());
+			}
+		)?
+	)
+;
+
+// Entry rule entryRuleItem
+entryRuleItem returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getItemRule()); }
+	iv_ruleItem=ruleItem
+	{ $current=$iv_ruleItem.current; }
+	EOF;
+
+// Rule Item
+ruleItem returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			otherlv_0='Item'
+			{
+				newLeafNode(otherlv_0, grammarAccess.getItemAccess().getItemKeyword_0_0());
+			}
+			    |
+			otherlv_1='item'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getItemAccess().getItemKeyword_0_1());
+			}
+		)
+		otherlv_2='('
+		{
+			newLeafNode(otherlv_2, grammarAccess.getItemAccess().getLeftParenthesisKeyword_1());
+		}
+		(
+			(
+				lv_texto_3_0=RULE_STRING
+				{
+					newLeafNode(lv_texto_3_0, grammarAccess.getItemAccess().getTextoSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getItemRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"texto",
+						lv_texto_3_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_4=')'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getItemAccess().getRightParenthesisKeyword_3());
 		}
 	)
 ;

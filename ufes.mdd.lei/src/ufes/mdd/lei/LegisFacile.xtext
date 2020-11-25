@@ -56,10 +56,13 @@ Paragrafo:
 ;
 
 Alinea:
-	('alinea'|'Alinea') '{'
-	
-	
-	'}'
+	('alinea'|'Alinea') '(' texto=STRING ')' ('{'
+		(itens+=Item)*	
+	'}')?
+;
+
+Item:
+	('Item'|'item') '(' texto=STRING ')'
 ;
 
 Final: 

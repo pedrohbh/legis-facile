@@ -9,22 +9,22 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Paragrafo</b></em>'.
+ * A representation of the model object '<em><b>Alinea</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link ufes.mdd.lei.legisFacile.Paragrafo#getTexto <em>Texto</em>}</li>
- *   <li>{@link ufes.mdd.lei.legisFacile.Paragrafo#getAlineas <em>Alineas</em>}</li>
+ *   <li>{@link ufes.mdd.lei.legisFacile.Alinea#getTexto <em>Texto</em>}</li>
+ *   <li>{@link ufes.mdd.lei.legisFacile.Alinea#getItens <em>Itens</em>}</li>
  * </ul>
  *
- * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getParagrafo()
+ * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getAlinea()
  * @model
  * @generated
  */
-public interface Paragrafo extends EObject
+public interface Alinea extends EObject
 {
   /**
    * Returns the value of the '<em><b>Texto</b></em>' attribute.
@@ -32,14 +32,14 @@ public interface Paragrafo extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Texto</em>' attribute.
    * @see #setTexto(String)
-   * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getParagrafo_Texto()
+   * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getAlinea_Texto()
    * @model
    * @generated
    */
   String getTexto();
 
   /**
-   * Sets the value of the '{@link ufes.mdd.lei.legisFacile.Paragrafo#getTexto <em>Texto</em>}' attribute.
+   * Sets the value of the '{@link ufes.mdd.lei.legisFacile.Alinea#getTexto <em>Texto</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Texto</em>' attribute.
@@ -49,15 +49,15 @@ public interface Paragrafo extends EObject
   void setTexto(String value);
 
   /**
-   * Returns the value of the '<em><b>Alineas</b></em>' containment reference list.
-   * The list contents are of type {@link ufes.mdd.lei.legisFacile.Alinea}.
+   * Returns the value of the '<em><b>Itens</b></em>' containment reference list.
+   * The list contents are of type {@link ufes.mdd.lei.legisFacile.Item}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Alineas</em>' containment reference list.
-   * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getParagrafo_Alineas()
+   * @return the value of the '<em>Itens</em>' containment reference list.
+   * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getAlinea_Itens()
    * @model containment="true"
    * @generated
    */
-  EList<Alinea> getAlineas();
+  EList<Item> getItens();
 
-} // Paragrafo
+} // Alinea

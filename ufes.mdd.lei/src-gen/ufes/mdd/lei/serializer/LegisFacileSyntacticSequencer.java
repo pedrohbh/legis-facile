@@ -22,10 +22,13 @@ import ufes.mdd.lei.services.LegisFacileGrammarAccess;
 public class LegisFacileSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected LegisFacileGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_Alinea_AlineaKeyword_0_0_or_AlineaKeyword_0_1;
+	protected AbstractElementAlias match_Alinea___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q;
 	protected AbstractElementAlias match_Artigo_ArtigoKeyword_0_0_or_ArtigoKeyword_0_1;
 	protected AbstractElementAlias match_Caput___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q;
 	protected AbstractElementAlias match_Ementa_EmentaKeyword_0_0_or_EmentaKeyword_0_1;
 	protected AbstractElementAlias match_Epigrafe_EpigrafeKeyword_0_0_or_EpigrafeKeyword_0_1;
+	protected AbstractElementAlias match_Item_ItemKeyword_0_0_or_ItemKeyword_0_1;
 	protected AbstractElementAlias match_Normativa_NormativaKeyword_0_0_or_NormativaKeyword_0_1;
 	protected AbstractElementAlias match_Paragrafo_ParagrafoKeyword_0_0_or_ParagrafoKeyword_0_1;
 	protected AbstractElementAlias match_Paragrafo___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q;
@@ -35,10 +38,13 @@ public class LegisFacileSyntacticSequencer extends AbstractSyntacticSequencer {
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (LegisFacileGrammarAccess) access;
+		match_Alinea_AlineaKeyword_0_0_or_AlineaKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getAlineaAccess().getAlineaKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getAlineaAccess().getAlineaKeyword_0_1()));
+		match_Alinea___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getAlineaAccess().getLeftCurlyBracketKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getAlineaAccess().getRightCurlyBracketKeyword_4_2()));
 		match_Artigo_ArtigoKeyword_0_0_or_ArtigoKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getArtigoAccess().getArtigoKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getArtigoAccess().getArtigoKeyword_0_1()));
 		match_Caput___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getCaputAccess().getLeftCurlyBracketKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getCaputAccess().getRightCurlyBracketKeyword_4_2()));
 		match_Ementa_EmentaKeyword_0_0_or_EmentaKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getEmentaAccess().getEmentaKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getEmentaAccess().getEmentaKeyword_0_1()));
 		match_Epigrafe_EpigrafeKeyword_0_0_or_EpigrafeKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getEpigrafeAccess().getEpigrafeKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getEpigrafeAccess().getEpigrafeKeyword_0_1()));
+		match_Item_ItemKeyword_0_0_or_ItemKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getItemAccess().getItemKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getItemAccess().getItemKeyword_0_1()));
 		match_Normativa_NormativaKeyword_0_0_or_NormativaKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getNormativaAccess().getNormativaKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getNormativaAccess().getNormativaKeyword_0_1()));
 		match_Paragrafo_ParagrafoKeyword_0_0_or_ParagrafoKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getParagrafoAccess().getParagrafoKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getParagrafoAccess().getParagrafoKeyword_0_1()));
 		match_Paragrafo___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getParagrafoAccess().getLeftCurlyBracketKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getParagrafoAccess().getRightCurlyBracketKeyword_4_2()));
@@ -58,7 +64,11 @@ public class LegisFacileSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Artigo_ArtigoKeyword_0_0_or_ArtigoKeyword_0_1.equals(syntax))
+			if (match_Alinea_AlineaKeyword_0_0_or_AlineaKeyword_0_1.equals(syntax))
+				emit_Alinea_AlineaKeyword_0_0_or_AlineaKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Alinea___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q.equals(syntax))
+				emit_Alinea___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Artigo_ArtigoKeyword_0_0_or_ArtigoKeyword_0_1.equals(syntax))
 				emit_Artigo_ArtigoKeyword_0_0_or_ArtigoKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Caput___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q.equals(syntax))
 				emit_Caput___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
@@ -66,6 +76,8 @@ public class LegisFacileSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Ementa_EmentaKeyword_0_0_or_EmentaKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Epigrafe_EpigrafeKeyword_0_0_or_EpigrafeKeyword_0_1.equals(syntax))
 				emit_Epigrafe_EpigrafeKeyword_0_0_or_EpigrafeKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Item_ItemKeyword_0_0_or_ItemKeyword_0_1.equals(syntax))
+				emit_Item_ItemKeyword_0_0_or_ItemKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Normativa_NormativaKeyword_0_0_or_NormativaKeyword_0_1.equals(syntax))
 				emit_Normativa_NormativaKeyword_0_0_or_NormativaKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Paragrafo_ParagrafoKeyword_0_0_or_ParagrafoKeyword_0_1.equals(syntax))
@@ -80,6 +92,28 @@ public class LegisFacileSyntacticSequencer extends AbstractSyntacticSequencer {
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     'alinea' | 'Alinea'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) '(' texto=STRING
+	 */
+	protected void emit_Alinea_AlineaKeyword_0_0_or_AlineaKeyword_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('{' '}')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     texto=STRING ')' (ambiguity) (rule end)
+	 */
+	protected void emit_Alinea___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * Ambiguous syntax:
 	 *     'Artigo' | 'artigo'
@@ -121,6 +155,17 @@ public class LegisFacileSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) '(' ato=STRING
 	 */
 	protected void emit_Epigrafe_EpigrafeKeyword_0_0_or_EpigrafeKeyword_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'Item' | 'item'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) '(' texto=STRING
+	 */
+	protected void emit_Item_ItemKeyword_0_0_or_ItemKeyword_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

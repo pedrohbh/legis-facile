@@ -126,6 +126,16 @@ public class LegisFacileAdapterFactory extends AdapterFactoryImpl
         return createParagrafoAdapter();
       }
       @Override
+      public Adapter caseAlinea(Alinea object)
+      {
+        return createAlineaAdapter();
+      }
+      @Override
+      public Adapter caseItem(Item object)
+      {
+        return createItemAdapter();
+      }
+      @Override
       public Adapter caseDataType(DataType object)
       {
         return createDataTypeAdapter();
@@ -308,6 +318,36 @@ public class LegisFacileAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createParagrafoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link ufes.mdd.lei.legisFacile.Alinea <em>Alinea</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see ufes.mdd.lei.legisFacile.Alinea
+   * @generated
+   */
+  public Adapter createAlineaAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link ufes.mdd.lei.legisFacile.Item <em>Item</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see ufes.mdd.lei.legisFacile.Item
+   * @generated
+   */
+  public Adapter createItemAdapter()
   {
     return null;
   }

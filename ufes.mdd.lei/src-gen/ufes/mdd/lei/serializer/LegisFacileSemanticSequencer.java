@@ -14,6 +14,7 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+import ufes.mdd.lei.legisFacile.Alinea;
 import ufes.mdd.lei.legisFacile.Artigo;
 import ufes.mdd.lei.legisFacile.Caput;
 import ufes.mdd.lei.legisFacile.DataType;
@@ -21,6 +22,7 @@ import ufes.mdd.lei.legisFacile.Ementa;
 import ufes.mdd.lei.legisFacile.Entity;
 import ufes.mdd.lei.legisFacile.Epigrafe;
 import ufes.mdd.lei.legisFacile.Feature;
+import ufes.mdd.lei.legisFacile.Item;
 import ufes.mdd.lei.legisFacile.LegisFacilePackage;
 import ufes.mdd.lei.legisFacile.Lei;
 import ufes.mdd.lei.legisFacile.Normativa;
@@ -44,6 +46,9 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == LegisFacilePackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case LegisFacilePackage.ALINEA:
+				sequence_Alinea(context, (Alinea) semanticObject); 
+				return; 
 			case LegisFacilePackage.ARTIGO:
 				sequence_Artigo(context, (Artigo) semanticObject); 
 				return; 
@@ -64,6 +69,9 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 				return; 
 			case LegisFacilePackage.FEATURE:
 				sequence_Feature(context, (Feature) semanticObject); 
+				return; 
+			case LegisFacilePackage.ITEM:
+				sequence_Item(context, (Item) semanticObject); 
 				return; 
 			case LegisFacilePackage.LEI:
 				sequence_Lei(context, (Lei) semanticObject); 
@@ -87,6 +95,18 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Contexts:
+	 *     Alinea returns Alinea
+	 *
+	 * Constraint:
+	 *     (texto=STRING itens+=Item*)
+	 */
+	protected void sequence_Alinea(ISerializationContext context, Alinea semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Contexts:
@@ -195,6 +215,24 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 */
 	protected void sequence_Feature(ISerializationContext context, Feature semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Item returns Item
+	 *
+	 * Constraint:
+	 *     texto=STRING
+	 */
+	protected void sequence_Item(ISerializationContext context, Item semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LegisFacilePackage.Literals.ITEM__TEXTO) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegisFacilePackage.Literals.ITEM__TEXTO));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getItemAccess().getTextoSTRINGTerminalRuleCall_2_0(), semanticObject.getTexto());
+		feeder.finish();
 	}
 	
 	

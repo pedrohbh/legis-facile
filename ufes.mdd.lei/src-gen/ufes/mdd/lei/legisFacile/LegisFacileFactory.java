@@ -114,6 +114,24 @@ public interface LegisFacileFactory extends EFactory
   Paragrafo createParagrafo();
 
   /**
+   * Returns a new object of class '<em>Alinea</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Alinea</em>'.
+   * @generated
+   */
+  Alinea createAlinea();
+
+  /**
+   * Returns a new object of class '<em>Item</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Item</em>'.
+   * @generated
+   */
+  Item createItem();
+
+  /**
    * Returns a new object of class '<em>Data Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
