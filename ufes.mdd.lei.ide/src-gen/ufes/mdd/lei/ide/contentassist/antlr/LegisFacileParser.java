@@ -38,7 +38,9 @@ public class LegisFacileParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPreambuloAccess().getAlternatives_0(), "rule__Preambulo__Alternatives_0");
 			builder.put(grammarAccess.getNormativaAccess().getAlternatives_0(), "rule__Normativa__Alternatives_0");
 			builder.put(grammarAccess.getArtigoAccess().getAlternatives_0(), "rule__Artigo__Alternatives_0");
+			builder.put(grammarAccess.getCaputAccess().getAlternatives_0(), "rule__Caput__Alternatives_0");
 			builder.put(grammarAccess.getParagrafoAccess().getAlternatives_0(), "rule__Paragrafo__Alternatives_0");
+			builder.put(grammarAccess.getIncisoAccess().getAlternatives_0(), "rule__Inciso__Alternatives_0");
 			builder.put(grammarAccess.getAlineaAccess().getAlternatives_0(), "rule__Alinea__Alternatives_0");
 			builder.put(grammarAccess.getItemAccess().getAlternatives_0(), "rule__Item__Alternatives_0");
 			builder.put(grammarAccess.getFinalAccess().getAlternatives_0(), "rule__Final__Alternatives_0");
@@ -53,6 +55,8 @@ public class LegisFacileParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getCaputAccess().getGroup_4(), "rule__Caput__Group_4__0");
 			builder.put(grammarAccess.getParagrafoAccess().getGroup(), "rule__Paragrafo__Group__0");
 			builder.put(grammarAccess.getParagrafoAccess().getGroup_4(), "rule__Paragrafo__Group_4__0");
+			builder.put(grammarAccess.getIncisoAccess().getGroup(), "rule__Inciso__Group__0");
+			builder.put(grammarAccess.getIncisoAccess().getGroup_4(), "rule__Inciso__Group_4__0");
 			builder.put(grammarAccess.getAlineaAccess().getGroup(), "rule__Alinea__Group__0");
 			builder.put(grammarAccess.getAlineaAccess().getGroup_4(), "rule__Alinea__Group_4__0");
 			builder.put(grammarAccess.getItemAccess().getGroup(), "rule__Item__Group__0");
@@ -77,9 +81,11 @@ public class LegisFacileParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getArtigoAccess().getCaputAssignment_2(), "rule__Artigo__CaputAssignment_2");
 			builder.put(grammarAccess.getArtigoAccess().getParagrafosAssignment_3(), "rule__Artigo__ParagrafosAssignment_3");
 			builder.put(grammarAccess.getCaputAccess().getTextoAssignment_2(), "rule__Caput__TextoAssignment_2");
-			builder.put(grammarAccess.getCaputAccess().getParagrafosAssignment_4_1(), "rule__Caput__ParagrafosAssignment_4_1");
+			builder.put(grammarAccess.getCaputAccess().getIncisosAssignment_4_1(), "rule__Caput__IncisosAssignment_4_1");
 			builder.put(grammarAccess.getParagrafoAccess().getTextoAssignment_2(), "rule__Paragrafo__TextoAssignment_2");
-			builder.put(grammarAccess.getParagrafoAccess().getAlineasAssignment_4_1(), "rule__Paragrafo__AlineasAssignment_4_1");
+			builder.put(grammarAccess.getParagrafoAccess().getIncisosAssignment_4_1(), "rule__Paragrafo__IncisosAssignment_4_1");
+			builder.put(grammarAccess.getIncisoAccess().getTextoAssignment_2(), "rule__Inciso__TextoAssignment_2");
+			builder.put(grammarAccess.getIncisoAccess().getAlineasAssignment_4_1(), "rule__Inciso__AlineasAssignment_4_1");
 			builder.put(grammarAccess.getAlineaAccess().getTextoAssignment_2(), "rule__Alinea__TextoAssignment_2");
 			builder.put(grammarAccess.getAlineaAccess().getItensAssignment_4_1(), "rule__Alinea__ItensAssignment_4_1");
 			builder.put(grammarAccess.getItemAccess().getTextoAssignment_2(), "rule__Item__TextoAssignment_2");

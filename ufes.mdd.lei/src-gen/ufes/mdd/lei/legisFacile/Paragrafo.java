@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link ufes.mdd.lei.legisFacile.Paragrafo#getTexto <em>Texto</em>}</li>
- *   <li>{@link ufes.mdd.lei.legisFacile.Paragrafo#getAlineas <em>Alineas</em>}</li>
+ *   <li>{@link ufes.mdd.lei.legisFacile.Paragrafo#getIncisos <em>Incisos</em>}</li>
  * </ul>
  *
  * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getParagrafo()
@@ -49,15 +49,15 @@ public interface Paragrafo extends EObject
   void setTexto(String value);
 
   /**
-   * Returns the value of the '<em><b>Alineas</b></em>' containment reference list.
-   * The list contents are of type {@link ufes.mdd.lei.legisFacile.Alinea}.
+   * Returns the value of the '<em><b>Incisos</b></em>' containment reference list.
+   * The list contents are of type {@link ufes.mdd.lei.legisFacile.Inciso}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Alineas</em>' containment reference list.
-   * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getParagrafo_Alineas()
+   * @return the value of the '<em>Incisos</em>' containment reference list.
+   * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getParagrafo_Incisos()
    * @model containment="true"
    * @generated
    */
-  EList<Alinea> getAlineas();
+  EList<Inciso> getIncisos();
 
 } // Paragrafo

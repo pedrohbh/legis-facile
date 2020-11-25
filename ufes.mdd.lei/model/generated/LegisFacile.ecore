@@ -44,10 +44,15 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Caput">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="texto" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="paragrafos" upperBound="-1"
-        eType="#//Paragrafo" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incisos" upperBound="-1"
+        eType="#//Inciso" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Paragrafo">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="texto" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incisos" upperBound="-1"
+        eType="#//Inciso" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Inciso">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="texto" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="alineas" upperBound="-1"
         eType="#//Alinea" containment="true"/>

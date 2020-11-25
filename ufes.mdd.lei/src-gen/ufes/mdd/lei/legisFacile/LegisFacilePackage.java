@@ -373,13 +373,13 @@ public interface LegisFacilePackage extends EPackage
   int CAPUT__TEXTO = 0;
 
   /**
-   * The feature id for the '<em><b>Paragrafos</b></em>' containment reference list.
+   * The feature id for the '<em><b>Incisos</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CAPUT__PARAGRAFOS = 1;
+  int CAPUT__INCISOS = 1;
 
   /**
    * The number of structural features of the '<em>Caput</em>' class.
@@ -410,13 +410,13 @@ public interface LegisFacilePackage extends EPackage
   int PARAGRAFO__TEXTO = 0;
 
   /**
-   * The feature id for the '<em><b>Alineas</b></em>' containment reference list.
+   * The feature id for the '<em><b>Incisos</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PARAGRAFO__ALINEAS = 1;
+  int PARAGRAFO__INCISOS = 1;
 
   /**
    * The number of structural features of the '<em>Paragrafo</em>' class.
@@ -428,6 +428,43 @@ public interface LegisFacilePackage extends EPackage
   int PARAGRAFO_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link ufes.mdd.lei.legisFacile.impl.IncisoImpl <em>Inciso</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see ufes.mdd.lei.legisFacile.impl.IncisoImpl
+   * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getInciso()
+   * @generated
+   */
+  int INCISO = 10;
+
+  /**
+   * The feature id for the '<em><b>Texto</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INCISO__TEXTO = 0;
+
+  /**
+   * The feature id for the '<em><b>Alineas</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INCISO__ALINEAS = 1;
+
+  /**
+   * The number of structural features of the '<em>Inciso</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INCISO_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link ufes.mdd.lei.legisFacile.impl.AlineaImpl <em>Alinea</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -435,7 +472,7 @@ public interface LegisFacilePackage extends EPackage
    * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getAlinea()
    * @generated
    */
-  int ALINEA = 10;
+  int ALINEA = 11;
 
   /**
    * The feature id for the '<em><b>Texto</b></em>' attribute.
@@ -472,7 +509,7 @@ public interface LegisFacilePackage extends EPackage
    * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getItem()
    * @generated
    */
-  int ITEM = 11;
+  int ITEM = 12;
 
   /**
    * The feature id for the '<em><b>Texto</b></em>' attribute.
@@ -500,7 +537,7 @@ public interface LegisFacilePackage extends EPackage
    * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getDataType()
    * @generated
    */
-  int DATA_TYPE = 12;
+  int DATA_TYPE = 13;
 
   /**
    * The feature id for the '<em><b>Preliminar</b></em>' containment reference.
@@ -555,7 +592,7 @@ public interface LegisFacilePackage extends EPackage
    * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getEntity()
    * @generated
    */
-  int ENTITY = 13;
+  int ENTITY = 14;
 
   /**
    * The feature id for the '<em><b>Preliminar</b></em>' containment reference.
@@ -628,7 +665,7 @@ public interface LegisFacilePackage extends EPackage
    * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getFeature()
    * @generated
    */
-  int FEATURE = 14;
+  int FEATURE = 15;
 
   /**
    * The feature id for the '<em><b>Many</b></em>' attribute.
@@ -945,15 +982,15 @@ public interface LegisFacilePackage extends EPackage
   EAttribute getCaput_Texto();
 
   /**
-   * Returns the meta object for the containment reference list '{@link ufes.mdd.lei.legisFacile.Caput#getParagrafos <em>Paragrafos</em>}'.
+   * Returns the meta object for the containment reference list '{@link ufes.mdd.lei.legisFacile.Caput#getIncisos <em>Incisos</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Paragrafos</em>'.
-   * @see ufes.mdd.lei.legisFacile.Caput#getParagrafos()
+   * @return the meta object for the containment reference list '<em>Incisos</em>'.
+   * @see ufes.mdd.lei.legisFacile.Caput#getIncisos()
    * @see #getCaput()
    * @generated
    */
-  EReference getCaput_Paragrafos();
+  EReference getCaput_Incisos();
 
   /**
    * Returns the meta object for class '{@link ufes.mdd.lei.legisFacile.Paragrafo <em>Paragrafo</em>}'.
@@ -977,15 +1014,47 @@ public interface LegisFacilePackage extends EPackage
   EAttribute getParagrafo_Texto();
 
   /**
-   * Returns the meta object for the containment reference list '{@link ufes.mdd.lei.legisFacile.Paragrafo#getAlineas <em>Alineas</em>}'.
+   * Returns the meta object for the containment reference list '{@link ufes.mdd.lei.legisFacile.Paragrafo#getIncisos <em>Incisos</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Alineas</em>'.
-   * @see ufes.mdd.lei.legisFacile.Paragrafo#getAlineas()
+   * @return the meta object for the containment reference list '<em>Incisos</em>'.
+   * @see ufes.mdd.lei.legisFacile.Paragrafo#getIncisos()
    * @see #getParagrafo()
    * @generated
    */
-  EReference getParagrafo_Alineas();
+  EReference getParagrafo_Incisos();
+
+  /**
+   * Returns the meta object for class '{@link ufes.mdd.lei.legisFacile.Inciso <em>Inciso</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Inciso</em>'.
+   * @see ufes.mdd.lei.legisFacile.Inciso
+   * @generated
+   */
+  EClass getInciso();
+
+  /**
+   * Returns the meta object for the attribute '{@link ufes.mdd.lei.legisFacile.Inciso#getTexto <em>Texto</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Texto</em>'.
+   * @see ufes.mdd.lei.legisFacile.Inciso#getTexto()
+   * @see #getInciso()
+   * @generated
+   */
+  EAttribute getInciso_Texto();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link ufes.mdd.lei.legisFacile.Inciso#getAlineas <em>Alineas</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Alineas</em>'.
+   * @see ufes.mdd.lei.legisFacile.Inciso#getAlineas()
+   * @see #getInciso()
+   * @generated
+   */
+  EReference getInciso_Alineas();
 
   /**
    * Returns the meta object for class '{@link ufes.mdd.lei.legisFacile.Alinea <em>Alinea</em>}'.
@@ -1375,12 +1444,12 @@ public interface LegisFacilePackage extends EPackage
     EAttribute CAPUT__TEXTO = eINSTANCE.getCaput_Texto();
 
     /**
-     * The meta object literal for the '<em><b>Paragrafos</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Incisos</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CAPUT__PARAGRAFOS = eINSTANCE.getCaput_Paragrafos();
+    EReference CAPUT__INCISOS = eINSTANCE.getCaput_Incisos();
 
     /**
      * The meta object literal for the '{@link ufes.mdd.lei.legisFacile.impl.ParagrafoImpl <em>Paragrafo</em>}' class.
@@ -1401,12 +1470,38 @@ public interface LegisFacilePackage extends EPackage
     EAttribute PARAGRAFO__TEXTO = eINSTANCE.getParagrafo_Texto();
 
     /**
+     * The meta object literal for the '<em><b>Incisos</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PARAGRAFO__INCISOS = eINSTANCE.getParagrafo_Incisos();
+
+    /**
+     * The meta object literal for the '{@link ufes.mdd.lei.legisFacile.impl.IncisoImpl <em>Inciso</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see ufes.mdd.lei.legisFacile.impl.IncisoImpl
+     * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getInciso()
+     * @generated
+     */
+    EClass INCISO = eINSTANCE.getInciso();
+
+    /**
+     * The meta object literal for the '<em><b>Texto</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INCISO__TEXTO = eINSTANCE.getInciso_Texto();
+
+    /**
      * The meta object literal for the '<em><b>Alineas</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PARAGRAFO__ALINEAS = eINSTANCE.getParagrafo_Alineas();
+    EReference INCISO__ALINEAS = eINSTANCE.getInciso_Alineas();
 
     /**
      * The meta object literal for the '{@link ufes.mdd.lei.legisFacile.impl.AlineaImpl <em>Alinea</em>}' class.

@@ -126,6 +126,11 @@ public class LegisFacileAdapterFactory extends AdapterFactoryImpl
         return createParagrafoAdapter();
       }
       @Override
+      public Adapter caseInciso(Inciso object)
+      {
+        return createIncisoAdapter();
+      }
+      @Override
       public Adapter caseAlinea(Alinea object)
       {
         return createAlineaAdapter();
@@ -318,6 +323,21 @@ public class LegisFacileAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createParagrafoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link ufes.mdd.lei.legisFacile.Inciso <em>Inciso</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see ufes.mdd.lei.legisFacile.Inciso
+   * @generated
+   */
+  public Adapter createIncisoAdapter()
   {
     return null;
   }

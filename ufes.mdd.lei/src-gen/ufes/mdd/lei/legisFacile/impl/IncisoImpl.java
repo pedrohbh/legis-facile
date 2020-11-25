@@ -19,25 +19,25 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import ufes.mdd.lei.legisFacile.Alinea;
 import ufes.mdd.lei.legisFacile.Inciso;
 import ufes.mdd.lei.legisFacile.LegisFacilePackage;
-import ufes.mdd.lei.legisFacile.Paragrafo;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Paragrafo</b></em>'.
+ * An implementation of the model object '<em><b>Inciso</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link ufes.mdd.lei.legisFacile.impl.ParagrafoImpl#getTexto <em>Texto</em>}</li>
- *   <li>{@link ufes.mdd.lei.legisFacile.impl.ParagrafoImpl#getIncisos <em>Incisos</em>}</li>
+ *   <li>{@link ufes.mdd.lei.legisFacile.impl.IncisoImpl#getTexto <em>Texto</em>}</li>
+ *   <li>{@link ufes.mdd.lei.legisFacile.impl.IncisoImpl#getAlineas <em>Alineas</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Paragrafo
+public class IncisoImpl extends MinimalEObjectImpl.Container implements Inciso
 {
   /**
    * The default value of the '{@link #getTexto() <em>Texto</em>}' attribute.
@@ -60,21 +60,21 @@ public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Parag
   protected String texto = TEXTO_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getIncisos() <em>Incisos</em>}' containment reference list.
+   * The cached value of the '{@link #getAlineas() <em>Alineas</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIncisos()
+   * @see #getAlineas()
    * @generated
    * @ordered
    */
-  protected EList<Inciso> incisos;
+  protected EList<Alinea> alineas;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ParagrafoImpl()
+  protected IncisoImpl()
   {
     super();
   }
@@ -87,7 +87,7 @@ public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Parag
   @Override
   protected EClass eStaticClass()
   {
-    return LegisFacilePackage.Literals.PARAGRAFO;
+    return LegisFacilePackage.Literals.INCISO;
   }
 
   /**
@@ -112,7 +112,7 @@ public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Parag
     String oldTexto = texto;
     texto = newTexto;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LegisFacilePackage.PARAGRAFO__TEXTO, oldTexto, texto));
+      eNotify(new ENotificationImpl(this, Notification.SET, LegisFacilePackage.INCISO__TEXTO, oldTexto, texto));
   }
 
   /**
@@ -121,13 +121,13 @@ public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Parag
    * @generated
    */
   @Override
-  public EList<Inciso> getIncisos()
+  public EList<Alinea> getAlineas()
   {
-    if (incisos == null)
+    if (alineas == null)
     {
-      incisos = new EObjectContainmentEList<Inciso>(Inciso.class, this, LegisFacilePackage.PARAGRAFO__INCISOS);
+      alineas = new EObjectContainmentEList<Alinea>(Alinea.class, this, LegisFacilePackage.INCISO__ALINEAS);
     }
-    return incisos;
+    return alineas;
   }
 
   /**
@@ -140,8 +140,8 @@ public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Parag
   {
     switch (featureID)
     {
-      case LegisFacilePackage.PARAGRAFO__INCISOS:
-        return ((InternalEList<?>)getIncisos()).basicRemove(otherEnd, msgs);
+      case LegisFacilePackage.INCISO__ALINEAS:
+        return ((InternalEList<?>)getAlineas()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -156,10 +156,10 @@ public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Parag
   {
     switch (featureID)
     {
-      case LegisFacilePackage.PARAGRAFO__TEXTO:
+      case LegisFacilePackage.INCISO__TEXTO:
         return getTexto();
-      case LegisFacilePackage.PARAGRAFO__INCISOS:
-        return getIncisos();
+      case LegisFacilePackage.INCISO__ALINEAS:
+        return getAlineas();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -175,12 +175,12 @@ public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Parag
   {
     switch (featureID)
     {
-      case LegisFacilePackage.PARAGRAFO__TEXTO:
+      case LegisFacilePackage.INCISO__TEXTO:
         setTexto((String)newValue);
         return;
-      case LegisFacilePackage.PARAGRAFO__INCISOS:
-        getIncisos().clear();
-        getIncisos().addAll((Collection<? extends Inciso>)newValue);
+      case LegisFacilePackage.INCISO__ALINEAS:
+        getAlineas().clear();
+        getAlineas().addAll((Collection<? extends Alinea>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -196,11 +196,11 @@ public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Parag
   {
     switch (featureID)
     {
-      case LegisFacilePackage.PARAGRAFO__TEXTO:
+      case LegisFacilePackage.INCISO__TEXTO:
         setTexto(TEXTO_EDEFAULT);
         return;
-      case LegisFacilePackage.PARAGRAFO__INCISOS:
-        getIncisos().clear();
+      case LegisFacilePackage.INCISO__ALINEAS:
+        getAlineas().clear();
         return;
     }
     super.eUnset(featureID);
@@ -216,10 +216,10 @@ public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Parag
   {
     switch (featureID)
     {
-      case LegisFacilePackage.PARAGRAFO__TEXTO:
+      case LegisFacilePackage.INCISO__TEXTO:
         return TEXTO_EDEFAULT == null ? texto != null : !TEXTO_EDEFAULT.equals(texto);
-      case LegisFacilePackage.PARAGRAFO__INCISOS:
-        return incisos != null && !incisos.isEmpty();
+      case LegisFacilePackage.INCISO__ALINEAS:
+        return alineas != null && !alineas.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -241,4 +241,4 @@ public class ParagrafoImpl extends MinimalEObjectImpl.Container implements Parag
     return result.toString();
   }
 
-} //ParagrafoImpl
+} //IncisoImpl

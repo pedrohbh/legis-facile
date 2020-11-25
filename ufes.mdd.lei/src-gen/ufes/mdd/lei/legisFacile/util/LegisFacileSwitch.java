@@ -143,6 +143,13 @@ public class LegisFacileSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LegisFacilePackage.INCISO:
+      {
+        Inciso inciso = (Inciso)theEObject;
+        T result = caseInciso(inciso);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LegisFacilePackage.ALINEA:
       {
         Alinea alinea = (Alinea)theEObject;
@@ -340,6 +347,22 @@ public class LegisFacileSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseParagrafo(Paragrafo object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Inciso</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Inciso</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInciso(Inciso object)
   {
     return null;
   }

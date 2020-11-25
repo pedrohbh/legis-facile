@@ -20,8 +20,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import ufes.mdd.lei.legisFacile.Caput;
+import ufes.mdd.lei.legisFacile.Inciso;
 import ufes.mdd.lei.legisFacile.LegisFacilePackage;
-import ufes.mdd.lei.legisFacile.Paragrafo;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +32,7 @@ import ufes.mdd.lei.legisFacile.Paragrafo;
  * </p>
  * <ul>
  *   <li>{@link ufes.mdd.lei.legisFacile.impl.CaputImpl#getTexto <em>Texto</em>}</li>
- *   <li>{@link ufes.mdd.lei.legisFacile.impl.CaputImpl#getParagrafos <em>Paragrafos</em>}</li>
+ *   <li>{@link ufes.mdd.lei.legisFacile.impl.CaputImpl#getIncisos <em>Incisos</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,14 +60,14 @@ public class CaputImpl extends MinimalEObjectImpl.Container implements Caput
   protected String texto = TEXTO_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getParagrafos() <em>Paragrafos</em>}' containment reference list.
+   * The cached value of the '{@link #getIncisos() <em>Incisos</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParagrafos()
+   * @see #getIncisos()
    * @generated
    * @ordered
    */
-  protected EList<Paragrafo> paragrafos;
+  protected EList<Inciso> incisos;
 
   /**
    * <!-- begin-user-doc -->
@@ -121,13 +121,13 @@ public class CaputImpl extends MinimalEObjectImpl.Container implements Caput
    * @generated
    */
   @Override
-  public EList<Paragrafo> getParagrafos()
+  public EList<Inciso> getIncisos()
   {
-    if (paragrafos == null)
+    if (incisos == null)
     {
-      paragrafos = new EObjectContainmentEList<Paragrafo>(Paragrafo.class, this, LegisFacilePackage.CAPUT__PARAGRAFOS);
+      incisos = new EObjectContainmentEList<Inciso>(Inciso.class, this, LegisFacilePackage.CAPUT__INCISOS);
     }
-    return paragrafos;
+    return incisos;
   }
 
   /**
@@ -140,8 +140,8 @@ public class CaputImpl extends MinimalEObjectImpl.Container implements Caput
   {
     switch (featureID)
     {
-      case LegisFacilePackage.CAPUT__PARAGRAFOS:
-        return ((InternalEList<?>)getParagrafos()).basicRemove(otherEnd, msgs);
+      case LegisFacilePackage.CAPUT__INCISOS:
+        return ((InternalEList<?>)getIncisos()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -158,8 +158,8 @@ public class CaputImpl extends MinimalEObjectImpl.Container implements Caput
     {
       case LegisFacilePackage.CAPUT__TEXTO:
         return getTexto();
-      case LegisFacilePackage.CAPUT__PARAGRAFOS:
-        return getParagrafos();
+      case LegisFacilePackage.CAPUT__INCISOS:
+        return getIncisos();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -178,9 +178,9 @@ public class CaputImpl extends MinimalEObjectImpl.Container implements Caput
       case LegisFacilePackage.CAPUT__TEXTO:
         setTexto((String)newValue);
         return;
-      case LegisFacilePackage.CAPUT__PARAGRAFOS:
-        getParagrafos().clear();
-        getParagrafos().addAll((Collection<? extends Paragrafo>)newValue);
+      case LegisFacilePackage.CAPUT__INCISOS:
+        getIncisos().clear();
+        getIncisos().addAll((Collection<? extends Inciso>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -199,8 +199,8 @@ public class CaputImpl extends MinimalEObjectImpl.Container implements Caput
       case LegisFacilePackage.CAPUT__TEXTO:
         setTexto(TEXTO_EDEFAULT);
         return;
-      case LegisFacilePackage.CAPUT__PARAGRAFOS:
-        getParagrafos().clear();
+      case LegisFacilePackage.CAPUT__INCISOS:
+        getIncisos().clear();
         return;
     }
     super.eUnset(featureID);
@@ -218,8 +218,8 @@ public class CaputImpl extends MinimalEObjectImpl.Container implements Caput
     {
       case LegisFacilePackage.CAPUT__TEXTO:
         return TEXTO_EDEFAULT == null ? texto != null : !TEXTO_EDEFAULT.equals(texto);
-      case LegisFacilePackage.CAPUT__PARAGRAFOS:
-        return paragrafos != null && !paragrafos.isEmpty();
+      case LegisFacilePackage.CAPUT__INCISOS:
+        return incisos != null && !incisos.isEmpty();
     }
     return super.eIsSet(featureID);
   }

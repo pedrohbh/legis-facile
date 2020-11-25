@@ -114,6 +114,15 @@ public interface LegisFacileFactory extends EFactory
   Paragrafo createParagrafo();
 
   /**
+   * Returns a new object of class '<em>Inciso</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Inciso</em>'.
+   * @generated
+   */
+  Inciso createInciso();
+
+  /**
    * Returns a new object of class '<em>Alinea</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

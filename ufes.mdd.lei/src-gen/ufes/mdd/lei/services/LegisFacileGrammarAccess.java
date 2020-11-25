@@ -391,28 +391,36 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 	public class CaputElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ufes.mdd.lei.LegisFacile.Caput");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cCaputCaputKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Keyword cCaputKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
+		private final Keyword cCaputKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTextoAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cTextoSTRINGTerminalRuleCall_2_0 = (RuleCall)cTextoAssignment_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cLeftCurlyBracketKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cParagrafosAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cParagrafosParagrafoParserRuleCall_4_1_0 = (RuleCall)cParagrafosAssignment_4_1.eContents().get(0);
+		private final Assignment cIncisosAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cIncisosIncisoParserRuleCall_4_1_0 = (RuleCall)cIncisosAssignment_4_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
 		
 		//Caput:
-		//	'Caput|caput' '(' texto=STRING ')' ('{'
-		//	paragrafos+=Paragrafo*
+		//	('Caput' | 'caput') '(' texto=STRING ')' ('{'
+		//	incisos+=Inciso*
 		//	'}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Caput|caput' '(' texto=STRING ')' ('{' paragrafos+=Paragrafo* '}')?
+		//('Caput' | 'caput') '(' texto=STRING ')' ('{' incisos+=Inciso* '}')?
 		public Group getGroup() { return cGroup; }
 		
-		//'Caput|caput'
-		public Keyword getCaputCaputKeyword_0() { return cCaputCaputKeyword_0; }
+		//('Caput' | 'caput')
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+		
+		//'Caput'
+		public Keyword getCaputKeyword_0_0() { return cCaputKeyword_0_0; }
+		
+		//'caput'
+		public Keyword getCaputKeyword_0_1() { return cCaputKeyword_0_1; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
@@ -426,17 +434,17 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 		//')'
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 		
-		//('{' paragrafos+=Paragrafo* '}')?
+		//('{' incisos+=Inciso* '}')?
 		public Group getGroup_4() { return cGroup_4; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_4_0() { return cLeftCurlyBracketKeyword_4_0; }
 		
-		//paragrafos+=Paragrafo*
-		public Assignment getParagrafosAssignment_4_1() { return cParagrafosAssignment_4_1; }
+		//incisos+=Inciso*
+		public Assignment getIncisosAssignment_4_1() { return cIncisosAssignment_4_1; }
 		
-		//Paragrafo
-		public RuleCall getParagrafosParagrafoParserRuleCall_4_1_0() { return cParagrafosParagrafoParserRuleCall_4_1_0; }
+		//Inciso
+		public RuleCall getIncisosIncisoParserRuleCall_4_1_0() { return cIncisosIncisoParserRuleCall_4_1_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4_2() { return cRightCurlyBracketKeyword_4_2; }
@@ -453,17 +461,17 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cLeftCurlyBracketKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cAlineasAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cAlineasAlineaParserRuleCall_4_1_0 = (RuleCall)cAlineasAssignment_4_1.eContents().get(0);
+		private final Assignment cIncisosAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cIncisosIncisoParserRuleCall_4_1_0 = (RuleCall)cIncisosAssignment_4_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
 		
 		//Paragrafo:
 		//	('Paragrafo' | 'paragrafo') '(' texto=STRING ')' ('{'
-		//	alineas+=Alinea*
+		//	incisos+=Inciso*
 		//	'}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('Paragrafo' | 'paragrafo') '(' texto=STRING ')' ('{' alineas+=Alinea* '}')?
+		//('Paragrafo' | 'paragrafo') '(' texto=STRING ')' ('{' incisos+=Inciso* '}')?
 		public Group getGroup() { return cGroup; }
 		
 		//('Paragrafo' | 'paragrafo')
@@ -474,6 +482,67 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 		
 		//'paragrafo'
 		public Keyword getParagrafoKeyword_0_1() { return cParagrafoKeyword_0_1; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//texto=STRING
+		public Assignment getTextoAssignment_2() { return cTextoAssignment_2; }
+		
+		//STRING
+		public RuleCall getTextoSTRINGTerminalRuleCall_2_0() { return cTextoSTRINGTerminalRuleCall_2_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		
+		//('{' incisos+=Inciso* '}')?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_4_0() { return cLeftCurlyBracketKeyword_4_0; }
+		
+		//incisos+=Inciso*
+		public Assignment getIncisosAssignment_4_1() { return cIncisosAssignment_4_1; }
+		
+		//Inciso
+		public RuleCall getIncisosIncisoParserRuleCall_4_1_0() { return cIncisosIncisoParserRuleCall_4_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4_2() { return cRightCurlyBracketKeyword_4_2; }
+	}
+	public class IncisoElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ufes.mdd.lei.LegisFacile.Inciso");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Keyword cIncisoKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
+		private final Keyword cIncisoKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTextoAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTextoSTRINGTerminalRuleCall_2_0 = (RuleCall)cTextoAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cLeftCurlyBracketKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cAlineasAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cAlineasAlineaParserRuleCall_4_1_0 = (RuleCall)cAlineasAssignment_4_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
+		
+		//Inciso:
+		//	('Inciso' | 'inciso') '(' texto=STRING ')' ('{'
+		//	alineas+=Alinea*
+		//	'}')?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//('Inciso' | 'inciso') '(' texto=STRING ')' ('{' alineas+=Alinea* '}')?
+		public Group getGroup() { return cGroup; }
+		
+		//('Inciso' | 'inciso')
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+		
+		//'Inciso'
+		public Keyword getIncisoKeyword_0_0() { return cIncisoKeyword_0_0; }
+		
+		//'inciso'
+		public Keyword getIncisoKeyword_0_1() { return cIncisoKeyword_0_1; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
@@ -773,6 +842,7 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 	private final ArtigoElements pArtigo;
 	private final CaputElements pCaput;
 	private final ParagrafoElements pParagrafo;
+	private final IncisoElements pInciso;
 	private final AlineaElements pAlinea;
 	private final ItemElements pItem;
 	private final FinalElements pFinal;
@@ -799,6 +869,7 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 		this.pArtigo = new ArtigoElements();
 		this.pCaput = new CaputElements();
 		this.pParagrafo = new ParagrafoElements();
+		this.pInciso = new IncisoElements();
 		this.pAlinea = new AlineaElements();
 		this.pItem = new ItemElements();
 		this.pFinal = new FinalElements();
@@ -924,8 +995,8 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//Caput:
-	//	'Caput|caput' '(' texto=STRING ')' ('{'
-	//	paragrafos+=Paragrafo*
+	//	('Caput' | 'caput') '(' texto=STRING ')' ('{'
+	//	incisos+=Inciso*
 	//	'}')?;
 	public CaputElements getCaputAccess() {
 		return pCaput;
@@ -937,7 +1008,7 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 	
 	//Paragrafo:
 	//	('Paragrafo' | 'paragrafo') '(' texto=STRING ')' ('{'
-	//	alineas+=Alinea*
+	//	incisos+=Inciso*
 	//	'}')?;
 	public ParagrafoElements getParagrafoAccess() {
 		return pParagrafo;
@@ -945,6 +1016,18 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 	
 	public ParserRule getParagrafoRule() {
 		return getParagrafoAccess().getRule();
+	}
+	
+	//Inciso:
+	//	('Inciso' | 'inciso') '(' texto=STRING ')' ('{'
+	//	alineas+=Alinea*
+	//	'}')?;
+	public IncisoElements getIncisoAccess() {
+		return pInciso;
+	}
+	
+	public ParserRule getIncisoRule() {
+		return getIncisoAccess().getRule();
 	}
 	
 	//Alinea:

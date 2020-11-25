@@ -75,6 +75,7 @@ public class LegisFacileFactoryImpl extends EFactoryImpl implements LegisFacileF
       case LegisFacilePackage.ARTIGO: return createArtigo();
       case LegisFacilePackage.CAPUT: return createCaput();
       case LegisFacilePackage.PARAGRAFO: return createParagrafo();
+      case LegisFacilePackage.INCISO: return createInciso();
       case LegisFacilePackage.ALINEA: return createAlinea();
       case LegisFacilePackage.ITEM: return createItem();
       case LegisFacilePackage.DATA_TYPE: return createDataType();
@@ -203,6 +204,18 @@ public class LegisFacileFactoryImpl extends EFactoryImpl implements LegisFacileF
   {
     ParagrafoImpl paragrafo = new ParagrafoImpl();
     return paragrafo;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Inciso createInciso()
+  {
+    IncisoImpl inciso = new IncisoImpl();
+    return inciso;
   }
 
   /**

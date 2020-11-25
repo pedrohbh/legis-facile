@@ -40,11 +40,15 @@
     </genClasses>
     <genClasses ecoreClass="LegisFacile.ecore#//Caput">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//Caput/texto"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Caput/paragrafos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Caput/incisos"/>
     </genClasses>
     <genClasses ecoreClass="LegisFacile.ecore#//Paragrafo">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//Paragrafo/texto"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Paragrafo/alineas"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Paragrafo/incisos"/>
+    </genClasses>
+    <genClasses ecoreClass="LegisFacile.ecore#//Inciso">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//Inciso/texto"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Inciso/alineas"/>
     </genClasses>
     <genClasses ecoreClass="LegisFacile.ecore#//Alinea">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//Alinea/texto"/>

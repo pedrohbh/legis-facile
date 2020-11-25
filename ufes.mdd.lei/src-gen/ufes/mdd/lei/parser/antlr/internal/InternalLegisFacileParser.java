@@ -21,33 +21,18 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Preliminar'", "'preliminar'", "'{'", "','", "'}'", "'Epigrafe'", "'epigrafe'", "'('", "')'", "'Ementa'", "'ementa'", "'Preambulo'", "'preambulo'", "'Normativa'", "'normativa'", "'Artigo'", "'artigo'", "'Caput|caput'", "'Paragrafo'", "'paragrafo'", "'alinea'", "'Alinea'", "'Item'", "'item'", "'Final'", "'final'", "'datatype'", "'entity'", "'extends'", "'many'", "':'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Preliminar'", "'preliminar'", "'{'", "','", "'}'", "'Epigrafe'", "'epigrafe'", "'('", "')'", "'Ementa'", "'ementa'", "'Preambulo'", "'preambulo'", "'Normativa'", "'normativa'", "'Artigo'", "'artigo'", "'Caput'", "'caput'", "'Paragrafo'", "'paragrafo'", "'Inciso'", "'inciso'", "'alinea'", "'Alinea'", "'Item'", "'item'", "'Final'", "'final'", "'datatype'", "'entity'", "'extends'", "'many'", "':'"
     };
-    public static final int RULE_STRING=4;
-    public static final int RULE_SL_COMMENT=8;
     public static final int T__19=19;
     public static final int T__15=15;
-    public static final int T__37=37;
     public static final int T__16=16;
-    public static final int T__38=38;
     public static final int T__17=17;
-    public static final int T__39=39;
     public static final int T__18=18;
     public static final int T__11=11;
-    public static final int T__33=33;
     public static final int T__12=12;
-    public static final int T__34=34;
     public static final int T__13=13;
-    public static final int T__35=35;
     public static final int T__14=14;
-    public static final int T__36=36;
-    public static final int EOF=-1;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
     public static final int RULE_ID=6;
-    public static final int RULE_WS=9;
-    public static final int RULE_ANY_OTHER=10;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
@@ -58,10 +43,28 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
     public static final int T__23=23;
     public static final int T__24=24;
     public static final int T__25=25;
-    public static final int T__40=40;
-    public static final int T__41=41;
     public static final int T__20=20;
     public static final int T__21=21;
+    public static final int RULE_STRING=4;
+    public static final int RULE_SL_COMMENT=8;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
+    public static final int T__33=33;
+    public static final int T__34=34;
+    public static final int T__35=35;
+    public static final int T__36=36;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int T__44=44;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__42=42;
+    public static final int T__43=43;
 
     // delegates
     // delegators
@@ -159,7 +162,7 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( ((LA1_0>=11 && LA1_0<=12)||(LA1_0>=37 && LA1_0<=38)) ) {
+                if ( ((LA1_0>=11 && LA1_0<=12)||(LA1_0>=40 && LA1_0<=41)) ) {
                     alt1=1;
                 }
 
@@ -283,12 +286,12 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
             // InternalLegisFacile.g:114:2: (this_DataType_0= ruleDataType | this_Entity_1= ruleEntity | ( ( (lv_preliminar_2_0= rulePreliminar ) ) ( (lv_normativa_3_0= ruleNormativa ) ) ( (lv_final_4_0= ruleFinal ) ) ) )
             int alt2=3;
             switch ( input.LA(1) ) {
-            case 37:
+            case 40:
                 {
                 alt2=1;
                 }
                 break;
-            case 38:
+            case 41:
                 {
                 alt2=2;
                 }
@@ -1556,7 +1559,7 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
                 int alt10=2;
                 int LA10_0 = input.LA(1);
 
-                if ( ((LA10_0>=29 && LA10_0<=30)) ) {
+                if ( ((LA10_0>=30 && LA10_0<=31)) ) {
                     alt10=1;
                 }
 
@@ -1662,46 +1665,83 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCaput"
-    // InternalLegisFacile.g:655:1: ruleCaput returns [EObject current=null] : (otherlv_0= 'Caput|caput' otherlv_1= '(' ( (lv_texto_2_0= RULE_STRING ) ) otherlv_3= ')' (otherlv_4= '{' ( (lv_paragrafos_5_0= ruleParagrafo ) )* otherlv_6= '}' )? ) ;
+    // InternalLegisFacile.g:655:1: ruleCaput returns [EObject current=null] : ( (otherlv_0= 'Caput' | otherlv_1= 'caput' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_incisos_6_0= ruleInciso ) )* otherlv_7= '}' )? ) ;
     public final EObject ruleCaput() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
-        Token lv_texto_2_0=null;
-        Token otherlv_3=null;
+        Token otherlv_2=null;
+        Token lv_texto_3_0=null;
         Token otherlv_4=null;
-        Token otherlv_6=null;
-        EObject lv_paragrafos_5_0 = null;
+        Token otherlv_5=null;
+        Token otherlv_7=null;
+        EObject lv_incisos_6_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalLegisFacile.g:661:2: ( (otherlv_0= 'Caput|caput' otherlv_1= '(' ( (lv_texto_2_0= RULE_STRING ) ) otherlv_3= ')' (otherlv_4= '{' ( (lv_paragrafos_5_0= ruleParagrafo ) )* otherlv_6= '}' )? ) )
-            // InternalLegisFacile.g:662:2: (otherlv_0= 'Caput|caput' otherlv_1= '(' ( (lv_texto_2_0= RULE_STRING ) ) otherlv_3= ')' (otherlv_4= '{' ( (lv_paragrafos_5_0= ruleParagrafo ) )* otherlv_6= '}' )? )
+            // InternalLegisFacile.g:661:2: ( ( (otherlv_0= 'Caput' | otherlv_1= 'caput' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_incisos_6_0= ruleInciso ) )* otherlv_7= '}' )? ) )
+            // InternalLegisFacile.g:662:2: ( (otherlv_0= 'Caput' | otherlv_1= 'caput' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_incisos_6_0= ruleInciso ) )* otherlv_7= '}' )? )
             {
-            // InternalLegisFacile.g:662:2: (otherlv_0= 'Caput|caput' otherlv_1= '(' ( (lv_texto_2_0= RULE_STRING ) ) otherlv_3= ')' (otherlv_4= '{' ( (lv_paragrafos_5_0= ruleParagrafo ) )* otherlv_6= '}' )? )
-            // InternalLegisFacile.g:663:3: otherlv_0= 'Caput|caput' otherlv_1= '(' ( (lv_texto_2_0= RULE_STRING ) ) otherlv_3= ')' (otherlv_4= '{' ( (lv_paragrafos_5_0= ruleParagrafo ) )* otherlv_6= '}' )?
+            // InternalLegisFacile.g:662:2: ( (otherlv_0= 'Caput' | otherlv_1= 'caput' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_incisos_6_0= ruleInciso ) )* otherlv_7= '}' )? )
+            // InternalLegisFacile.g:663:3: (otherlv_0= 'Caput' | otherlv_1= 'caput' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_incisos_6_0= ruleInciso ) )* otherlv_7= '}' )?
             {
-            otherlv_0=(Token)match(input,28,FOLLOW_12); 
+            // InternalLegisFacile.g:663:3: (otherlv_0= 'Caput' | otherlv_1= 'caput' )
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-            			newLeafNode(otherlv_0, grammarAccess.getCaputAccess().getCaputCaputKeyword_0());
+            if ( (LA11_0==28) ) {
+                alt11=1;
+            }
+            else if ( (LA11_0==29) ) {
+                alt11=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 11, 0, input);
+
+                throw nvae;
+            }
+            switch (alt11) {
+                case 1 :
+                    // InternalLegisFacile.g:664:4: otherlv_0= 'Caput'
+                    {
+                    otherlv_0=(Token)match(input,28,FOLLOW_12); 
+
+                    				newLeafNode(otherlv_0, grammarAccess.getCaputAccess().getCaputKeyword_0_0());
+                    			
+
+                    }
+                    break;
+                case 2 :
+                    // InternalLegisFacile.g:669:4: otherlv_1= 'caput'
+                    {
+                    otherlv_1=(Token)match(input,29,FOLLOW_12); 
+
+                    				newLeafNode(otherlv_1, grammarAccess.getCaputAccess().getCaputKeyword_0_1());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            otherlv_2=(Token)match(input,18,FOLLOW_13); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getCaputAccess().getLeftParenthesisKeyword_1());
             		
-            otherlv_1=(Token)match(input,18,FOLLOW_13); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getCaputAccess().getLeftParenthesisKeyword_1());
-            		
-            // InternalLegisFacile.g:671:3: ( (lv_texto_2_0= RULE_STRING ) )
-            // InternalLegisFacile.g:672:4: (lv_texto_2_0= RULE_STRING )
+            // InternalLegisFacile.g:678:3: ( (lv_texto_3_0= RULE_STRING ) )
+            // InternalLegisFacile.g:679:4: (lv_texto_3_0= RULE_STRING )
             {
-            // InternalLegisFacile.g:672:4: (lv_texto_2_0= RULE_STRING )
-            // InternalLegisFacile.g:673:5: lv_texto_2_0= RULE_STRING
+            // InternalLegisFacile.g:679:4: (lv_texto_3_0= RULE_STRING )
+            // InternalLegisFacile.g:680:5: lv_texto_3_0= RULE_STRING
             {
-            lv_texto_2_0=(Token)match(input,RULE_STRING,FOLLOW_15); 
+            lv_texto_3_0=(Token)match(input,RULE_STRING,FOLLOW_15); 
 
-            					newLeafNode(lv_texto_2_0, grammarAccess.getCaputAccess().getTextoSTRINGTerminalRuleCall_2_0());
+            					newLeafNode(lv_texto_3_0, grammarAccess.getCaputAccess().getTextoSTRINGTerminalRuleCall_2_0());
             				
 
             					if (current==null) {
@@ -1710,7 +1750,7 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"texto",
-            						lv_texto_2_0,
+            						lv_texto_3_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -1719,48 +1759,48 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,19,FOLLOW_20); 
+            otherlv_4=(Token)match(input,19,FOLLOW_20); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getCaputAccess().getRightParenthesisKeyword_3());
+            			newLeafNode(otherlv_4, grammarAccess.getCaputAccess().getRightParenthesisKeyword_3());
             		
-            // InternalLegisFacile.g:693:3: (otherlv_4= '{' ( (lv_paragrafos_5_0= ruleParagrafo ) )* otherlv_6= '}' )?
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+            // InternalLegisFacile.g:700:3: (otherlv_5= '{' ( (lv_incisos_6_0= ruleInciso ) )* otherlv_7= '}' )?
+            int alt13=2;
+            int LA13_0 = input.LA(1);
 
-            if ( (LA12_0==13) ) {
-                alt12=1;
+            if ( (LA13_0==13) ) {
+                alt13=1;
             }
-            switch (alt12) {
+            switch (alt13) {
                 case 1 :
-                    // InternalLegisFacile.g:694:4: otherlv_4= '{' ( (lv_paragrafos_5_0= ruleParagrafo ) )* otherlv_6= '}'
+                    // InternalLegisFacile.g:701:4: otherlv_5= '{' ( (lv_incisos_6_0= ruleInciso ) )* otherlv_7= '}'
                     {
-                    otherlv_4=(Token)match(input,13,FOLLOW_19); 
+                    otherlv_5=(Token)match(input,13,FOLLOW_21); 
 
-                    				newLeafNode(otherlv_4, grammarAccess.getCaputAccess().getLeftCurlyBracketKeyword_4_0());
+                    				newLeafNode(otherlv_5, grammarAccess.getCaputAccess().getLeftCurlyBracketKeyword_4_0());
                     			
-                    // InternalLegisFacile.g:698:4: ( (lv_paragrafos_5_0= ruleParagrafo ) )*
-                    loop11:
+                    // InternalLegisFacile.g:705:4: ( (lv_incisos_6_0= ruleInciso ) )*
+                    loop12:
                     do {
-                        int alt11=2;
-                        int LA11_0 = input.LA(1);
+                        int alt12=2;
+                        int LA12_0 = input.LA(1);
 
-                        if ( ((LA11_0>=29 && LA11_0<=30)) ) {
-                            alt11=1;
+                        if ( ((LA12_0>=32 && LA12_0<=33)) ) {
+                            alt12=1;
                         }
 
 
-                        switch (alt11) {
+                        switch (alt12) {
                     	case 1 :
-                    	    // InternalLegisFacile.g:699:5: (lv_paragrafos_5_0= ruleParagrafo )
+                    	    // InternalLegisFacile.g:706:5: (lv_incisos_6_0= ruleInciso )
                     	    {
-                    	    // InternalLegisFacile.g:699:5: (lv_paragrafos_5_0= ruleParagrafo )
-                    	    // InternalLegisFacile.g:700:6: lv_paragrafos_5_0= ruleParagrafo
+                    	    // InternalLegisFacile.g:706:5: (lv_incisos_6_0= ruleInciso )
+                    	    // InternalLegisFacile.g:707:6: lv_incisos_6_0= ruleInciso
                     	    {
 
-                    	    						newCompositeNode(grammarAccess.getCaputAccess().getParagrafosParagrafoParserRuleCall_4_1_0());
+                    	    						newCompositeNode(grammarAccess.getCaputAccess().getIncisosIncisoParserRuleCall_4_1_0());
                     	    					
-                    	    pushFollow(FOLLOW_19);
-                    	    lv_paragrafos_5_0=ruleParagrafo();
+                    	    pushFollow(FOLLOW_21);
+                    	    lv_incisos_6_0=ruleInciso();
 
                     	    state._fsp--;
 
@@ -1770,9 +1810,9 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
                     	    						}
                     	    						add(
                     	    							current,
-                    	    							"paragrafos",
-                    	    							lv_paragrafos_5_0,
-                    	    							"ufes.mdd.lei.LegisFacile.Paragrafo");
+                    	    							"incisos",
+                    	    							lv_incisos_6_0,
+                    	    							"ufes.mdd.lei.LegisFacile.Inciso");
                     	    						afterParserOrEnumRuleCall();
                     	    					
 
@@ -1783,13 +1823,13 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop11;
+                    	    break loop12;
                         }
                     } while (true);
 
-                    otherlv_6=(Token)match(input,15,FOLLOW_2); 
+                    otherlv_7=(Token)match(input,15,FOLLOW_2); 
 
-                    				newLeafNode(otherlv_6, grammarAccess.getCaputAccess().getRightCurlyBracketKeyword_4_2());
+                    				newLeafNode(otherlv_7, grammarAccess.getCaputAccess().getRightCurlyBracketKeyword_4_2());
                     			
 
                     }
@@ -1820,7 +1860,7 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParagrafo"
-    // InternalLegisFacile.g:726:1: entryRuleParagrafo returns [EObject current=null] : iv_ruleParagrafo= ruleParagrafo EOF ;
+    // InternalLegisFacile.g:733:1: entryRuleParagrafo returns [EObject current=null] : iv_ruleParagrafo= ruleParagrafo EOF ;
     public final EObject entryRuleParagrafo() throws RecognitionException {
         EObject current = null;
 
@@ -1828,8 +1868,8 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLegisFacile.g:726:50: (iv_ruleParagrafo= ruleParagrafo EOF )
-            // InternalLegisFacile.g:727:2: iv_ruleParagrafo= ruleParagrafo EOF
+            // InternalLegisFacile.g:733:50: (iv_ruleParagrafo= ruleParagrafo EOF )
+            // InternalLegisFacile.g:734:2: iv_ruleParagrafo= ruleParagrafo EOF
             {
              newCompositeNode(grammarAccess.getParagrafoRule()); 
             pushFollow(FOLLOW_1);
@@ -1856,7 +1896,7 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParagrafo"
-    // InternalLegisFacile.g:733:1: ruleParagrafo returns [EObject current=null] : ( (otherlv_0= 'Paragrafo' | otherlv_1= 'paragrafo' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_alineas_6_0= ruleAlinea ) )* otherlv_7= '}' )? ) ;
+    // InternalLegisFacile.g:740:1: ruleParagrafo returns [EObject current=null] : ( (otherlv_0= 'Paragrafo' | otherlv_1= 'paragrafo' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_incisos_6_0= ruleInciso ) )* otherlv_7= '}' )? ) ;
     public final EObject ruleParagrafo() throws RecognitionException {
         EObject current = null;
 
@@ -1867,40 +1907,40 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
         Token otherlv_4=null;
         Token otherlv_5=null;
         Token otherlv_7=null;
-        EObject lv_alineas_6_0 = null;
+        EObject lv_incisos_6_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalLegisFacile.g:739:2: ( ( (otherlv_0= 'Paragrafo' | otherlv_1= 'paragrafo' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_alineas_6_0= ruleAlinea ) )* otherlv_7= '}' )? ) )
-            // InternalLegisFacile.g:740:2: ( (otherlv_0= 'Paragrafo' | otherlv_1= 'paragrafo' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_alineas_6_0= ruleAlinea ) )* otherlv_7= '}' )? )
+            // InternalLegisFacile.g:746:2: ( ( (otherlv_0= 'Paragrafo' | otherlv_1= 'paragrafo' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_incisos_6_0= ruleInciso ) )* otherlv_7= '}' )? ) )
+            // InternalLegisFacile.g:747:2: ( (otherlv_0= 'Paragrafo' | otherlv_1= 'paragrafo' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_incisos_6_0= ruleInciso ) )* otherlv_7= '}' )? )
             {
-            // InternalLegisFacile.g:740:2: ( (otherlv_0= 'Paragrafo' | otherlv_1= 'paragrafo' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_alineas_6_0= ruleAlinea ) )* otherlv_7= '}' )? )
-            // InternalLegisFacile.g:741:3: (otherlv_0= 'Paragrafo' | otherlv_1= 'paragrafo' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_alineas_6_0= ruleAlinea ) )* otherlv_7= '}' )?
+            // InternalLegisFacile.g:747:2: ( (otherlv_0= 'Paragrafo' | otherlv_1= 'paragrafo' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_incisos_6_0= ruleInciso ) )* otherlv_7= '}' )? )
+            // InternalLegisFacile.g:748:3: (otherlv_0= 'Paragrafo' | otherlv_1= 'paragrafo' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_incisos_6_0= ruleInciso ) )* otherlv_7= '}' )?
             {
-            // InternalLegisFacile.g:741:3: (otherlv_0= 'Paragrafo' | otherlv_1= 'paragrafo' )
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+            // InternalLegisFacile.g:748:3: (otherlv_0= 'Paragrafo' | otherlv_1= 'paragrafo' )
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-            if ( (LA13_0==29) ) {
-                alt13=1;
+            if ( (LA14_0==30) ) {
+                alt14=1;
             }
-            else if ( (LA13_0==30) ) {
-                alt13=2;
+            else if ( (LA14_0==31) ) {
+                alt14=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 13, 0, input);
+                    new NoViableAltException("", 14, 0, input);
 
                 throw nvae;
             }
-            switch (alt13) {
+            switch (alt14) {
                 case 1 :
-                    // InternalLegisFacile.g:742:4: otherlv_0= 'Paragrafo'
+                    // InternalLegisFacile.g:749:4: otherlv_0= 'Paragrafo'
                     {
-                    otherlv_0=(Token)match(input,29,FOLLOW_12); 
+                    otherlv_0=(Token)match(input,30,FOLLOW_12); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getParagrafoAccess().getParagrafoKeyword_0_0());
                     			
@@ -1908,9 +1948,9 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLegisFacile.g:747:4: otherlv_1= 'paragrafo'
+                    // InternalLegisFacile.g:754:4: otherlv_1= 'paragrafo'
                     {
-                    otherlv_1=(Token)match(input,30,FOLLOW_12); 
+                    otherlv_1=(Token)match(input,31,FOLLOW_12); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getParagrafoAccess().getParagrafoKeyword_0_1());
                     			
@@ -1924,11 +1964,11 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getParagrafoAccess().getLeftParenthesisKeyword_1());
             		
-            // InternalLegisFacile.g:756:3: ( (lv_texto_3_0= RULE_STRING ) )
-            // InternalLegisFacile.g:757:4: (lv_texto_3_0= RULE_STRING )
+            // InternalLegisFacile.g:763:3: ( (lv_texto_3_0= RULE_STRING ) )
+            // InternalLegisFacile.g:764:4: (lv_texto_3_0= RULE_STRING )
             {
-            // InternalLegisFacile.g:757:4: (lv_texto_3_0= RULE_STRING )
-            // InternalLegisFacile.g:758:5: lv_texto_3_0= RULE_STRING
+            // InternalLegisFacile.g:764:4: (lv_texto_3_0= RULE_STRING )
+            // InternalLegisFacile.g:765:5: lv_texto_3_0= RULE_STRING
             {
             lv_texto_3_0=(Token)match(input,RULE_STRING,FOLLOW_15); 
 
@@ -1954,44 +1994,44 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getParagrafoAccess().getRightParenthesisKeyword_3());
             		
-            // InternalLegisFacile.g:778:3: (otherlv_5= '{' ( (lv_alineas_6_0= ruleAlinea ) )* otherlv_7= '}' )?
-            int alt15=2;
-            int LA15_0 = input.LA(1);
+            // InternalLegisFacile.g:785:3: (otherlv_5= '{' ( (lv_incisos_6_0= ruleInciso ) )* otherlv_7= '}' )?
+            int alt16=2;
+            int LA16_0 = input.LA(1);
 
-            if ( (LA15_0==13) ) {
-                alt15=1;
+            if ( (LA16_0==13) ) {
+                alt16=1;
             }
-            switch (alt15) {
+            switch (alt16) {
                 case 1 :
-                    // InternalLegisFacile.g:779:4: otherlv_5= '{' ( (lv_alineas_6_0= ruleAlinea ) )* otherlv_7= '}'
+                    // InternalLegisFacile.g:786:4: otherlv_5= '{' ( (lv_incisos_6_0= ruleInciso ) )* otherlv_7= '}'
                     {
                     otherlv_5=(Token)match(input,13,FOLLOW_21); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getParagrafoAccess().getLeftCurlyBracketKeyword_4_0());
                     			
-                    // InternalLegisFacile.g:783:4: ( (lv_alineas_6_0= ruleAlinea ) )*
-                    loop14:
+                    // InternalLegisFacile.g:790:4: ( (lv_incisos_6_0= ruleInciso ) )*
+                    loop15:
                     do {
-                        int alt14=2;
-                        int LA14_0 = input.LA(1);
+                        int alt15=2;
+                        int LA15_0 = input.LA(1);
 
-                        if ( ((LA14_0>=31 && LA14_0<=32)) ) {
-                            alt14=1;
+                        if ( ((LA15_0>=32 && LA15_0<=33)) ) {
+                            alt15=1;
                         }
 
 
-                        switch (alt14) {
+                        switch (alt15) {
                     	case 1 :
-                    	    // InternalLegisFacile.g:784:5: (lv_alineas_6_0= ruleAlinea )
+                    	    // InternalLegisFacile.g:791:5: (lv_incisos_6_0= ruleInciso )
                     	    {
-                    	    // InternalLegisFacile.g:784:5: (lv_alineas_6_0= ruleAlinea )
-                    	    // InternalLegisFacile.g:785:6: lv_alineas_6_0= ruleAlinea
+                    	    // InternalLegisFacile.g:791:5: (lv_incisos_6_0= ruleInciso )
+                    	    // InternalLegisFacile.g:792:6: lv_incisos_6_0= ruleInciso
                     	    {
 
-                    	    						newCompositeNode(grammarAccess.getParagrafoAccess().getAlineasAlineaParserRuleCall_4_1_0());
+                    	    						newCompositeNode(grammarAccess.getParagrafoAccess().getIncisosIncisoParserRuleCall_4_1_0());
                     	    					
                     	    pushFollow(FOLLOW_21);
-                    	    lv_alineas_6_0=ruleAlinea();
+                    	    lv_incisos_6_0=ruleInciso();
 
                     	    state._fsp--;
 
@@ -2001,9 +2041,9 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
                     	    						}
                     	    						add(
                     	    							current,
-                    	    							"alineas",
-                    	    							lv_alineas_6_0,
-                    	    							"ufes.mdd.lei.LegisFacile.Alinea");
+                    	    							"incisos",
+                    	    							lv_incisos_6_0,
+                    	    							"ufes.mdd.lei.LegisFacile.Inciso");
                     	    						afterParserOrEnumRuleCall();
                     	    					
 
@@ -2014,7 +2054,7 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop14;
+                    	    break loop15;
                         }
                     } while (true);
 
@@ -2050,8 +2090,239 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleParagrafo"
 
 
+    // $ANTLR start "entryRuleInciso"
+    // InternalLegisFacile.g:818:1: entryRuleInciso returns [EObject current=null] : iv_ruleInciso= ruleInciso EOF ;
+    public final EObject entryRuleInciso() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleInciso = null;
+
+
+        try {
+            // InternalLegisFacile.g:818:47: (iv_ruleInciso= ruleInciso EOF )
+            // InternalLegisFacile.g:819:2: iv_ruleInciso= ruleInciso EOF
+            {
+             newCompositeNode(grammarAccess.getIncisoRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleInciso=ruleInciso();
+
+            state._fsp--;
+
+             current =iv_ruleInciso; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleInciso"
+
+
+    // $ANTLR start "ruleInciso"
+    // InternalLegisFacile.g:825:1: ruleInciso returns [EObject current=null] : ( (otherlv_0= 'Inciso' | otherlv_1= 'inciso' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_alineas_6_0= ruleAlinea ) )* otherlv_7= '}' )? ) ;
+    public final EObject ruleInciso() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token lv_texto_3_0=null;
+        Token otherlv_4=null;
+        Token otherlv_5=null;
+        Token otherlv_7=null;
+        EObject lv_alineas_6_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalLegisFacile.g:831:2: ( ( (otherlv_0= 'Inciso' | otherlv_1= 'inciso' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_alineas_6_0= ruleAlinea ) )* otherlv_7= '}' )? ) )
+            // InternalLegisFacile.g:832:2: ( (otherlv_0= 'Inciso' | otherlv_1= 'inciso' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_alineas_6_0= ruleAlinea ) )* otherlv_7= '}' )? )
+            {
+            // InternalLegisFacile.g:832:2: ( (otherlv_0= 'Inciso' | otherlv_1= 'inciso' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_alineas_6_0= ruleAlinea ) )* otherlv_7= '}' )? )
+            // InternalLegisFacile.g:833:3: (otherlv_0= 'Inciso' | otherlv_1= 'inciso' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_alineas_6_0= ruleAlinea ) )* otherlv_7= '}' )?
+            {
+            // InternalLegisFacile.g:833:3: (otherlv_0= 'Inciso' | otherlv_1= 'inciso' )
+            int alt17=2;
+            int LA17_0 = input.LA(1);
+
+            if ( (LA17_0==32) ) {
+                alt17=1;
+            }
+            else if ( (LA17_0==33) ) {
+                alt17=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 17, 0, input);
+
+                throw nvae;
+            }
+            switch (alt17) {
+                case 1 :
+                    // InternalLegisFacile.g:834:4: otherlv_0= 'Inciso'
+                    {
+                    otherlv_0=(Token)match(input,32,FOLLOW_12); 
+
+                    				newLeafNode(otherlv_0, grammarAccess.getIncisoAccess().getIncisoKeyword_0_0());
+                    			
+
+                    }
+                    break;
+                case 2 :
+                    // InternalLegisFacile.g:839:4: otherlv_1= 'inciso'
+                    {
+                    otherlv_1=(Token)match(input,33,FOLLOW_12); 
+
+                    				newLeafNode(otherlv_1, grammarAccess.getIncisoAccess().getIncisoKeyword_0_1());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            otherlv_2=(Token)match(input,18,FOLLOW_13); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getIncisoAccess().getLeftParenthesisKeyword_1());
+            		
+            // InternalLegisFacile.g:848:3: ( (lv_texto_3_0= RULE_STRING ) )
+            // InternalLegisFacile.g:849:4: (lv_texto_3_0= RULE_STRING )
+            {
+            // InternalLegisFacile.g:849:4: (lv_texto_3_0= RULE_STRING )
+            // InternalLegisFacile.g:850:5: lv_texto_3_0= RULE_STRING
+            {
+            lv_texto_3_0=(Token)match(input,RULE_STRING,FOLLOW_15); 
+
+            					newLeafNode(lv_texto_3_0, grammarAccess.getIncisoAccess().getTextoSTRINGTerminalRuleCall_2_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getIncisoRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"texto",
+            						lv_texto_3_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+            otherlv_4=(Token)match(input,19,FOLLOW_20); 
+
+            			newLeafNode(otherlv_4, grammarAccess.getIncisoAccess().getRightParenthesisKeyword_3());
+            		
+            // InternalLegisFacile.g:870:3: (otherlv_5= '{' ( (lv_alineas_6_0= ruleAlinea ) )* otherlv_7= '}' )?
+            int alt19=2;
+            int LA19_0 = input.LA(1);
+
+            if ( (LA19_0==13) ) {
+                alt19=1;
+            }
+            switch (alt19) {
+                case 1 :
+                    // InternalLegisFacile.g:871:4: otherlv_5= '{' ( (lv_alineas_6_0= ruleAlinea ) )* otherlv_7= '}'
+                    {
+                    otherlv_5=(Token)match(input,13,FOLLOW_22); 
+
+                    				newLeafNode(otherlv_5, grammarAccess.getIncisoAccess().getLeftCurlyBracketKeyword_4_0());
+                    			
+                    // InternalLegisFacile.g:875:4: ( (lv_alineas_6_0= ruleAlinea ) )*
+                    loop18:
+                    do {
+                        int alt18=2;
+                        int LA18_0 = input.LA(1);
+
+                        if ( ((LA18_0>=34 && LA18_0<=35)) ) {
+                            alt18=1;
+                        }
+
+
+                        switch (alt18) {
+                    	case 1 :
+                    	    // InternalLegisFacile.g:876:5: (lv_alineas_6_0= ruleAlinea )
+                    	    {
+                    	    // InternalLegisFacile.g:876:5: (lv_alineas_6_0= ruleAlinea )
+                    	    // InternalLegisFacile.g:877:6: lv_alineas_6_0= ruleAlinea
+                    	    {
+
+                    	    						newCompositeNode(grammarAccess.getIncisoAccess().getAlineasAlineaParserRuleCall_4_1_0());
+                    	    					
+                    	    pushFollow(FOLLOW_22);
+                    	    lv_alineas_6_0=ruleAlinea();
+
+                    	    state._fsp--;
+
+
+                    	    						if (current==null) {
+                    	    							current = createModelElementForParent(grammarAccess.getIncisoRule());
+                    	    						}
+                    	    						add(
+                    	    							current,
+                    	    							"alineas",
+                    	    							lv_alineas_6_0,
+                    	    							"ufes.mdd.lei.LegisFacile.Alinea");
+                    	    						afterParserOrEnumRuleCall();
+                    	    					
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop18;
+                        }
+                    } while (true);
+
+                    otherlv_7=(Token)match(input,15,FOLLOW_2); 
+
+                    				newLeafNode(otherlv_7, grammarAccess.getIncisoAccess().getRightCurlyBracketKeyword_4_2());
+                    			
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleInciso"
+
+
     // $ANTLR start "entryRuleAlinea"
-    // InternalLegisFacile.g:811:1: entryRuleAlinea returns [EObject current=null] : iv_ruleAlinea= ruleAlinea EOF ;
+    // InternalLegisFacile.g:903:1: entryRuleAlinea returns [EObject current=null] : iv_ruleAlinea= ruleAlinea EOF ;
     public final EObject entryRuleAlinea() throws RecognitionException {
         EObject current = null;
 
@@ -2059,8 +2330,8 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLegisFacile.g:811:47: (iv_ruleAlinea= ruleAlinea EOF )
-            // InternalLegisFacile.g:812:2: iv_ruleAlinea= ruleAlinea EOF
+            // InternalLegisFacile.g:903:47: (iv_ruleAlinea= ruleAlinea EOF )
+            // InternalLegisFacile.g:904:2: iv_ruleAlinea= ruleAlinea EOF
             {
              newCompositeNode(grammarAccess.getAlineaRule()); 
             pushFollow(FOLLOW_1);
@@ -2087,7 +2358,7 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAlinea"
-    // InternalLegisFacile.g:818:1: ruleAlinea returns [EObject current=null] : ( (otherlv_0= 'alinea' | otherlv_1= 'Alinea' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_itens_6_0= ruleItem ) )* otherlv_7= '}' )? ) ;
+    // InternalLegisFacile.g:910:1: ruleAlinea returns [EObject current=null] : ( (otherlv_0= 'alinea' | otherlv_1= 'Alinea' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_itens_6_0= ruleItem ) )* otherlv_7= '}' )? ) ;
     public final EObject ruleAlinea() throws RecognitionException {
         EObject current = null;
 
@@ -2105,33 +2376,33 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLegisFacile.g:824:2: ( ( (otherlv_0= 'alinea' | otherlv_1= 'Alinea' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_itens_6_0= ruleItem ) )* otherlv_7= '}' )? ) )
-            // InternalLegisFacile.g:825:2: ( (otherlv_0= 'alinea' | otherlv_1= 'Alinea' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_itens_6_0= ruleItem ) )* otherlv_7= '}' )? )
+            // InternalLegisFacile.g:916:2: ( ( (otherlv_0= 'alinea' | otherlv_1= 'Alinea' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_itens_6_0= ruleItem ) )* otherlv_7= '}' )? ) )
+            // InternalLegisFacile.g:917:2: ( (otherlv_0= 'alinea' | otherlv_1= 'Alinea' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_itens_6_0= ruleItem ) )* otherlv_7= '}' )? )
             {
-            // InternalLegisFacile.g:825:2: ( (otherlv_0= 'alinea' | otherlv_1= 'Alinea' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_itens_6_0= ruleItem ) )* otherlv_7= '}' )? )
-            // InternalLegisFacile.g:826:3: (otherlv_0= 'alinea' | otherlv_1= 'Alinea' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_itens_6_0= ruleItem ) )* otherlv_7= '}' )?
+            // InternalLegisFacile.g:917:2: ( (otherlv_0= 'alinea' | otherlv_1= 'Alinea' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_itens_6_0= ruleItem ) )* otherlv_7= '}' )? )
+            // InternalLegisFacile.g:918:3: (otherlv_0= 'alinea' | otherlv_1= 'Alinea' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' (otherlv_5= '{' ( (lv_itens_6_0= ruleItem ) )* otherlv_7= '}' )?
             {
-            // InternalLegisFacile.g:826:3: (otherlv_0= 'alinea' | otherlv_1= 'Alinea' )
-            int alt16=2;
-            int LA16_0 = input.LA(1);
+            // InternalLegisFacile.g:918:3: (otherlv_0= 'alinea' | otherlv_1= 'Alinea' )
+            int alt20=2;
+            int LA20_0 = input.LA(1);
 
-            if ( (LA16_0==31) ) {
-                alt16=1;
+            if ( (LA20_0==34) ) {
+                alt20=1;
             }
-            else if ( (LA16_0==32) ) {
-                alt16=2;
+            else if ( (LA20_0==35) ) {
+                alt20=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 16, 0, input);
+                    new NoViableAltException("", 20, 0, input);
 
                 throw nvae;
             }
-            switch (alt16) {
+            switch (alt20) {
                 case 1 :
-                    // InternalLegisFacile.g:827:4: otherlv_0= 'alinea'
+                    // InternalLegisFacile.g:919:4: otherlv_0= 'alinea'
                     {
-                    otherlv_0=(Token)match(input,31,FOLLOW_12); 
+                    otherlv_0=(Token)match(input,34,FOLLOW_12); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getAlineaAccess().getAlineaKeyword_0_0());
                     			
@@ -2139,9 +2410,9 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLegisFacile.g:832:4: otherlv_1= 'Alinea'
+                    // InternalLegisFacile.g:924:4: otherlv_1= 'Alinea'
                     {
-                    otherlv_1=(Token)match(input,32,FOLLOW_12); 
+                    otherlv_1=(Token)match(input,35,FOLLOW_12); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getAlineaAccess().getAlineaKeyword_0_1());
                     			
@@ -2155,11 +2426,11 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getAlineaAccess().getLeftParenthesisKeyword_1());
             		
-            // InternalLegisFacile.g:841:3: ( (lv_texto_3_0= RULE_STRING ) )
-            // InternalLegisFacile.g:842:4: (lv_texto_3_0= RULE_STRING )
+            // InternalLegisFacile.g:933:3: ( (lv_texto_3_0= RULE_STRING ) )
+            // InternalLegisFacile.g:934:4: (lv_texto_3_0= RULE_STRING )
             {
-            // InternalLegisFacile.g:842:4: (lv_texto_3_0= RULE_STRING )
-            // InternalLegisFacile.g:843:5: lv_texto_3_0= RULE_STRING
+            // InternalLegisFacile.g:934:4: (lv_texto_3_0= RULE_STRING )
+            // InternalLegisFacile.g:935:5: lv_texto_3_0= RULE_STRING
             {
             lv_texto_3_0=(Token)match(input,RULE_STRING,FOLLOW_15); 
 
@@ -2185,43 +2456,43 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getAlineaAccess().getRightParenthesisKeyword_3());
             		
-            // InternalLegisFacile.g:863:3: (otherlv_5= '{' ( (lv_itens_6_0= ruleItem ) )* otherlv_7= '}' )?
-            int alt18=2;
-            int LA18_0 = input.LA(1);
+            // InternalLegisFacile.g:955:3: (otherlv_5= '{' ( (lv_itens_6_0= ruleItem ) )* otherlv_7= '}' )?
+            int alt22=2;
+            int LA22_0 = input.LA(1);
 
-            if ( (LA18_0==13) ) {
-                alt18=1;
+            if ( (LA22_0==13) ) {
+                alt22=1;
             }
-            switch (alt18) {
+            switch (alt22) {
                 case 1 :
-                    // InternalLegisFacile.g:864:4: otherlv_5= '{' ( (lv_itens_6_0= ruleItem ) )* otherlv_7= '}'
+                    // InternalLegisFacile.g:956:4: otherlv_5= '{' ( (lv_itens_6_0= ruleItem ) )* otherlv_7= '}'
                     {
-                    otherlv_5=(Token)match(input,13,FOLLOW_22); 
+                    otherlv_5=(Token)match(input,13,FOLLOW_23); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getAlineaAccess().getLeftCurlyBracketKeyword_4_0());
                     			
-                    // InternalLegisFacile.g:868:4: ( (lv_itens_6_0= ruleItem ) )*
-                    loop17:
+                    // InternalLegisFacile.g:960:4: ( (lv_itens_6_0= ruleItem ) )*
+                    loop21:
                     do {
-                        int alt17=2;
-                        int LA17_0 = input.LA(1);
+                        int alt21=2;
+                        int LA21_0 = input.LA(1);
 
-                        if ( ((LA17_0>=33 && LA17_0<=34)) ) {
-                            alt17=1;
+                        if ( ((LA21_0>=36 && LA21_0<=37)) ) {
+                            alt21=1;
                         }
 
 
-                        switch (alt17) {
+                        switch (alt21) {
                     	case 1 :
-                    	    // InternalLegisFacile.g:869:5: (lv_itens_6_0= ruleItem )
+                    	    // InternalLegisFacile.g:961:5: (lv_itens_6_0= ruleItem )
                     	    {
-                    	    // InternalLegisFacile.g:869:5: (lv_itens_6_0= ruleItem )
-                    	    // InternalLegisFacile.g:870:6: lv_itens_6_0= ruleItem
+                    	    // InternalLegisFacile.g:961:5: (lv_itens_6_0= ruleItem )
+                    	    // InternalLegisFacile.g:962:6: lv_itens_6_0= ruleItem
                     	    {
 
                     	    						newCompositeNode(grammarAccess.getAlineaAccess().getItensItemParserRuleCall_4_1_0());
                     	    					
-                    	    pushFollow(FOLLOW_22);
+                    	    pushFollow(FOLLOW_23);
                     	    lv_itens_6_0=ruleItem();
 
                     	    state._fsp--;
@@ -2245,7 +2516,7 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop17;
+                    	    break loop21;
                         }
                     } while (true);
 
@@ -2282,7 +2553,7 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleItem"
-    // InternalLegisFacile.g:896:1: entryRuleItem returns [EObject current=null] : iv_ruleItem= ruleItem EOF ;
+    // InternalLegisFacile.g:988:1: entryRuleItem returns [EObject current=null] : iv_ruleItem= ruleItem EOF ;
     public final EObject entryRuleItem() throws RecognitionException {
         EObject current = null;
 
@@ -2290,8 +2561,8 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLegisFacile.g:896:45: (iv_ruleItem= ruleItem EOF )
-            // InternalLegisFacile.g:897:2: iv_ruleItem= ruleItem EOF
+            // InternalLegisFacile.g:988:45: (iv_ruleItem= ruleItem EOF )
+            // InternalLegisFacile.g:989:2: iv_ruleItem= ruleItem EOF
             {
              newCompositeNode(grammarAccess.getItemRule()); 
             pushFollow(FOLLOW_1);
@@ -2318,7 +2589,7 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleItem"
-    // InternalLegisFacile.g:903:1: ruleItem returns [EObject current=null] : ( (otherlv_0= 'Item' | otherlv_1= 'item' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' ) ;
+    // InternalLegisFacile.g:995:1: ruleItem returns [EObject current=null] : ( (otherlv_0= 'Item' | otherlv_1= 'item' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' ) ;
     public final EObject ruleItem() throws RecognitionException {
         EObject current = null;
 
@@ -2332,33 +2603,33 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLegisFacile.g:909:2: ( ( (otherlv_0= 'Item' | otherlv_1= 'item' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' ) )
-            // InternalLegisFacile.g:910:2: ( (otherlv_0= 'Item' | otherlv_1= 'item' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' )
+            // InternalLegisFacile.g:1001:2: ( ( (otherlv_0= 'Item' | otherlv_1= 'item' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' ) )
+            // InternalLegisFacile.g:1002:2: ( (otherlv_0= 'Item' | otherlv_1= 'item' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' )
             {
-            // InternalLegisFacile.g:910:2: ( (otherlv_0= 'Item' | otherlv_1= 'item' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' )
-            // InternalLegisFacile.g:911:3: (otherlv_0= 'Item' | otherlv_1= 'item' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')'
+            // InternalLegisFacile.g:1002:2: ( (otherlv_0= 'Item' | otherlv_1= 'item' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')' )
+            // InternalLegisFacile.g:1003:3: (otherlv_0= 'Item' | otherlv_1= 'item' ) otherlv_2= '(' ( (lv_texto_3_0= RULE_STRING ) ) otherlv_4= ')'
             {
-            // InternalLegisFacile.g:911:3: (otherlv_0= 'Item' | otherlv_1= 'item' )
-            int alt19=2;
-            int LA19_0 = input.LA(1);
+            // InternalLegisFacile.g:1003:3: (otherlv_0= 'Item' | otherlv_1= 'item' )
+            int alt23=2;
+            int LA23_0 = input.LA(1);
 
-            if ( (LA19_0==33) ) {
-                alt19=1;
+            if ( (LA23_0==36) ) {
+                alt23=1;
             }
-            else if ( (LA19_0==34) ) {
-                alt19=2;
+            else if ( (LA23_0==37) ) {
+                alt23=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 19, 0, input);
+                    new NoViableAltException("", 23, 0, input);
 
                 throw nvae;
             }
-            switch (alt19) {
+            switch (alt23) {
                 case 1 :
-                    // InternalLegisFacile.g:912:4: otherlv_0= 'Item'
+                    // InternalLegisFacile.g:1004:4: otherlv_0= 'Item'
                     {
-                    otherlv_0=(Token)match(input,33,FOLLOW_12); 
+                    otherlv_0=(Token)match(input,36,FOLLOW_12); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getItemAccess().getItemKeyword_0_0());
                     			
@@ -2366,9 +2637,9 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLegisFacile.g:917:4: otherlv_1= 'item'
+                    // InternalLegisFacile.g:1009:4: otherlv_1= 'item'
                     {
-                    otherlv_1=(Token)match(input,34,FOLLOW_12); 
+                    otherlv_1=(Token)match(input,37,FOLLOW_12); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getItemAccess().getItemKeyword_0_1());
                     			
@@ -2382,11 +2653,11 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getItemAccess().getLeftParenthesisKeyword_1());
             		
-            // InternalLegisFacile.g:926:3: ( (lv_texto_3_0= RULE_STRING ) )
-            // InternalLegisFacile.g:927:4: (lv_texto_3_0= RULE_STRING )
+            // InternalLegisFacile.g:1018:3: ( (lv_texto_3_0= RULE_STRING ) )
+            // InternalLegisFacile.g:1019:4: (lv_texto_3_0= RULE_STRING )
             {
-            // InternalLegisFacile.g:927:4: (lv_texto_3_0= RULE_STRING )
-            // InternalLegisFacile.g:928:5: lv_texto_3_0= RULE_STRING
+            // InternalLegisFacile.g:1019:4: (lv_texto_3_0= RULE_STRING )
+            // InternalLegisFacile.g:1020:5: lv_texto_3_0= RULE_STRING
             {
             lv_texto_3_0=(Token)match(input,RULE_STRING,FOLLOW_15); 
 
@@ -2435,7 +2706,7 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFinal"
-    // InternalLegisFacile.g:952:1: entryRuleFinal returns [String current=null] : iv_ruleFinal= ruleFinal EOF ;
+    // InternalLegisFacile.g:1044:1: entryRuleFinal returns [String current=null] : iv_ruleFinal= ruleFinal EOF ;
     public final String entryRuleFinal() throws RecognitionException {
         String current = null;
 
@@ -2443,8 +2714,8 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLegisFacile.g:952:45: (iv_ruleFinal= ruleFinal EOF )
-            // InternalLegisFacile.g:953:2: iv_ruleFinal= ruleFinal EOF
+            // InternalLegisFacile.g:1044:45: (iv_ruleFinal= ruleFinal EOF )
+            // InternalLegisFacile.g:1045:2: iv_ruleFinal= ruleFinal EOF
             {
              newCompositeNode(grammarAccess.getFinalRule()); 
             pushFollow(FOLLOW_1);
@@ -2471,7 +2742,7 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFinal"
-    // InternalLegisFacile.g:959:1: ruleFinal returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= 'Final' | kw= 'final' ) kw= '{' kw= '}' ) ;
+    // InternalLegisFacile.g:1051:1: ruleFinal returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= 'Final' | kw= 'final' ) kw= '{' kw= '}' ) ;
     public final AntlrDatatypeRuleToken ruleFinal() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2481,33 +2752,33 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLegisFacile.g:965:2: ( ( (kw= 'Final' | kw= 'final' ) kw= '{' kw= '}' ) )
-            // InternalLegisFacile.g:966:2: ( (kw= 'Final' | kw= 'final' ) kw= '{' kw= '}' )
+            // InternalLegisFacile.g:1057:2: ( ( (kw= 'Final' | kw= 'final' ) kw= '{' kw= '}' ) )
+            // InternalLegisFacile.g:1058:2: ( (kw= 'Final' | kw= 'final' ) kw= '{' kw= '}' )
             {
-            // InternalLegisFacile.g:966:2: ( (kw= 'Final' | kw= 'final' ) kw= '{' kw= '}' )
-            // InternalLegisFacile.g:967:3: (kw= 'Final' | kw= 'final' ) kw= '{' kw= '}'
+            // InternalLegisFacile.g:1058:2: ( (kw= 'Final' | kw= 'final' ) kw= '{' kw= '}' )
+            // InternalLegisFacile.g:1059:3: (kw= 'Final' | kw= 'final' ) kw= '{' kw= '}'
             {
-            // InternalLegisFacile.g:967:3: (kw= 'Final' | kw= 'final' )
-            int alt20=2;
-            int LA20_0 = input.LA(1);
+            // InternalLegisFacile.g:1059:3: (kw= 'Final' | kw= 'final' )
+            int alt24=2;
+            int LA24_0 = input.LA(1);
 
-            if ( (LA20_0==35) ) {
-                alt20=1;
+            if ( (LA24_0==38) ) {
+                alt24=1;
             }
-            else if ( (LA20_0==36) ) {
-                alt20=2;
+            else if ( (LA24_0==39) ) {
+                alt24=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 20, 0, input);
+                    new NoViableAltException("", 24, 0, input);
 
                 throw nvae;
             }
-            switch (alt20) {
+            switch (alt24) {
                 case 1 :
-                    // InternalLegisFacile.g:968:4: kw= 'Final'
+                    // InternalLegisFacile.g:1060:4: kw= 'Final'
                     {
-                    kw=(Token)match(input,35,FOLLOW_6); 
+                    kw=(Token)match(input,38,FOLLOW_6); 
 
                     				current.merge(kw);
                     				newLeafNode(kw, grammarAccess.getFinalAccess().getFinalKeyword_0_0());
@@ -2516,9 +2787,9 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLegisFacile.g:974:4: kw= 'final'
+                    // InternalLegisFacile.g:1066:4: kw= 'final'
                     {
-                    kw=(Token)match(input,36,FOLLOW_6); 
+                    kw=(Token)match(input,39,FOLLOW_6); 
 
                     				current.merge(kw);
                     				newLeafNode(kw, grammarAccess.getFinalAccess().getFinalKeyword_0_1());
@@ -2562,7 +2833,7 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDataType"
-    // InternalLegisFacile.g:994:1: entryRuleDataType returns [EObject current=null] : iv_ruleDataType= ruleDataType EOF ;
+    // InternalLegisFacile.g:1086:1: entryRuleDataType returns [EObject current=null] : iv_ruleDataType= ruleDataType EOF ;
     public final EObject entryRuleDataType() throws RecognitionException {
         EObject current = null;
 
@@ -2570,8 +2841,8 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLegisFacile.g:994:49: (iv_ruleDataType= ruleDataType EOF )
-            // InternalLegisFacile.g:995:2: iv_ruleDataType= ruleDataType EOF
+            // InternalLegisFacile.g:1086:49: (iv_ruleDataType= ruleDataType EOF )
+            // InternalLegisFacile.g:1087:2: iv_ruleDataType= ruleDataType EOF
             {
              newCompositeNode(grammarAccess.getDataTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -2598,7 +2869,7 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDataType"
-    // InternalLegisFacile.g:1001:1: ruleDataType returns [EObject current=null] : (otherlv_0= 'datatype' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalLegisFacile.g:1093:1: ruleDataType returns [EObject current=null] : (otherlv_0= 'datatype' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleDataType() throws RecognitionException {
         EObject current = null;
 
@@ -2609,21 +2880,21 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLegisFacile.g:1007:2: ( (otherlv_0= 'datatype' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalLegisFacile.g:1008:2: (otherlv_0= 'datatype' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalLegisFacile.g:1099:2: ( (otherlv_0= 'datatype' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalLegisFacile.g:1100:2: (otherlv_0= 'datatype' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalLegisFacile.g:1008:2: (otherlv_0= 'datatype' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalLegisFacile.g:1009:3: otherlv_0= 'datatype' ( (lv_name_1_0= RULE_ID ) )
+            // InternalLegisFacile.g:1100:2: (otherlv_0= 'datatype' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalLegisFacile.g:1101:3: otherlv_0= 'datatype' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,37,FOLLOW_23); 
+            otherlv_0=(Token)match(input,40,FOLLOW_24); 
 
             			newLeafNode(otherlv_0, grammarAccess.getDataTypeAccess().getDatatypeKeyword_0());
             		
-            // InternalLegisFacile.g:1013:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalLegisFacile.g:1014:4: (lv_name_1_0= RULE_ID )
+            // InternalLegisFacile.g:1105:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalLegisFacile.g:1106:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalLegisFacile.g:1014:4: (lv_name_1_0= RULE_ID )
-            // InternalLegisFacile.g:1015:5: lv_name_1_0= RULE_ID
+            // InternalLegisFacile.g:1106:4: (lv_name_1_0= RULE_ID )
+            // InternalLegisFacile.g:1107:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -2668,7 +2939,7 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEntity"
-    // InternalLegisFacile.g:1035:1: entryRuleEntity returns [EObject current=null] : iv_ruleEntity= ruleEntity EOF ;
+    // InternalLegisFacile.g:1127:1: entryRuleEntity returns [EObject current=null] : iv_ruleEntity= ruleEntity EOF ;
     public final EObject entryRuleEntity() throws RecognitionException {
         EObject current = null;
 
@@ -2676,8 +2947,8 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLegisFacile.g:1035:47: (iv_ruleEntity= ruleEntity EOF )
-            // InternalLegisFacile.g:1036:2: iv_ruleEntity= ruleEntity EOF
+            // InternalLegisFacile.g:1127:47: (iv_ruleEntity= ruleEntity EOF )
+            // InternalLegisFacile.g:1128:2: iv_ruleEntity= ruleEntity EOF
             {
              newCompositeNode(grammarAccess.getEntityRule()); 
             pushFollow(FOLLOW_1);
@@ -2704,7 +2975,7 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEntity"
-    // InternalLegisFacile.g:1042:1: ruleEntity returns [EObject current=null] : (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '{' ( (lv_features_5_0= ruleFeature ) )* otherlv_6= '}' ) ;
+    // InternalLegisFacile.g:1134:1: ruleEntity returns [EObject current=null] : (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '{' ( (lv_features_5_0= ruleFeature ) )* otherlv_6= '}' ) ;
     public final EObject ruleEntity() throws RecognitionException {
         EObject current = null;
 
@@ -2721,23 +2992,23 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLegisFacile.g:1048:2: ( (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '{' ( (lv_features_5_0= ruleFeature ) )* otherlv_6= '}' ) )
-            // InternalLegisFacile.g:1049:2: (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '{' ( (lv_features_5_0= ruleFeature ) )* otherlv_6= '}' )
+            // InternalLegisFacile.g:1140:2: ( (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '{' ( (lv_features_5_0= ruleFeature ) )* otherlv_6= '}' ) )
+            // InternalLegisFacile.g:1141:2: (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '{' ( (lv_features_5_0= ruleFeature ) )* otherlv_6= '}' )
             {
-            // InternalLegisFacile.g:1049:2: (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '{' ( (lv_features_5_0= ruleFeature ) )* otherlv_6= '}' )
-            // InternalLegisFacile.g:1050:3: otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '{' ( (lv_features_5_0= ruleFeature ) )* otherlv_6= '}'
+            // InternalLegisFacile.g:1141:2: (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '{' ( (lv_features_5_0= ruleFeature ) )* otherlv_6= '}' )
+            // InternalLegisFacile.g:1142:3: otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '{' ( (lv_features_5_0= ruleFeature ) )* otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,38,FOLLOW_23); 
+            otherlv_0=(Token)match(input,41,FOLLOW_24); 
 
             			newLeafNode(otherlv_0, grammarAccess.getEntityAccess().getEntityKeyword_0());
             		
-            // InternalLegisFacile.g:1054:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalLegisFacile.g:1055:4: (lv_name_1_0= RULE_ID )
+            // InternalLegisFacile.g:1146:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalLegisFacile.g:1147:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalLegisFacile.g:1055:4: (lv_name_1_0= RULE_ID )
-            // InternalLegisFacile.g:1056:5: lv_name_1_0= RULE_ID
+            // InternalLegisFacile.g:1147:4: (lv_name_1_0= RULE_ID )
+            // InternalLegisFacile.g:1148:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_24); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_25); 
 
             					newLeafNode(lv_name_1_0, grammarAccess.getEntityAccess().getNameIDTerminalRuleCall_1_0());
             				
@@ -2757,26 +3028,26 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalLegisFacile.g:1072:3: (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )?
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            // InternalLegisFacile.g:1164:3: (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )?
+            int alt25=2;
+            int LA25_0 = input.LA(1);
 
-            if ( (LA21_0==39) ) {
-                alt21=1;
+            if ( (LA25_0==42) ) {
+                alt25=1;
             }
-            switch (alt21) {
+            switch (alt25) {
                 case 1 :
-                    // InternalLegisFacile.g:1073:4: otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) )
+                    // InternalLegisFacile.g:1165:4: otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) )
                     {
-                    otherlv_2=(Token)match(input,39,FOLLOW_23); 
+                    otherlv_2=(Token)match(input,42,FOLLOW_24); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getEntityAccess().getExtendsKeyword_2_0());
                     			
-                    // InternalLegisFacile.g:1077:4: ( (otherlv_3= RULE_ID ) )
-                    // InternalLegisFacile.g:1078:5: (otherlv_3= RULE_ID )
+                    // InternalLegisFacile.g:1169:4: ( (otherlv_3= RULE_ID ) )
+                    // InternalLegisFacile.g:1170:5: (otherlv_3= RULE_ID )
                     {
-                    // InternalLegisFacile.g:1078:5: (otherlv_3= RULE_ID )
-                    // InternalLegisFacile.g:1079:6: otherlv_3= RULE_ID
+                    // InternalLegisFacile.g:1170:5: (otherlv_3= RULE_ID )
+                    // InternalLegisFacile.g:1171:6: otherlv_3= RULE_ID
                     {
 
                     						if (current==null) {
@@ -2799,32 +3070,32 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,13,FOLLOW_25); 
+            otherlv_4=(Token)match(input,13,FOLLOW_26); 
 
             			newLeafNode(otherlv_4, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalLegisFacile.g:1095:3: ( (lv_features_5_0= ruleFeature ) )*
-            loop22:
+            // InternalLegisFacile.g:1187:3: ( (lv_features_5_0= ruleFeature ) )*
+            loop26:
             do {
-                int alt22=2;
-                int LA22_0 = input.LA(1);
+                int alt26=2;
+                int LA26_0 = input.LA(1);
 
-                if ( (LA22_0==RULE_ID||LA22_0==40) ) {
-                    alt22=1;
+                if ( (LA26_0==RULE_ID||LA26_0==43) ) {
+                    alt26=1;
                 }
 
 
-                switch (alt22) {
+                switch (alt26) {
             	case 1 :
-            	    // InternalLegisFacile.g:1096:4: (lv_features_5_0= ruleFeature )
+            	    // InternalLegisFacile.g:1188:4: (lv_features_5_0= ruleFeature )
             	    {
-            	    // InternalLegisFacile.g:1096:4: (lv_features_5_0= ruleFeature )
-            	    // InternalLegisFacile.g:1097:5: lv_features_5_0= ruleFeature
+            	    // InternalLegisFacile.g:1188:4: (lv_features_5_0= ruleFeature )
+            	    // InternalLegisFacile.g:1189:5: lv_features_5_0= ruleFeature
             	    {
 
             	    					newCompositeNode(grammarAccess.getEntityAccess().getFeaturesFeatureParserRuleCall_4_0());
             	    				
-            	    pushFollow(FOLLOW_25);
+            	    pushFollow(FOLLOW_26);
             	    lv_features_5_0=ruleFeature();
 
             	    state._fsp--;
@@ -2848,7 +3119,7 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop22;
+            	    break loop26;
                 }
             } while (true);
 
@@ -2879,7 +3150,7 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFeature"
-    // InternalLegisFacile.g:1122:1: entryRuleFeature returns [EObject current=null] : iv_ruleFeature= ruleFeature EOF ;
+    // InternalLegisFacile.g:1214:1: entryRuleFeature returns [EObject current=null] : iv_ruleFeature= ruleFeature EOF ;
     public final EObject entryRuleFeature() throws RecognitionException {
         EObject current = null;
 
@@ -2887,8 +3158,8 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLegisFacile.g:1122:48: (iv_ruleFeature= ruleFeature EOF )
-            // InternalLegisFacile.g:1123:2: iv_ruleFeature= ruleFeature EOF
+            // InternalLegisFacile.g:1214:48: (iv_ruleFeature= ruleFeature EOF )
+            // InternalLegisFacile.g:1215:2: iv_ruleFeature= ruleFeature EOF
             {
              newCompositeNode(grammarAccess.getFeatureRule()); 
             pushFollow(FOLLOW_1);
@@ -2915,7 +3186,7 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFeature"
-    // InternalLegisFacile.g:1129:1: ruleFeature returns [EObject current=null] : ( ( (lv_many_0_0= 'many' ) )? ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) ) ;
+    // InternalLegisFacile.g:1221:1: ruleFeature returns [EObject current=null] : ( ( (lv_many_0_0= 'many' ) )? ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) ) ;
     public final EObject ruleFeature() throws RecognitionException {
         EObject current = null;
 
@@ -2928,27 +3199,27 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLegisFacile.g:1135:2: ( ( ( (lv_many_0_0= 'many' ) )? ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) ) )
-            // InternalLegisFacile.g:1136:2: ( ( (lv_many_0_0= 'many' ) )? ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) )
+            // InternalLegisFacile.g:1227:2: ( ( ( (lv_many_0_0= 'many' ) )? ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) ) )
+            // InternalLegisFacile.g:1228:2: ( ( (lv_many_0_0= 'many' ) )? ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) )
             {
-            // InternalLegisFacile.g:1136:2: ( ( (lv_many_0_0= 'many' ) )? ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) )
-            // InternalLegisFacile.g:1137:3: ( (lv_many_0_0= 'many' ) )? ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) )
+            // InternalLegisFacile.g:1228:2: ( ( (lv_many_0_0= 'many' ) )? ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) )
+            // InternalLegisFacile.g:1229:3: ( (lv_many_0_0= 'many' ) )? ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) )
             {
-            // InternalLegisFacile.g:1137:3: ( (lv_many_0_0= 'many' ) )?
-            int alt23=2;
-            int LA23_0 = input.LA(1);
+            // InternalLegisFacile.g:1229:3: ( (lv_many_0_0= 'many' ) )?
+            int alt27=2;
+            int LA27_0 = input.LA(1);
 
-            if ( (LA23_0==40) ) {
-                alt23=1;
+            if ( (LA27_0==43) ) {
+                alt27=1;
             }
-            switch (alt23) {
+            switch (alt27) {
                 case 1 :
-                    // InternalLegisFacile.g:1138:4: (lv_many_0_0= 'many' )
+                    // InternalLegisFacile.g:1230:4: (lv_many_0_0= 'many' )
                     {
-                    // InternalLegisFacile.g:1138:4: (lv_many_0_0= 'many' )
-                    // InternalLegisFacile.g:1139:5: lv_many_0_0= 'many'
+                    // InternalLegisFacile.g:1230:4: (lv_many_0_0= 'many' )
+                    // InternalLegisFacile.g:1231:5: lv_many_0_0= 'many'
                     {
-                    lv_many_0_0=(Token)match(input,40,FOLLOW_23); 
+                    lv_many_0_0=(Token)match(input,43,FOLLOW_24); 
 
                     					newLeafNode(lv_many_0_0, grammarAccess.getFeatureAccess().getManyManyKeyword_0_0());
                     				
@@ -2967,13 +3238,13 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalLegisFacile.g:1151:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalLegisFacile.g:1152:4: (lv_name_1_0= RULE_ID )
+            // InternalLegisFacile.g:1243:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalLegisFacile.g:1244:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalLegisFacile.g:1152:4: (lv_name_1_0= RULE_ID )
-            // InternalLegisFacile.g:1153:5: lv_name_1_0= RULE_ID
+            // InternalLegisFacile.g:1244:4: (lv_name_1_0= RULE_ID )
+            // InternalLegisFacile.g:1245:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_26); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_27); 
 
             					newLeafNode(lv_name_1_0, grammarAccess.getFeatureAccess().getNameIDTerminalRuleCall_1_0());
             				
@@ -2993,15 +3264,15 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,41,FOLLOW_23); 
+            otherlv_2=(Token)match(input,44,FOLLOW_24); 
 
             			newLeafNode(otherlv_2, grammarAccess.getFeatureAccess().getColonKeyword_2());
             		
-            // InternalLegisFacile.g:1173:3: ( (otherlv_3= RULE_ID ) )
-            // InternalLegisFacile.g:1174:4: (otherlv_3= RULE_ID )
+            // InternalLegisFacile.g:1265:3: ( (otherlv_3= RULE_ID ) )
+            // InternalLegisFacile.g:1266:4: (otherlv_3= RULE_ID )
             {
-            // InternalLegisFacile.g:1174:4: (otherlv_3= RULE_ID )
-            // InternalLegisFacile.g:1175:5: otherlv_3= RULE_ID
+            // InternalLegisFacile.g:1266:4: (otherlv_3= RULE_ID )
+            // InternalLegisFacile.g:1267:5: otherlv_3= RULE_ID
             {
 
             					if (current==null) {
@@ -3046,9 +3317,9 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000006000001802L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000030000001802L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000003000000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000001800000000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x000000C000000000L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000030000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000004000L});
@@ -3061,14 +3332,15 @@ public class InternalLegisFacileParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x000000000C000000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x000000000C008000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000060008000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000030000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x00000000C0008000L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000002002L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000180008000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000600008000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000008000002000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000010000008040L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000300008000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000C00008000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000003000008000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000040000002000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000080000008040L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000100000000000L});
 
 }

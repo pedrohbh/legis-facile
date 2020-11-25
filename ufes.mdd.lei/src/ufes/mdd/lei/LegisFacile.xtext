@@ -44,13 +44,19 @@ Artigo:
 ;
 
 Caput:
-	('Caput|caput') '(' texto=STRING ')' ('{'
-	(paragrafos+=Paragrafo)*
+	('Caput'|'caput') '(' texto=STRING ')' ('{'
+	(incisos+=Inciso)*
 	'}')?
 ;
 
 Paragrafo:
 	('Paragrafo'|'paragrafo') '(' texto=STRING ')' ('{'		
+		(incisos+=Inciso)*
+	'}')?
+;
+
+Inciso:
+	('Inciso'|'inciso') '(' texto=STRING ')' ('{'
 		(alineas+=Alinea)*
 	'}')?
 ;

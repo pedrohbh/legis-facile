@@ -9,22 +9,22 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Caput</b></em>'.
+ * A representation of the model object '<em><b>Inciso</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link ufes.mdd.lei.legisFacile.Caput#getTexto <em>Texto</em>}</li>
- *   <li>{@link ufes.mdd.lei.legisFacile.Caput#getIncisos <em>Incisos</em>}</li>
+ *   <li>{@link ufes.mdd.lei.legisFacile.Inciso#getTexto <em>Texto</em>}</li>
+ *   <li>{@link ufes.mdd.lei.legisFacile.Inciso#getAlineas <em>Alineas</em>}</li>
  * </ul>
  *
- * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getCaput()
+ * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getInciso()
  * @model
  * @generated
  */
-public interface Caput extends EObject
+public interface Inciso extends EObject
 {
   /**
    * Returns the value of the '<em><b>Texto</b></em>' attribute.
@@ -32,14 +32,14 @@ public interface Caput extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Texto</em>' attribute.
    * @see #setTexto(String)
-   * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getCaput_Texto()
+   * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getInciso_Texto()
    * @model
    * @generated
    */
   String getTexto();
 
   /**
-   * Sets the value of the '{@link ufes.mdd.lei.legisFacile.Caput#getTexto <em>Texto</em>}' attribute.
+   * Sets the value of the '{@link ufes.mdd.lei.legisFacile.Inciso#getTexto <em>Texto</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Texto</em>' attribute.
@@ -49,15 +49,15 @@ public interface Caput extends EObject
   void setTexto(String value);
 
   /**
-   * Returns the value of the '<em><b>Incisos</b></em>' containment reference list.
-   * The list contents are of type {@link ufes.mdd.lei.legisFacile.Inciso}.
+   * Returns the value of the '<em><b>Alineas</b></em>' containment reference list.
+   * The list contents are of type {@link ufes.mdd.lei.legisFacile.Alinea}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Incisos</em>' containment reference list.
-   * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getCaput_Incisos()
+   * @return the value of the '<em>Alineas</em>' containment reference list.
+   * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getInciso_Alineas()
    * @model containment="true"
    * @generated
    */
-  EList<Inciso> getIncisos();
+  EList<Alinea> getAlineas();
 
-} // Caput
+} // Inciso

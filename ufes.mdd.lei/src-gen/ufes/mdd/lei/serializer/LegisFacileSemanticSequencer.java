@@ -22,6 +22,7 @@ import ufes.mdd.lei.legisFacile.Ementa;
 import ufes.mdd.lei.legisFacile.Entity;
 import ufes.mdd.lei.legisFacile.Epigrafe;
 import ufes.mdd.lei.legisFacile.Feature;
+import ufes.mdd.lei.legisFacile.Inciso;
 import ufes.mdd.lei.legisFacile.Item;
 import ufes.mdd.lei.legisFacile.LegisFacilePackage;
 import ufes.mdd.lei.legisFacile.Lei;
@@ -69,6 +70,9 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 				return; 
 			case LegisFacilePackage.FEATURE:
 				sequence_Feature(context, (Feature) semanticObject); 
+				return; 
+			case LegisFacilePackage.INCISO:
+				sequence_Inciso(context, (Inciso) semanticObject); 
 				return; 
 			case LegisFacilePackage.ITEM:
 				sequence_Item(context, (Item) semanticObject); 
@@ -125,7 +129,7 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Caput returns Caput
 	 *
 	 * Constraint:
-	 *     (texto=STRING paragrafos+=Paragrafo*)
+	 *     (texto=STRING incisos+=Inciso*)
 	 */
 	protected void sequence_Caput(ISerializationContext context, Caput semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -220,6 +224,18 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Contexts:
+	 *     Inciso returns Inciso
+	 *
+	 * Constraint:
+	 *     (texto=STRING alineas+=Alinea*)
+	 */
+	protected void sequence_Inciso(ISerializationContext context, Inciso semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Item returns Item
 	 *
 	 * Constraint:
@@ -265,7 +281,7 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Paragrafo returns Paragrafo
 	 *
 	 * Constraint:
-	 *     (texto=STRING alineas+=Alinea*)
+	 *     (texto=STRING incisos+=Inciso*)
 	 */
 	protected void sequence_Paragrafo(ISerializationContext context, Paragrafo semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
