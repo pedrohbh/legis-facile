@@ -3,7 +3,6 @@
  */
 package ufes.mdd.lei.validation;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.xtext.validation.Check;
 
 import ufes.mdd.lei.legisFacile.Caput;
