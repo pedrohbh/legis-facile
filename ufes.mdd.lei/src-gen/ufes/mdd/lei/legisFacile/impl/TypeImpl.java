@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import ufes.mdd.lei.legisFacile.Final;
 import ufes.mdd.lei.legisFacile.LegisFacilePackage;
 import ufes.mdd.lei.legisFacile.Normativa;
 import ufes.mdd.lei.legisFacile.Preliminar;
@@ -56,24 +57,14 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
   protected Normativa normativa;
 
   /**
-   * The default value of the '{@link #getFinal() <em>Final</em>}' attribute.
+   * The cached value of the '{@link #getFinal() <em>Final</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getFinal()
    * @generated
    * @ordered
    */
-  protected static final String FINAL_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getFinal() <em>Final</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFinal()
-   * @generated
-   * @ordered
-   */
-  protected String final_ = FINAL_EDEFAULT;
+  protected Final final_;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -222,7 +213,7 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
    * @generated
    */
   @Override
-  public String getFinal()
+  public Final getFinal()
   {
     return final_;
   }
@@ -232,13 +223,38 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setFinal(String newFinal)
+  public NotificationChain basicSetFinal(Final newFinal, NotificationChain msgs)
   {
-    String oldFinal = final_;
+    Final oldFinal = final_;
     final_ = newFinal;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LegisFacilePackage.TYPE__FINAL, oldFinal, final_));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LegisFacilePackage.TYPE__FINAL, oldFinal, newFinal);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setFinal(Final newFinal)
+  {
+    if (newFinal != final_)
+    {
+      NotificationChain msgs = null;
+      if (final_ != null)
+        msgs = ((InternalEObject)final_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LegisFacilePackage.TYPE__FINAL, null, msgs);
+      if (newFinal != null)
+        msgs = ((InternalEObject)newFinal).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LegisFacilePackage.TYPE__FINAL, null, msgs);
+      msgs = basicSetFinal(newFinal, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LegisFacilePackage.TYPE__FINAL, newFinal, newFinal));
   }
 
   /**
@@ -280,6 +296,8 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
         return basicSetPreliminar(null, msgs);
       case LegisFacilePackage.TYPE__NORMATIVA:
         return basicSetNormativa(null, msgs);
+      case LegisFacilePackage.TYPE__FINAL:
+        return basicSetFinal(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -323,7 +341,7 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
         setNormativa((Normativa)newValue);
         return;
       case LegisFacilePackage.TYPE__FINAL:
-        setFinal((String)newValue);
+        setFinal((Final)newValue);
         return;
       case LegisFacilePackage.TYPE__NAME:
         setName((String)newValue);
@@ -349,7 +367,7 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
         setNormativa((Normativa)null);
         return;
       case LegisFacilePackage.TYPE__FINAL:
-        setFinal(FINAL_EDEFAULT);
+        setFinal((Final)null);
         return;
       case LegisFacilePackage.TYPE__NAME:
         setName(NAME_EDEFAULT);
@@ -373,7 +391,7 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
       case LegisFacilePackage.TYPE__NORMATIVA:
         return normativa != null;
       case LegisFacilePackage.TYPE__FINAL:
-        return FINAL_EDEFAULT == null ? final_ != null : !FINAL_EDEFAULT.equals(final_);
+        return final_ != null;
       case LegisFacilePackage.TYPE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
@@ -391,9 +409,7 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (final: ");
-    result.append(final_);
-    result.append(", name: ");
+    result.append(" (name: ");
     result.append(name);
     result.append(')');
     return result.toString();

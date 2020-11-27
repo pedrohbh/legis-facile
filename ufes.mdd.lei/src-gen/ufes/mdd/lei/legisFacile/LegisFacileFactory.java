@@ -141,6 +141,33 @@ public interface LegisFacileFactory extends EFactory
   Item createItem();
 
   /**
+   * Returns a new object of class '<em>Final</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Final</em>'.
+   * @generated
+   */
+  Final createFinal();
+
+  /**
+   * Returns a new object of class '<em>Vigencia</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Vigencia</em>'.
+   * @generated
+   */
+  Vigencia createVigencia();
+
+  /**
+   * Returns a new object of class '<em>Revogacao</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Revogacao</em>'.
+   * @generated
+   */
+  Revogacao createRevogacao();
+
+  /**
    * Returns a new object of class '<em>Data Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

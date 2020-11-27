@@ -18,6 +18,7 @@ import ufes.mdd.lei.legisFacile.Ementa;
 import ufes.mdd.lei.legisFacile.Entity;
 import ufes.mdd.lei.legisFacile.Epigrafe;
 import ufes.mdd.lei.legisFacile.Feature;
+import ufes.mdd.lei.legisFacile.Final;
 import ufes.mdd.lei.legisFacile.Inciso;
 import ufes.mdd.lei.legisFacile.Item;
 import ufes.mdd.lei.legisFacile.LegisFacileFactory;
@@ -27,7 +28,9 @@ import ufes.mdd.lei.legisFacile.Normativa;
 import ufes.mdd.lei.legisFacile.Paragrafo;
 import ufes.mdd.lei.legisFacile.Preambulo;
 import ufes.mdd.lei.legisFacile.Preliminar;
+import ufes.mdd.lei.legisFacile.Revogacao;
 import ufes.mdd.lei.legisFacile.Type;
+import ufes.mdd.lei.legisFacile.Vigencia;
 
 /**
  * <!-- begin-user-doc -->
@@ -127,6 +130,27 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
    * @generated
    */
   private EClass itemEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass finalEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass vigenciaEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass revogacaoEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -273,9 +297,9 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
    * @generated
    */
   @Override
-  public EAttribute getType_Final()
+  public EReference getType_Final()
   {
-    return (EAttribute)typeEClass.getEStructuralFeatures().get(2);
+    return (EReference)typeEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -636,6 +660,94 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
    * @generated
    */
   @Override
+  public EClass getFinal()
+  {
+    return finalEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFinal_Texto()
+  {
+    return (EAttribute)finalEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getFinal_Vigencia()
+  {
+    return (EReference)finalEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getFinal_Revogacao()
+  {
+    return (EReference)finalEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getVigencia()
+  {
+    return vigenciaEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getVigencia_Texto()
+  {
+    return (EAttribute)vigenciaEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getRevogacao()
+  {
+    return revogacaoEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRevogacao_Texto()
+  {
+    return (EAttribute)revogacaoEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getDataType()
   {
     return dataTypeEClass;
@@ -755,7 +867,7 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
     typeEClass = createEClass(TYPE);
     createEReference(typeEClass, TYPE__PRELIMINAR);
     createEReference(typeEClass, TYPE__NORMATIVA);
-    createEAttribute(typeEClass, TYPE__FINAL);
+    createEReference(typeEClass, TYPE__FINAL);
     createEAttribute(typeEClass, TYPE__NAME);
 
     preliminarEClass = createEClass(PRELIMINAR);
@@ -799,6 +911,17 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
 
     itemEClass = createEClass(ITEM);
     createEAttribute(itemEClass, ITEM__TEXTO);
+
+    finalEClass = createEClass(FINAL);
+    createEAttribute(finalEClass, FINAL__TEXTO);
+    createEReference(finalEClass, FINAL__VIGENCIA);
+    createEReference(finalEClass, FINAL__REVOGACAO);
+
+    vigenciaEClass = createEClass(VIGENCIA);
+    createEAttribute(vigenciaEClass, VIGENCIA__TEXTO);
+
+    revogacaoEClass = createEClass(REVOGACAO);
+    createEAttribute(revogacaoEClass, REVOGACAO__TEXTO);
 
     dataTypeEClass = createEClass(DATA_TYPE);
 
@@ -851,7 +974,7 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
     initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getType_Preliminar(), this.getPreliminar(), null, "preliminar", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getType_Normativa(), this.getNormativa(), null, "normativa", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getType_Final(), ecorePackage.getEString(), "final", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getType_Final(), this.getFinal(), null, "final", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getType_Name(), ecorePackage.getEString(), "name", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(preliminarEClass, Preliminar.class, "Preliminar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -895,6 +1018,17 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
 
     initEClass(itemEClass, Item.class, "Item", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getItem_Texto(), ecorePackage.getEString(), "texto", null, 0, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(finalEClass, Final.class, "Final", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFinal_Texto(), ecorePackage.getEString(), "texto", null, 0, 1, Final.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFinal_Vigencia(), this.getVigencia(), null, "vigencia", null, 0, -1, Final.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFinal_Revogacao(), this.getRevogacao(), null, "revogacao", null, 0, -1, Final.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(vigenciaEClass, Vigencia.class, "Vigencia", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getVigencia_Texto(), ecorePackage.getEString(), "texto", null, 0, 1, Vigencia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(revogacaoEClass, Revogacao.class, "Revogacao", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRevogacao_Texto(), ecorePackage.getEString(), "texto", null, 0, 1, Revogacao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dataTypeEClass, DataType.class, "DataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

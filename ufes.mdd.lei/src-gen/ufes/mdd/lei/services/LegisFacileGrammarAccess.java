@@ -677,15 +677,26 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
 		private final Keyword cFinalKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
 		private final Keyword cFinalKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTextoAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTextoSTRINGTerminalRuleCall_2_0 = (RuleCall)cTextoAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cLeftCurlyBracketKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cVigenciaAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cVigenciaVigenciaParserRuleCall_4_1_0 = (RuleCall)cVigenciaAssignment_4_1.eContents().get(0);
+		private final Assignment cRevogacaoAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cRevogacaoRevogacaoParserRuleCall_4_2_0 = (RuleCall)cRevogacaoAssignment_4_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4_3 = (Keyword)cGroup_4.eContents().get(3);
 		
 		//Final:
-		//	('Final' | 'final') '{'
-		//	'}';
+		//	('Final' | 'final') '(' texto=STRING ')' ('{'
+		//	vigencia+=Vigencia*
+		//	revogacao+=Revogacao*
+		//	'}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('Final' | 'final') '{' '}'
+		//('Final' | 'final') '(' texto=STRING ')' ('{' vigencia+=Vigencia* revogacao+=Revogacao* '}')?
 		public Group getGroup() { return cGroup; }
 		
 		//('Final' | 'final')
@@ -697,11 +708,116 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 		//'final'
 		public Keyword getFinalKeyword_0_1() { return cFinalKeyword_0_1; }
 		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//texto=STRING
+		public Assignment getTextoAssignment_2() { return cTextoAssignment_2; }
+		
+		//STRING
+		public RuleCall getTextoSTRINGTerminalRuleCall_2_0() { return cTextoSTRINGTerminalRuleCall_2_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		
+		//('{' vigencia+=Vigencia* revogacao+=Revogacao* '}')?
+		public Group getGroup_4() { return cGroup_4; }
+		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		public Keyword getLeftCurlyBracketKeyword_4_0() { return cLeftCurlyBracketKeyword_4_0; }
+		
+		//vigencia+=Vigencia*
+		public Assignment getVigenciaAssignment_4_1() { return cVigenciaAssignment_4_1; }
+		
+		//Vigencia
+		public RuleCall getVigenciaVigenciaParserRuleCall_4_1_0() { return cVigenciaVigenciaParserRuleCall_4_1_0; }
+		
+		//revogacao+=Revogacao*
+		public Assignment getRevogacaoAssignment_4_2() { return cRevogacaoAssignment_4_2; }
+		
+		//Revogacao
+		public RuleCall getRevogacaoRevogacaoParserRuleCall_4_2_0() { return cRevogacaoRevogacaoParserRuleCall_4_2_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_2() { return cRightCurlyBracketKeyword_2; }
+		public Keyword getRightCurlyBracketKeyword_4_3() { return cRightCurlyBracketKeyword_4_3; }
+	}
+	public class VigenciaElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ufes.mdd.lei.LegisFacile.Vigencia");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Keyword cVigenciaKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
+		private final Keyword cVigenciaKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTextoAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTextoSTRINGTerminalRuleCall_2_0 = (RuleCall)cTextoAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//Vigencia:
+		//	('vigencia' | 'Vigencia') '(' texto=STRING ')';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//('vigencia' | 'Vigencia') '(' texto=STRING ')'
+		public Group getGroup() { return cGroup; }
+		
+		//('vigencia' | 'Vigencia')
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+		
+		//'vigencia'
+		public Keyword getVigenciaKeyword_0_0() { return cVigenciaKeyword_0_0; }
+		
+		//'Vigencia'
+		public Keyword getVigenciaKeyword_0_1() { return cVigenciaKeyword_0_1; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//texto=STRING
+		public Assignment getTextoAssignment_2() { return cTextoAssignment_2; }
+		
+		//STRING
+		public RuleCall getTextoSTRINGTerminalRuleCall_2_0() { return cTextoSTRINGTerminalRuleCall_2_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+	}
+	public class RevogacaoElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ufes.mdd.lei.LegisFacile.Revogacao");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Keyword cRevogaKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
+		private final Keyword cRevogaKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTextoAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTextoSTRINGTerminalRuleCall_2_0 = (RuleCall)cTextoAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//Revogacao:
+		//	('revoga' | 'Revoga') '(' texto=STRING ')';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//('revoga' | 'Revoga') '(' texto=STRING ')'
+		public Group getGroup() { return cGroup; }
+		
+		//('revoga' | 'Revoga')
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+		
+		//'revoga'
+		public Keyword getRevogaKeyword_0_0() { return cRevogaKeyword_0_0; }
+		
+		//'Revoga'
+		public Keyword getRevogaKeyword_0_1() { return cRevogaKeyword_0_1; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//texto=STRING
+		public Assignment getTextoAssignment_2() { return cTextoAssignment_2; }
+		
+		//STRING
+		public RuleCall getTextoSTRINGTerminalRuleCall_2_0() { return cTextoSTRINGTerminalRuleCall_2_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
 	public class DataTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ufes.mdd.lei.LegisFacile.DataType");
@@ -846,6 +962,8 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 	private final AlineaElements pAlinea;
 	private final ItemElements pItem;
 	private final FinalElements pFinal;
+	private final VigenciaElements pVigencia;
+	private final RevogacaoElements pRevogacao;
 	private final DataTypeElements pDataType;
 	private final EntityElements pEntity;
 	private final FeatureElements pFeature;
@@ -873,6 +991,8 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 		this.pAlinea = new AlineaElements();
 		this.pItem = new ItemElements();
 		this.pFinal = new FinalElements();
+		this.pVigencia = new VigenciaElements();
+		this.pRevogacao = new RevogacaoElements();
 		this.pDataType = new DataTypeElements();
 		this.pEntity = new EntityElements();
 		this.pFeature = new FeatureElements();
@@ -1053,14 +1173,36 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//Final:
-	//	('Final' | 'final') '{'
-	//	'}';
+	//	('Final' | 'final') '(' texto=STRING ')' ('{'
+	//	vigencia+=Vigencia*
+	//	revogacao+=Revogacao*
+	//	'}')?;
 	public FinalElements getFinalAccess() {
 		return pFinal;
 	}
 	
 	public ParserRule getFinalRule() {
 		return getFinalAccess().getRule();
+	}
+	
+	//Vigencia:
+	//	('vigencia' | 'Vigencia') '(' texto=STRING ')';
+	public VigenciaElements getVigenciaAccess() {
+		return pVigencia;
+	}
+	
+	public ParserRule getVigenciaRule() {
+		return getVigenciaAccess().getRule();
+	}
+	
+	//Revogacao:
+	//	('revoga' | 'Revoga') '(' texto=STRING ')';
+	public RevogacaoElements getRevogacaoAccess() {
+		return pRevogacao;
+	}
+	
+	public ParserRule getRevogacaoRule() {
+		return getRevogacaoAccess().getRule();
 	}
 	
 	//DataType:

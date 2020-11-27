@@ -71,26 +71,26 @@ public interface Type extends EObject
   void setNormativa(Normativa value);
 
   /**
-   * Returns the value of the '<em><b>Final</b></em>' attribute.
+   * Returns the value of the '<em><b>Final</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Final</em>' attribute.
-   * @see #setFinal(String)
+   * @return the value of the '<em>Final</em>' containment reference.
+   * @see #setFinal(Final)
    * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getType_Final()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getFinal();
+  Final getFinal();
 
   /**
-   * Sets the value of the '{@link ufes.mdd.lei.legisFacile.Type#getFinal <em>Final</em>}' attribute.
+   * Sets the value of the '{@link ufes.mdd.lei.legisFacile.Type#getFinal <em>Final</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Final</em>' attribute.
+   * @param value the new value of the '<em>Final</em>' containment reference.
    * @see #getFinal()
    * @generated
    */
-  void setFinal(String value);
+  void setFinal(Final value);
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

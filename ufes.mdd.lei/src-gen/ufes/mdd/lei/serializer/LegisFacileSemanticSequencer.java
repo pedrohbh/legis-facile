@@ -22,6 +22,7 @@ import ufes.mdd.lei.legisFacile.Ementa;
 import ufes.mdd.lei.legisFacile.Entity;
 import ufes.mdd.lei.legisFacile.Epigrafe;
 import ufes.mdd.lei.legisFacile.Feature;
+import ufes.mdd.lei.legisFacile.Final;
 import ufes.mdd.lei.legisFacile.Inciso;
 import ufes.mdd.lei.legisFacile.Item;
 import ufes.mdd.lei.legisFacile.LegisFacilePackage;
@@ -30,7 +31,9 @@ import ufes.mdd.lei.legisFacile.Normativa;
 import ufes.mdd.lei.legisFacile.Paragrafo;
 import ufes.mdd.lei.legisFacile.Preambulo;
 import ufes.mdd.lei.legisFacile.Preliminar;
+import ufes.mdd.lei.legisFacile.Revogacao;
 import ufes.mdd.lei.legisFacile.Type;
+import ufes.mdd.lei.legisFacile.Vigencia;
 import ufes.mdd.lei.services.LegisFacileGrammarAccess;
 
 @SuppressWarnings("all")
@@ -71,6 +74,9 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 			case LegisFacilePackage.FEATURE:
 				sequence_Feature(context, (Feature) semanticObject); 
 				return; 
+			case LegisFacilePackage.FINAL:
+				sequence_Final(context, (Final) semanticObject); 
+				return; 
 			case LegisFacilePackage.INCISO:
 				sequence_Inciso(context, (Inciso) semanticObject); 
 				return; 
@@ -92,8 +98,14 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 			case LegisFacilePackage.PRELIMINAR:
 				sequence_Preliminar(context, (Preliminar) semanticObject); 
 				return; 
+			case LegisFacilePackage.REVOGACAO:
+				sequence_Revogacao(context, (Revogacao) semanticObject); 
+				return; 
 			case LegisFacilePackage.TYPE:
 				sequence_Type(context, (Type) semanticObject); 
+				return; 
+			case LegisFacilePackage.VIGENCIA:
+				sequence_Vigencia(context, (Vigencia) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -224,6 +236,18 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Contexts:
+	 *     Final returns Final
+	 *
+	 * Constraint:
+	 *     (texto=STRING vigencia+=Vigencia* revogacao+=Revogacao*)
+	 */
+	protected void sequence_Final(ISerializationContext context, Final semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Inciso returns Inciso
 	 *
 	 * Constraint:
@@ -332,6 +356,24 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Contexts:
+	 *     Revogacao returns Revogacao
+	 *
+	 * Constraint:
+	 *     texto=STRING
+	 */
+	protected void sequence_Revogacao(ISerializationContext context, Revogacao semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LegisFacilePackage.Literals.REVOGACAO__TEXTO) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegisFacilePackage.Literals.REVOGACAO__TEXTO));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRevogacaoAccess().getTextoSTRINGTerminalRuleCall_2_0(), semanticObject.getTexto());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Type returns Type
 	 *
 	 * Constraint:
@@ -350,6 +392,24 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 		feeder.accept(grammarAccess.getTypeAccess().getPreliminarPreliminarParserRuleCall_2_0_0(), semanticObject.getPreliminar());
 		feeder.accept(grammarAccess.getTypeAccess().getNormativaNormativaParserRuleCall_2_1_0(), semanticObject.getNormativa());
 		feeder.accept(grammarAccess.getTypeAccess().getFinalFinalParserRuleCall_2_2_0(), semanticObject.getFinal());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Vigencia returns Vigencia
+	 *
+	 * Constraint:
+	 *     texto=STRING
+	 */
+	protected void sequence_Vigencia(ISerializationContext context, Vigencia semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LegisFacilePackage.Literals.VIGENCIA__TEXTO) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegisFacilePackage.Literals.VIGENCIA__TEXTO));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getVigenciaAccess().getTextoSTRINGTerminalRuleCall_2_0(), semanticObject.getTexto());
 		feeder.finish();
 	}
 	

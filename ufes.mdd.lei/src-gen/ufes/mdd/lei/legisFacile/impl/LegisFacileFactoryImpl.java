@@ -78,6 +78,9 @@ public class LegisFacileFactoryImpl extends EFactoryImpl implements LegisFacileF
       case LegisFacilePackage.INCISO: return createInciso();
       case LegisFacilePackage.ALINEA: return createAlinea();
       case LegisFacilePackage.ITEM: return createItem();
+      case LegisFacilePackage.FINAL: return createFinal();
+      case LegisFacilePackage.VIGENCIA: return createVigencia();
+      case LegisFacilePackage.REVOGACAO: return createRevogacao();
       case LegisFacilePackage.DATA_TYPE: return createDataType();
       case LegisFacilePackage.ENTITY: return createEntity();
       case LegisFacilePackage.FEATURE: return createFeature();
@@ -240,6 +243,42 @@ public class LegisFacileFactoryImpl extends EFactoryImpl implements LegisFacileF
   {
     ItemImpl item = new ItemImpl();
     return item;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Final createFinal()
+  {
+    FinalImpl final_ = new FinalImpl();
+    return final_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Vigencia createVigencia()
+  {
+    VigenciaImpl vigencia = new VigenciaImpl();
+    return vigencia;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Revogacao createRevogacao()
+  {
+    RevogacaoImpl revogacao = new RevogacaoImpl();
+    return revogacao;
   }
 
   /**

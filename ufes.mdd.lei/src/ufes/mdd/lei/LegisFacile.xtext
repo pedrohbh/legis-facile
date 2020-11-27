@@ -72,8 +72,19 @@ Item:
 ;
 
 Final: 
-	('Final'|'final') '{'
-	'}'
+	('Final'|'final') '(' texto=STRING ')' ('{'	
+	(vigencia+=Vigencia)*
+	(revogacao+=Revogacao)*
+	'}')?
+;
+
+Vigencia:
+	('vigencia'|'Vigencia') '(' texto=STRING ')'
+;
+
+
+Revogacao:
+	('revoga'|'Revoga') '(' texto=STRING ')'
 ;
 
 DataType:

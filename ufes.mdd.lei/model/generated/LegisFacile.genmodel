@@ -12,7 +12,7 @@
     <genClasses ecoreClass="LegisFacile.ecore#//Type">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Type/preliminar"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Type/normativa"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//Type/final"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Type/final"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//Type/name"/>
     </genClasses>
     <genClasses ecoreClass="LegisFacile.ecore#//Preliminar">
@@ -56,6 +56,17 @@
     </genClasses>
     <genClasses ecoreClass="LegisFacile.ecore#//Item">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//Item/texto"/>
+    </genClasses>
+    <genClasses ecoreClass="LegisFacile.ecore#//Final">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//Final/texto"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Final/vigencia"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Final/revogacao"/>
+    </genClasses>
+    <genClasses ecoreClass="LegisFacile.ecore#//Vigencia">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//Vigencia/texto"/>
+    </genClasses>
+    <genClasses ecoreClass="LegisFacile.ecore#//Revogacao">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//Revogacao/texto"/>
     </genClasses>
     <genClasses ecoreClass="LegisFacile.ecore#//DataType"/>
     <genClasses ecoreClass="LegisFacile.ecore#//Entity">

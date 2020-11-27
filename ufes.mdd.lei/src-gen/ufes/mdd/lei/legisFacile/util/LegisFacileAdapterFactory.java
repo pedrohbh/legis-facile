@@ -141,6 +141,21 @@ public class LegisFacileAdapterFactory extends AdapterFactoryImpl
         return createItemAdapter();
       }
       @Override
+      public Adapter caseFinal(Final object)
+      {
+        return createFinalAdapter();
+      }
+      @Override
+      public Adapter caseVigencia(Vigencia object)
+      {
+        return createVigenciaAdapter();
+      }
+      @Override
+      public Adapter caseRevogacao(Revogacao object)
+      {
+        return createRevogacaoAdapter();
+      }
+      @Override
       public Adapter caseDataType(DataType object)
       {
         return createDataTypeAdapter();
@@ -368,6 +383,51 @@ public class LegisFacileAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createItemAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link ufes.mdd.lei.legisFacile.Final <em>Final</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see ufes.mdd.lei.legisFacile.Final
+   * @generated
+   */
+  public Adapter createFinalAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link ufes.mdd.lei.legisFacile.Vigencia <em>Vigencia</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see ufes.mdd.lei.legisFacile.Vigencia
+   * @generated
+   */
+  public Adapter createVigenciaAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link ufes.mdd.lei.legisFacile.Revogacao <em>Revogacao</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see ufes.mdd.lei.legisFacile.Revogacao
+   * @generated
+   */
+  public Adapter createRevogacaoAdapter()
   {
     return null;
   }

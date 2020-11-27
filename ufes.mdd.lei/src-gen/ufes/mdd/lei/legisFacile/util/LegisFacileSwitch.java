@@ -164,6 +164,27 @@ public class LegisFacileSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LegisFacilePackage.FINAL:
+      {
+        Final final_ = (Final)theEObject;
+        T result = caseFinal(final_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LegisFacilePackage.VIGENCIA:
+      {
+        Vigencia vigencia = (Vigencia)theEObject;
+        T result = caseVigencia(vigencia);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LegisFacilePackage.REVOGACAO:
+      {
+        Revogacao revogacao = (Revogacao)theEObject;
+        T result = caseRevogacao(revogacao);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LegisFacilePackage.DATA_TYPE:
       {
         DataType dataType = (DataType)theEObject;
@@ -395,6 +416,54 @@ public class LegisFacileSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseItem(Item object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Final</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Final</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFinal(Final object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Vigencia</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Vigencia</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVigencia(Vigencia object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Revogacao</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Revogacao</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRevogacao(Revogacao object)
   {
     return null;
   }

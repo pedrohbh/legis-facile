@@ -114,7 +114,7 @@ public interface LegisFacilePackage extends EPackage
   int TYPE__NORMATIVA = 1;
 
   /**
-   * The feature id for the '<em><b>Final</b></em>' attribute.
+   * The feature id for the '<em><b>Final</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -530,6 +530,108 @@ public interface LegisFacilePackage extends EPackage
   int ITEM_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link ufes.mdd.lei.legisFacile.impl.FinalImpl <em>Final</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see ufes.mdd.lei.legisFacile.impl.FinalImpl
+   * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getFinal()
+   * @generated
+   */
+  int FINAL = 13;
+
+  /**
+   * The feature id for the '<em><b>Texto</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FINAL__TEXTO = 0;
+
+  /**
+   * The feature id for the '<em><b>Vigencia</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FINAL__VIGENCIA = 1;
+
+  /**
+   * The feature id for the '<em><b>Revogacao</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FINAL__REVOGACAO = 2;
+
+  /**
+   * The number of structural features of the '<em>Final</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FINAL_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link ufes.mdd.lei.legisFacile.impl.VigenciaImpl <em>Vigencia</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see ufes.mdd.lei.legisFacile.impl.VigenciaImpl
+   * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getVigencia()
+   * @generated
+   */
+  int VIGENCIA = 14;
+
+  /**
+   * The feature id for the '<em><b>Texto</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VIGENCIA__TEXTO = 0;
+
+  /**
+   * The number of structural features of the '<em>Vigencia</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VIGENCIA_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link ufes.mdd.lei.legisFacile.impl.RevogacaoImpl <em>Revogacao</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see ufes.mdd.lei.legisFacile.impl.RevogacaoImpl
+   * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getRevogacao()
+   * @generated
+   */
+  int REVOGACAO = 15;
+
+  /**
+   * The feature id for the '<em><b>Texto</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REVOGACAO__TEXTO = 0;
+
+  /**
+   * The number of structural features of the '<em>Revogacao</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REVOGACAO_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link ufes.mdd.lei.legisFacile.impl.DataTypeImpl <em>Data Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -537,7 +639,7 @@ public interface LegisFacilePackage extends EPackage
    * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getDataType()
    * @generated
    */
-  int DATA_TYPE = 13;
+  int DATA_TYPE = 16;
 
   /**
    * The feature id for the '<em><b>Preliminar</b></em>' containment reference.
@@ -558,7 +660,7 @@ public interface LegisFacilePackage extends EPackage
   int DATA_TYPE__NORMATIVA = TYPE__NORMATIVA;
 
   /**
-   * The feature id for the '<em><b>Final</b></em>' attribute.
+   * The feature id for the '<em><b>Final</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -592,7 +694,7 @@ public interface LegisFacilePackage extends EPackage
    * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getEntity()
    * @generated
    */
-  int ENTITY = 14;
+  int ENTITY = 17;
 
   /**
    * The feature id for the '<em><b>Preliminar</b></em>' containment reference.
@@ -613,7 +715,7 @@ public interface LegisFacilePackage extends EPackage
   int ENTITY__NORMATIVA = TYPE__NORMATIVA;
 
   /**
-   * The feature id for the '<em><b>Final</b></em>' attribute.
+   * The feature id for the '<em><b>Final</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -665,7 +767,7 @@ public interface LegisFacilePackage extends EPackage
    * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getFeature()
    * @generated
    */
-  int FEATURE = 15;
+  int FEATURE = 18;
 
   /**
    * The feature id for the '<em><b>Many</b></em>' attribute.
@@ -758,15 +860,15 @@ public interface LegisFacilePackage extends EPackage
   EReference getType_Normativa();
 
   /**
-   * Returns the meta object for the attribute '{@link ufes.mdd.lei.legisFacile.Type#getFinal <em>Final</em>}'.
+   * Returns the meta object for the containment reference '{@link ufes.mdd.lei.legisFacile.Type#getFinal <em>Final</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Final</em>'.
+   * @return the meta object for the containment reference '<em>Final</em>'.
    * @see ufes.mdd.lei.legisFacile.Type#getFinal()
    * @see #getType()
    * @generated
    */
-  EAttribute getType_Final();
+  EReference getType_Final();
 
   /**
    * Returns the meta object for the attribute '{@link ufes.mdd.lei.legisFacile.Type#getName <em>Name</em>}'.
@@ -1110,6 +1212,91 @@ public interface LegisFacilePackage extends EPackage
   EAttribute getItem_Texto();
 
   /**
+   * Returns the meta object for class '{@link ufes.mdd.lei.legisFacile.Final <em>Final</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Final</em>'.
+   * @see ufes.mdd.lei.legisFacile.Final
+   * @generated
+   */
+  EClass getFinal();
+
+  /**
+   * Returns the meta object for the attribute '{@link ufes.mdd.lei.legisFacile.Final#getTexto <em>Texto</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Texto</em>'.
+   * @see ufes.mdd.lei.legisFacile.Final#getTexto()
+   * @see #getFinal()
+   * @generated
+   */
+  EAttribute getFinal_Texto();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link ufes.mdd.lei.legisFacile.Final#getVigencia <em>Vigencia</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Vigencia</em>'.
+   * @see ufes.mdd.lei.legisFacile.Final#getVigencia()
+   * @see #getFinal()
+   * @generated
+   */
+  EReference getFinal_Vigencia();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link ufes.mdd.lei.legisFacile.Final#getRevogacao <em>Revogacao</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Revogacao</em>'.
+   * @see ufes.mdd.lei.legisFacile.Final#getRevogacao()
+   * @see #getFinal()
+   * @generated
+   */
+  EReference getFinal_Revogacao();
+
+  /**
+   * Returns the meta object for class '{@link ufes.mdd.lei.legisFacile.Vigencia <em>Vigencia</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Vigencia</em>'.
+   * @see ufes.mdd.lei.legisFacile.Vigencia
+   * @generated
+   */
+  EClass getVigencia();
+
+  /**
+   * Returns the meta object for the attribute '{@link ufes.mdd.lei.legisFacile.Vigencia#getTexto <em>Texto</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Texto</em>'.
+   * @see ufes.mdd.lei.legisFacile.Vigencia#getTexto()
+   * @see #getVigencia()
+   * @generated
+   */
+  EAttribute getVigencia_Texto();
+
+  /**
+   * Returns the meta object for class '{@link ufes.mdd.lei.legisFacile.Revogacao <em>Revogacao</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Revogacao</em>'.
+   * @see ufes.mdd.lei.legisFacile.Revogacao
+   * @generated
+   */
+  EClass getRevogacao();
+
+  /**
+   * Returns the meta object for the attribute '{@link ufes.mdd.lei.legisFacile.Revogacao#getTexto <em>Texto</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Texto</em>'.
+   * @see ufes.mdd.lei.legisFacile.Revogacao#getTexto()
+   * @see #getRevogacao()
+   * @generated
+   */
+  EAttribute getRevogacao_Texto();
+
+  /**
    * Returns the meta object for class '{@link ufes.mdd.lei.legisFacile.DataType <em>Data Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1262,12 +1449,12 @@ public interface LegisFacilePackage extends EPackage
     EReference TYPE__NORMATIVA = eINSTANCE.getType_Normativa();
 
     /**
-     * The meta object literal for the '<em><b>Final</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Final</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TYPE__FINAL = eINSTANCE.getType_Final();
+    EReference TYPE__FINAL = eINSTANCE.getType_Final();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1546,6 +1733,76 @@ public interface LegisFacilePackage extends EPackage
      * @generated
      */
     EAttribute ITEM__TEXTO = eINSTANCE.getItem_Texto();
+
+    /**
+     * The meta object literal for the '{@link ufes.mdd.lei.legisFacile.impl.FinalImpl <em>Final</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see ufes.mdd.lei.legisFacile.impl.FinalImpl
+     * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getFinal()
+     * @generated
+     */
+    EClass FINAL = eINSTANCE.getFinal();
+
+    /**
+     * The meta object literal for the '<em><b>Texto</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FINAL__TEXTO = eINSTANCE.getFinal_Texto();
+
+    /**
+     * The meta object literal for the '<em><b>Vigencia</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FINAL__VIGENCIA = eINSTANCE.getFinal_Vigencia();
+
+    /**
+     * The meta object literal for the '<em><b>Revogacao</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FINAL__REVOGACAO = eINSTANCE.getFinal_Revogacao();
+
+    /**
+     * The meta object literal for the '{@link ufes.mdd.lei.legisFacile.impl.VigenciaImpl <em>Vigencia</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see ufes.mdd.lei.legisFacile.impl.VigenciaImpl
+     * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getVigencia()
+     * @generated
+     */
+    EClass VIGENCIA = eINSTANCE.getVigencia();
+
+    /**
+     * The meta object literal for the '<em><b>Texto</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VIGENCIA__TEXTO = eINSTANCE.getVigencia_Texto();
+
+    /**
+     * The meta object literal for the '{@link ufes.mdd.lei.legisFacile.impl.RevogacaoImpl <em>Revogacao</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see ufes.mdd.lei.legisFacile.impl.RevogacaoImpl
+     * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getRevogacao()
+     * @generated
+     */
+    EClass REVOGACAO = eINSTANCE.getRevogacao();
+
+    /**
+     * The meta object literal for the '<em><b>Texto</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REVOGACAO__TEXTO = eINSTANCE.getRevogacao_Texto();
 
     /**
      * The meta object literal for the '{@link ufes.mdd.lei.legisFacile.impl.DataTypeImpl <em>Data Type</em>}' class.
