@@ -27,7 +27,7 @@ class LegisFacileGenerator extends AbstractGenerator {
 	{
 		for ( e : resource.allContents.toIterable.filter(Lei) )
 		{
-			fsa.generateFile('lei_prototipo.html', e.compile)
+			fsa.generateFile(resource.className + ".html", e.compile)
 		}
 		
 //		fsa.generateFile('greetings.txt', 'People to greet: ' + 
@@ -35,6 +35,12 @@ class LegisFacileGenerator extends AbstractGenerator {
 //				.filter(Greeting)
 //				.map[name]
 //				.join(', '))	
+	}
+	
+	protected def className(Resource res)
+	{
+		var name = res.URI.lastSegment
+		return name.substring(0, name.indexOf(".")).toFirstUpper
 	}
 	
 	
