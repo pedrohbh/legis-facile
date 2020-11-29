@@ -13,6 +13,8 @@ import ufes.mdd.lei.legisFacile.Preliminar
 import ufes.mdd.lei.legisFacile.Epigrafe
 import ufes.mdd.lei.legisFacile.Ementa
 import ufes.mdd.lei.legisFacile.Preambulo
+import ufes.mdd.lei.legisFacile.Normativa
+import ufes.mdd.lei.legisFacile.Artigo
 
 /**
  * Generates code from your model files on save.
@@ -43,7 +45,33 @@ class LegisFacileGenerator extends AbstractGenerator {
 	'''
 	
 	private def compile(Type t)'''
-	«t.preliminar.compile»		         
+	<!DOCTYPE html>
+	<html>
+	<head>
+	    <meta charset='utf-8'>
+	    <!--<meta http-equiv='X-UA-Compatible' content='IE=edge'>-->
+	    <title>Lei protótipo</title>
+	    <meta name='viewport' content='width=device-width, initial-scale=1'>
+	    <!--<link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+	    <script src='main.js'></script>-->
+	</head>
+	<body>
+	«t.preliminar.compile»
+	«t.normativa.compile»
+	</body>
+	</html>		         
+	'''
+	
+	private def compile(Normativa n)
+	{
+		for ( var i = 0; i < n.artigos.size; i++ )
+		{
+			n.artigos.get(i).compile((i+1))
+		}
+	}
+	
+	private def compile(Artigo a, Integer i)'''
+	<p>Art. «i»: «a.caput»</p>
 	'''
 	
 	private def compile(Preliminar p)'''
@@ -53,7 +81,7 @@ class LegisFacileGenerator extends AbstractGenerator {
 	'''
 	
 	private def compile(Epigrafe e)'''
-	<div style="margin: 0 0 1.0% 50%;"><a href="http://informtica.ufes.br">
+	<div style="margin: 0 0 1.0% 50%;"><a href="http://informatica.ufes.br">
 		        <font color="#000080">
 		         «e.ato» Nº «e.numero», de «e.ano» </font></a></div>
 	'''
