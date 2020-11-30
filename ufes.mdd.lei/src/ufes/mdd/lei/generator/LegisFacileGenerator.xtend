@@ -37,7 +37,7 @@ class LegisFacileGenerator extends AbstractGenerator {
 //				.join(', '))	
 	}
 	
-	protected def className(Resource res)
+	private def className(Resource res)
 	{
 		var name = res.URI.lastSegment
 		return name.substring(0, name.indexOf(".")).toFirstUpper
@@ -68,16 +68,19 @@ class LegisFacileGenerator extends AbstractGenerator {
 	</html>		         
 	'''
 	
+	
 	private def compile(Normativa n)
 	{
+		var elemento = new StringBuilder
 		for ( var i = 0; i < n.artigos.size; i++ )
 		{
-			n.artigos.get(i).compile((i+1))
+			elemento.append(n.artigos.get(i).compile((i+1)))
 		}
+		return elemento.toString
 	}
 	
 	private def compile(Artigo a, Integer i)'''
-	<p>Art. «i»: «a.caput»</p>
+	<p>Art. «i»: «a.caput.texto»</p>
 	'''
 	
 	private def compile(Preliminar p)'''
