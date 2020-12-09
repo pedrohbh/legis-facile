@@ -7,15 +7,16 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import ufes.mdd.lei.legisFacile.Lei
-import ufes.mdd.lei.legisFacile.Type
-import ufes.mdd.lei.legisFacile.Preliminar
-import ufes.mdd.lei.legisFacile.Epigrafe
-import ufes.mdd.lei.legisFacile.Ementa
-import ufes.mdd.lei.legisFacile.Preambulo
-import ufes.mdd.lei.legisFacile.Normativa
 import ufes.mdd.lei.legisFacile.Artigo
+import ufes.mdd.lei.legisFacile.Caput
+import ufes.mdd.lei.legisFacile.Ementa
+import ufes.mdd.lei.legisFacile.Epigrafe
 import ufes.mdd.lei.legisFacile.Inciso
+import ufes.mdd.lei.legisFacile.Lei
+import ufes.mdd.lei.legisFacile.Normativa
+import ufes.mdd.lei.legisFacile.Preambulo
+import ufes.mdd.lei.legisFacile.Preliminar
+import ufes.mdd.lei.legisFacile.Type
 
 /**
  * Generates code from your model files on save.
@@ -68,16 +69,16 @@ class LegisFacileGenerator extends AbstractGenerator {
 	</body>
 	</html>		         
 	'''
-	private def compile(Inciso i)
-	{
-		
-	}
+	
+	private def compile(Inciso i, int j)'''
+	<p>«converteEmRomanos(j)» - «i.texto»</p>
+	'''
 	
 	private def converteEmRomanos(int numero)
 	{
 		var numeroConvertido = numero
-		val int []valores_lista = #{1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1}
-		val String []char_lista = #{"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"}
+		val valores_lista = newArrayList(1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)
+		val String []char_lista = newArrayList("M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I")
 		
 		var res = new StringBuilder
 		for ( var i = 0; i < valores_lista.size; i++ )
@@ -102,9 +103,26 @@ class LegisFacileGenerator extends AbstractGenerator {
 		return elemento.toString
 	}
 	
-	private def compile(Artigo a, Integer i)'''
-	<p>Art. «i»: «a.caput.texto»</p>
+	private def compile(Artigo a, int i)
+	{
+		val resultado = new StringBuilder
+		resultado.append(a.caput.compile(i))
+		a.caput.incisos.forEach[inciso, j| resultado.append(inciso.compile(j+1))]
+		
+		return resultado.toString
+		
+	}
+	
+	private def compile(Caput c, int i)'''
+	<p>Art. «i»: «c.texto»</p>
 	'''
+	
+	//private def compile(Artigo a, Integer i)'''
+	//<p>Art. «i»: «a.caput.texto»</p>
+	//«a.caput.incisos.forEach[in, j| in.compile((j+1))]»
+	//«FOR p : a.paragrafos»
+	//«ENDFOR»
+	//'''
 	
 	private def compile(Preliminar p)'''
 	«p.epigrage.compile»	
