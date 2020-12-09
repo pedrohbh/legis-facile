@@ -15,6 +15,7 @@ import ufes.mdd.lei.legisFacile.Ementa
 import ufes.mdd.lei.legisFacile.Preambulo
 import ufes.mdd.lei.legisFacile.Normativa
 import ufes.mdd.lei.legisFacile.Artigo
+import ufes.mdd.lei.legisFacile.Inciso
 
 /**
  * Generates code from your model files on save.
@@ -67,7 +68,29 @@ class LegisFacileGenerator extends AbstractGenerator {
 	</body>
 	</html>		         
 	'''
+	private def compile(Inciso i)
+	{
+		
+	}
 	
+	private def converteEmRomanos(int numero)
+	{
+		var numeroConvertido = numero
+		val int []valores_lista = #{1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1}
+		val String []char_lista = #{"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"}
+		
+		var res = new StringBuilder
+		for ( var i = 0; i < valores_lista.size; i++ )
+		{
+			while ( numeroConvertido >= valores_lista.get(i) )
+			{
+				numeroConvertido -= valores_lista.get(i)
+				res.append(char_lista.get(i))
+			}
+		}
+		
+		return res.toString
+	}
 	
 	private def compile(Normativa n)
 	{
