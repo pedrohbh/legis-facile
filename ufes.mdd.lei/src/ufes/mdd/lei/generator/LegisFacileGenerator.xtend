@@ -18,6 +18,7 @@ import ufes.mdd.lei.legisFacile.Preambulo
 import ufes.mdd.lei.legisFacile.Preliminar
 import ufes.mdd.lei.legisFacile.Type
 import ufes.mdd.lei.legisFacile.Alinea
+import ufes.mdd.lei.legisFacile.Item
 
 /**
  * Generates code from your model files on save.
@@ -75,9 +76,16 @@ class LegisFacileGenerator extends AbstractGenerator {
 	{
 		var sb = new StringBuilder
 		sb.append(a.compileLinha(i))
-		
+		for ( var j = 0; j < a.itens.size; j++ )
+		{
+			sb.append(a.itens.get(j).compile(j))
+		}
 		return sb.toString
 	}
+	
+	private def compile(Item item, int i)'''
+	<p>«i+1» - «item.texto»</p>
+	'''
 	
 	private def compileLinha(Alinea a, int i)'''
 	<p>«converteEmAlfabeto(i)» - «a.texto»</p>
@@ -145,11 +153,11 @@ class LegisFacileGenerator extends AbstractGenerator {
 		
 	}
 	
-	private def insereNovaLinha(StringBuilder sb, String elemento)
+	/*private def insereNovaLinha(StringBuilder sb, String elemento)
 	{
 		sb.append(elemento)
 		sb.append(System.getProperty("line.separator"))
-	}
+	}*/
 	
 	private def compile(Caput c, int i)'''
 	<p>Art. «i+1»: «c.texto»</p>
