@@ -17,6 +17,7 @@ import ufes.mdd.lei.legisFacile.Normativa
 import ufes.mdd.lei.legisFacile.Preambulo
 import ufes.mdd.lei.legisFacile.Preliminar
 import ufes.mdd.lei.legisFacile.Type
+import ufes.mdd.lei.legisFacile.Alinea
 
 /**
  * Generates code from your model files on save.
@@ -70,8 +71,39 @@ class LegisFacileGenerator extends AbstractGenerator {
 	</html>		         
 	'''
 	
-	private def compile(Inciso i, int j)'''
-	<p>«converteEmRomanos(j)» - «i.texto»</p>
+	private def compile(Alinea a, int i)
+	{
+		var sb = new StringBuilder
+		sb.append(a.compileLinha(i))
+		
+		return sb.toString
+	}
+	
+	private def compileLinha(Alinea a, int i)'''
+	<p>«converteEmAlfabeto(i)» - «a.texto»</p>
+	'''
+	
+	private def converteEmAlfabeto(int i)
+	{
+		val alfabeto = "abcdefghijklmnopqrstuvwxyz"
+		return String.valueOf(alfabeto.charAt(i))
+		
+	}
+	
+	private def compile(Inciso i, int j)
+	{
+		var sb = new StringBuilder
+		sb.append(i.compileLinha(j))
+		for ( var k = 0; k < i.alineas.size; k++ )
+		{
+			sb.append(i.alineas.get(k).compile(k))		
+		}
+		
+		return sb.toString		
+	}
+	
+	private def compileLinha(Inciso i, int j)'''
+	<p>«converteEmRomanos((j+1))» - «i.texto»</p>
 	'''
 	
 	private def converteEmRomanos(int numero)
@@ -98,7 +130,7 @@ class LegisFacileGenerator extends AbstractGenerator {
 		var elemento = new StringBuilder
 		for ( var i = 0; i < n.artigos.size; i++ )
 		{
-			elemento.append(n.artigos.get(i).compile((i+1)))
+			elemento.append(n.artigos.get(i).compile((i)))
 		}
 		return elemento.toString
 	}
@@ -107,14 +139,20 @@ class LegisFacileGenerator extends AbstractGenerator {
 	{
 		val resultado = new StringBuilder
 		resultado.append(a.caput.compile(i))
-		a.caput.incisos.forEach[inciso, j| resultado.append(inciso.compile(j+1))]
+		a.caput.incisos.forEach[inciso, j| resultado.append(inciso.compile(j))]
 		
 		return resultado.toString
 		
 	}
 	
+	private def insereNovaLinha(StringBuilder sb, String elemento)
+	{
+		sb.append(elemento)
+		sb.append(System.getProperty("line.separator"))
+	}
+	
 	private def compile(Caput c, int i)'''
-	<p>Art. «i»: «c.texto»</p>
+	<p>Art. «i+1»: «c.texto»</p>
 	'''
 	
 	//private def compile(Artigo a, Integer i)'''
