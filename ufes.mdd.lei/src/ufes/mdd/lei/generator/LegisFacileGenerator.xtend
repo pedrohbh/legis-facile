@@ -85,11 +85,11 @@ class LegisFacileGenerator extends AbstractGenerator {
 	}
 	
 	private def compile(Item item, int i)'''
-	<p>«i+1» - «item.texto»</p>
+	<p>«i+1». «item.texto»</p>
 	'''
 	
 	private def compileLinha(Alinea a, int i)'''
-	<p>«converteEmAlfabeto(i)» - «a.texto»</p>
+	<p>«converteEmAlfabeto(i)») «a.texto»</p>
 	'''
 	
 	private def converteEmAlfabeto(int i)
@@ -138,6 +138,10 @@ class LegisFacileGenerator extends AbstractGenerator {
 	{
 		var sb = new StringBuilder
 		sb.append(p.compileLinha(ehUnico, indice))
+		for ( var i = 0; i < p.incisos.size; i++ )
+		{
+			sb.append(p.incisos.get(i).compile(i))
+		}
 		
 		return sb.toString
 	}
