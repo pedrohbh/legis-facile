@@ -95,7 +95,7 @@ class LegisFacileGenerator extends AbstractGenerator {
 	private def converteEmAlfabeto(int i)
 	{
 		val alfabeto = "abcdefghijklmnopqrstuvwxyz"
-		return String.valueOf(alfabeto.charAt(i))
+		return String.valueOf(alfabeto.charAt(i % alfabeto.length))
 		
 	}
 	
@@ -192,7 +192,12 @@ class LegisFacileGenerator extends AbstractGenerator {
 	}*/
 	
 	private def compile(Caput c, int i)'''
-	<p>Art. «i+1»: «c.texto»</p>
+	«IF i < 9 »
+	<p>Art. «i+1»º «c.texto»</p>
+	«ELSE»
+	<p>Art. «i+1». «c.texto»</p>
+	«ENDIF»
+	
 	'''
 	
 	private def compile(Preliminar p)'''
