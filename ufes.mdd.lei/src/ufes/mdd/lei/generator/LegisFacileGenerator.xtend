@@ -19,6 +19,7 @@ import ufes.mdd.lei.legisFacile.Preliminar
 import ufes.mdd.lei.legisFacile.Type
 import ufes.mdd.lei.legisFacile.Alinea
 import ufes.mdd.lei.legisFacile.Item
+import ufes.mdd.lei.legisFacile.Paragrafo
 
 /**
  * Generates code from your model files on save.
@@ -133,14 +134,41 @@ class LegisFacileGenerator extends AbstractGenerator {
 		return res.toString
 	}
 	
+	private def compile(Paragrafo p, boolean ehUnico, int indice)
+	{
+		var sb = new StringBuilder
+		sb.append(p.compileLinha(ehUnico, indice))
+		
+		return sb.toString
+	}
+	
+	private def compileLinha(Paragrafo p, boolean ehUnico, int indice)'''
+	«IF ehUnico»
+	<p>Parágrafo único. «p.texto»</p>
+	«ELSE»
+	<p>§«indice+1»º «p.texto»</p>
+	«ENDIF»
+	'''
+	
 	private def compile(Normativa n)
 	{
-		var elemento = new StringBuilder
+		var sb = new StringBuilder
 		for ( var i = 0; i < n.artigos.size; i++ )
 		{
-			elemento.append(n.artigos.get(i).compile((i)))
+			sb.append(n.artigos.get(i).compile((i)))
+			for ( var j = 0; j < n.artigos.get(i).paragrafos.size; j++ )
+			{
+				var ehUnico = false
+				if ( !ehUnico && n.artigos.get(i).paragrafos.size == 1 )
+				{
+					ehUnico = true
+				}
+				
+				sb.append(n.artigos.get(i).paragrafos.get(j).compile(ehUnico, j))
+								
+			}
 		}
-		return elemento.toString
+		return sb.toString
 	}
 	
 	private def compile(Artigo a, int i)
@@ -162,13 +190,6 @@ class LegisFacileGenerator extends AbstractGenerator {
 	private def compile(Caput c, int i)'''
 	<p>Art. «i+1»: «c.texto»</p>
 	'''
-	
-	//private def compile(Artigo a, Integer i)'''
-	//<p>Art. «i»: «a.caput.texto»</p>
-	//«a.caput.incisos.forEach[in, j| in.compile((j+1))]»
-	//«FOR p : a.paragrafos»
-	//«ENDFOR»
-	//'''
 	
 	private def compile(Preliminar p)'''
 	«p.epigrage.compile»	
