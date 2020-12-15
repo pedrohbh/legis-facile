@@ -540,31 +540,22 @@ public interface LegisFacilePackage extends EPackage
   int FINAL = 13;
 
   /**
-   * The feature id for the '<em><b>Texto</b></em>' attribute.
+   * The feature id for the '<em><b>Vigencia</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FINAL__TEXTO = 0;
+  int FINAL__VIGENCIA = 0;
 
   /**
-   * The feature id for the '<em><b>Vigencia</b></em>' containment reference list.
+   * The feature id for the '<em><b>Revogacao</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FINAL__VIGENCIA = 1;
-
-  /**
-   * The feature id for the '<em><b>Revogacao</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FINAL__REVOGACAO = 2;
+  int FINAL__REVOGACAO = 1;
 
   /**
    * The number of structural features of the '<em>Final</em>' class.
@@ -573,7 +564,7 @@ public interface LegisFacilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int FINAL_FEATURE_COUNT = 3;
+  int FINAL_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link ufes.mdd.lei.legisFacile.impl.VigenciaImpl <em>Vigencia</em>}' class.
@@ -1222,21 +1213,10 @@ public interface LegisFacilePackage extends EPackage
   EClass getFinal();
 
   /**
-   * Returns the meta object for the attribute '{@link ufes.mdd.lei.legisFacile.Final#getTexto <em>Texto</em>}'.
+   * Returns the meta object for the containment reference '{@link ufes.mdd.lei.legisFacile.Final#getVigencia <em>Vigencia</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Texto</em>'.
-   * @see ufes.mdd.lei.legisFacile.Final#getTexto()
-   * @see #getFinal()
-   * @generated
-   */
-  EAttribute getFinal_Texto();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link ufes.mdd.lei.legisFacile.Final#getVigencia <em>Vigencia</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Vigencia</em>'.
+   * @return the meta object for the containment reference '<em>Vigencia</em>'.
    * @see ufes.mdd.lei.legisFacile.Final#getVigencia()
    * @see #getFinal()
    * @generated
@@ -1244,10 +1224,10 @@ public interface LegisFacilePackage extends EPackage
   EReference getFinal_Vigencia();
 
   /**
-   * Returns the meta object for the containment reference list '{@link ufes.mdd.lei.legisFacile.Final#getRevogacao <em>Revogacao</em>}'.
+   * Returns the meta object for the containment reference '{@link ufes.mdd.lei.legisFacile.Final#getRevogacao <em>Revogacao</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Revogacao</em>'.
+   * @return the meta object for the containment reference '<em>Revogacao</em>'.
    * @see ufes.mdd.lei.legisFacile.Final#getRevogacao()
    * @see #getFinal()
    * @generated
@@ -1745,15 +1725,7 @@ public interface LegisFacilePackage extends EPackage
     EClass FINAL = eINSTANCE.getFinal();
 
     /**
-     * The meta object literal for the '<em><b>Texto</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FINAL__TEXTO = eINSTANCE.getFinal_Texto();
-
-    /**
-     * The meta object literal for the '<em><b>Vigencia</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Vigencia</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1761,7 +1733,7 @@ public interface LegisFacilePackage extends EPackage
     EReference FINAL__VIGENCIA = eINSTANCE.getFinal_Vigencia();
 
     /**
-     * The meta object literal for the '<em><b>Revogacao</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Revogacao</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

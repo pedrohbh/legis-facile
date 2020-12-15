@@ -30,7 +30,6 @@ public class LegisFacileSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Ementa_EmentaKeyword_0_0_or_EmentaKeyword_0_1;
 	protected AbstractElementAlias match_Epigrafe_EpigrafeKeyword_0_0_or_EpigrafeKeyword_0_1;
 	protected AbstractElementAlias match_Final_FinalKeyword_0_0_or_FinalKeyword_0_1;
-	protected AbstractElementAlias match_Final___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_3__q;
 	protected AbstractElementAlias match_Inciso_IncisoKeyword_0_0_or_IncisoKeyword_0_1;
 	protected AbstractElementAlias match_Inciso___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q;
 	protected AbstractElementAlias match_Item_ItemKeyword_0_0_or_ItemKeyword_0_1;
@@ -53,7 +52,6 @@ public class LegisFacileSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Ementa_EmentaKeyword_0_0_or_EmentaKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getEmentaAccess().getEmentaKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getEmentaAccess().getEmentaKeyword_0_1()));
 		match_Epigrafe_EpigrafeKeyword_0_0_or_EpigrafeKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getEpigrafeAccess().getEpigrafeKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getEpigrafeAccess().getEpigrafeKeyword_0_1()));
 		match_Final_FinalKeyword_0_0_or_FinalKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFinalAccess().getFinalKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getFinalAccess().getFinalKeyword_0_1()));
-		match_Final___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getFinalAccess().getLeftCurlyBracketKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getFinalAccess().getRightCurlyBracketKeyword_4_3()));
 		match_Inciso_IncisoKeyword_0_0_or_IncisoKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getIncisoAccess().getIncisoKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getIncisoAccess().getIncisoKeyword_0_1()));
 		match_Inciso___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getIncisoAccess().getLeftCurlyBracketKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getIncisoAccess().getRightCurlyBracketKeyword_4_2()));
 		match_Item_ItemKeyword_0_0_or_ItemKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getItemAccess().getItemKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getItemAccess().getItemKeyword_0_1()));
@@ -94,8 +92,6 @@ public class LegisFacileSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Epigrafe_EpigrafeKeyword_0_0_or_EpigrafeKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Final_FinalKeyword_0_0_or_FinalKeyword_0_1.equals(syntax))
 				emit_Final_FinalKeyword_0_0_or_FinalKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Final___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_3__q.equals(syntax))
-				emit_Final___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Inciso_IncisoKeyword_0_0_or_IncisoKeyword_0_1.equals(syntax))
 				emit_Inciso_IncisoKeyword_0_0_or_IncisoKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Inciso___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q.equals(syntax))
@@ -202,20 +198,10 @@ public class LegisFacileSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'Final' | 'final'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) '(' texto=STRING
+	 *     (rule start) (ambiguity) '{' revogacao=Revogacao
+	 *     (rule start) (ambiguity) '{' vigencia=Vigencia
 	 */
 	protected void emit_Final_FinalKeyword_0_0_or_FinalKeyword_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     ('{' '}')?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     texto=STRING ')' (ambiguity) (rule end)
-	 */
-	protected void emit_Final___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

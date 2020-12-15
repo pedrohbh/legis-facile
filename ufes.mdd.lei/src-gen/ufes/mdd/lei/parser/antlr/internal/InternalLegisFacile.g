@@ -187,7 +187,7 @@ ruleType returns [EObject current=null]
 						afterParserOrEnumRuleCall();
 					}
 				)
-			)
+			)?
 		)
 	)
 ;
@@ -1067,80 +1067,97 @@ ruleFinal returns [EObject current=null]
 				newLeafNode(otherlv_1, grammarAccess.getFinalAccess().getFinalKeyword_0_1());
 			}
 		)
-		otherlv_2='('
+		otherlv_2='{'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getFinalAccess().getLeftParenthesisKeyword_1());
+			newLeafNode(otherlv_2, grammarAccess.getFinalAccess().getLeftCurlyBracketKeyword_1());
 		}
 		(
 			(
-				lv_texto_3_0=RULE_STRING
-				{
-					newLeafNode(lv_texto_3_0, grammarAccess.getFinalAccess().getTextoSTRINGTerminalRuleCall_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getFinalRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"texto",
-						lv_texto_3_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getFinalAccess().getVigenciaVigenciaParserRuleCall_2_0_0_0());
+						}
+						lv_vigencia_3_0=ruleVigencia
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getFinalRule());
+							}
+							set(
+								$current,
+								"vigencia",
+								lv_vigencia_3_0,
+								"ufes.mdd.lei.LegisFacile.Vigencia");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getFinalAccess().getRevogacaoRevogacaoParserRuleCall_2_0_1_0());
+						}
+						lv_revogacao_4_0=ruleRevogacao
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getFinalRule());
+							}
+							set(
+								$current,
+								"revogacao",
+								lv_revogacao_4_0,
+								"ufes.mdd.lei.LegisFacile.Revogacao");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)?
+			)
+			    |
+			(
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getFinalAccess().getRevogacaoRevogacaoParserRuleCall_2_1_0_0());
+						}
+						lv_revogacao_5_0=ruleRevogacao
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getFinalRule());
+							}
+							set(
+								$current,
+								"revogacao",
+								lv_revogacao_5_0,
+								"ufes.mdd.lei.LegisFacile.Revogacao");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getFinalAccess().getVigenciaVigenciaParserRuleCall_2_1_1_0());
+						}
+						lv_vigencia_6_0=ruleVigencia
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getFinalRule());
+							}
+							set(
+								$current,
+								"vigencia",
+								lv_vigencia_6_0,
+								"ufes.mdd.lei.LegisFacile.Vigencia");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)?
 			)
 		)
-		otherlv_4=')'
+		otherlv_7='}'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getFinalAccess().getRightParenthesisKeyword_3());
+			newLeafNode(otherlv_7, grammarAccess.getFinalAccess().getRightCurlyBracketKeyword_3());
 		}
-		(
-			otherlv_5='{'
-			{
-				newLeafNode(otherlv_5, grammarAccess.getFinalAccess().getLeftCurlyBracketKeyword_4_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getFinalAccess().getVigenciaVigenciaParserRuleCall_4_1_0());
-					}
-					lv_vigencia_6_0=ruleVigencia
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getFinalRule());
-						}
-						add(
-							$current,
-							"vigencia",
-							lv_vigencia_6_0,
-							"ufes.mdd.lei.LegisFacile.Vigencia");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)*
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getFinalAccess().getRevogacaoRevogacaoParserRuleCall_4_2_0());
-					}
-					lv_revogacao_7_0=ruleRevogacao
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getFinalRule());
-						}
-						add(
-							$current,
-							"revogacao",
-							lv_revogacao_7_0,
-							"ufes.mdd.lei.LegisFacile.Revogacao");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)*
-			otherlv_8='}'
-			{
-				newLeafNode(otherlv_8, grammarAccess.getFinalAccess().getRightCurlyBracketKeyword_4_3());
-			}
-		)?
 	)
 ;
 

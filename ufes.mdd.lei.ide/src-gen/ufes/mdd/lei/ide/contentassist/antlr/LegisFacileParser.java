@@ -44,6 +44,7 @@ public class LegisFacileParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAlineaAccess().getAlternatives_0(), "rule__Alinea__Alternatives_0");
 			builder.put(grammarAccess.getItemAccess().getAlternatives_0(), "rule__Item__Alternatives_0");
 			builder.put(grammarAccess.getFinalAccess().getAlternatives_0(), "rule__Final__Alternatives_0");
+			builder.put(grammarAccess.getFinalAccess().getAlternatives_2(), "rule__Final__Alternatives_2");
 			builder.put(grammarAccess.getVigenciaAccess().getAlternatives_0(), "rule__Vigencia__Alternatives_0");
 			builder.put(grammarAccess.getRevogacaoAccess().getAlternatives_0(), "rule__Revogacao__Alternatives_0");
 			builder.put(grammarAccess.getTypeAccess().getGroup_2(), "rule__Type__Group_2__0");
@@ -63,7 +64,8 @@ public class LegisFacileParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAlineaAccess().getGroup_4(), "rule__Alinea__Group_4__0");
 			builder.put(grammarAccess.getItemAccess().getGroup(), "rule__Item__Group__0");
 			builder.put(grammarAccess.getFinalAccess().getGroup(), "rule__Final__Group__0");
-			builder.put(grammarAccess.getFinalAccess().getGroup_4(), "rule__Final__Group_4__0");
+			builder.put(grammarAccess.getFinalAccess().getGroup_2_0(), "rule__Final__Group_2_0__0");
+			builder.put(grammarAccess.getFinalAccess().getGroup_2_1(), "rule__Final__Group_2_1__0");
 			builder.put(grammarAccess.getVigenciaAccess().getGroup(), "rule__Vigencia__Group__0");
 			builder.put(grammarAccess.getRevogacaoAccess().getGroup(), "rule__Revogacao__Group__0");
 			builder.put(grammarAccess.getDataTypeAccess().getGroup(), "rule__DataType__Group__0");
@@ -94,9 +96,10 @@ public class LegisFacileParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAlineaAccess().getTextoAssignment_2(), "rule__Alinea__TextoAssignment_2");
 			builder.put(grammarAccess.getAlineaAccess().getItensAssignment_4_1(), "rule__Alinea__ItensAssignment_4_1");
 			builder.put(grammarAccess.getItemAccess().getTextoAssignment_2(), "rule__Item__TextoAssignment_2");
-			builder.put(grammarAccess.getFinalAccess().getTextoAssignment_2(), "rule__Final__TextoAssignment_2");
-			builder.put(grammarAccess.getFinalAccess().getVigenciaAssignment_4_1(), "rule__Final__VigenciaAssignment_4_1");
-			builder.put(grammarAccess.getFinalAccess().getRevogacaoAssignment_4_2(), "rule__Final__RevogacaoAssignment_4_2");
+			builder.put(grammarAccess.getFinalAccess().getVigenciaAssignment_2_0_0(), "rule__Final__VigenciaAssignment_2_0_0");
+			builder.put(grammarAccess.getFinalAccess().getRevogacaoAssignment_2_0_1(), "rule__Final__RevogacaoAssignment_2_0_1");
+			builder.put(grammarAccess.getFinalAccess().getRevogacaoAssignment_2_1_0(), "rule__Final__RevogacaoAssignment_2_1_0");
+			builder.put(grammarAccess.getFinalAccess().getVigenciaAssignment_2_1_1(), "rule__Final__VigenciaAssignment_2_1_1");
 			builder.put(grammarAccess.getVigenciaAccess().getTextoAssignment_2(), "rule__Vigencia__TextoAssignment_2");
 			builder.put(grammarAccess.getRevogacaoAccess().getTextoAssignment_2(), "rule__Revogacao__TextoAssignment_2");
 			builder.put(grammarAccess.getDataTypeAccess().getNameAssignment_1(), "rule__DataType__NameAssignment_1");

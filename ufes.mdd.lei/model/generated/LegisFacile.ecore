@@ -67,11 +67,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="texto" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Final">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="texto" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="vigencia" upperBound="-1"
-        eType="#//Vigencia" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="revogacao" upperBound="-1"
-        eType="#//Revogacao" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vigencia" eType="#//Vigencia"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="revogacao" eType="#//Revogacao"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Vigencia">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="texto" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

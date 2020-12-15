@@ -671,20 +671,9 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
    * @generated
    */
   @Override
-  public EAttribute getFinal_Texto()
-  {
-    return (EAttribute)finalEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EReference getFinal_Vigencia()
   {
-    return (EReference)finalEClass.getEStructuralFeatures().get(1);
+    return (EReference)finalEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -695,7 +684,7 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
   @Override
   public EReference getFinal_Revogacao()
   {
-    return (EReference)finalEClass.getEStructuralFeatures().get(2);
+    return (EReference)finalEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -913,7 +902,6 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
     createEAttribute(itemEClass, ITEM__TEXTO);
 
     finalEClass = createEClass(FINAL);
-    createEAttribute(finalEClass, FINAL__TEXTO);
     createEReference(finalEClass, FINAL__VIGENCIA);
     createEReference(finalEClass, FINAL__REVOGACAO);
 
@@ -1020,9 +1008,8 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
     initEAttribute(getItem_Texto(), ecorePackage.getEString(), "texto", null, 0, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(finalEClass, Final.class, "Final", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFinal_Texto(), ecorePackage.getEString(), "texto", null, 0, 1, Final.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFinal_Vigencia(), this.getVigencia(), null, "vigencia", null, 0, -1, Final.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFinal_Revogacao(), this.getRevogacao(), null, "revogacao", null, 0, -1, Final.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFinal_Vigencia(), this.getVigencia(), null, "vigencia", null, 0, 1, Final.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFinal_Revogacao(), this.getRevogacao(), null, "revogacao", null, 0, 1, Final.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(vigenciaEClass, Vigencia.class, "Vigencia", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVigencia_Texto(), ecorePackage.getEString(), "texto", null, 0, 1, Vigencia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

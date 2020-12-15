@@ -3,21 +3,14 @@
  */
 package ufes.mdd.lei.legisFacile.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 import ufes.mdd.lei.legisFacile.Final;
 import ufes.mdd.lei.legisFacile.LegisFacilePackage;
@@ -32,7 +25,6 @@ import ufes.mdd.lei.legisFacile.Vigencia;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link ufes.mdd.lei.legisFacile.impl.FinalImpl#getTexto <em>Texto</em>}</li>
  *   <li>{@link ufes.mdd.lei.legisFacile.impl.FinalImpl#getVigencia <em>Vigencia</em>}</li>
  *   <li>{@link ufes.mdd.lei.legisFacile.impl.FinalImpl#getRevogacao <em>Revogacao</em>}</li>
  * </ul>
@@ -42,44 +34,24 @@ import ufes.mdd.lei.legisFacile.Vigencia;
 public class FinalImpl extends MinimalEObjectImpl.Container implements Final
 {
   /**
-   * The default value of the '{@link #getTexto() <em>Texto</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTexto()
-   * @generated
-   * @ordered
-   */
-  protected static final String TEXTO_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getTexto() <em>Texto</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTexto()
-   * @generated
-   * @ordered
-   */
-  protected String texto = TEXTO_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getVigencia() <em>Vigencia</em>}' containment reference list.
+   * The cached value of the '{@link #getVigencia() <em>Vigencia</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getVigencia()
    * @generated
    * @ordered
    */
-  protected EList<Vigencia> vigencia;
+  protected Vigencia vigencia;
 
   /**
-   * The cached value of the '{@link #getRevogacao() <em>Revogacao</em>}' containment reference list.
+   * The cached value of the '{@link #getRevogacao() <em>Revogacao</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getRevogacao()
    * @generated
    * @ordered
    */
-  protected EList<Revogacao> revogacao;
+  protected Revogacao revogacao;
 
   /**
    * <!-- begin-user-doc -->
@@ -108,37 +80,8 @@ public class FinalImpl extends MinimalEObjectImpl.Container implements Final
    * @generated
    */
   @Override
-  public String getTexto()
+  public Vigencia getVigencia()
   {
-    return texto;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setTexto(String newTexto)
-  {
-    String oldTexto = texto;
-    texto = newTexto;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LegisFacilePackage.FINAL__TEXTO, oldTexto, texto));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<Vigencia> getVigencia()
-  {
-    if (vigencia == null)
-    {
-      vigencia = new EObjectContainmentEList<Vigencia>(Vigencia.class, this, LegisFacilePackage.FINAL__VIGENCIA);
-    }
     return vigencia;
   }
 
@@ -147,14 +90,88 @@ public class FinalImpl extends MinimalEObjectImpl.Container implements Final
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public EList<Revogacao> getRevogacao()
+  public NotificationChain basicSetVigencia(Vigencia newVigencia, NotificationChain msgs)
   {
-    if (revogacao == null)
+    Vigencia oldVigencia = vigencia;
+    vigencia = newVigencia;
+    if (eNotificationRequired())
     {
-      revogacao = new EObjectContainmentEList<Revogacao>(Revogacao.class, this, LegisFacilePackage.FINAL__REVOGACAO);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LegisFacilePackage.FINAL__VIGENCIA, oldVigencia, newVigencia);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setVigencia(Vigencia newVigencia)
+  {
+    if (newVigencia != vigencia)
+    {
+      NotificationChain msgs = null;
+      if (vigencia != null)
+        msgs = ((InternalEObject)vigencia).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LegisFacilePackage.FINAL__VIGENCIA, null, msgs);
+      if (newVigencia != null)
+        msgs = ((InternalEObject)newVigencia).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LegisFacilePackage.FINAL__VIGENCIA, null, msgs);
+      msgs = basicSetVigencia(newVigencia, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LegisFacilePackage.FINAL__VIGENCIA, newVigencia, newVigencia));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Revogacao getRevogacao()
+  {
     return revogacao;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetRevogacao(Revogacao newRevogacao, NotificationChain msgs)
+  {
+    Revogacao oldRevogacao = revogacao;
+    revogacao = newRevogacao;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LegisFacilePackage.FINAL__REVOGACAO, oldRevogacao, newRevogacao);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setRevogacao(Revogacao newRevogacao)
+  {
+    if (newRevogacao != revogacao)
+    {
+      NotificationChain msgs = null;
+      if (revogacao != null)
+        msgs = ((InternalEObject)revogacao).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LegisFacilePackage.FINAL__REVOGACAO, null, msgs);
+      if (newRevogacao != null)
+        msgs = ((InternalEObject)newRevogacao).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LegisFacilePackage.FINAL__REVOGACAO, null, msgs);
+      msgs = basicSetRevogacao(newRevogacao, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LegisFacilePackage.FINAL__REVOGACAO, newRevogacao, newRevogacao));
   }
 
   /**
@@ -168,9 +185,9 @@ public class FinalImpl extends MinimalEObjectImpl.Container implements Final
     switch (featureID)
     {
       case LegisFacilePackage.FINAL__VIGENCIA:
-        return ((InternalEList<?>)getVigencia()).basicRemove(otherEnd, msgs);
+        return basicSetVigencia(null, msgs);
       case LegisFacilePackage.FINAL__REVOGACAO:
-        return ((InternalEList<?>)getRevogacao()).basicRemove(otherEnd, msgs);
+        return basicSetRevogacao(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -185,8 +202,6 @@ public class FinalImpl extends MinimalEObjectImpl.Container implements Final
   {
     switch (featureID)
     {
-      case LegisFacilePackage.FINAL__TEXTO:
-        return getTexto();
       case LegisFacilePackage.FINAL__VIGENCIA:
         return getVigencia();
       case LegisFacilePackage.FINAL__REVOGACAO:
@@ -200,22 +215,16 @@ public class FinalImpl extends MinimalEObjectImpl.Container implements Final
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case LegisFacilePackage.FINAL__TEXTO:
-        setTexto((String)newValue);
-        return;
       case LegisFacilePackage.FINAL__VIGENCIA:
-        getVigencia().clear();
-        getVigencia().addAll((Collection<? extends Vigencia>)newValue);
+        setVigencia((Vigencia)newValue);
         return;
       case LegisFacilePackage.FINAL__REVOGACAO:
-        getRevogacao().clear();
-        getRevogacao().addAll((Collection<? extends Revogacao>)newValue);
+        setRevogacao((Revogacao)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -231,14 +240,11 @@ public class FinalImpl extends MinimalEObjectImpl.Container implements Final
   {
     switch (featureID)
     {
-      case LegisFacilePackage.FINAL__TEXTO:
-        setTexto(TEXTO_EDEFAULT);
-        return;
       case LegisFacilePackage.FINAL__VIGENCIA:
-        getVigencia().clear();
+        setVigencia((Vigencia)null);
         return;
       case LegisFacilePackage.FINAL__REVOGACAO:
-        getRevogacao().clear();
+        setRevogacao((Revogacao)null);
         return;
     }
     super.eUnset(featureID);
@@ -254,31 +260,12 @@ public class FinalImpl extends MinimalEObjectImpl.Container implements Final
   {
     switch (featureID)
     {
-      case LegisFacilePackage.FINAL__TEXTO:
-        return TEXTO_EDEFAULT == null ? texto != null : !TEXTO_EDEFAULT.equals(texto);
       case LegisFacilePackage.FINAL__VIGENCIA:
-        return vigencia != null && !vigencia.isEmpty();
+        return vigencia != null;
       case LegisFacilePackage.FINAL__REVOGACAO:
-        return revogacao != null && !revogacao.isEmpty();
+        return revogacao != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (texto: ");
-    result.append(texto);
-    result.append(')');
-    return result.toString();
   }
 
 } //FinalImpl

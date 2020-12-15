@@ -239,7 +239,7 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Final returns Final
 	 *
 	 * Constraint:
-	 *     (texto=STRING vigencia+=Vigencia* revogacao+=Revogacao*)
+	 *     ((vigencia=Vigencia revogacao=Revogacao?) | (revogacao=Revogacao vigencia=Vigencia?))
 	 */
 	protected void sequence_Final(ISerializationContext context, Final semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -377,22 +377,10 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Type returns Type
 	 *
 	 * Constraint:
-	 *     (preliminar=Preliminar normativa=Normativa final=Final)
+	 *     (preliminar=Preliminar normativa=Normativa final=Final?)
 	 */
 	protected void sequence_Type(ISerializationContext context, Type semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LegisFacilePackage.Literals.TYPE__PRELIMINAR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegisFacilePackage.Literals.TYPE__PRELIMINAR));
-			if (transientValues.isValueTransient(semanticObject, LegisFacilePackage.Literals.TYPE__NORMATIVA) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegisFacilePackage.Literals.TYPE__NORMATIVA));
-			if (transientValues.isValueTransient(semanticObject, LegisFacilePackage.Literals.TYPE__FINAL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegisFacilePackage.Literals.TYPE__FINAL));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTypeAccess().getPreliminarPreliminarParserRuleCall_2_0_0(), semanticObject.getPreliminar());
-		feeder.accept(grammarAccess.getTypeAccess().getNormativaNormativaParserRuleCall_2_1_0(), semanticObject.getNormativa());
-		feeder.accept(grammarAccess.getTypeAccess().getFinalFinalParserRuleCall_2_2_0(), semanticObject.getFinal());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

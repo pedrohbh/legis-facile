@@ -7,7 +7,7 @@ Lei:
 ;
 
 Type:
-	DataType | Entity | preliminar=Preliminar normativa=Normativa final=Final
+	DataType | Entity | preliminar=Preliminar normativa=Normativa (final=Final)?
 ;
 
 Preliminar:
@@ -72,10 +72,9 @@ Item:
 ;
 
 Final: 
-	('Final'|'final') '(' texto=STRING ')' ('{'	
-	(vigencia+=Vigencia)*
-	(revogacao+=Revogacao)*
-	'}')?
+	('Final'|'final') '{'
+	(vigencia=Vigencia (revogacao=Revogacao)?|revogacao=Revogacao (vigencia=Vigencia)?)
+	'}'
 ;
 
 Vigencia:

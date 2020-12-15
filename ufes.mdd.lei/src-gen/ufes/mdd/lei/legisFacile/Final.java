@@ -3,8 +3,6 @@
  */
 package ufes.mdd.lei.legisFacile;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,7 +14,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link ufes.mdd.lei.legisFacile.Final#getTexto <em>Texto</em>}</li>
  *   <li>{@link ufes.mdd.lei.legisFacile.Final#getVigencia <em>Vigencia</em>}</li>
  *   <li>{@link ufes.mdd.lei.legisFacile.Final#getRevogacao <em>Revogacao</em>}</li>
  * </ul>
@@ -28,49 +25,47 @@ import org.eclipse.emf.ecore.EObject;
 public interface Final extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Texto</b></em>' attribute.
+   * Returns the value of the '<em><b>Vigencia</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Texto</em>' attribute.
-   * @see #setTexto(String)
-   * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getFinal_Texto()
-   * @model
-   * @generated
-   */
-  String getTexto();
-
-  /**
-   * Sets the value of the '{@link ufes.mdd.lei.legisFacile.Final#getTexto <em>Texto</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Texto</em>' attribute.
-   * @see #getTexto()
-   * @generated
-   */
-  void setTexto(String value);
-
-  /**
-   * Returns the value of the '<em><b>Vigencia</b></em>' containment reference list.
-   * The list contents are of type {@link ufes.mdd.lei.legisFacile.Vigencia}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Vigencia</em>' containment reference list.
+   * @return the value of the '<em>Vigencia</em>' containment reference.
+   * @see #setVigencia(Vigencia)
    * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getFinal_Vigencia()
    * @model containment="true"
    * @generated
    */
-  EList<Vigencia> getVigencia();
+  Vigencia getVigencia();
 
   /**
-   * Returns the value of the '<em><b>Revogacao</b></em>' containment reference list.
-   * The list contents are of type {@link ufes.mdd.lei.legisFacile.Revogacao}.
+   * Sets the value of the '{@link ufes.mdd.lei.legisFacile.Final#getVigencia <em>Vigencia</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Revogacao</em>' containment reference list.
+   * @param value the new value of the '<em>Vigencia</em>' containment reference.
+   * @see #getVigencia()
+   * @generated
+   */
+  void setVigencia(Vigencia value);
+
+  /**
+   * Returns the value of the '<em><b>Revogacao</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Revogacao</em>' containment reference.
+   * @see #setRevogacao(Revogacao)
    * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getFinal_Revogacao()
    * @model containment="true"
    * @generated
    */
-  EList<Revogacao> getRevogacao();
+  Revogacao getRevogacao();
+
+  /**
+   * Sets the value of the '{@link ufes.mdd.lei.legisFacile.Final#getRevogacao <em>Revogacao</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Revogacao</em>' containment reference.
+   * @see #getRevogacao()
+   * @generated
+   */
+  void setRevogacao(Revogacao value);
 
 } // Final

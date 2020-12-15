@@ -58,7 +58,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//Item/texto"/>
     </genClasses>
     <genClasses ecoreClass="LegisFacile.ecore#//Final">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//Final/texto"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Final/vigencia"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Final/revogacao"/>
     </genClasses>
