@@ -20,6 +20,9 @@ import ufes.mdd.lei.legisFacile.Type
 import ufes.mdd.lei.legisFacile.Alinea
 import ufes.mdd.lei.legisFacile.Item
 import ufes.mdd.lei.legisFacile.Paragrafo
+import ufes.mdd.lei.legisFacile.Final
+import ufes.mdd.lei.legisFacile.Revogacao
+import ufes.mdd.lei.legisFacile.Vigencia
 
 /**
  * Generates code from your model files on save.
@@ -69,8 +72,36 @@ class LegisFacileGenerator extends AbstractGenerator {
 	<body>
 	«t.preliminar.compile»
 	«t.normativa.compile»
+	«IF t.final !== null »
+	«t.final.compile(t.normativa)»
+	«ENDIF»
 	</body>
 	</html>		         
+	'''
+	
+	private def compile(Final f, Normativa n)'''
+	«IF f.revogacao !== null»
+	«f.revogacao.compile(n.artigos.size+1)»
+	«ENDIF»
+	«IF f.vigencia !== null »
+	«f.vigencia.compile(n.artigos.size+2)»
+	«ENDIF»
+	'''
+	
+	private def compile(Vigencia v, int i)'''
+	«IF i < 9 »
+	<p>Art. «i»º «v.texto»</p>
+	«ELSE»
+	<p>Art. «i». «v.texto»</p>
+	«ENDIF»	
+	'''
+	
+	private def compile(Revogacao r, int i)'''
+	«IF i < 9 »
+	<p>Art. «i»º «r.texto»</p>
+	«ELSE»
+	<p>Art. «i». «r.texto»</p>
+	«ENDIF»	
 	'''
 	
 	private def compile(Alinea a, int i)
@@ -196,8 +227,7 @@ class LegisFacileGenerator extends AbstractGenerator {
 	<p>Art. «i+1»º «c.texto»</p>
 	«ELSE»
 	<p>Art. «i+1». «c.texto»</p>
-	«ENDIF»
-	
+	«ENDIF»	
 	'''
 	
 	private def compile(Preliminar p)'''
