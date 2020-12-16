@@ -83,8 +83,12 @@ class LegisFacileGenerator extends AbstractGenerator {
 	«IF f.revogacao !== null»
 	«f.revogacao.compile(n.artigos.size+1)»
 	«ENDIF»
-	«IF f.vigencia !== null »
-	«f.vigencia.compile(n.artigos.size+2)»
+	«IF f.vigencia !== null»
+		«IF f.revogacao !== null»
+			«f.vigencia.compile(n.artigos.size+2)»
+		«ELSE»
+			«f.vigencia.compile(n.artigos.size+1)»
+		«ENDIF»
 	«ENDIF»
 	'''
 	
@@ -181,7 +185,11 @@ class LegisFacileGenerator extends AbstractGenerator {
 	«IF ehUnico»
 	<p>Parágrafo único. «p.texto»</p>
 	«ELSE»
-	<p>§«indice+1»º «p.texto»</p>
+		«IF indice < 9 »
+		<p>§«indice+1»º «p.texto»</p>
+		«ELSE»
+		<p>§«indice+1». «p.texto»</p>
+		«ENDIF»
 	«ENDIF»
 	'''
 	
