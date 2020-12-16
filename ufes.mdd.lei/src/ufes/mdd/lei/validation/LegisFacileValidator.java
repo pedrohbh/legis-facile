@@ -5,8 +5,12 @@ package ufes.mdd.lei.validation;
 
 import org.eclipse.xtext.validation.Check;
 
+import ufes.mdd.lei.legisFacile.Alinea;
 import ufes.mdd.lei.legisFacile.Caput;
+import ufes.mdd.lei.legisFacile.Inciso;
+import ufes.mdd.lei.legisFacile.Item;
 import ufes.mdd.lei.legisFacile.LegisFacilePackage;
+import ufes.mdd.lei.legisFacile.Paragrafo;
 
 /**
  * This class contains custom validation rules. 
@@ -29,12 +33,50 @@ public class LegisFacileValidator extends AbstractLegisFacileValidator {
 	public static final String INVALID_NAME = "invalidName";
 
 	@Check
-	public void checkNameStartsWithCapital(Caput caput)
+	public void checkCaputStartsWithCapital(Caput caput)
 	{
 		if (!Character.isUpperCase(caput.getTexto().charAt(0)))
 		{
-			warning("O texto do \"caput\" deve começar com letra maiscula", LegisFacilePackage.Literals.CAPUT__TEXTO, INVALID_NAME);
+			warning("O texto do \"caput\" deve começar com letra maiúscula", LegisFacilePackage.Literals.CAPUT__TEXTO, INVALID_NAME);
 		}
 	}
+	
+	@Check
+	public void checkParagrafoStartsWithCapital(Paragrafo caput)
+	{
+		if (!Character.isUpperCase(caput.getTexto().charAt(0)))
+		{
+			warning("O texto do \"paragrafo\" deve começar com letra maiúscula", LegisFacilePackage.Literals.CAPUT__TEXTO, INVALID_NAME);
+		}
+	}
+	
+	@Check
+	public void checkIncisoStartWithLowerCase(Inciso inciso)
+	{
+		if (!Character.isLowerCase(inciso.getTexto().charAt(0)) )
+		{
+			warning("O texto do \"Inciso\" deve começar com letra minúscula exceto para nomes próprios", LegisFacilePackage.Literals.INCISO__TEXTO, INVALID_NAME);
+		}
+	}
+
+	@Check
+	public void checkAlineaStartWithLowerCase(Alinea alinea)
+	{
+		if (!Character.isLowerCase(alinea.getTexto().charAt(0)) )
+		{
+			warning("O texto do \"Alinea\" deve começar com letra minúscula exceto para nomes próprios", LegisFacilePackage.Literals.ALINEA__TEXTO, INVALID_NAME);
+		}
+	}
+	
+	@Check
+	public void checkItemStartWithLowerCase(Item item)
+	{
+		if (!Character.isLowerCase(item.getTexto().charAt(0)) )
+		{
+			warning("O texto do \"Item\" deve começar com letra minúscula exceto para nomes próprios", LegisFacilePackage.Literals.ITEM__TEXTO, INVALID_NAME);
+		}
+	}
+	
+	
 	
 }
