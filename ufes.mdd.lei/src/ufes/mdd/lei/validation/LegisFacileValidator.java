@@ -31,6 +31,26 @@ public class LegisFacileValidator extends AbstractLegisFacileValidator {
 //	}
 	
 	public static final String INVALID_NAME = "invalidName";
+	
+	@Check
+	public void checkEndWithSemicolonOrDot(Caput caput)
+	{
+		if ( caput.getIncisos() == null || caput.getIncisos().size() == 0)
+		{
+			if ( !caput.getTexto().trim().endsWith(".") )
+			{
+				warning("Deve terminar em \".\" quando não se desdobra em Incisos", LegisFacilePackage.Literals.CAPUT__TEXTO, INVALID_NAME);
+			}
+		}
+		else
+		{
+			if ( !caput.getTexto().trim().endsWith(":") )
+			{
+				warning("Deve terminar em \":\" quando não se desdobra em Incisos", LegisFacilePackage.Literals.CAPUT__TEXTO, INVALID_NAME);
+			}
+		}
+		
+	}
 
 	@Check
 	public void checkCaputStartsWithCapital(Caput caput)
