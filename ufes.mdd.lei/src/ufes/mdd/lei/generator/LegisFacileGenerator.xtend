@@ -94,17 +94,25 @@ class LegisFacileGenerator extends AbstractGenerator {
 	
 	private def compile(Vigencia v, int i)'''
 	«IF i < 9 »
-	<p>Art. «i»º «v.texto»</p>
+	<p class="MsoNormal" style="text-indent: 1.0cm; line-height: normal; text-align: justify; margin-top: 20px; margin-bottom: 20px">
+			<span style="font-size:
+		10.0pt;font-family:&quot;Arial&quot;,sans-serif"><a name="art1"></a>Art. «i»º «v.texto»</span></p>
 	«ELSE»
-	<p>Art. «i». «v.texto»</p>
+	<p class="MsoNormal" style="text-indent: 1.0cm; line-height: normal; text-align: justify; margin-top: 20px; margin-bottom: 20px">
+			<span style="font-size:
+		10.0pt;font-family:&quot;Arial&quot;,sans-serif"><a name="art1"></a>Art. «i». «v.texto»</span></p>
 	«ENDIF»	
 	'''
 	
 	private def compile(Revogacao r, int i)'''
 	«IF i < 9 »
-	<p>Art. «i»º «r.texto»</p>
+	<p class="MsoNormal" style="text-indent: 1.0cm; line-height: normal; text-align: justify; margin-top: 20px; margin-bottom: 20px">
+			<span style="font-size:
+		10.0pt;font-family:&quot;Arial&quot;,sans-serif"><a name="art1"></a>Art. «i»º «r.texto»</span></p>
 	«ELSE»
-	<p>Art. «i». «r.texto»</p>
+	<p class="MsoNormal" style="text-indent: 1.0cm; line-height: normal; text-align: justify; margin-top: 20px; margin-bottom: 20px">
+			<span style="font-size:
+		10.0pt;font-family:&quot;Arial&quot;,sans-serif"><a name="art1"></a>Art. «i». «r.texto»</span></p>
 	«ENDIF»	
 	'''
 	
@@ -191,9 +199,11 @@ class LegisFacileGenerator extends AbstractGenerator {
 		<span style="font-size:10.0pt;font-family:&quot;Arial&quot;,sans-serif">Parágrafo único. «p.texto»</span></p>
 	«ELSE»
 		«IF indice < 9 »
-		<p>§«indice+1»º «p.texto»</p>
+		<p class="MsoNormal" style="text-indent: 1.0cm; line-height: normal; text-align: justify; margin-top: 20px; margin-bottom: 20px">
+			<span style="font-size:10.0pt;font-family:&quot;Arial&quot;,sans-serif">§«indice+1»º «p.texto»</span></p>
 		«ELSE»
-		<p>§«indice+1». «p.texto»</p>
+		<p class="MsoNormal" style="text-indent: 1.0cm; line-height: normal; text-align: justify; margin-top: 20px; margin-bottom: 20px">
+			<span style="font-size:10.0pt;font-family:&quot;Arial&quot;,sans-serif">§«indice+1». «p.texto»</span></p>
 		«ENDIF»
 	«ENDIF»
 	'''
