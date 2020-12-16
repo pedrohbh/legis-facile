@@ -124,7 +124,8 @@ class LegisFacileGenerator extends AbstractGenerator {
 	'''
 	
 	private def compileLinha(Alinea a, int i)'''
-	<p>«converteEmAlfabeto(i)») «a.texto»</p>
+	<p class="MsoNormal" style="text-indent: 1.0cm; line-height: normal; text-align: justify; margin-top: 20px; margin-bottom: 20px">
+		<span style="font-size:10.0pt;font-family:&quot;Arial&quot;,sans-serif">«converteEmAlfabeto(i)») «a.texto»</span></p>
 	'''
 	
 	private def converteEmAlfabeto(int i)
