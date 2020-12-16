@@ -72,31 +72,53 @@ public class LegisFacileValidator extends AbstractLegisFacileValidator {
 	}
 	
 	@Check
-	public void checkIncisoEndWithDot(Inciso inciso)
+	public void checkIncisoEndSemicolonOrTwoPoints(Inciso inciso)
 	{
-		EObject elementroPai = inciso.eContainer();
-		if ( elementroPai instanceof Caput )
+		if ( inciso.getAlineas() == null || inciso.getAlineas().size() == 0)
 		{
-			Caput caputPai = (Caput) elementroPai;
-			int indiceElemento = caputPai.getIncisos().indexOf(inciso);
-			if ( indiceElemento == (caputPai.getIncisos().size()-1) )
+			EObject elementroPai = inciso.eContainer();
+			if ( elementroPai instanceof Caput )
 			{
-				if ( !inciso.getTexto().endsWith(".") )
+				Caput caputPai = (Caput) elementroPai;
+				int indiceElemento = caputPai.getIncisos().indexOf(inciso);
+				if ( indiceElemento == (caputPai.getIncisos().size()-1) )
 				{
-					warning("Deve terminar em \".\" quando não se desdobra em alíneas", LegisFacilePackage.Literals.INCISO__TEXTO, INVALID_NAME);
+					if ( !inciso.getTexto().endsWith(".") )
+					{
+						warning("Deve terminar em \".\" quando não se desdobra em alíneas", LegisFacilePackage.Literals.INCISO__TEXTO, INVALID_NAME);
+					}
+					
+				}
+				else if ( !inciso.getTexto().trim().endsWith(";") )
+				{
+					warning("Deve terminar em \";\" quando não se desdobra em Alíneas", LegisFacilePackage.Literals.INCISO__TEXTO, INVALID_NAME);
 				}
 			}
-		}
-		else if ( elementroPai instanceof Paragrafo )
-		{
-			Paragrafo caputPai = (Paragrafo) elementroPai;
-			int indiceElemento = caputPai.getIncisos().indexOf(inciso);
-			if ( indiceElemento == (caputPai.getIncisos().size()-1) )
+			else if ( elementroPai instanceof Paragrafo )
 			{
-				if ( !inciso.getTexto().endsWith(".") )
+				Paragrafo caputPai = (Paragrafo) elementroPai;
+				int indiceElemento = caputPai.getIncisos().indexOf(inciso);
+				if ( indiceElemento == (caputPai.getIncisos().size()-1) )
 				{
-					warning("Deve terminar em \".\" quando não se desdobra em alíneas", LegisFacilePackage.Literals.INCISO__TEXTO, INVALID_NAME);
+					if ( !inciso.getTexto().endsWith(".") )
+					{
+						warning("Deve terminar em \".\" quando se é o último elemento não se desdobra em alíneas", LegisFacilePackage.Literals.INCISO__TEXTO, INVALID_NAME);
+					}
+					
 				}
+				else if ( !inciso.getTexto().trim().endsWith(";") )
+				{
+					warning("Deve terminar em \";\" quando não se desdobra em Alíneas", LegisFacilePackage.Literals.INCISO__TEXTO, INVALID_NAME);
+				}
+			}
+			
+			
+		}
+		else
+		{
+			if ( !inciso.getTexto().trim().endsWith(":") )
+			{
+				warning("Deve terminar em \":\" quando se desdobra em Alíneas", LegisFacilePackage.Literals.INCISO__TEXTO, INVALID_NAME);
 			}
 		}
 	}
@@ -104,16 +126,16 @@ public class LegisFacileValidator extends AbstractLegisFacileValidator {
 	@Check
 	public void checkCaputStartsWithCapital(Caput caput)
 	{
-		if (!Character.isUpperCase(caput.getTexto().charAt(0)))
+		if (!caput.getTexto().isEmpty() && !Character.isUpperCase(caput.getTexto().charAt(0)))
 		{
 			warning("O texto do \"caput\" deve começar com letra maiúscula", LegisFacilePackage.Literals.CAPUT__TEXTO, INVALID_NAME);
 		}
 	}
 	
 	@Check
-	public void checkParagrafoStartsWithCapital(Paragrafo caput)
+	public void checkParagrafoStartsWithCapital(Paragrafo paragrafo)
 	{
-		if (!Character.isUpperCase(caput.getTexto().charAt(0)))
+		if (!paragrafo.getTexto().isEmpty() && !Character.isUpperCase(paragrafo.getTexto().charAt(0)))
 		{
 			warning("O texto do \"Parágrafo\" deve começar com letra maiúscula", LegisFacilePackage.Literals.CAPUT__TEXTO, INVALID_NAME);
 		}
@@ -122,7 +144,7 @@ public class LegisFacileValidator extends AbstractLegisFacileValidator {
 	@Check
 	public void checkIncisoStartWithLowerCase(Inciso inciso)
 	{
-		if (!Character.isLowerCase(inciso.getTexto().charAt(0)) )
+		if (!inciso.getTexto().isEmpty() && !Character.isLowerCase(inciso.getTexto().charAt(0)) )
 		{
 			warning("O texto do \"Inciso\" deve começar com letra minúscula exceto para nomes próprios", LegisFacilePackage.Literals.INCISO__TEXTO, INVALID_NAME);
 		}
@@ -131,7 +153,7 @@ public class LegisFacileValidator extends AbstractLegisFacileValidator {
 	@Check
 	public void checkAlineaStartWithLowerCase(Alinea alinea)
 	{
-		if (!Character.isLowerCase(alinea.getTexto().charAt(0)) )
+		if (!alinea.getTexto().isEmpty() && !Character.isLowerCase(alinea.getTexto().charAt(0)) )
 		{
 			warning("O texto do \"Alinea\" deve começar com letra minúscula exceto para nomes próprios", LegisFacilePackage.Literals.ALINEA__TEXTO, INVALID_NAME);
 		}
@@ -140,7 +162,7 @@ public class LegisFacileValidator extends AbstractLegisFacileValidator {
 	@Check
 	public void checkItemStartWithLowerCase(Item item)
 	{
-		if (!Character.isLowerCase(item.getTexto().charAt(0)) )
+		if (!item.getTexto().isEmpty() && !Character.isLowerCase(item.getTexto().charAt(0)) )
 		{
 			warning("O texto do \"Item\" deve começar com letra minúscula exceto para nomes próprios", LegisFacilePackage.Literals.ITEM__TEXTO, INVALID_NAME);
 		}
