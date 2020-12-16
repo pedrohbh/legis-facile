@@ -72,7 +72,7 @@ public class LegisFacileValidator extends AbstractLegisFacileValidator {
 	}
 	
 	@Check
-	public void checaTeste(Inciso inciso)
+	public void checkIncisoEndWithDot(Inciso inciso)
 	{
 		EObject elementroPai = inciso.eContainer();
 		if ( elementroPai instanceof Caput )
