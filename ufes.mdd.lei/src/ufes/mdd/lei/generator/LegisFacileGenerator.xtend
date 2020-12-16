@@ -232,9 +232,13 @@ class LegisFacileGenerator extends AbstractGenerator {
 	
 	private def compile(Caput c, int i)'''
 	«IF i < 9 »
-	<p>Art. «i+1»º «c.texto»</p>
+	<p class="MsoNormal" style="text-indent: 1.0cm; line-height: normal; text-align: justify; margin-top: 20px; margin-bottom: 20px">
+		<span style="font-size:
+	10.0pt;font-family:&quot;Arial&quot;,sans-serif"><a name="art1"></a>Art. «i+1»º «c.texto»</p>
 	«ELSE»
-	<p>Art. «i+1». «c.texto»</p>
+	<p class="MsoNormal" style="text-indent: 1.0cm; line-height: normal; text-align: justify; margin-top: 20px; margin-bottom: 20px">
+		<span style="font-size:
+	10.0pt;font-family:&quot;Arial&quot;,sans-serif"><a name="art1"></a>Art. «i+1». «c.texto»</p>
 	«ENDIF»	
 	'''
 	
