@@ -7,7 +7,7 @@ Lei:
 ;
 
 Type:
-	DataType | Entity | preliminar=Preliminar normativa=Normativa (final=Final)?
+	preliminar=Preliminar normativa=Normativa (final=Final)?
 ;
 
 Preliminar:
@@ -84,18 +84,4 @@ Vigencia:
 
 Revogacao:
 	('revoga'|'Revoga') '(' texto=STRING ')'
-;
-
-DataType:
-	'datatype' name=ID
-;
-
-Entity:
-	'entity' name=ID ('extends' superType=[Entity])? '{'
-	(features+=Feature)*
-	'}'
-;
-
-Feature:
-	(many?='many')? name=ID ':' type=[Type]
 ;

@@ -168,33 +168,6 @@ public interface LegisFacileFactory extends EFactory
   Revogacao createRevogacao();
 
   /**
-   * Returns a new object of class '<em>Data Type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Data Type</em>'.
-   * @generated
-   */
-  DataType createDataType();
-
-  /**
-   * Returns a new object of class '<em>Entity</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Entity</em>'.
-   * @generated
-   */
-  Entity createEntity();
-
-  /**
-   * Returns a new object of class '<em>Feature</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Feature</em>'.
-   * @generated
-   */
-  Feature createFeature();
-
-  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

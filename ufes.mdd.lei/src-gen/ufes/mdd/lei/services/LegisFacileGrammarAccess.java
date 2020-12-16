@@ -8,7 +8,6 @@ import com.google.inject.Singleton;
 import java.util.List;
 import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
-import org.eclipse.xtext.CrossReference;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.GrammarUtil;
 import org.eclipse.xtext.Group;
@@ -40,50 +39,38 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	public class TypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ufes.mdd.lei.LegisFacile.Type");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cDataTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cEntityParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Assignment cPreliminarAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
-		private final RuleCall cPreliminarPreliminarParserRuleCall_2_0_0 = (RuleCall)cPreliminarAssignment_2_0.eContents().get(0);
-		private final Assignment cNormativaAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cNormativaNormativaParserRuleCall_2_1_0 = (RuleCall)cNormativaAssignment_2_1.eContents().get(0);
-		private final Assignment cFinalAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
-		private final RuleCall cFinalFinalParserRuleCall_2_2_0 = (RuleCall)cFinalAssignment_2_2.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cPreliminarAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cPreliminarPreliminarParserRuleCall_0_0 = (RuleCall)cPreliminarAssignment_0.eContents().get(0);
+		private final Assignment cNormativaAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNormativaNormativaParserRuleCall_1_0 = (RuleCall)cNormativaAssignment_1.eContents().get(0);
+		private final Assignment cFinalAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cFinalFinalParserRuleCall_2_0 = (RuleCall)cFinalAssignment_2.eContents().get(0);
 		
 		//Type:
-		//	DataType | Entity | preliminar=Preliminar normativa=Normativa final=Final?;
+		//	preliminar=Preliminar normativa=Normativa final=Final?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//DataType | Entity | preliminar=Preliminar normativa=Normativa final=Final?
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//DataType
-		public RuleCall getDataTypeParserRuleCall_0() { return cDataTypeParserRuleCall_0; }
-		
-		//Entity
-		public RuleCall getEntityParserRuleCall_1() { return cEntityParserRuleCall_1; }
-		
 		//preliminar=Preliminar normativa=Normativa final=Final?
-		public Group getGroup_2() { return cGroup_2; }
+		public Group getGroup() { return cGroup; }
 		
 		//preliminar=Preliminar
-		public Assignment getPreliminarAssignment_2_0() { return cPreliminarAssignment_2_0; }
+		public Assignment getPreliminarAssignment_0() { return cPreliminarAssignment_0; }
 		
 		//Preliminar
-		public RuleCall getPreliminarPreliminarParserRuleCall_2_0_0() { return cPreliminarPreliminarParserRuleCall_2_0_0; }
+		public RuleCall getPreliminarPreliminarParserRuleCall_0_0() { return cPreliminarPreliminarParserRuleCall_0_0; }
 		
 		//normativa=Normativa
-		public Assignment getNormativaAssignment_2_1() { return cNormativaAssignment_2_1; }
+		public Assignment getNormativaAssignment_1() { return cNormativaAssignment_1; }
 		
 		//Normativa
-		public RuleCall getNormativaNormativaParserRuleCall_2_1_0() { return cNormativaNormativaParserRuleCall_2_1_0; }
+		public RuleCall getNormativaNormativaParserRuleCall_1_0() { return cNormativaNormativaParserRuleCall_1_0; }
 		
 		//final=Final?
-		public Assignment getFinalAssignment_2_2() { return cFinalAssignment_2_2; }
+		public Assignment getFinalAssignment_2() { return cFinalAssignment_2; }
 		
 		//Final
-		public RuleCall getFinalFinalParserRuleCall_2_2_0() { return cFinalFinalParserRuleCall_2_2_0; }
+		public RuleCall getFinalFinalParserRuleCall_2_0() { return cFinalFinalParserRuleCall_2_0; }
 	}
 	public class PreliminarElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ufes.mdd.lei.LegisFacile.Preliminar");
@@ -825,133 +812,6 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 		//')'
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
-	public class DataTypeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ufes.mdd.lei.LegisFacile.DataType");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cDatatypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		
-		//DataType:
-		//	'datatype' name=ID;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'datatype' name=ID
-		public Group getGroup() { return cGroup; }
-		
-		//'datatype'
-		public Keyword getDatatypeKeyword_0() { return cDatatypeKeyword_0; }
-		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-	}
-	public class EntityElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ufes.mdd.lei.LegisFacile.Entity");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cEntityKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cExtendsKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cSuperTypeAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final CrossReference cSuperTypeEntityCrossReference_2_1_0 = (CrossReference)cSuperTypeAssignment_2_1.eContents().get(0);
-		private final RuleCall cSuperTypeEntityIDTerminalRuleCall_2_1_0_1 = (RuleCall)cSuperTypeEntityCrossReference_2_1_0.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cFeaturesAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cFeaturesFeatureParserRuleCall_4_0 = (RuleCall)cFeaturesAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		
-		//Entity:
-		//	'entity' name=ID ('extends' superType=[Entity])? '{'
-		//	features+=Feature*
-		//	'}';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'entity' name=ID ('extends' superType=[Entity])? '{' features+=Feature* '}'
-		public Group getGroup() { return cGroup; }
-		
-		//'entity'
-		public Keyword getEntityKeyword_0() { return cEntityKeyword_0; }
-		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-		
-		//('extends' superType=[Entity])?
-		public Group getGroup_2() { return cGroup_2; }
-		
-		//'extends'
-		public Keyword getExtendsKeyword_2_0() { return cExtendsKeyword_2_0; }
-		
-		//superType=[Entity]
-		public Assignment getSuperTypeAssignment_2_1() { return cSuperTypeAssignment_2_1; }
-		
-		//[Entity]
-		public CrossReference getSuperTypeEntityCrossReference_2_1_0() { return cSuperTypeEntityCrossReference_2_1_0; }
-		
-		//ID
-		public RuleCall getSuperTypeEntityIDTerminalRuleCall_2_1_0_1() { return cSuperTypeEntityIDTerminalRuleCall_2_1_0_1; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
-		
-		//features+=Feature*
-		public Assignment getFeaturesAssignment_4() { return cFeaturesAssignment_4; }
-		
-		//Feature
-		public RuleCall getFeaturesFeatureParserRuleCall_4_0() { return cFeaturesFeatureParserRuleCall_4_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
-	}
-	public class FeatureElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ufes.mdd.lei.LegisFacile.Feature");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cManyAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final Keyword cManyManyKeyword_0_0 = (Keyword)cManyAssignment_0.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cTypeTypeCrossReference_3_0 = (CrossReference)cTypeAssignment_3.eContents().get(0);
-		private final RuleCall cTypeTypeIDTerminalRuleCall_3_0_1 = (RuleCall)cTypeTypeCrossReference_3_0.eContents().get(1);
-		
-		//Feature:
-		//	many?='many'? name=ID ':' type=[Type];
-		@Override public ParserRule getRule() { return rule; }
-		
-		//many?='many'? name=ID ':' type=[Type]
-		public Group getGroup() { return cGroup; }
-		
-		//many?='many'?
-		public Assignment getManyAssignment_0() { return cManyAssignment_0; }
-		
-		//'many'
-		public Keyword getManyManyKeyword_0_0() { return cManyManyKeyword_0_0; }
-		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-		
-		//':'
-		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
-		
-		//type=[Type]
-		public Assignment getTypeAssignment_3() { return cTypeAssignment_3; }
-		
-		//[Type]
-		public CrossReference getTypeTypeCrossReference_3_0() { return cTypeTypeCrossReference_3_0; }
-		
-		//ID
-		public RuleCall getTypeTypeIDTerminalRuleCall_3_0_1() { return cTypeTypeIDTerminalRuleCall_3_0_1; }
-	}
 	
 	
 	private final LeiElements pLei;
@@ -970,9 +830,6 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 	private final FinalElements pFinal;
 	private final VigenciaElements pVigencia;
 	private final RevogacaoElements pRevogacao;
-	private final DataTypeElements pDataType;
-	private final EntityElements pEntity;
-	private final FeatureElements pFeature;
 	
 	private final Grammar grammar;
 	
@@ -999,9 +856,6 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 		this.pFinal = new FinalElements();
 		this.pVigencia = new VigenciaElements();
 		this.pRevogacao = new RevogacaoElements();
-		this.pDataType = new DataTypeElements();
-		this.pEntity = new EntityElements();
-		this.pFeature = new FeatureElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -1042,7 +896,7 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//Type:
-	//	DataType | Entity | preliminar=Preliminar normativa=Normativa final=Final?;
+	//	preliminar=Preliminar normativa=Normativa final=Final?;
 	public TypeElements getTypeAccess() {
 		return pType;
 	}
@@ -1207,38 +1061,6 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 	
 	public ParserRule getRevogacaoRule() {
 		return getRevogacaoAccess().getRule();
-	}
-	
-	//DataType:
-	//	'datatype' name=ID;
-	public DataTypeElements getDataTypeAccess() {
-		return pDataType;
-	}
-	
-	public ParserRule getDataTypeRule() {
-		return getDataTypeAccess().getRule();
-	}
-	
-	//Entity:
-	//	'entity' name=ID ('extends' superType=[Entity])? '{'
-	//	features+=Feature*
-	//	'}';
-	public EntityElements getEntityAccess() {
-		return pEntity;
-	}
-	
-	public ParserRule getEntityRule() {
-		return getEntityAccess().getRule();
-	}
-	
-	//Feature:
-	//	many?='many'? name=ID ':' type=[Type];
-	public FeatureElements getFeatureAccess() {
-		return pFeature;
-	}
-	
-	public ParserRule getFeatureRule() {
-		return getFeatureAccess().getRule();
 	}
 	
 	//terminal ID:

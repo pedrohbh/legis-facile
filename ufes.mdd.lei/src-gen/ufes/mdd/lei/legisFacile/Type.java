@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ufes.mdd.lei.legisFacile.Type#getPreliminar <em>Preliminar</em>}</li>
  *   <li>{@link ufes.mdd.lei.legisFacile.Type#getNormativa <em>Normativa</em>}</li>
  *   <li>{@link ufes.mdd.lei.legisFacile.Type#getFinal <em>Final</em>}</li>
- *   <li>{@link ufes.mdd.lei.legisFacile.Type#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getType()
@@ -91,27 +90,5 @@ public interface Type extends EObject
    * @generated
    */
   void setFinal(Final value);
-
-  /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getType_Name()
-   * @model
-   * @generated
-   */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link ufes.mdd.lei.legisFacile.Type#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
 
 } // Type

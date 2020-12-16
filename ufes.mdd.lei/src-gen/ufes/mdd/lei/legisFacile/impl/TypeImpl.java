@@ -29,7 +29,6 @@ import ufes.mdd.lei.legisFacile.Type;
  *   <li>{@link ufes.mdd.lei.legisFacile.impl.TypeImpl#getPreliminar <em>Preliminar</em>}</li>
  *   <li>{@link ufes.mdd.lei.legisFacile.impl.TypeImpl#getNormativa <em>Normativa</em>}</li>
  *   <li>{@link ufes.mdd.lei.legisFacile.impl.TypeImpl#getFinal <em>Final</em>}</li>
- *   <li>{@link ufes.mdd.lei.legisFacile.impl.TypeImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -65,26 +64,6 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
    * @ordered
    */
   protected Final final_;
-
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -263,31 +242,6 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
    * @generated
    */
   @Override
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LegisFacilePackage.TYPE__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -318,8 +272,6 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
         return getNormativa();
       case LegisFacilePackage.TYPE__FINAL:
         return getFinal();
-      case LegisFacilePackage.TYPE__NAME:
-        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -342,9 +294,6 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
         return;
       case LegisFacilePackage.TYPE__FINAL:
         setFinal((Final)newValue);
-        return;
-      case LegisFacilePackage.TYPE__NAME:
-        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -369,9 +318,6 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
       case LegisFacilePackage.TYPE__FINAL:
         setFinal((Final)null);
         return;
-      case LegisFacilePackage.TYPE__NAME:
-        setName(NAME_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -392,27 +338,8 @@ public class TypeImpl extends MinimalEObjectImpl.Container implements Type
         return normativa != null;
       case LegisFacilePackage.TYPE__FINAL:
         return final_ != null;
-      case LegisFacilePackage.TYPE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //TypeImpl

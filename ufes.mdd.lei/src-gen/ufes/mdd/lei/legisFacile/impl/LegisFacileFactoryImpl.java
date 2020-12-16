@@ -81,9 +81,6 @@ public class LegisFacileFactoryImpl extends EFactoryImpl implements LegisFacileF
       case LegisFacilePackage.FINAL: return createFinal();
       case LegisFacilePackage.VIGENCIA: return createVigencia();
       case LegisFacilePackage.REVOGACAO: return createRevogacao();
-      case LegisFacilePackage.DATA_TYPE: return createDataType();
-      case LegisFacilePackage.ENTITY: return createEntity();
-      case LegisFacilePackage.FEATURE: return createFeature();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -279,42 +276,6 @@ public class LegisFacileFactoryImpl extends EFactoryImpl implements LegisFacileF
   {
     RevogacaoImpl revogacao = new RevogacaoImpl();
     return revogacao;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public DataType createDataType()
-  {
-    DataTypeImpl dataType = new DataTypeImpl();
-    return dataType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Entity createEntity()
-  {
-    EntityImpl entity = new EntityImpl();
-    return entity;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Feature createFeature()
-  {
-    FeatureImpl feature = new FeatureImpl();
-    return feature;
   }
 
   /**

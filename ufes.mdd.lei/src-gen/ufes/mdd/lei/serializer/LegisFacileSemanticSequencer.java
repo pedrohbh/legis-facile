@@ -17,11 +17,8 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransi
 import ufes.mdd.lei.legisFacile.Alinea;
 import ufes.mdd.lei.legisFacile.Artigo;
 import ufes.mdd.lei.legisFacile.Caput;
-import ufes.mdd.lei.legisFacile.DataType;
 import ufes.mdd.lei.legisFacile.Ementa;
-import ufes.mdd.lei.legisFacile.Entity;
 import ufes.mdd.lei.legisFacile.Epigrafe;
-import ufes.mdd.lei.legisFacile.Feature;
 import ufes.mdd.lei.legisFacile.Final;
 import ufes.mdd.lei.legisFacile.Inciso;
 import ufes.mdd.lei.legisFacile.Item;
@@ -59,20 +56,11 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 			case LegisFacilePackage.CAPUT:
 				sequence_Caput(context, (Caput) semanticObject); 
 				return; 
-			case LegisFacilePackage.DATA_TYPE:
-				sequence_DataType(context, (DataType) semanticObject); 
-				return; 
 			case LegisFacilePackage.EMENTA:
 				sequence_Ementa(context, (Ementa) semanticObject); 
 				return; 
-			case LegisFacilePackage.ENTITY:
-				sequence_Entity(context, (Entity) semanticObject); 
-				return; 
 			case LegisFacilePackage.EPIGRAFE:
 				sequence_Epigrafe(context, (Epigrafe) semanticObject); 
-				return; 
-			case LegisFacilePackage.FEATURE:
-				sequence_Feature(context, (Feature) semanticObject); 
 				return; 
 			case LegisFacilePackage.FINAL:
 				sequence_Final(context, (Final) semanticObject); 
@@ -150,25 +138,6 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Contexts:
-	 *     Type returns DataType
-	 *     DataType returns DataType
-	 *
-	 * Constraint:
-	 *     name=ID
-	 */
-	protected void sequence_DataType(ISerializationContext context, DataType semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LegisFacilePackage.Literals.TYPE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegisFacilePackage.Literals.TYPE__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDataTypeAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Ementa returns Ementa
 	 *
 	 * Constraint:
@@ -182,19 +151,6 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getEmentaAccess().getEmentaSTRINGTerminalRuleCall_2_0(), semanticObject.getEmenta());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Type returns Entity
-	 *     Entity returns Entity
-	 *
-	 * Constraint:
-	 *     (name=ID superType=[Entity|ID]? features+=Feature*)
-	 */
-	protected void sequence_Entity(ISerializationContext context, Entity semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -219,18 +175,6 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 		feeder.accept(grammarAccess.getEpigrafeAccess().getNumeroINTTerminalRuleCall_4_0(), semanticObject.getNumero());
 		feeder.accept(grammarAccess.getEpigrafeAccess().getAnoINTTerminalRuleCall_6_0(), semanticObject.getAno());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Feature returns Feature
-	 *
-	 * Constraint:
-	 *     (many?='many'? name=ID type=[Type|ID])
-	 */
-	protected void sequence_Feature(ISerializationContext context, Feature semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

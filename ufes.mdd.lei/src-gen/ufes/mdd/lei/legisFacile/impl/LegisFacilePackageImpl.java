@@ -13,11 +13,8 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import ufes.mdd.lei.legisFacile.Alinea;
 import ufes.mdd.lei.legisFacile.Artigo;
 import ufes.mdd.lei.legisFacile.Caput;
-import ufes.mdd.lei.legisFacile.DataType;
 import ufes.mdd.lei.legisFacile.Ementa;
-import ufes.mdd.lei.legisFacile.Entity;
 import ufes.mdd.lei.legisFacile.Epigrafe;
-import ufes.mdd.lei.legisFacile.Feature;
 import ufes.mdd.lei.legisFacile.Final;
 import ufes.mdd.lei.legisFacile.Inciso;
 import ufes.mdd.lei.legisFacile.Item;
@@ -153,27 +150,6 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
   private EClass revogacaoEClass = null;
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass dataTypeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass entityEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass featureEClass = null;
-
-  /**
    * Creates an instance of the model <b>Package</b>, registered with
    * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
    * package URI value.
@@ -300,17 +276,6 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
   public EReference getType_Final()
   {
     return (EReference)typeEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getType_Name()
-  {
-    return (EAttribute)typeEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -737,94 +702,6 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
    * @generated
    */
   @Override
-  public EClass getDataType()
-  {
-    return dataTypeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getEntity()
-  {
-    return entityEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getEntity_SuperType()
-  {
-    return (EReference)entityEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getEntity_Features()
-  {
-    return (EReference)entityEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getFeature()
-  {
-    return featureEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getFeature_Many()
-  {
-    return (EAttribute)featureEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getFeature_Name()
-  {
-    return (EAttribute)featureEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getFeature_Type()
-  {
-    return (EReference)featureEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public LegisFacileFactory getLegisFacileFactory()
   {
     return (LegisFacileFactory)getEFactoryInstance();
@@ -857,7 +734,6 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
     createEReference(typeEClass, TYPE__PRELIMINAR);
     createEReference(typeEClass, TYPE__NORMATIVA);
     createEReference(typeEClass, TYPE__FINAL);
-    createEAttribute(typeEClass, TYPE__NAME);
 
     preliminarEClass = createEClass(PRELIMINAR);
     createEReference(preliminarEClass, PRELIMINAR__EPIGRAGE);
@@ -910,17 +786,6 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
 
     revogacaoEClass = createEClass(REVOGACAO);
     createEAttribute(revogacaoEClass, REVOGACAO__TEXTO);
-
-    dataTypeEClass = createEClass(DATA_TYPE);
-
-    entityEClass = createEClass(ENTITY);
-    createEReference(entityEClass, ENTITY__SUPER_TYPE);
-    createEReference(entityEClass, ENTITY__FEATURES);
-
-    featureEClass = createEClass(FEATURE);
-    createEAttribute(featureEClass, FEATURE__MANY);
-    createEAttribute(featureEClass, FEATURE__NAME);
-    createEReference(featureEClass, FEATURE__TYPE);
   }
 
   /**
@@ -952,8 +817,6 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    dataTypeEClass.getESuperTypes().add(this.getType());
-    entityEClass.getESuperTypes().add(this.getType());
 
     // Initialize classes and features; add operations and parameters
     initEClass(leiEClass, Lei.class, "Lei", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -963,7 +826,6 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
     initEReference(getType_Preliminar(), this.getPreliminar(), null, "preliminar", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getType_Normativa(), this.getNormativa(), null, "normativa", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getType_Final(), this.getFinal(), null, "final", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getType_Name(), ecorePackage.getEString(), "name", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(preliminarEClass, Preliminar.class, "Preliminar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPreliminar_Epigrage(), this.getEpigrafe(), null, "epigrage", null, 0, 1, Preliminar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1016,17 +878,6 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
 
     initEClass(revogacaoEClass, Revogacao.class, "Revogacao", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRevogacao_Texto(), ecorePackage.getEString(), "texto", null, 0, 1, Revogacao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(dataTypeEClass, DataType.class, "DataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getEntity_SuperType(), this.getEntity(), null, "superType", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEntity_Features(), this.getFeature(), null, "features", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(featureEClass, Feature.class, "Feature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFeature_Many(), ecorePackage.getEBoolean(), "many", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFeature_Name(), ecorePackage.getEString(), "name", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFeature_Type(), this.getType(), null, "type", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

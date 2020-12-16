@@ -123,22 +123,13 @@ public interface LegisFacilePackage extends EPackage
   int TYPE__FINAL = 2;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE__NAME = 3;
-
-  /**
    * The number of structural features of the '<em>Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_FEATURE_COUNT = 4;
+  int TYPE_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link ufes.mdd.lei.legisFacile.impl.PreliminarImpl <em>Preliminar</em>}' class.
@@ -622,180 +613,6 @@ public interface LegisFacilePackage extends EPackage
    */
   int REVOGACAO_FEATURE_COUNT = 1;
 
-  /**
-   * The meta object id for the '{@link ufes.mdd.lei.legisFacile.impl.DataTypeImpl <em>Data Type</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see ufes.mdd.lei.legisFacile.impl.DataTypeImpl
-   * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getDataType()
-   * @generated
-   */
-  int DATA_TYPE = 16;
-
-  /**
-   * The feature id for the '<em><b>Preliminar</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA_TYPE__PRELIMINAR = TYPE__PRELIMINAR;
-
-  /**
-   * The feature id for the '<em><b>Normativa</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA_TYPE__NORMATIVA = TYPE__NORMATIVA;
-
-  /**
-   * The feature id for the '<em><b>Final</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA_TYPE__FINAL = TYPE__FINAL;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA_TYPE__NAME = TYPE__NAME;
-
-  /**
-   * The number of structural features of the '<em>Data Type</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link ufes.mdd.lei.legisFacile.impl.EntityImpl <em>Entity</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see ufes.mdd.lei.legisFacile.impl.EntityImpl
-   * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getEntity()
-   * @generated
-   */
-  int ENTITY = 17;
-
-  /**
-   * The feature id for the '<em><b>Preliminar</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENTITY__PRELIMINAR = TYPE__PRELIMINAR;
-
-  /**
-   * The feature id for the '<em><b>Normativa</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENTITY__NORMATIVA = TYPE__NORMATIVA;
-
-  /**
-   * The feature id for the '<em><b>Final</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENTITY__FINAL = TYPE__FINAL;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENTITY__NAME = TYPE__NAME;
-
-  /**
-   * The feature id for the '<em><b>Super Type</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENTITY__SUPER_TYPE = TYPE_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Features</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENTITY__FEATURES = TYPE_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Entity</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENTITY_FEATURE_COUNT = TYPE_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link ufes.mdd.lei.legisFacile.impl.FeatureImpl <em>Feature</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see ufes.mdd.lei.legisFacile.impl.FeatureImpl
-   * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getFeature()
-   * @generated
-   */
-  int FEATURE = 18;
-
-  /**
-   * The feature id for the '<em><b>Many</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FEATURE__MANY = 0;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FEATURE__NAME = 1;
-
-  /**
-   * The feature id for the '<em><b>Type</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FEATURE__TYPE = 2;
-
-  /**
-   * The number of structural features of the '<em>Feature</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FEATURE_FEATURE_COUNT = 3;
-
 
   /**
    * Returns the meta object for class '{@link ufes.mdd.lei.legisFacile.Lei <em>Lei</em>}'.
@@ -860,17 +677,6 @@ public interface LegisFacilePackage extends EPackage
    * @generated
    */
   EReference getType_Final();
-
-  /**
-   * Returns the meta object for the attribute '{@link ufes.mdd.lei.legisFacile.Type#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see ufes.mdd.lei.legisFacile.Type#getName()
-   * @see #getType()
-   * @generated
-   */
-  EAttribute getType_Name();
 
   /**
    * Returns the meta object for class '{@link ufes.mdd.lei.legisFacile.Preliminar <em>Preliminar</em>}'.
@@ -1277,91 +1083,6 @@ public interface LegisFacilePackage extends EPackage
   EAttribute getRevogacao_Texto();
 
   /**
-   * Returns the meta object for class '{@link ufes.mdd.lei.legisFacile.DataType <em>Data Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Data Type</em>'.
-   * @see ufes.mdd.lei.legisFacile.DataType
-   * @generated
-   */
-  EClass getDataType();
-
-  /**
-   * Returns the meta object for class '{@link ufes.mdd.lei.legisFacile.Entity <em>Entity</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Entity</em>'.
-   * @see ufes.mdd.lei.legisFacile.Entity
-   * @generated
-   */
-  EClass getEntity();
-
-  /**
-   * Returns the meta object for the reference '{@link ufes.mdd.lei.legisFacile.Entity#getSuperType <em>Super Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Super Type</em>'.
-   * @see ufes.mdd.lei.legisFacile.Entity#getSuperType()
-   * @see #getEntity()
-   * @generated
-   */
-  EReference getEntity_SuperType();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link ufes.mdd.lei.legisFacile.Entity#getFeatures <em>Features</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Features</em>'.
-   * @see ufes.mdd.lei.legisFacile.Entity#getFeatures()
-   * @see #getEntity()
-   * @generated
-   */
-  EReference getEntity_Features();
-
-  /**
-   * Returns the meta object for class '{@link ufes.mdd.lei.legisFacile.Feature <em>Feature</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Feature</em>'.
-   * @see ufes.mdd.lei.legisFacile.Feature
-   * @generated
-   */
-  EClass getFeature();
-
-  /**
-   * Returns the meta object for the attribute '{@link ufes.mdd.lei.legisFacile.Feature#isMany <em>Many</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Many</em>'.
-   * @see ufes.mdd.lei.legisFacile.Feature#isMany()
-   * @see #getFeature()
-   * @generated
-   */
-  EAttribute getFeature_Many();
-
-  /**
-   * Returns the meta object for the attribute '{@link ufes.mdd.lei.legisFacile.Feature#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see ufes.mdd.lei.legisFacile.Feature#getName()
-   * @see #getFeature()
-   * @generated
-   */
-  EAttribute getFeature_Name();
-
-  /**
-   * Returns the meta object for the reference '{@link ufes.mdd.lei.legisFacile.Feature#getType <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Type</em>'.
-   * @see ufes.mdd.lei.legisFacile.Feature#getType()
-   * @see #getFeature()
-   * @generated
-   */
-  EReference getFeature_Type();
-
-  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1435,14 +1156,6 @@ public interface LegisFacilePackage extends EPackage
      * @generated
      */
     EReference TYPE__FINAL = eINSTANCE.getType_Final();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TYPE__NAME = eINSTANCE.getType_Name();
 
     /**
      * The meta object literal for the '{@link ufes.mdd.lei.legisFacile.impl.PreliminarImpl <em>Preliminar</em>}' class.
@@ -1775,76 +1488,6 @@ public interface LegisFacilePackage extends EPackage
      * @generated
      */
     EAttribute REVOGACAO__TEXTO = eINSTANCE.getRevogacao_Texto();
-
-    /**
-     * The meta object literal for the '{@link ufes.mdd.lei.legisFacile.impl.DataTypeImpl <em>Data Type</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see ufes.mdd.lei.legisFacile.impl.DataTypeImpl
-     * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getDataType()
-     * @generated
-     */
-    EClass DATA_TYPE = eINSTANCE.getDataType();
-
-    /**
-     * The meta object literal for the '{@link ufes.mdd.lei.legisFacile.impl.EntityImpl <em>Entity</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see ufes.mdd.lei.legisFacile.impl.EntityImpl
-     * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getEntity()
-     * @generated
-     */
-    EClass ENTITY = eINSTANCE.getEntity();
-
-    /**
-     * The meta object literal for the '<em><b>Super Type</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ENTITY__SUPER_TYPE = eINSTANCE.getEntity_SuperType();
-
-    /**
-     * The meta object literal for the '<em><b>Features</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ENTITY__FEATURES = eINSTANCE.getEntity_Features();
-
-    /**
-     * The meta object literal for the '{@link ufes.mdd.lei.legisFacile.impl.FeatureImpl <em>Feature</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see ufes.mdd.lei.legisFacile.impl.FeatureImpl
-     * @see ufes.mdd.lei.legisFacile.impl.LegisFacilePackageImpl#getFeature()
-     * @generated
-     */
-    EClass FEATURE = eINSTANCE.getFeature();
-
-    /**
-     * The meta object literal for the '<em><b>Many</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FEATURE__MANY = eINSTANCE.getFeature_Many();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FEATURE__NAME = eINSTANCE.getFeature_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FEATURE__TYPE = eINSTANCE.getFeature_Type();
 
   }
 

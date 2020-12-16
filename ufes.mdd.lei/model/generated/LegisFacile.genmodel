@@ -13,7 +13,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Type/preliminar"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Type/normativa"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Type/final"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//Type/name"/>
     </genClasses>
     <genClasses ecoreClass="LegisFacile.ecore#//Preliminar">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Preliminar/epigrage"/>
@@ -66,16 +65,6 @@
     </genClasses>
     <genClasses ecoreClass="LegisFacile.ecore#//Revogacao">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//Revogacao/texto"/>
-    </genClasses>
-    <genClasses ecoreClass="LegisFacile.ecore#//DataType"/>
-    <genClasses ecoreClass="LegisFacile.ecore#//Entity">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Entity/superType"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Entity/features"/>
-    </genClasses>
-    <genClasses ecoreClass="LegisFacile.ecore#//Feature">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//Feature/many"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//Feature/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Feature/type"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

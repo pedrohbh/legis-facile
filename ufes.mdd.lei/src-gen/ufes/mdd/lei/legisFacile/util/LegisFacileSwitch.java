@@ -185,29 +185,6 @@ public class LegisFacileSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LegisFacilePackage.DATA_TYPE:
-      {
-        DataType dataType = (DataType)theEObject;
-        T result = caseDataType(dataType);
-        if (result == null) result = caseType(dataType);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LegisFacilePackage.ENTITY:
-      {
-        Entity entity = (Entity)theEObject;
-        T result = caseEntity(entity);
-        if (result == null) result = caseType(entity);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case LegisFacilePackage.FEATURE:
-      {
-        Feature feature = (Feature)theEObject;
-        T result = caseFeature(feature);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       default: return defaultCase(theEObject);
     }
   }
@@ -464,54 +441,6 @@ public class LegisFacileSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseRevogacao(Revogacao object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Data Type</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDataType(DataType object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Entity</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Entity</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseEntity(Entity object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Feature</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Feature</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseFeature(Feature object)
   {
     return null;
   }
