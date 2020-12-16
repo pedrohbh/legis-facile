@@ -89,7 +89,15 @@ public class LegisFacileValidator extends AbstractLegisFacileValidator {
 		}
 		else if ( elementroPai instanceof Paragrafo )
 		{
-			
+			Paragrafo caputPai = (Paragrafo) elementroPai;
+			int indiceElemento = caputPai.getIncisos().indexOf(inciso);
+			if ( indiceElemento == (caputPai.getIncisos().size()-1) )
+			{
+				if ( !inciso.getTexto().endsWith(".") )
+				{
+					warning("Deve terminar em \".\" quando não se desdobra em alíneas", LegisFacilePackage.Literals.INCISO__TEXTO, INVALID_NAME);
+				}
+			}
 		}
 	}
 
