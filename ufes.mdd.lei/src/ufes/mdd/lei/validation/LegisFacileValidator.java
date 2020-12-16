@@ -33,7 +33,7 @@ public class LegisFacileValidator extends AbstractLegisFacileValidator {
 	public static final String INVALID_NAME = "invalidName";
 	
 	@Check
-	public void checkEndWithSemicolonOrDot(Caput caput)
+	public void checkCaputEndWithSemicolonOrDot(Caput caput)
 	{
 		if ( caput.getIncisos() == null || caput.getIncisos().size() == 0)
 		{
@@ -46,10 +46,28 @@ public class LegisFacileValidator extends AbstractLegisFacileValidator {
 		{
 			if ( !caput.getTexto().trim().endsWith(":") )
 			{
-				warning("Deve terminar em \":\" quando não se desdobra em Incisos", LegisFacilePackage.Literals.CAPUT__TEXTO, INVALID_NAME);
+				warning("Deve terminar em \":\" quando se desdobra em Incisos", LegisFacilePackage.Literals.CAPUT__TEXTO, INVALID_NAME);
+			}
+		}		
+	}
+	
+	@Check
+	public void checkParagrafoEndWithSemicolonOrDot(Paragrafo pragrafo)
+	{
+		if ( pragrafo.getIncisos() == null || pragrafo.getIncisos().size() == 0)
+		{
+			if ( !pragrafo.getTexto().trim().endsWith(".") )
+			{
+				warning("Deve terminar em \".\" quando não se desdobra em Incisos", LegisFacilePackage.Literals.CAPUT__TEXTO, INVALID_NAME);
 			}
 		}
-		
+		else
+		{
+			if ( !pragrafo.getTexto().trim().endsWith(":") )
+			{
+				warning("Deve terminar em \":\" quando se desdobra em Incisos", LegisFacilePackage.Literals.CAPUT__TEXTO, INVALID_NAME);
+			}
+		}		
 	}
 
 	@Check
