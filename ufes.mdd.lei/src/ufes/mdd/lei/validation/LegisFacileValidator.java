@@ -46,7 +46,7 @@ public class LegisFacileValidator extends AbstractLegisFacileValidator {
 	{
 		if (!Character.isUpperCase(caput.getTexto().charAt(0)))
 		{
-			warning("O texto do \"paragrafo\" deve começar com letra maiúscula", LegisFacilePackage.Literals.CAPUT__TEXTO, INVALID_NAME);
+			warning("O texto do \"Parágrafo\" deve começar com letra maiúscula", LegisFacilePackage.Literals.CAPUT__TEXTO, INVALID_NAME);
 		}
 	}
 	
