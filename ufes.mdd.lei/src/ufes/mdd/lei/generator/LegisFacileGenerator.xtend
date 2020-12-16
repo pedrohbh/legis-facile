@@ -120,7 +120,9 @@ class LegisFacileGenerator extends AbstractGenerator {
 	}
 	
 	private def compile(Item item, int i)'''
-	<p>«i+1». «item.texto»</p>
+	<p class="MsoNormal" style="text-indent: 1.0cm; line-height: normal; text-align: justify; margin-top: 20px; margin-bottom: 20px">
+		<span style="font-size:
+	10.0pt;font-family:&quot;Arial&quot;,sans-serif">«i+1». «item.texto»</span></p>
 	'''
 	
 	private def compileLinha(Alinea a, int i)'''
@@ -185,7 +187,8 @@ class LegisFacileGenerator extends AbstractGenerator {
 	
 	private def compileLinha(Paragrafo p, boolean ehUnico, int indice)'''
 	«IF ehUnico»
-	<p>Parágrafo único. «p.texto»</p>
+	<p class="MsoNormal" style="text-indent: 1.0cm; line-height: normal; text-align: justify; margin-top: 20px; margin-bottom: 20px">
+		<span style="font-size:10.0pt;font-family:&quot;Arial&quot;,sans-serif">Parágrafo único. «p.texto»</span></p>
 	«ELSE»
 		«IF indice < 9 »
 		<p>§«indice+1»º «p.texto»</p>
