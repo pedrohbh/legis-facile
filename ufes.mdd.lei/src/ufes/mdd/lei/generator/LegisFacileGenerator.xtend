@@ -147,7 +147,8 @@ class LegisFacileGenerator extends AbstractGenerator {
 	}
 	
 	private def compileLinha(Inciso i, int j)'''
-	<p>«converteEmRomanos((j+1))» - «i.texto»</p>
+	<p class="MsoNormal" style="text-indent: 1.0cm; line-height: normal; text-align: justify; margin-top: 20px; margin-bottom: 20px">
+		<span style="font-size:10.0pt;font-family:&quot;Arial&quot;,sans-serif">«converteEmRomanos((j+1))» - «i.texto»</span></p>
 	'''
 	
 	private def converteEmRomanos(int numero)
