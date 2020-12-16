@@ -3,6 +3,7 @@
  */
 package ufes.mdd.lei.validation;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
 
 import ufes.mdd.lei.legisFacile.Alinea;
@@ -58,16 +59,38 @@ public class LegisFacileValidator extends AbstractLegisFacileValidator {
 		{
 			if ( !pragrafo.getTexto().trim().endsWith(".") )
 			{
-				warning("Deve terminar em \".\" quando não se desdobra em Incisos", LegisFacilePackage.Literals.CAPUT__TEXTO, INVALID_NAME);
+				warning("Deve terminar em \".\" quando não se desdobra em Incisos", LegisFacilePackage.Literals.PARAGRAFO__TEXTO, INVALID_NAME);
 			}
 		}
 		else
 		{
 			if ( !pragrafo.getTexto().trim().endsWith(":") )
 			{
-				warning("Deve terminar em \":\" quando se desdobra em Incisos", LegisFacilePackage.Literals.CAPUT__TEXTO, INVALID_NAME);
+				warning("Deve terminar em \":\" quando se desdobra em Incisos", LegisFacilePackage.Literals.PARAGRAFO__TEXTO, INVALID_NAME);
 			}
 		}		
+	}
+	
+	@Check
+	public void checaTeste(Inciso inciso)
+	{
+		EObject elementroPai = inciso.eContainer();
+		if ( elementroPai instanceof Caput )
+		{
+			Caput caputPai = (Caput) elementroPai;
+			int indiceElemento = caputPai.getIncisos().indexOf(inciso);
+			if ( indiceElemento == (caputPai.getIncisos().size()-1) )
+			{
+				if ( !inciso.getTexto().endsWith(".") )
+				{
+					warning("Deve terminar em \".\" quando não se desdobra em alíneas", LegisFacilePackage.Literals.INCISO__TEXTO, INVALID_NAME);
+				}
+			}
+		}
+		else if ( elementroPai instanceof Paragrafo )
+		{
+			
+		}
 	}
 
 	@Check
