@@ -53,18 +53,40 @@ public class LegisFacileValidator extends AbstractLegisFacileValidator {
 	}
 	
 	@Check
-	public void checkParagrafoEndWithSemicolonOrDot(Paragrafo pragrafo)
+	public void checkItemEndWithSemicolonOrDot(Item item)
 	{
-		if ( pragrafo.getIncisos() == null || pragrafo.getIncisos().size() == 0)
+		Alinea alineaPai = (Alinea) item.eContainer();
+		int indiceElemento = alineaPai.getItens().indexOf(item);
+		if ( indiceElemento == (alineaPai.getItens().size()-1) )
 		{
-			if ( !pragrafo.getTexto().trim().endsWith(".") )
+			if ( !item.getTexto().trim().endsWith(".") )
+			{
+				warning("Deve terminar em \".\" quando é o último item e anteceda artigo ou parágrafo", LegisFacilePackage.Literals.ITEM__TEXTO, INVALID_NAME);
+			}
+		}
+		else
+		{
+			if ( !item.getTexto().trim().endsWith(";") )
+			{
+				warning("Deve terminar em \";\"", LegisFacilePackage.Literals.ITEM__TEXTO, INVALID_NAME);
+			}
+		}
+		
+	}
+	
+	@Check
+	public void checkParagrafoEndWithSemicolonOrDot(Paragrafo paragrafo)
+	{
+		if ( paragrafo.getIncisos() == null || paragrafo.getIncisos().size() == 0)
+		{
+			if ( !paragrafo.getTexto().trim().endsWith(".") )
 			{
 				warning("Deve terminar em \".\" quando não se desdobra em Incisos", LegisFacilePackage.Literals.PARAGRAFO__TEXTO, INVALID_NAME);
 			}
 		}
 		else
 		{
-			if ( !pragrafo.getTexto().trim().endsWith(":") )
+			if ( !paragrafo.getTexto().trim().endsWith(":") )
 			{
 				warning("Deve terminar em \":\" quando se desdobra em Incisos", LegisFacilePackage.Literals.PARAGRAFO__TEXTO, INVALID_NAME);
 			}
