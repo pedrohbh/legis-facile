@@ -122,7 +122,16 @@ public class LegisFacileValidator extends AbstractLegisFacileValidator {
 			}
 		}
 	}
-
+	
+	@Check
+	public void verificaSeNaoSeDesdobraEmUmaUnicaAlinea(Inciso inciso)
+	{
+		if ( inciso.getAlineas() != null && inciso.getAlineas().size() == 1)
+		{
+			error("O texto de um inciso não poderá desdobrar-se em uma única alínea.", LegisFacilePackage.Literals.INCISO__ALINEAS);
+		}
+	}
+	
 	@Check
 	public void checkCaputStartsWithCapital(Caput caput)
 	{
