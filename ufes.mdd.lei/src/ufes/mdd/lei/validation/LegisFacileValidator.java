@@ -178,7 +178,16 @@ public class LegisFacileValidator extends AbstractLegisFacileValidator {
 	{
 		if ( inciso.getAlineas() != null && inciso.getAlineas().size() == 1)
 		{
-			error("O texto de um inciso não poderá desdobrar-se em uma única alínea.", LegisFacilePackage.Literals.INCISO__ALINEAS);
+			error("O texto de um inciso não poderá desdobrar-se em uma única alínea", LegisFacilePackage.Literals.INCISO__ALINEAS);
+		}
+	}
+	
+	@Check
+	public void verificaSeNaoSeDesdobraEmUmUnicoItem(Alinea alinea)
+	{
+		if ( alinea.getItens() != null && alinea.getItens().size() ==1)
+		{
+			error("O texto de uma alínea não poderá desdobrar-se em um único item", LegisFacilePackage.Literals.ALINEA__ITENS);
 		}
 	}
 	
