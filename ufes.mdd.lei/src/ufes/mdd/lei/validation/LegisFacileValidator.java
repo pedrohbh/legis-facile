@@ -102,7 +102,7 @@ public class LegisFacileValidator extends AbstractLegisFacileValidator {
 				{
 					if ( !inciso.getTexto().endsWith(".") )
 					{
-						warning("Deve terminar em \".\" quando se é o último elemento não se desdobra em alíneas", LegisFacilePackage.Literals.INCISO__TEXTO, INVALID_NAME);
+						warning("Deve terminar em \".\" quando se é o último elemento e não se desdobra em alíneas", LegisFacilePackage.Literals.INCISO__TEXTO, INVALID_NAME);
 					}
 					
 				}
@@ -119,6 +119,34 @@ public class LegisFacileValidator extends AbstractLegisFacileValidator {
 			if ( !inciso.getTexto().trim().endsWith(":") )
 			{
 				warning("Deve terminar em \":\" quando se desdobra em Alíneas", LegisFacilePackage.Literals.INCISO__TEXTO, INVALID_NAME);
+			}
+		}
+	}
+	
+	@Check
+	public void checkAlineaEndSemicolonOrTwoPoints(Alinea alinea)
+	{
+		if ( alinea.getItens() != null && alinea.getItens().size() != 0)
+		{
+			if ( !alinea.getTexto().trim().endsWith(":") )
+			{
+				warning("Deve terminar em \":\" quando se desdobra em itens", LegisFacilePackage.Literals.ALINEA__TEXTO, INVALID_NAME);
+			}
+		}
+		else
+		{
+			Inciso incisoPai = (Inciso) alinea.eContainer();
+			int indiceElemento = incisoPai.getAlineas().indexOf(alinea);
+			if ( indiceElemento == (incisoPai.getAlineas().size()-1) )
+			{
+				if ( !alinea.getTexto().endsWith(".") )
+				{
+					warning("Deve terminar em \".\" quando se é o último elemento e não se desdobra em itens", LegisFacilePackage.Literals.ALINEA__TEXTO, INVALID_NAME);
+				}				
+			}
+			else if ( !alinea.getTexto().trim().endsWith(";") )
+			{
+				warning("Deve terminar em \";\" quando não se desdobra em itens", LegisFacilePackage.Literals.ALINEA__TEXTO, INVALID_NAME);
 			}
 		}
 	}
