@@ -266,10 +266,30 @@ class LegisFacileGenerator extends AbstractGenerator {
 				return textoFinal
 			}
 			val textoLabel = texto.substring(indiceInicial + "\ref{".length, indiceFinal)
-			val numeroArtigo = mapaLabels.get(textoLabel) + 1
+			var numeroArtigo = mapaLabels.get(textoLabel)
+			
+			if ( numeroArtigo === null)
+			{
+				return textoFinal
+			}
+			else
+			{
+				numeroArtigo = numeroArtigo + 1
+			}
+			
+			
 			
 			textoConsumido = textoConsumido.substring(indiceFinal)
+			if ( numeroArtigo >= 10 )
+			{
 			textoFinal = textoFinal.replaceFirst("\ref\\{" + textoLabel + "\\}", "<a href=\"#" + textoLabel  + "\">Art. " + numeroArtigo + "</a>")
+				
+			}
+			else
+			{
+				textoFinal = textoFinal.replaceFirst("\ref\\{" + textoLabel + "\\}", "<a href=\"#" + textoLabel  + "\">Art. " + numeroArtigo + "º</a>")
+			}
+			
 		}
 		/*if ( texto.contains("\ref{") )
 		{
