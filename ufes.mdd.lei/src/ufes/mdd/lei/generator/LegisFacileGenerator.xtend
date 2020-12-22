@@ -241,11 +241,29 @@ class LegisFacileGenerator extends AbstractGenerator {
 	private def compile(Artigo a, int i)
 	{
 		val resultado = new StringBuilder
+		a.caput.texto = processaReferencia(a.caput.texto)
 		resultado.append(a.caput.compile(i, a.label))
 		a.caput.incisos.forEach[inciso, j| resultado.append(inciso.compile(j))]
 		
 		return resultado.toString
 		
+	}
+	
+	private def processaReferencia(String texto)
+	{
+		if ( texto.contains("\ref{") )
+		{
+			val indiceInicial = texto.indexOf("\ref{")
+			val indiceFinal = texto.indexOf("}", indiceInicial);
+			if ( indiceFinal !== -1)
+			{
+				val textoLabel = texto.substring(indiceInicial, indiceFinal)
+				val numeroArtigo = mapaLabels.get(textoLabel)
+				texto.replaceAll("\\ref{(\\w)*}", "<a href=\"#" + textoLabel  + "\">Art. " + numeroArtigo + "</a>")
+			}
+		}
+		
+		return texto
 	}
 	
 	/*private def insereNovaLinha(StringBuilder sb, String elemento)
