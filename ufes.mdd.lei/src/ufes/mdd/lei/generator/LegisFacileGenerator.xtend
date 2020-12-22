@@ -124,9 +124,11 @@ class LegisFacileGenerator extends AbstractGenerator {
 	private def compile(Alinea a, int i)
 	{
 		var sb = new StringBuilder
+		a.texto = processaReferencia(a.texto)
 		sb.append(a.compileLinha(i))
 		for ( var j = 0; j < a.itens.size; j++ )
 		{
+			a.itens.get(j).texto = processaReferencia(a.itens.get(j).texto)
 			sb.append(a.itens.get(j).compile(j))
 		}
 		return sb.toString
@@ -153,7 +155,8 @@ class LegisFacileGenerator extends AbstractGenerator {
 	private def compile(Inciso i, int j)
 	{
 		var sb = new StringBuilder
-		sb.append(i.compileLinha(j))
+		i.texto = processaReferencia(i.texto)
+		sb.append(i.compileLinha(j))		
 		for ( var k = 0; k < i.alineas.size; k++ )
 		{
 			sb.append(i.alineas.get(k).compile(k))		
@@ -189,6 +192,7 @@ class LegisFacileGenerator extends AbstractGenerator {
 	private def compile(Paragrafo p, boolean ehUnico, int indice)
 	{
 		var sb = new StringBuilder
+		p.texto = processaReferencia(p.texto)
 		sb.append(p.compileLinha(ehUnico, indice))
 		for ( var i = 0; i < p.incisos.size; i++ )
 		{
