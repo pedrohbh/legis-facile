@@ -251,7 +251,23 @@ class LegisFacileGenerator extends AbstractGenerator {
 	
 	private def processaReferencia(String texto)
 	{
-		if ( texto.contains("\ref{") )
+		var textoFinal = new String(texto)
+		var textoConsumido = new String(texto)
+		while ( textoConsumido.contains("\ref") )
+		{
+			val indiceInicial = texto.indexOf("\ref{")
+			val indiceFinal = texto.indexOf("}", indiceInicial);
+			if ( indiceFinal == -1)
+			{
+				return textoFinal
+			}
+			val textoLabel = texto.substring(indiceInicial + "\ref{".length, indiceFinal)
+			val numeroArtigo = mapaLabels.get(textoLabel) + 1
+			
+			textoConsumido = textoConsumido.substring(indiceFinal)
+			textoFinal = textoFinal.replaceFirst("\ref\\{" + textoLabel + "\\}", "<a href=\"#" + textoLabel  + "\">Art. " + numeroArtigo + "</a>")
+		}
+		/*if ( texto.contains("\ref{") )
 		{
 			val indiceInicial = texto.indexOf("\ref{")
 			val indiceFinal = texto.indexOf("}", indiceInicial);
@@ -261,9 +277,9 @@ class LegisFacileGenerator extends AbstractGenerator {
 				val numeroArtigo = mapaLabels.get(textoLabel)
 				texto.replaceAll("\\ref{(\\w)*}", "<a href=\"#" + textoLabel  + "\">Art. " + numeroArtigo + "</a>")
 			}
-		}
+		}*/
 		
-		return texto
+		return textoFinal
 	}
 	
 	/*private def insereNovaLinha(StringBuilder sb, String elemento)
