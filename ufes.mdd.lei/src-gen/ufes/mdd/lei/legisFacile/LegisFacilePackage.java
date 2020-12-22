@@ -318,13 +318,22 @@ public interface LegisFacilePackage extends EPackage
   int ARTIGO = 7;
 
   /**
+   * The feature id for the '<em><b>Label</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARTIGO__LABEL = 0;
+
+  /**
    * The feature id for the '<em><b>Caput</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ARTIGO__CAPUT = 0;
+  int ARTIGO__CAPUT = 1;
 
   /**
    * The feature id for the '<em><b>Paragrafos</b></em>' containment reference list.
@@ -333,7 +342,7 @@ public interface LegisFacilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int ARTIGO__PARAGRAFOS = 1;
+  int ARTIGO__PARAGRAFOS = 2;
 
   /**
    * The number of structural features of the '<em>Artigo</em>' class.
@@ -342,7 +351,7 @@ public interface LegisFacilePackage extends EPackage
    * @generated
    * @ordered
    */
-  int ARTIGO_FEATURE_COUNT = 2;
+  int ARTIGO_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link ufes.mdd.lei.legisFacile.impl.CaputImpl <em>Caput</em>}' class.
@@ -838,6 +847,17 @@ public interface LegisFacilePackage extends EPackage
   EClass getArtigo();
 
   /**
+   * Returns the meta object for the attribute '{@link ufes.mdd.lei.legisFacile.Artigo#getLabel <em>Label</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Label</em>'.
+   * @see ufes.mdd.lei.legisFacile.Artigo#getLabel()
+   * @see #getArtigo()
+   * @generated
+   */
+  EAttribute getArtigo_Label();
+
+  /**
    * Returns the meta object for the containment reference '{@link ufes.mdd.lei.legisFacile.Artigo#getCaput <em>Caput</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1288,6 +1308,14 @@ public interface LegisFacilePackage extends EPackage
      * @generated
      */
     EClass ARTIGO = eINSTANCE.getArtigo();
+
+    /**
+     * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ARTIGO__LABEL = eINSTANCE.getArtigo_Label();
 
     /**
      * The meta object literal for the '<em><b>Caput</b></em>' containment reference feature.

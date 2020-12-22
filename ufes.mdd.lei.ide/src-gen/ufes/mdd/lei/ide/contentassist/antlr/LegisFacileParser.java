@@ -53,6 +53,7 @@ public class LegisFacileParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPreambuloAccess().getGroup(), "rule__Preambulo__Group__0");
 			builder.put(grammarAccess.getNormativaAccess().getGroup(), "rule__Normativa__Group__0");
 			builder.put(grammarAccess.getArtigoAccess().getGroup(), "rule__Artigo__Group__0");
+			builder.put(grammarAccess.getArtigoAccess().getGroup_1(), "rule__Artigo__Group_1__0");
 			builder.put(grammarAccess.getCaputAccess().getGroup(), "rule__Caput__Group__0");
 			builder.put(grammarAccess.getCaputAccess().getGroup_4(), "rule__Caput__Group_4__0");
 			builder.put(grammarAccess.getParagrafoAccess().getGroup(), "rule__Paragrafo__Group__0");
@@ -80,8 +81,9 @@ public class LegisFacileParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEmentaAccess().getEmentaAssignment_2(), "rule__Ementa__EmentaAssignment_2");
 			builder.put(grammarAccess.getPreambuloAccess().getPreambuloAssignment_2(), "rule__Preambulo__PreambuloAssignment_2");
 			builder.put(grammarAccess.getNormativaAccess().getArtigosAssignment_2(), "rule__Normativa__ArtigosAssignment_2");
-			builder.put(grammarAccess.getArtigoAccess().getCaputAssignment_2(), "rule__Artigo__CaputAssignment_2");
-			builder.put(grammarAccess.getArtigoAccess().getParagrafosAssignment_3(), "rule__Artigo__ParagrafosAssignment_3");
+			builder.put(grammarAccess.getArtigoAccess().getLabelAssignment_1_1(), "rule__Artigo__LabelAssignment_1_1");
+			builder.put(grammarAccess.getArtigoAccess().getCaputAssignment_3(), "rule__Artigo__CaputAssignment_3");
+			builder.put(grammarAccess.getArtigoAccess().getParagrafosAssignment_4(), "rule__Artigo__ParagrafosAssignment_4");
 			builder.put(grammarAccess.getCaputAccess().getTextoAssignment_2(), "rule__Caput__TextoAssignment_2");
 			builder.put(grammarAccess.getCaputAccess().getIncisosAssignment_4_1(), "rule__Caput__IncisosAssignment_4_1");
 			builder.put(grammarAccess.getParagrafoAccess().getTextoAssignment_2(), "rule__Paragrafo__TextoAssignment_2");

@@ -34,6 +34,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Normativa/artigos"/>
     </genClasses>
     <genClasses ecoreClass="LegisFacile.ecore#//Artigo">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LegisFacile.ecore#//Artigo/label"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Artigo/caput"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LegisFacile.ecore#//Artigo/paragrafos"/>
     </genClasses>

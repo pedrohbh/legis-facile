@@ -32,6 +32,7 @@ import ufes.mdd.lei.legisFacile.Paragrafo;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link ufes.mdd.lei.legisFacile.impl.ArtigoImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link ufes.mdd.lei.legisFacile.impl.ArtigoImpl#getCaput <em>Caput</em>}</li>
  *   <li>{@link ufes.mdd.lei.legisFacile.impl.ArtigoImpl#getParagrafos <em>Paragrafos</em>}</li>
  * </ul>
@@ -40,6 +41,26 @@ import ufes.mdd.lei.legisFacile.Paragrafo;
  */
 public class ArtigoImpl extends MinimalEObjectImpl.Container implements Artigo
 {
+  /**
+   * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLabel()
+   * @generated
+   * @ordered
+   */
+  protected static final String LABEL_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getLabel() <em>Label</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLabel()
+   * @generated
+   * @ordered
+   */
+  protected String label = LABEL_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getCaput() <em>Caput</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -79,6 +100,31 @@ public class ArtigoImpl extends MinimalEObjectImpl.Container implements Artigo
   protected EClass eStaticClass()
   {
     return LegisFacilePackage.Literals.ARTIGO;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getLabel()
+  {
+    return label;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setLabel(String newLabel)
+  {
+    String oldLabel = label;
+    label = newLabel;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LegisFacilePackage.ARTIGO__LABEL, oldLabel, label));
   }
 
   /**
@@ -174,6 +220,8 @@ public class ArtigoImpl extends MinimalEObjectImpl.Container implements Artigo
   {
     switch (featureID)
     {
+      case LegisFacilePackage.ARTIGO__LABEL:
+        return getLabel();
       case LegisFacilePackage.ARTIGO__CAPUT:
         return getCaput();
       case LegisFacilePackage.ARTIGO__PARAGRAFOS:
@@ -193,6 +241,9 @@ public class ArtigoImpl extends MinimalEObjectImpl.Container implements Artigo
   {
     switch (featureID)
     {
+      case LegisFacilePackage.ARTIGO__LABEL:
+        setLabel((String)newValue);
+        return;
       case LegisFacilePackage.ARTIGO__CAPUT:
         setCaput((Caput)newValue);
         return;
@@ -214,6 +265,9 @@ public class ArtigoImpl extends MinimalEObjectImpl.Container implements Artigo
   {
     switch (featureID)
     {
+      case LegisFacilePackage.ARTIGO__LABEL:
+        setLabel(LABEL_EDEFAULT);
+        return;
       case LegisFacilePackage.ARTIGO__CAPUT:
         setCaput((Caput)null);
         return;
@@ -234,12 +288,31 @@ public class ArtigoImpl extends MinimalEObjectImpl.Container implements Artigo
   {
     switch (featureID)
     {
+      case LegisFacilePackage.ARTIGO__LABEL:
+        return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
       case LegisFacilePackage.ARTIGO__CAPUT:
         return caput != null;
       case LegisFacilePackage.ARTIGO__PARAGRAFOS:
         return paragrafos != null && !paragrafos.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (label: ");
+    result.append(label);
+    result.append(')');
+    return result.toString();
   }
 
 } //ArtigoImpl

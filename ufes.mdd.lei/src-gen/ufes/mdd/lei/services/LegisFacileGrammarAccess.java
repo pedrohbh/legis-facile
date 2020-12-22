@@ -331,21 +331,26 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
 		private final Keyword cArtigoKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
 		private final Keyword cArtigoKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cCaputAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cCaputCaputParserRuleCall_2_0 = (RuleCall)cCaputAssignment_2.eContents().get(0);
-		private final Assignment cParagrafosAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cParagrafosParagrafoParserRuleCall_3_0 = (RuleCall)cParagrafosAssignment_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cLabelAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cLabelSTRINGTerminalRuleCall_1_1_0 = (RuleCall)cLabelAssignment_1_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cCaputAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cCaputCaputParserRuleCall_3_0 = (RuleCall)cCaputAssignment_3.eContents().get(0);
+		private final Assignment cParagrafosAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cParagrafosParagrafoParserRuleCall_4_0 = (RuleCall)cParagrafosAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Artigo:
-		//	('Artigo' | 'artigo') '{'
+		//	('Artigo' | 'artigo') ('(' label=STRING ')')? '{'
 		//	caput=Caput
 		//	paragrafos+=Paragrafo*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('Artigo' | 'artigo') '{' caput=Caput paragrafos+=Paragrafo* '}'
+		//('Artigo' | 'artigo') ('(' label=STRING ')')? '{' caput=Caput paragrafos+=Paragrafo* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//('Artigo' | 'artigo')
@@ -357,23 +362,38 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 		//'artigo'
 		public Keyword getArtigoKeyword_0_1() { return cArtigoKeyword_0_1; }
 		
+		//('(' label=STRING ')')?
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1_0() { return cLeftParenthesisKeyword_1_0; }
+		
+		//label=STRING
+		public Assignment getLabelAssignment_1_1() { return cLabelAssignment_1_1; }
+		
+		//STRING
+		public RuleCall getLabelSTRINGTerminalRuleCall_1_1_0() { return cLabelSTRINGTerminalRuleCall_1_1_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_1_2() { return cRightParenthesisKeyword_1_2; }
+		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//caput=Caput
-		public Assignment getCaputAssignment_2() { return cCaputAssignment_2; }
+		public Assignment getCaputAssignment_3() { return cCaputAssignment_3; }
 		
 		//Caput
-		public RuleCall getCaputCaputParserRuleCall_2_0() { return cCaputCaputParserRuleCall_2_0; }
+		public RuleCall getCaputCaputParserRuleCall_3_0() { return cCaputCaputParserRuleCall_3_0; }
 		
 		//paragrafos+=Paragrafo*
-		public Assignment getParagrafosAssignment_3() { return cParagrafosAssignment_3; }
+		public Assignment getParagrafosAssignment_4() { return cParagrafosAssignment_4; }
 		
 		//Paragrafo
-		public RuleCall getParagrafosParagrafoParserRuleCall_3_0() { return cParagrafosParagrafoParserRuleCall_3_0; }
+		public RuleCall getParagrafosParagrafoParserRuleCall_4_0() { return cParagrafosParagrafoParserRuleCall_4_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	public class CaputElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ufes.mdd.lei.LegisFacile.Caput");
@@ -962,7 +982,7 @@ public class LegisFacileGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//Artigo:
-	//	('Artigo' | 'artigo') '{'
+	//	('Artigo' | 'artigo') ('(' label=STRING ')')? '{'
 	//	caput=Caput
 	//	paragrafos+=Paragrafo*
 	//	'}';

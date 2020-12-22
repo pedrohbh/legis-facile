@@ -37,7 +37,7 @@ Normativa:
 ;
 
 Artigo:
-	('Artigo'|'artigo') '{'
+	('Artigo'|'artigo') ('(' label=STRING ')')? '{'
 		caput=Caput
 		(paragrafos+=Paragrafo)*
 	'}'

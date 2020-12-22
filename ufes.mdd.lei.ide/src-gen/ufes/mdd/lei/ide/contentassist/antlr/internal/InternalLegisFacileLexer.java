@@ -760,10 +760,10 @@ public class InternalLegisFacileLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLegisFacile.g:3627:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalLegisFacile.g:3627:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalLegisFacile.g:3750:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalLegisFacile.g:3750:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalLegisFacile.g:3627:11: ( '^' )?
+            // InternalLegisFacile.g:3750:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -772,7 +772,7 @@ public class InternalLegisFacileLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalLegisFacile.g:3627:11: '^'
+                    // InternalLegisFacile.g:3750:11: '^'
                     {
                     match('^'); 
 
@@ -790,7 +790,7 @@ public class InternalLegisFacileLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalLegisFacile.g:3627:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalLegisFacile.g:3750:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -839,10 +839,10 @@ public class InternalLegisFacileLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLegisFacile.g:3629:10: ( ( '0' .. '9' )+ )
-            // InternalLegisFacile.g:3629:12: ( '0' .. '9' )+
+            // InternalLegisFacile.g:3752:10: ( ( '0' .. '9' )+ )
+            // InternalLegisFacile.g:3752:12: ( '0' .. '9' )+
             {
-            // InternalLegisFacile.g:3629:12: ( '0' .. '9' )+
+            // InternalLegisFacile.g:3752:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -856,7 +856,7 @@ public class InternalLegisFacileLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalLegisFacile.g:3629:13: '0' .. '9'
+            	    // InternalLegisFacile.g:3752:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -888,10 +888,10 @@ public class InternalLegisFacileLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLegisFacile.g:3631:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalLegisFacile.g:3631:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalLegisFacile.g:3754:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalLegisFacile.g:3754:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalLegisFacile.g:3631:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalLegisFacile.g:3754:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -909,10 +909,10 @@ public class InternalLegisFacileLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalLegisFacile.g:3631:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalLegisFacile.g:3754:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalLegisFacile.g:3631:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalLegisFacile.g:3754:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -928,7 +928,7 @@ public class InternalLegisFacileLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalLegisFacile.g:3631:21: '\\\\' .
+                    	    // InternalLegisFacile.g:3754:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -936,7 +936,7 @@ public class InternalLegisFacileLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalLegisFacile.g:3631:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalLegisFacile.g:3754:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -961,10 +961,10 @@ public class InternalLegisFacileLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalLegisFacile.g:3631:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalLegisFacile.g:3754:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalLegisFacile.g:3631:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalLegisFacile.g:3754:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -980,7 +980,7 @@ public class InternalLegisFacileLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalLegisFacile.g:3631:54: '\\\\' .
+                    	    // InternalLegisFacile.g:3754:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -988,7 +988,7 @@ public class InternalLegisFacileLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalLegisFacile.g:3631:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalLegisFacile.g:3754:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1031,12 +1031,12 @@ public class InternalLegisFacileLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLegisFacile.g:3633:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalLegisFacile.g:3633:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalLegisFacile.g:3756:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalLegisFacile.g:3756:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalLegisFacile.g:3633:24: ( options {greedy=false; } : . )*
+            // InternalLegisFacile.g:3756:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1061,7 +1061,7 @@ public class InternalLegisFacileLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalLegisFacile.g:3633:52: .
+            	    // InternalLegisFacile.g:3756:52: .
             	    {
             	    matchAny(); 
 
@@ -1091,12 +1091,12 @@ public class InternalLegisFacileLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLegisFacile.g:3635:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalLegisFacile.g:3635:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalLegisFacile.g:3758:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalLegisFacile.g:3758:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalLegisFacile.g:3635:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalLegisFacile.g:3758:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1109,7 +1109,7 @@ public class InternalLegisFacileLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalLegisFacile.g:3635:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalLegisFacile.g:3758:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1129,7 +1129,7 @@ public class InternalLegisFacileLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalLegisFacile.g:3635:40: ( ( '\\r' )? '\\n' )?
+            // InternalLegisFacile.g:3758:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1138,9 +1138,9 @@ public class InternalLegisFacileLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalLegisFacile.g:3635:41: ( '\\r' )? '\\n'
+                    // InternalLegisFacile.g:3758:41: ( '\\r' )? '\\n'
                     {
-                    // InternalLegisFacile.g:3635:41: ( '\\r' )?
+                    // InternalLegisFacile.g:3758:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1149,7 +1149,7 @@ public class InternalLegisFacileLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalLegisFacile.g:3635:41: '\\r'
+                            // InternalLegisFacile.g:3758:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1181,10 +1181,10 @@ public class InternalLegisFacileLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLegisFacile.g:3637:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalLegisFacile.g:3637:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalLegisFacile.g:3760:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalLegisFacile.g:3760:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalLegisFacile.g:3637:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalLegisFacile.g:3760:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1238,8 +1238,8 @@ public class InternalLegisFacileLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLegisFacile.g:3639:16: ( . )
-            // InternalLegisFacile.g:3639:18: .
+            // InternalLegisFacile.g:3762:16: ( . )
+            // InternalLegisFacile.g:3762:18: .
             {
             matchAny(); 
 

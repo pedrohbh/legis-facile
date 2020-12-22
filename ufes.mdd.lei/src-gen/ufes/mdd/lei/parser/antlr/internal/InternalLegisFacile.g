@@ -575,16 +575,44 @@ ruleArtigo returns [EObject current=null]
 				newLeafNode(otherlv_1, grammarAccess.getArtigoAccess().getArtigoKeyword_0_1());
 			}
 		)
-		otherlv_2='{'
+		(
+			otherlv_2='('
+			{
+				newLeafNode(otherlv_2, grammarAccess.getArtigoAccess().getLeftParenthesisKeyword_1_0());
+			}
+			(
+				(
+					lv_label_3_0=RULE_STRING
+					{
+						newLeafNode(lv_label_3_0, grammarAccess.getArtigoAccess().getLabelSTRINGTerminalRuleCall_1_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getArtigoRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"label",
+							lv_label_3_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+			otherlv_4=')'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getArtigoAccess().getRightParenthesisKeyword_1_2());
+			}
+		)?
+		otherlv_5='{'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getArtigoAccess().getLeftCurlyBracketKeyword_1());
+			newLeafNode(otherlv_5, grammarAccess.getArtigoAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getArtigoAccess().getCaputCaputParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getArtigoAccess().getCaputCaputParserRuleCall_3_0());
 				}
-				lv_caput_3_0=ruleCaput
+				lv_caput_6_0=ruleCaput
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getArtigoRule());
@@ -592,7 +620,7 @@ ruleArtigo returns [EObject current=null]
 					set(
 						$current,
 						"caput",
-						lv_caput_3_0,
+						lv_caput_6_0,
 						"ufes.mdd.lei.LegisFacile.Caput");
 					afterParserOrEnumRuleCall();
 				}
@@ -601,9 +629,9 @@ ruleArtigo returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getArtigoAccess().getParagrafosParagrafoParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getArtigoAccess().getParagrafosParagrafoParserRuleCall_4_0());
 				}
-				lv_paragrafos_4_0=ruleParagrafo
+				lv_paragrafos_7_0=ruleParagrafo
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getArtigoRule());
@@ -611,15 +639,15 @@ ruleArtigo returns [EObject current=null]
 					add(
 						$current,
 						"paragrafos",
-						lv_paragrafos_4_0,
+						lv_paragrafos_7_0,
 						"ufes.mdd.lei.LegisFacile.Paragrafo");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_5='}'
+		otherlv_8='}'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getArtigoAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_8, grammarAccess.getArtigoAccess().getRightCurlyBracketKeyword_5());
 		}
 	)
 ;

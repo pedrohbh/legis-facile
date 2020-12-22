@@ -23,6 +23,8 @@ import ufes.mdd.lei.legisFacile.Paragrafo
 import ufes.mdd.lei.legisFacile.Final
 import ufes.mdd.lei.legisFacile.Revogacao
 import ufes.mdd.lei.legisFacile.Vigencia
+import java.util.Map
+import java.util.HashMap
 
 /**
  * Generates code from your model files on save.
@@ -30,11 +32,14 @@ import ufes.mdd.lei.legisFacile.Vigencia
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class LegisFacileGenerator extends AbstractGenerator {
+	
+	Map<String, Integer> mapaLabels; 
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) 
 	{
 		for ( e : resource.allContents.toIterable.filter(Lei) )
 		{
+			mapaLabels = new HashMap
 			fsa.generateFile(resource.className + ".html", e.compile)
 		}
 		
@@ -43,7 +48,7 @@ class LegisFacileGenerator extends AbstractGenerator {
 //				.filter(Greeting)
 //				.map[name]
 //				.join(', '))	
-	}
+	}	
 	
 	private def className(Resource res)
 	{
@@ -213,6 +218,10 @@ class LegisFacileGenerator extends AbstractGenerator {
 		var sb = new StringBuilder
 		for ( var i = 0; i < n.artigos.size; i++ )
 		{
+			if ( n.artigos.get(i).label !== null)
+			{
+				mapaLabels.put(n.artigos.get(i).label, i)
+			}
 			sb.append(n.artigos.get(i).compile((i)))
 			for ( var j = 0; j < n.artigos.get(i).paragrafos.size; j++ )
 			{
@@ -232,7 +241,7 @@ class LegisFacileGenerator extends AbstractGenerator {
 	private def compile(Artigo a, int i)
 	{
 		val resultado = new StringBuilder
-		resultado.append(a.caput.compile(i))
+		resultado.append(a.caput.compile(i, a.label))
 		a.caput.incisos.forEach[inciso, j| resultado.append(inciso.compile(j))]
 		
 		return resultado.toString
@@ -245,15 +254,22 @@ class LegisFacileGenerator extends AbstractGenerator {
 		sb.append(System.getProperty("line.separator"))
 	}*/
 	
-	private def compile(Caput c, int i)'''
+	private def compile(Caput c, int i, String label)'''
 	«IF i < 9 »
 	<p class="MsoNormal" style="text-indent: 1.0cm; line-height: normal; text-align: justify; margin-top: 20px; margin-bottom: 20px">
 		<span style="font-size:
-	10.0pt;font-family:&quot;Arial&quot;,sans-serif"><a name="art1"></a>Art. «i+1»º «c.texto»</span></p>
+	10.0pt;font-family:&quot;Arial&quot;,sans-serif">
+	«IF label !== null»
+	<a name="«label»"></a>
+	«ENDIF»
+	Art. «i+1»º «c.texto»</span></p>
 	«ELSE»
 	<p class="MsoNormal" style="text-indent: 1.0cm; line-height: normal; text-align: justify; margin-top: 20px; margin-bottom: 20px">
 		<span style="font-size:
-	10.0pt;font-family:&quot;Arial&quot;,sans-serif"><a name="art1"></a>Art. «i+1». «c.texto»</span></p>
+	10.0pt;font-family:&quot;Arial&quot;,sans-serif">
+	«IF label !== null»
+		<a name="«label»"></a>
+		«ENDIF»Art. «i+1». «c.texto»</span></p>
 	«ENDIF»	
 	'''
 	

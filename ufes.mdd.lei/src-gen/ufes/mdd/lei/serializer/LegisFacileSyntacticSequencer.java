@@ -143,6 +143,7 @@ public class LegisFacileSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'Artigo' | 'artigo'
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) '(' label=STRING
 	 *     (rule start) (ambiguity) '{' caput=Caput
 	 */
 	protected void emit_Artigo_ArtigoKeyword_0_0_or_ArtigoKeyword_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {

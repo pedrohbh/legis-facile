@@ -449,9 +449,20 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
    * @generated
    */
   @Override
+  public EAttribute getArtigo_Label()
+  {
+    return (EAttribute)artigoEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getArtigo_Caput()
   {
-    return (EReference)artigoEClass.getEStructuralFeatures().get(0);
+    return (EReference)artigoEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -462,7 +473,7 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
   @Override
   public EReference getArtigo_Paragrafos()
   {
-    return (EReference)artigoEClass.getEStructuralFeatures().get(1);
+    return (EReference)artigoEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -755,6 +766,7 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
     createEReference(normativaEClass, NORMATIVA__ARTIGOS);
 
     artigoEClass = createEClass(ARTIGO);
+    createEAttribute(artigoEClass, ARTIGO__LABEL);
     createEReference(artigoEClass, ARTIGO__CAPUT);
     createEReference(artigoEClass, ARTIGO__PARAGRAFOS);
 
@@ -847,6 +859,7 @@ public class LegisFacilePackageImpl extends EPackageImpl implements LegisFacileP
     initEReference(getNormativa_Artigos(), this.getArtigo(), null, "artigos", null, 0, -1, Normativa.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(artigoEClass, Artigo.class, "Artigo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getArtigo_Label(), ecorePackage.getEString(), "label", null, 0, 1, Artigo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getArtigo_Caput(), this.getCaput(), null, "caput", null, 0, 1, Artigo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getArtigo_Paragrafos(), this.getParagrafo(), null, "paragrafos", null, 0, -1, Artigo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

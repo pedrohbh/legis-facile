@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link ufes.mdd.lei.legisFacile.Artigo#getLabel <em>Label</em>}</li>
  *   <li>{@link ufes.mdd.lei.legisFacile.Artigo#getCaput <em>Caput</em>}</li>
  *   <li>{@link ufes.mdd.lei.legisFacile.Artigo#getParagrafos <em>Paragrafos</em>}</li>
  * </ul>
@@ -26,6 +27,28 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Artigo extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Label</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Label</em>' attribute.
+   * @see #setLabel(String)
+   * @see ufes.mdd.lei.legisFacile.LegisFacilePackage#getArtigo_Label()
+   * @model
+   * @generated
+   */
+  String getLabel();
+
+  /**
+   * Sets the value of the '{@link ufes.mdd.lei.legisFacile.Artigo#getLabel <em>Label</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Label</em>' attribute.
+   * @see #getLabel()
+   * @generated
+   */
+  void setLabel(String value);
+
   /**
    * Returns the value of the '<em><b>Caput</b></em>' containment reference.
    * <!-- begin-user-doc -->

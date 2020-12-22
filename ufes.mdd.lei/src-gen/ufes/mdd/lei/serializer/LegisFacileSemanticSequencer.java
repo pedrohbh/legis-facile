@@ -117,7 +117,7 @@ public class LegisFacileSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Artigo returns Artigo
 	 *
 	 * Constraint:
-	 *     (caput=Caput paragrafos+=Paragrafo*)
+	 *     (label=STRING? caput=Caput paragrafos+=Paragrafo*)
 	 */
 	protected void sequence_Artigo(ISerializationContext context, Artigo semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
